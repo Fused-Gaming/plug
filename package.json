@@ -1,0 +1,21 @@
+{
+  "name": "next-chapter-demo",
+  "version": "0.1.0",
+  "description": "Next Chapter Project - Bootcamp Submission Demo",
+  "private": true,
+  "scripts": {
+    "dev": "echo 'Add your dev script here'",
+    "build": "echo 'Add your build script here'",
+    "test": "echo 'Add your test script here'",
+    "start": "echo 'Add your start script here'"
+  },
+  "keywords": [
+    "next-chapter",
+    "bootcamp",
+    "demo"
+  ],
+  "author": "Fused Gaming",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {}
+}
