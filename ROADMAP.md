@@ -5,11 +5,17 @@
 
 ## Phase 1: Foundation (Days 1-2)
 - [x] Project initialization & structure
+- [x] GitHub Pages deployment automation
+- [x] CNAME configuration for plug.vln.gg
 - [ ] Development environment setup
+- [ ] Tech stack decided & dependencies installed
 - [ ] Basic README & documentation
 - [ ] Git workflow established
 
-**Definition of Done:** Environment ready, team can run `npm install && npm run dev`
+**Definition of Done:** 
+- Environment ready, team can run `npm install && npm run dev`
+- GitHub Actions workflow configured and tested
+- `npm run build` produces `dist/` folder successfully
 
 ## Phase 2: MVP Feature Development (Days 2-4)
 ### Primary Feature: [DESCRIBE YOUR ONE CORE FEATURE]

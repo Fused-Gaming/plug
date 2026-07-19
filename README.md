@@ -8,7 +8,13 @@ A minimal viable demo for the Next Chapter Project bootcamp entry.
 
 ## What's Included
 
-This is a focused submission with one core feature and essential documentation.
+This is a focused submission with one core feature and essential documentation. Includes automated GitHub Pages deployment to plug.vln.gg.
+
+## Live Demo
+
+**Production:** https://plug.vln.gg
+
+(Automatically deployed on every push to main)
 
 ## Getting Started
 
@@ -45,6 +51,16 @@ The demo will be available at `http://localhost:3000`
 ```bash
 npm test
 ```
+
+## Deployment
+
+This project is automatically deployed to GitHub Pages via GitHub Actions.
+
+- **Live:** https://plug.vln.gg
+- **Workflow:** `.github/workflows/deploy.yml`
+- **Build output:** `dist/` folder
+
+See [DEPLOYMENT.md](DEPLOYMENT.md) for detailed deployment documentation and troubleshooting.
 
 ## Submission Details
 
