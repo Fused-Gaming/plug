@@ -4,11 +4,17 @@ A minimal viable demo for the Next Chapter Project bootcamp entry.
 
 ## Project Vision
 
-[Brief description of what this project does - to be updated based on your specific feature]
+**Charging Station Locator** — A privacy-first map to help vulnerable populations (people experiencing homelessness, students, travelers, gig workers) locate free, reliable device-charging options.
+
+**This MVP:** Read-only map interface showing charging locations. Bootcamp submission focusing on core value proposition without user submissions or complex features.
 
 ## What's Included
 
-This is a focused submission with one core feature and essential documentation. Includes automated GitHub Pages deployment to plug.vln.gg.
+- Interactive map showing device charging stations
+- Location details (name, address, operating hours)
+- Basic filtering and search
+- Mobile-responsive design
+- Automated GitHub Pages deployment to plug.vln.gg
 
 ## Live Demo
 
@@ -38,13 +44,20 @@ npm run dev
 
 The demo will be available at `http://localhost:3000`
 
-## Core Feature
+## Core Feature: Read-Only Charging Map
 
-[Description of the single MVP feature being delivered]
+- View charging stations on an interactive map
+- See details: name, address, hours of operation
+- Filter by availability (if location is known)
+- Distance-based sorting
+- Works on mobile and desktop
 
 ## Architecture
 
-[Brief overview of how the project is structured]
+**Frontend:** React + Vite (fast build, lightweight)  
+**Mapping:** MapLibre GL JS + OpenStreetMap (free, no API key needed)  
+**Data:** Hardcoded seed locations (no backend required)  
+**Deployment:** GitHub Pages (automatic on push to main)
 
 ## Testing
 

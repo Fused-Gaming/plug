@@ -1,21 +1,30 @@
 {
-  "name": "next-chapter-demo",
+  "name": "charging-map-mvp",
   "version": "0.1.0",
-  "description": "Next Chapter Project - Bootcamp Submission Demo",
+  "description": "Charging Station Locator - Privacy-first map for device charging",
   "private": true,
+  "type": "module",
   "scripts": {
-    "dev": "echo 'Add your dev script here'",
-    "build": "echo 'Add your build script here'",
-    "test": "echo 'Add your test script here'",
-    "start": "echo 'Add your start script here'"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "keywords": [
-    "next-chapter",
-    "bootcamp",
-    "demo"
+    "charging",
+    "map",
+    "device",
+    "accessibility",
+    "privacy"
   ],
   "author": "Fused Gaming",
   "license": "MIT",
-  "dependencies": {},
-  "devDependencies": {}
+  "dependencies": {
+    "maplibre-gl": "^4.0.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.2.1",
+    "vite": "^5.0.8"
+  }
 }
