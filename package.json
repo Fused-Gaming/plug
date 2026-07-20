@@ -25,6 +25,7 @@
     "@h4shed/skill-project-manager": "^1.0.30",
     "@h4shed/skill-syncpulse": "^0.2.20",
     "@h4shed/syncpulse-hub": "^0.1.19",
+    "better-sqlite3": "^12.11.1",
     "maplibre-gl": "^4.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
