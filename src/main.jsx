@@ -3,6 +3,10 @@ import ReactDOM from 'react-dom/client'
 import App from './App'
 import './styles/main.css'
 import { logInfo, logError, getUserFriendlyError } from './utils/errorSanitizer'
+import { setupCspViolationListener } from './config/csp'
+
+// Set up CSP violation monitoring
+setupCspViolationListener()
 
 // Error logging for debugging
 logInfo('App starting...')
