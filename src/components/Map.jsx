@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import maplibregl from 'maplibre-gl'
 import 'maplibre-gl/dist/maplibre-gl.css'
+import { logInfo, logError } from '../utils/errorSanitizer'
 
 export default function Map({ locations, selectedLocation, onSelectLocation, userLocation }) {
   const mapContainer = useRef(null)
@@ -17,7 +18,7 @@ export default function Map({ locations, selectedLocation, onSelectLocation, use
     if (!mapContainer.current) return
 
     try {
-      console.log('Initializing MapLibre GL...')
+      logInfo('Initializing MapLibre GL')
 
       // Fallback style if external URL fails
       const fallbackStyle = {
@@ -55,22 +56,22 @@ export default function Map({ locations, selectedLocation, onSelectLocation, use
       map.current.addControl(new maplibregl.NavigationControl(), 'top-right')
 
       map.current.on('load', () => {
-        console.log('Map loaded successfully')
+        logInfo('Map loaded successfully')
         setMapLoaded(true)
       })
 
       map.current.on('error', (e) => {
-        console.error('Map error:', e.error)
+        logError(e.error, 'Map render error')
       })
     } catch (error) {
-      console.error('Failed to initialize map:', error)
+      logError(error, 'Map initialization')
     }
 
     return () => {
       try {
         map.current?.remove()
       } catch (e) {
-        console.error('Error removing map:', e)
+        logError(e, 'Map cleanup')
       }
     }
   }, [])

@@ -4,6 +4,7 @@ import LocationList from './components/LocationList'
 import Filters from './components/Filters'
 import LocationDetail from './components/LocationDetail'
 import { locations as importedLocations } from './data/locations'
+import { logInfo, logGeolocationError } from './utils/errorSanitizer'
 
 // Use imported locations with fallback
 const locations = importedLocations && Array.isArray(importedLocations) && importedLocations.length > 0
@@ -24,10 +25,10 @@ const locations = importedLocations && Array.isArray(importedLocations) && impor
       },
     ]
 
-console.log('App.jsx loaded, locations:', locations.length)
+logInfo('Locations loaded:', locations.length)
 
 export default function App() {
-  console.log('App component rendering with', locations.length, 'locations')
+  logInfo('App rendering with', locations.length, 'locations')
 
   const [selectedLocation, setSelectedLocation] = useState(null)
   const [userLocation, setUserLocation] = useState(null)
@@ -44,7 +45,7 @@ export default function App() {
           })
         },
         () => {
-          console.log('Geolocation denied or unavailable')
+          logGeolocationError(null, 'App initialization')
         }
       )
     }
