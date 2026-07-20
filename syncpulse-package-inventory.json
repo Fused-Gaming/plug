@@ -1,0 +1,534 @@
+{
+  "discovered_at": "2026-07-20T01:44:34.412Z",
+  "total_packages": 66,
+  "packages": [
+    {
+      "name": "@h4shed/mcp-core",
+      "version": "1.0.31",
+      "description": "Core MCP server and skill registry for Fused Gaming",
+      "deprecated": false,
+      "scoped": true,
+      "category": "foundation"
+    },
+    {
+      "name": "@h4shed/skill-tailwindcss-style-builder",
+      "version": "1.0.22",
+      "description": "Tailwind CSS utility-first styling and design system builder for rapid UI development",
+      "deprecated": false,
+      "scoped": true,
+      "category": "skill"
+    },
+    {
+      "name": "@h4shed/design-tokens",
+      "version": "1.0.7",
+      "description": "SyncPulse Design System - Complete token system with colors, typography, spacing, shadows, animations, and component tokens",
+      "deprecated": false,
+      "scoped": true,
+      "category": "design"
+    },
+    {
+      "name": "@h4shed/skill-theme-factory",
+      "version": "1.0.31",
+      "description": "Design system and theme generation for consistent UI/UX across applications",
+      "deprecated": false,
+      "scoped": true,
+      "category": "skill"
+    },
+    {
+      "name": "@h4shed/skill-frontend-design",
+      "version": "1.0.31",
+      "description": "Frontend component design and HTML/CSS generation for modern web applications",
+      "deprecated": false,
+      "scoped": true,
+      "category": "skill"
+    },
+    {
+      "name": "@h4shed/skill-underworld-writer",
+      "version": "1.0.31",
+      "description": "Create detailed character profiles, mythologies, and narrative worlds for underworld-themed stories",
+      "deprecated": false,
+      "scoped": true,
+      "category": "skill"
+    },
+    {
+      "name": "@h4shed/skill-canvas-design",
+      "version": "1.0.31",
+      "description": "Visual design generation for web with SVG and canvas rendering",
+      "deprecated": false,
+      "scoped": true,
+      "category": "skill"
+    },
+    {
+      "name": "@h4shed/skill-agentic-flow-devkit",
+      "version": "1.0.28",
+      "description": "Design and visualize agentic orchestration flows with trailer A/B-roll planning support.",
+      "deprecated": false,
+      "scoped": true,
+      "category": "skill"
+    },
+    {
+      "name": "@h4shed/skill-ascii-mockup",
+      "version": "1.0.31",
+      "description": "Mobile-first ASCII wireframe mockup generator for rapid UI prototyping",
+      "deprecated": false,
+      "scoped": true,
+      "category": "skill"
+    },
+    {
+      "name": "@h4shed/skill-style-dictionary-system",
+      "version": "1.0.22",
+      "description": "Design tokens and style dictionary generation for cross-platform design system management",
+      "deprecated": false,
+      "scoped": true,
+      "category": "skill"
+    },
+    {
+      "name": "@h4shed/skill-vercel-nextjs-deployment",
+      "version": "1.0.22",
+      "description": "Vercel deployment optimization and Next.js framework integration for serverless applications",
+      "deprecated": false,
+      "scoped": true,
+      "category": "skill"
+    },
+    {
+      "name": "@h4shed/skill-algorithmic-art",
+      "version": "1.0.31",
+      "description": "Generative art using p5.js with seeded randomness, flow fields, and particle systems",
+      "deprecated": false,
+      "scoped": true,
+      "category": "skill"
+    },
+    {
+      "name": "@h4shed/skill-syncpulse",
+      "version": "0.2.20",
+      "description": "SyncPulse - intelligent project state caching, multi-agent coordination, and secure email automation with 9 production-ready templated workflows",
+      "deprecated": false,
+      "scoped": true,
+      "category": "hub"
+    },
+    {
+      "name": "@h4shed/skill-nft-generative-art",
+      "version": "1.0.22",
+      "description": "NFT artwork generation, metadata creation, and blockchain-ready asset creation",
+      "deprecated": false,
+      "scoped": true,
+      "category": "skill"
+    },
+    {
+      "name": "@h4shed/mcp-cli",
+      "version": "1.0.31",
+      "description": "CLI tool for managing Fused Gaming MCP skills and configuration",
+      "deprecated": false,
+      "scoped": true,
+      "category": "foundation"
+    },
+    {
+      "name": "@h4shed/syncpulse-hub",
+      "version": "0.1.19",
+      "description": "Centralized SyncPulse Hub - Unified orchestration and installation of all @h4shed packages",
+      "deprecated": false,
+      "scoped": true,
+      "category": "hub"
+    },
+    {
+      "name": "@h4shed/skill-pre-deploy-validator",
+      "version": "1.0.31",
+      "description": "Pre-deployment validation and quality checks for production readiness",
+      "deprecated": false,
+      "scoped": true,
+      "category": "skill"
+    },
+    {
+      "name": "@h4shed/skill-typescript-toolchain",
+      "version": "1.0.22",
+      "description": "Advanced TypeScript configuration, type generation, and static analysis tooling",
+      "deprecated": false,
+      "scoped": true,
+      "category": "skill"
+    },
+    {
+      "name": "@h4shed/skill-ux-journeymapper",
+      "version": "1.0.30",
+      "description": "Create UX journey maps with pain points, touchpoints, and opportunities.",
+      "deprecated": false,
+      "scoped": true,
+      "category": "skill"
+    },
+    {
+      "name": "@h4shed/skill-project-manager-skill",
+      "version": "1.0.31",
+      "description": "Task and project management skill for tracking work items and team collaboration",
+      "deprecated": false,
+      "scoped": true,
+      "category": "skill"
+    },
+    {
+      "name": "@h4shed/skill-daily-review",
+      "version": "1.0.30",
+      "description": "Productivity tracking and daily review skill for session aggregation, metrics analysis, and multi-account reporting",
+      "deprecated": false,
+      "scoped": true,
+      "category": "skill"
+    },
+    {
+      "name": "@h4shed/skill-mcp-builder",
+      "version": "1.0.31",
+      "description": "Build and scaffold MCP servers and skills with best practices",
+      "deprecated": false,
+      "scoped": true,
+      "category": "skill"
+    },
+    {
+      "name": "@h4shed/skill-linkedin-master-journalist",
+      "version": "1.0.30",
+      "description": "Draft polished LinkedIn release and thought-leadership posts.",
+      "deprecated": false,
+      "scoped": true,
+      "category": "skill"
+    },
+    {
+      "name": "@h4shed/skill-project-status-tool",
+      "version": "1.0.30",
+      "description": "Summarize current project status, risks, and next actions.",
+      "deprecated": false,
+      "scoped": true,
+      "category": "skill"
+    },
+    {
+      "name": "@h4shed/skill-creator",
+      "version": "1.0.31",
+      "description": "Create custom skills and tools for the Fused Gaming MCP ecosystem",
+      "deprecated": false,
+      "scoped": true,
+      "category": "skill"
+    },
+    {
+      "name": "@h4shed/skill-project-manager",
+      "version": "1.0.30",
+      "description": "Plan projects with milestones, dependencies, and delivery phases.",
+      "deprecated": false,
+      "scoped": true,
+      "category": "skill"
+    },
+    {
+      "name": "@h4shed/skill-vite-module-bundler",
+      "version": "1.0.22",
+      "description": "Next-generation JavaScript module bundler for lightning-fast development and optimized production builds",
+      "deprecated": false,
+      "scoped": true,
+      "category": "skill"
+    },
+    {
+      "name": "@h4shed/skill-mermaid-terminal",
+      "version": "1.0.30",
+      "description": "Generate terminal-friendly Mermaid diagrams and flowcharts.",
+      "deprecated": false,
+      "scoped": true,
+      "category": "skill"
+    },
+    {
+      "name": "@h4shed/skill-svg-generator",
+      "version": "1.0.30",
+      "description": "Generate SVG assets and icon concepts from structured prompts.",
+      "deprecated": false,
+      "scoped": true,
+      "category": "skill"
+    },
+    {
+      "name": "@h4shed/skill-playwright-test-automation",
+      "version": "1.0.22",
+      "description": "End-to-end testing automation framework for web applications with cross-browser support",
+      "deprecated": false,
+      "scoped": true,
+      "category": "skill"
+    },
+    {
+      "name": "@h4shed/skill-smart-contract-tools",
+      "version": "1.0.22",
+      "description": "Smart contract development tools for Hardhat, Truffle, and Foundry ecosystems",
+      "deprecated": false,
+      "scoped": true,
+      "category": "skill"
+    },
+    {
+      "name": "@h4shed/skill-multi-account-session-tracking",
+      "version": "1.0.30",
+      "description": "Extended framework for tracking Claude sessions across multiple accounts with unified metrics",
+      "deprecated": false,
+      "scoped": true,
+      "category": "skill"
+    },
+    {
+      "name": "@h4shed/skill-storybook-component-library",
+      "version": "1.0.22",
+      "description": "Component library documentation and visual testing with Storybook integration",
+      "deprecated": false,
+      "scoped": true,
+      "category": "skill"
+    },
+    {
+      "name": "@h4shed/license-client",
+      "version": "1.0.7",
+      "description": "License validation & management library for SyncPulse CLI",
+      "deprecated": false,
+      "scoped": true,
+      "category": "other"
+    },
+    {
+      "name": "blockchain-forensic-toolkit",
+      "version": "2.5.2",
+      "description": "Professional blockchain forensic analysis toolkit with AI-powered MCP integration, Etherscan API V2 support, and comprehensive investigation management",
+      "deprecated": false,
+      "scoped": false,
+      "category": "other"
+    },
+    {
+      "name": "@h4shed/skill-skill-creator",
+      "version": "1.0.23",
+      "description": "Create custom skills and tools for the Fused Gaming MCP ecosystem",
+      "deprecated": false,
+      "scoped": true,
+      "category": "skill"
+    },
+    {
+      "name": "@h4shed/multi-account-session-tracking",
+      "version": "1.0.22",
+      "description": "Track session activity across multiple accounts and workstreams.",
+      "deprecated": false,
+      "scoped": true,
+      "category": "other"
+    },
+    {
+      "name": "@h4shed/tool-commander",
+      "version": "11.0.6",
+      "description": "CLI framework integration for @h4shed ecosystem",
+      "deprecated": false,
+      "scoped": true,
+      "category": "tool"
+    },
+    {
+      "name": "@h4shed/tool-ora",
+      "version": "7.0.6",
+      "description": "Terminal spinners and progress indicators integration for @h4shed ecosystem",
+      "deprecated": false,
+      "scoped": true,
+      "category": "tool"
+    },
+    {
+      "name": "@h4shed/tool-cssnano",
+      "version": "1.0.6",
+      "description": "CSS minification and optimization tool wrapper for @h4shed ecosystem",
+      "deprecated": false,
+      "scoped": true,
+      "category": "tool"
+    },
+    {
+      "name": "@h4shed/tool-cypress",
+      "version": "13.0.6",
+      "description": "End-to-end testing framework integration for @h4shed ecosystem",
+      "deprecated": false,
+      "scoped": true,
+      "category": "tool"
+    },
+    {
+      "name": "@h4shed/tool-axe-core",
+      "version": "4.0.6",
+      "description": "Accessibility testing engine integration for @h4shed ecosystem",
+      "deprecated": false,
+      "scoped": true,
+      "category": "tool"
+    },
+    {
+      "name": "@h4shed/tool-inquirer",
+      "version": "8.0.6",
+      "description": "Interactive CLI prompts integration for @h4shed ecosystem",
+      "deprecated": false,
+      "scoped": true,
+      "category": "tool"
+    },
+    {
+      "name": "@h4shed/tool-sass",
+      "version": "1.0.6",
+      "description": "Sass CSS preprocessor tool wrapper for @h4shed ecosystem",
+      "deprecated": false,
+      "scoped": true,
+      "category": "tool"
+    },
+    {
+      "name": "@h4shed/tool-markdown-it",
+      "version": "1.0.6",
+      "description": "Markdown parser tool wrapper for @h4shed ecosystem",
+      "deprecated": false,
+      "scoped": true,
+      "category": "tool"
+    },
+    {
+      "name": "@h4shed/tool-rollup",
+      "version": "1.0.6",
+      "description": "JavaScript bundler tool wrapper for @h4shed ecosystem",
+      "deprecated": false,
+      "scoped": true,
+      "category": "tool"
+    },
+    {
+      "name": "@h4shed/tool-pa11y",
+      "version": "6.0.6",
+      "description": "Web accessibility testing CLI integration for @h4shed ecosystem",
+      "deprecated": false,
+      "scoped": true,
+      "category": "tool"
+    },
+    {
+      "name": "@h4shed/tool-storybook",
+      "version": "7.0.6",
+      "description": "Component library and interactive documentation integration for @h4shed ecosystem",
+      "deprecated": false,
+      "scoped": true,
+      "category": "tool"
+    },
+    {
+      "name": "@h4shed/tool-postcss",
+      "version": "8.0.6",
+      "description": "CSS transformation and processing integration for @h4shed ecosystem",
+      "deprecated": false,
+      "scoped": true,
+      "category": "tool"
+    },
+    {
+      "name": "@h4shed/tool-jest",
+      "version": "29.0.6",
+      "description": "JavaScript testing framework integration for @h4shed ecosystem",
+      "deprecated": false,
+      "scoped": true,
+      "category": "tool"
+    },
+    {
+      "name": "@h4shed/tool-tsup",
+      "version": "1.0.6",
+      "description": "TypeScript bundler tool wrapper for @h4shed ecosystem",
+      "deprecated": false,
+      "scoped": true,
+      "category": "tool"
+    },
+    {
+      "name": "@h4shed/tool-vite",
+      "version": "5.0.6",
+      "description": "Lightning-fast module bundler and dev server integration for @h4shed ecosystem",
+      "deprecated": false,
+      "scoped": true,
+      "category": "tool"
+    },
+    {
+      "name": "@h4shed/tool-playwright",
+      "version": "1.0.6",
+      "description": "Browser automation and E2E testing integration for @h4shed ecosystem",
+      "deprecated": false,
+      "scoped": true,
+      "category": "tool"
+    },
+    {
+      "name": "@h4shed/tool-esbuild",
+      "version": "1.0.6",
+      "description": "JavaScript bundler tool wrapper for @h4shed ecosystem",
+      "deprecated": false,
+      "scoped": true,
+      "category": "tool"
+    },
+    {
+      "name": "@h4shed/tool-vitest",
+      "version": "1.0.6",
+      "description": "Vitest test runner wrapper for @h4shed ecosystem",
+      "deprecated": false,
+      "scoped": true,
+      "category": "tool"
+    },
+    {
+      "name": "@h4shed/tool-istanbul",
+      "version": "1.0.6",
+      "description": "Code coverage tool wrapper for @h4shed ecosystem",
+      "deprecated": false,
+      "scoped": true,
+      "category": "tool"
+    },
+    {
+      "name": "@h4shed/tool-less",
+      "version": "1.0.6",
+      "description": "LESS CSS preprocessor tool wrapper for @h4shed ecosystem",
+      "deprecated": false,
+      "scoped": true,
+      "category": "tool"
+    },
+    {
+      "name": "@h4shed/tool-tailwindcss",
+      "version": "3.0.6",
+      "description": "Utility-first CSS framework integration for @h4shed ecosystem",
+      "deprecated": false,
+      "scoped": true,
+      "category": "tool"
+    },
+    {
+      "name": "@h4shed/tool-docusaurus",
+      "version": "2.0.6",
+      "description": "Documentation site generator integration for @h4shed ecosystem",
+      "deprecated": false,
+      "scoped": true,
+      "category": "tool"
+    },
+    {
+      "name": "@h4shed/tool-webpack",
+      "version": "1.0.6",
+      "description": "Webpack bundler tool wrapper for @h4shed ecosystem",
+      "deprecated": false,
+      "scoped": true,
+      "category": "tool"
+    },
+    {
+      "name": "@h4shed/tool-style-dictionary",
+      "version": "3.0.6",
+      "description": "Design token management and multi-format export integration for @h4shed ecosystem",
+      "deprecated": false,
+      "scoped": true,
+      "category": "tool"
+    },
+    {
+      "name": "@h4shed/tool-husky",
+      "version": "1.0.6",
+      "description": "Git hooks tool wrapper for @h4shed ecosystem",
+      "deprecated": false,
+      "scoped": true,
+      "category": "tool"
+    },
+    {
+      "name": "@h4shed/tool-typedoc",
+      "version": "0.24.6",
+      "description": "TypeScript API documentation generator integration for @h4shed ecosystem",
+      "deprecated": false,
+      "scoped": true,
+      "category": "tool"
+    },
+    {
+      "name": "@h4shed/tool-vitepress",
+      "version": "1.0.6",
+      "description": "Lightweight documentation site generator integration for @h4shed ecosystem",
+      "deprecated": false,
+      "scoped": true,
+      "category": "tool"
+    },
+    {
+      "name": "@h4shed/docs",
+      "version": "1.0.1",
+      "description": "Complete design system and tool documentation hub - docs.vln.gg",
+      "deprecated": false,
+      "scoped": true,
+      "category": "documentation"
+    },
+    {
+      "name": "@h4shed/skill-mermaid-terminal-skill",
+      "version": "1.0.3",
+      "description": "Visualization engine for generating Mermaid diagrams from code analysis and documentation",
+      "deprecated": false,
+      "scoped": true,
+      "category": "skill"
+    }
+  ]
+}

@@ -19,6 +19,10 @@
   "author": "Fused Gaming",
   "license": "MIT",
   "dependencies": {
+    "@h4shed/mcp-cli": "^1.0.31",
+    "@h4shed/mcp-core": "^1.0.31",
+    "@h4shed/skill-syncpulse": "^0.2.20",
+    "@h4shed/syncpulse-hub": "^0.1.19",
     "maplibre-gl": "^4.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
