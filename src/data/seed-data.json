@@ -1,0 +1,135 @@
+{
+  "version": "1.0",
+  "metadata": {
+    "city": "Oakland, CA",
+    "count": 10,
+    "date_verified": "2026-07-20",
+    "sources": [
+      "Oakland Open Data Portal",
+      "PlugShare Community",
+      "OpenStreetMap"
+    ]
+  },
+  "locations": [
+    {
+      "id": 1,
+      "name": "Downtown Oakland Convention Center",
+      "lat": 37.8044,
+      "lng": -122.2712,
+      "address": "10 10th St, Oakland, CA 94607",
+      "charger_type": "Level 2",
+      "connectors": "Tesla, CCS, J1772",
+      "power_kw": 7.2,
+      "source": "PlugShare",
+      "verified_date": "2026-07-20"
+    },
+    {
+      "id": 2,
+      "name": "Oakland International Airport Parking",
+      "lat": 37.7213,
+      "lng": -122.2208,
+      "address": "9000 Airport Blvd, Oakland, CA 94621",
+      "charger_type": "DC Fast",
+      "connectors": "CCS, CHAdeMO",
+      "power_kw": 50.0,
+      "source": "Oakland Open Data",
+      "verified_date": "2026-07-20"
+    },
+    {
+      "id": 3,
+      "name": "Lake Merritt Loop Trail Parking",
+      "lat": 37.8105,
+      "lng": -122.2606,
+      "address": "568 Bellevue Ave, Oakland, CA 94610",
+      "charger_type": "Level 2",
+      "connectors": "CCS, J1772",
+      "power_kw": 6.6,
+      "source": "OpenStreetMap",
+      "verified_date": "2026-07-20"
+    },
+    {
+      "id": 4,
+      "name": "Uptown Shopping District",
+      "lat": 37.8252,
+      "lng": -122.2708,
+      "address": "1900 Telegraph Ave, Oakland, CA 94612",
+      "charger_type": "Level 2",
+      "connectors": "Tesla, CCS",
+      "power_kw": 7.2,
+      "source": "PlugShare",
+      "verified_date": "2026-07-20"
+    },
+    {
+      "id": 5,
+      "name": "West Oakland Community Center",
+      "lat": 37.8047,
+      "lng": -122.3089,
+      "address": "3801 San Pablo Ave, Oakland, CA 94608",
+      "charger_type": "Level 2",
+      "connectors": "J1772, CCS",
+      "power_kw": 6.6,
+      "source": "Oakland Open Data",
+      "verified_date": "2026-07-20"
+    },
+    {
+      "id": 6,
+      "name": "Oakland Technical High School",
+      "lat": 37.8390,
+      "lng": -122.2556,
+      "address": "4351 Piedmont Ave, Oakland, CA 94610",
+      "charger_type": "Level 2",
+      "connectors": "CCS, J1772",
+      "power_kw": 7.2,
+      "source": "OpenStreetMap",
+      "verified_date": "2026-07-20"
+    },
+    {
+      "id": 7,
+      "name": "Jack London District Parking",
+      "lat": 37.7924,
+      "lng": -122.2771,
+      "address": "250 2nd St, Oakland, CA 94606",
+      "charger_type": "DC Fast",
+      "connectors": "CCS, Tesla",
+      "power_kw": 100.0,
+      "source": "PlugShare",
+      "verified_date": "2026-07-20"
+    },
+    {
+      "id": 8,
+      "name": "Fruitvale BART Station",
+      "lat": 37.7749,
+      "lng": -122.2246,
+      "address": "3401 E 12th St, Oakland, CA 94601",
+      "charger_type": "Level 2",
+      "connectors": "J1772, CCS",
+      "power_kw": 6.6,
+      "source": "Oakland Open Data",
+      "verified_date": "2026-07-20"
+    },
+    {
+      "id": 9,
+      "name": "Grand Lake Shopping Center",
+      "lat": 37.8171,
+      "lng": -122.2423,
+      "address": "370 Grand Ave, Oakland, CA 94610",
+      "charger_type": "Level 2",
+      "connectors": "Tesla, CCS, J1772",
+      "power_kw": 7.2,
+      "source": "PlugShare",
+      "verified_date": "2026-07-20"
+    },
+    {
+      "id": 10,
+      "name": "Eastmont Mall Parking",
+      "lat": 37.7456,
+      "lng": -122.1856,
+      "address": "7200 Bancroft Ave, Oakland, CA 94621",
+      "charger_type": "Level 2",
+      "connectors": "CCS, J1772",
+      "power_kw": 6.6,
+      "source": "OpenStreetMap",
+      "verified_date": "2026-07-20"
+    }
+  ]
+}
