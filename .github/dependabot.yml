@@ -1,13 +1,11 @@
 version: 2
 updates:
-  # Enable version updates for npm dependencies
+  # Enable version updates for npm dependencies (including security updates)
   - package-ecosystem: npm
     directory: "/"
     schedule:
-      interval: weekly
-      day: monday
-      time: "09:00"
-    open-pull-requests-limit: 5
+      interval: daily
+    open-pull-requests-limit: 10
     reviewers:
       - "jlucus916"
     allow:
@@ -28,31 +26,6 @@ updates:
       # Ignore pre-release versions
       - dependency-name: "*"
         versions: [">=0.0.0-0", "<1.0.0"]
-
-  # Enable security updates for npm dependencies (higher priority)
-  - package-ecosystem: npm
-    directory: "/"
-    schedule:
-      interval: daily
-    open-pull-requests-limit: 10
-    reviewers:
-      - "jlucus916"
-    allow:
-      - dependency-type: "production"
-      - dependency-type: "development"
-    security-updates-only: true
-    pull-request-branch-name:
-      separator: "/"
-    commit-message:
-      prefix: "security:"
-      include: "scope"
-    labels:
-      - "security"
-      - "dependencies"
-      - "npm"
-    milestone: 1
-    target-branch: "main"
-    rebase-strategy: "auto"
 
   # Enable GitHub Actions updates
   - package-ecosystem: github-actions
