@@ -4,8 +4,23 @@
 
 This project is automatically deployed to GitHub Pages on every push to `main`.
 
+### ⚠️ Important: GitHub Pages Serves Static Files Only
+
+**GitHub Pages does NOT support:**
+- React runtime execution
+- Node.js backend
+- Server-side rendering
+- Dynamic frameworks
+
+**Our Solution:** ✅
+- React app is **pre-built** to static HTML/CSS/JavaScript using Vite
+- GitHub Actions runs `npm run build` which outputs to `dist/`
+- GitHub Pages serves the static `dist/` folder
+- All interactivity happens in the **browser** (client-side React)
+- **Result:** Full React app runs as static site
+
 ### Live URL
-- **Production:** https://plug.vln.gg
+- **Production:** https://plug.vln.gg (static Vite build)
 - **Fallback:** https://fused-gaming.github.io/plug
 
 ### Automatic Deployment
@@ -57,19 +72,28 @@ Then check that `dist/` contains all needed files.
 
 **Build fails:**
 - Check `npm run build` output locally
-- Ensure `dist/` folder is created
-- Check `.github/workflows/deploy.yml` for errors
+- Ensure `dist/` folder is created with HTML/CSS/JS files
+- Verify Vite config is correct in `vite.config.js`
+- Check `.github/workflows/deploy.yml` for build step errors
 
-**Site not updating:**
+**Site not updating after push:**
 - Verify push was to `main` branch
 - Check Actions tab for workflow status
-- Wait 5-10 minutes for deployment to complete
+- Wait 2-5 minutes for deployment
+- Hard refresh browser (Cmd+Shift+R or Ctrl+Shift+R)
+
+**Blank page or 404:**
+- Verify `dist/` folder was created by build
+- Check that `index.html` exists in `dist/`
+- Ensure `.github/workflows/deploy.yml` uses correct artifact path
+- Check GitHub Pages source is set to deploy from branch
 
 **Custom domain not working:**
-- Verify DNS CNAME record is set
+- Verify DNS CNAME record is set correctly
 - Wait for DNS propagation (up to 48 hours)
 - Check GitHub Pages settings show correct domain
 - Ensure CNAME file exists in repository root
+- Test with fallback URL first (fused-gaming.github.io/plug)
 
 ### Framework-Specific Notes
 

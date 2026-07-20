@@ -2,18 +2,33 @@
 
 **Project:** Privacy-first device charging location map for vulnerable populations  
 **Submission Deadline:** Day 7  
-**Core MVP:** Read-only map showing hardcoded charging stations with basic search
+**Core MVP:** Read-only map showing hardcoded charging stations with basic search  
+**Deployment:** GitHub Pages (static site via Vite build pipeline)
+
+### ⚠️ Critical Constraint
+
+**GitHub Pages serves static files only** — does not execute React or Node.js code.
+
+**Our Solution:** React + Vite → `npm run build` produces static HTML/CSS/JS → GitHub Actions deploys `dist/` folder → plug.vln.gg serves static output ✅
+
+This approach works because:
+- Vite pre-renders React into static files
+- No runtime JavaScript framework required on server
+- GitHub Actions handles build before deployment
+- All client-side interactivity works in browser
+- Zero backend required for MVP
 
 ---
 
 ## Phase 1: Foundation (Days 1-2)
 
-**Setup & Tooling**
+**Setup & Tooling - GitHub Pages Static Build Pipeline**
 - [x] Repository & GitHub Pages deployment
-- [ ] React + Vite setup (or equivalent lightweight framework)
-- [ ] MapLibre GL JS integration with OpenStreetMap
-- [ ] Basic component structure
-- [ ] Seed data (10-15 hardcoded charging locations in pilot city)
+- [x] React + Vite setup (builds to static `dist/` folder)
+- [x] GitHub Actions workflow (npm install → npm run build → deploy dist/)
+- [x] MapLibre GL JS integration with OpenStreetMap
+- [x] Basic component structure
+- [x] Seed data (10 hardcoded NYC charging locations)
 
 **Definition of Done:** 
 - `npm install && npm run dev` launches app
