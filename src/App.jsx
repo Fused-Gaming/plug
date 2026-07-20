@@ -3,13 +3,12 @@ import Map from './components/Map'
 import LocationList from './components/LocationList'
 import Filters from './components/Filters'
 import LocationDetail from './components/LocationDetail'
-import * as locationsModule from './data/locations'
+import locationsData from './data/locations'
 import { logInfo, logGeolocationError } from './utils/errorSanitizer'
 
-// Debug import and use fallback if needed
-const importedLocations = locationsModule?.locations
-const locations = importedLocations && Array.isArray(importedLocations) && importedLocations.length > 0
-  ? importedLocations
+// Use imported locations with fallback
+const locations = (locationsData && Array.isArray(locationsData) && locationsData.length > 0)
+  ? locationsData
   : [
       {
         id: 1,

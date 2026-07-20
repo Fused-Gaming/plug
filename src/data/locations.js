@@ -1,6 +1,6 @@
 // Seed data: Charging stations in Oakland, CA (Wave 1 - A03)
 // This is a static fallback for browsers that can't fetch the JSON
-export const locations = [
+const locations = [
   {
     id: 1,
     name: 'Downtown Oakland Convention Center',
@@ -132,3 +132,6 @@ export const locations = [
     hours: '9 AM - 9 PM daily',
   },
 ]
+
+export default locations
+export { locations }
