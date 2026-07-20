@@ -16,23 +16,37 @@ export default function Map({ locations, selectedLocation, onSelectLocation, use
   useEffect(() => {
     if (!mapContainer.current) return
 
-    map.current = new maplibregl.Map({
-      container: mapContainer.current,
-      style: 'https://demotiles.maplibre.org/style.json',
-      center: userLocation ? [userLocation.lng, userLocation.lat] : DEFAULT_CENTER,
-      zoom: DEFAULT_ZOOM,
-      attributionControl: true,
-    })
+    try {
+      console.log('Initializing MapLibre GL...')
+      map.current = new maplibregl.Map({
+        container: mapContainer.current,
+        style: 'https://demotiles.maplibre.org/style.json',
+        center: userLocation ? [userLocation.lng, userLocation.lat] : DEFAULT_CENTER,
+        zoom: DEFAULT_ZOOM,
+        attributionControl: true,
+      })
 
-    // Add zoom and rotation controls
-    map.current.addControl(new maplibregl.NavigationControl(), 'top-right')
+      // Add zoom and rotation controls
+      map.current.addControl(new maplibregl.NavigationControl(), 'top-right')
 
-    map.current.on('load', () => {
-      setMapLoaded(true)
-    })
+      map.current.on('load', () => {
+        console.log('Map loaded successfully')
+        setMapLoaded(true)
+      })
+
+      map.current.on('error', (e) => {
+        console.error('Map error:', e.error)
+      })
+    } catch (error) {
+      console.error('Failed to initialize map:', error)
+    }
 
     return () => {
-      map.current?.remove()
+      try {
+        map.current?.remove()
+      } catch (e) {
+        console.error('Error removing map:', e)
+      }
     }
   }, [])
 

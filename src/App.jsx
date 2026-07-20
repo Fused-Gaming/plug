@@ -5,7 +5,10 @@ import Filters from './components/Filters'
 import LocationDetail from './components/LocationDetail'
 import { locations } from './data/locations'
 
+console.log('App.jsx loaded, locations:', locations.length)
+
 export default function App() {
+  console.log('App component rendering')
   const [selectedLocation, setSelectedLocation] = useState(null)
   const [userLocation, setUserLocation] = useState(null)
   const [allLocations, setAllLocations] = useState(locations)
