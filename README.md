@@ -1,5 +1,14 @@
 # 📱 Charging Station Locator
 
+[![Build Status](https://github.com/fused-gaming/plug/actions/workflows/deploy.yml/badge.svg?branch=main)](https://github.com/fused-gaming/plug/actions)
+[![Deployment Status](https://img.shields.io/badge/deployment-live-success?logo=github)](https://plug.vln.gg)
+[![Security: 0 Vulnerabilities](https://img.shields.io/badge/security-0%20vulnerabilities-success)](SECURITY_SCANNING.md)
+[![Tests: 36 Passing](https://img.shields.io/badge/tests-36%20passing-success)](#)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
+[![Version: 2.0.0](https://img.shields.io/badge/version-2.0.0-blue)](#)
+[![React: 18.2.0](https://img.shields.io/badge/react-18.2.0-61dafb?logo=react)](https://react.dev)
+[![Vite: 6.4.3](https://img.shields.io/badge/vite-6.4.3-646cff?logo=vite)](https://vitejs.dev)
+
 A privacy-first, interactive map to help vulnerable populations discover free, reliable device-charging options. Built as a bootcamp MVP demonstrating responsive web design, geolocation services, and GitHub Pages static site deployment.
 
 ---
