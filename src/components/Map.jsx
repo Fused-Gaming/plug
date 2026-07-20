@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import maplibregl from 'maplibre-gl'
 import 'maplibre-gl/dist/maplibre-gl.css'
 import { logInfo, logError } from '../utils/errorSanitizer'
+import { MAPLIBRE_CONFIG, MAP_DEFAULTS } from '../config/externalServices'
 
 export default function Map({ locations, selectedLocation, onSelectLocation, userLocation }) {
   const mapContainer = useRef(null)
@@ -10,9 +11,7 @@ export default function Map({ locations, selectedLocation, onSelectLocation, use
   const userMarkerRef = useRef(null)
   const [mapLoaded, setMapLoaded] = useState(false)
 
-  // Oakland center coordinates (default)
-  const DEFAULT_CENTER = [-122.2731, 37.8044]
-  const DEFAULT_ZOOM = 12
+  const { DEFAULT_CENTER, DEFAULT_ZOOM } = MAP_DEFAULTS
 
   useEffect(() => {
     if (!mapContainer.current) return
@@ -20,25 +19,8 @@ export default function Map({ locations, selectedLocation, onSelectLocation, use
     try {
       logInfo('Initializing MapLibre GL')
 
-      // Fallback style if external URL fails
-      const fallbackStyle = {
-        version: 8,
-        sources: {
-          osm: {
-            type: 'raster',
-            url: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
-            tileSize: 256,
-          },
-        },
-        layers: [
-          {
-            id: 'osm',
-            type: 'raster',
-            source: 'osm',
-          },
-        ],
-        glyphs: 'https://demotiles.maplibre.org/font/{fontstack}/{range}.pbf',
-      }
+      // Use configured fallback style
+      const fallbackStyle = MAPLIBRE_CONFIG.getDefaultStyle()
 
       map.current = new maplibregl.Map({
         container: mapContainer.current,
