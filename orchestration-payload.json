@@ -1,0 +1,697 @@
+{
+  "orchestration": {
+    "metadata": {
+      "project": "Charging Station Locator MVP",
+      "coordinator": "Claude Swarm Agent",
+      "created_at": "2026-07-20T00:00:00Z",
+      "version": "1.0",
+      "status": "ready_to_launch"
+    },
+    "canvas": {
+      "title": "Swarm Orchestration — Charging Station Locator MVP",
+      "lanes": [
+        {
+          "id": "intake",
+          "label": "Intake",
+          "order": 0,
+          "description": "Coordinator setup and contract definition"
+        },
+        {
+          "id": "planning",
+          "label": "Planning",
+          "order": 1,
+          "description": "Wave 1: Foundations — contracts and boundaries"
+        },
+        {
+          "id": "execution",
+          "label": "Execution",
+          "order": 2,
+          "description": "Wave 2: Implementation — parallel feature build"
+        },
+        {
+          "id": "qa",
+          "label": "QA & Validation",
+          "order": 3,
+          "description": "Wave 3: Integration — final validation and testing"
+        },
+        {
+          "id": "release",
+          "label": "Release",
+          "order": 4,
+          "description": "Final PR, review, and production deployment"
+        }
+      ]
+    },
+    "agents": [
+      {
+        "id": "A01",
+        "name": "Static Build Configuration",
+        "role": "Infrastructure Engineer",
+        "objective": "Configure Vite static build, base path handling, output directory",
+        "lane": "planning",
+        "wave": 1,
+        "branch": "agent/01-static-build",
+        "owned_files": [
+          "vite.config.js",
+          "src/main.jsx"
+        ],
+        "read_only_files": [
+          "package.json",
+          "package-lock.json"
+        ],
+        "deliverables": [
+          "Vite configuration locked",
+          "npm run build succeeds with empty source",
+          "dist/ directory structure validated"
+        ],
+        "estimated_duration": "2h",
+        "dependencies": [],
+        "dependents": [
+          "A02",
+          "A04",
+          "A10"
+        ],
+        "acceptance_criteria": [
+          "Vite build succeeds: npm run build",
+          "Build artifacts in dist/",
+          "Base path /plug configured",
+          "CNAME points to plug.vln.gg"
+        ],
+        "priority": "P0",
+        "status": "ready",
+        "assigned_to": "Claude Agent 01"
+      },
+      {
+        "id": "A03",
+        "name": "SQLite Data Owner",
+        "role": "Data Architect",
+        "objective": "Define SQLite schema, seed data, database integrity validation",
+        "lane": "planning",
+        "wave": 1,
+        "branch": "data/03-oakland-locations",
+        "owned_files": [
+          "src/data/locations.db",
+          "src/data/schema.sql",
+          "src/data/seed-data.json"
+        ],
+        "read_only_files": [
+          "package.json"
+        ],
+        "deliverables": [
+          "SQLite database schema defined",
+          "10-location seed data with Oakland OSINT",
+          "Database integrity check passing",
+          "WAL checkpoint completed"
+        ],
+        "estimated_duration": "2h",
+        "dependencies": [],
+        "dependents": [
+          "A02",
+          "A04",
+          "A05"
+        ],
+        "acceptance_criteria": [
+          "PRAGMA integrity_check returns 'ok'",
+          "10 locations with lat/long/address",
+          "Seed data includes charger types",
+          "Database checksum documented"
+        ],
+        "priority": "P0",
+        "status": "ready",
+        "assigned_to": "Claude Agent 03",
+        "constraints": "Single writer — no parallel SQLite edits. A03 is exclusive owner."
+      },
+      {
+        "id": "A08",
+        "name": "Privacy & Security Lead",
+        "role": "Security Engineer",
+        "objective": "Draft privacy policy, CSP rules, dependency audit, security requirements",
+        "lane": "planning",
+        "wave": 1,
+        "branch": "agent/08-privacy-security",
+        "owned_files": [
+          "SECURITY.md",
+          "PRIVACY.md"
+        ],
+        "read_only_files": [
+          "package.json"
+        ],
+        "deliverables": [
+          "CSP rules documented",
+          "Initial dependency audit completed",
+          "Privacy policy draft",
+          "Static-site security requirements"
+        ],
+        "estimated_duration": "2h",
+        "dependencies": [],
+        "dependents": [
+          "A10"
+        ],
+        "acceptance_criteria": [
+          "CSP header defined",
+          "npm audit baseline established",
+          "No hardcoded secrets in code",
+          "Privacy policy addresses data collection"
+        ],
+        "priority": "P0",
+        "status": "ready",
+        "assigned_to": "Claude Agent 08"
+      },
+      {
+        "id": "A09",
+        "name": "Documentation & Content",
+        "role": "Technical Writer",
+        "objective": "Create documentation skeleton, README template, user guides",
+        "lane": "planning",
+        "wave": 1,
+        "branch": "agent/09-docs-content",
+        "owned_files": [
+          "README.md",
+          "docs/**/*.md"
+        ],
+        "read_only_files": [],
+        "deliverables": [
+          "README outline",
+          "Getting started guide skeleton",
+          "Architecture documentation template",
+          "docs/ directory structure"
+        ],
+        "estimated_duration": "2h",
+        "dependencies": [],
+        "dependents": [],
+        "acceptance_criteria": [
+          "README has sections: overview, setup, features, deployment",
+          "docs/ directory has index.md",
+          "All internal links validated"
+        ],
+        "priority": "P1",
+        "status": "ready",
+        "assigned_to": "Claude Agent 09"
+      },
+      {
+        "id": "COORD",
+        "name": "Swarm Coordinator",
+        "role": "Coordinator",
+        "objective": "Manage integration branch, freeze contracts, oversee merge queue",
+        "lane": "intake",
+        "wave": 0,
+        "branch": "integration-map-app",
+        "owned_files": [],
+        "read_only_files": [
+          "package.json",
+          "vite.config.js"
+        ],
+        "deliverables": [
+          "Integration branch created and pushed",
+          "Shared contracts documented",
+          "File ownership assigned",
+          "Merge order defined"
+        ],
+        "estimated_duration": "1h",
+        "dependencies": [],
+        "dependents": [
+          "A01",
+          "A03",
+          "A08",
+          "A09"
+        ],
+        "acceptance_criteria": [
+          "integration-map-app branch exists on origin",
+          "All agents have assigned branches",
+          "Contracts frozen in COORDINATION.md"
+        ],
+        "priority": "P0",
+        "status": "ready",
+        "assigned_to": "Claude Coordinator"
+      },
+      {
+        "id": "A02",
+        "name": "Data Adapter & Reader",
+        "role": "Backend Engineer",
+        "objective": "Build read-only SQLite adapter, location query functions, geolocation handling",
+        "lane": "execution",
+        "wave": 2,
+        "branch": "agent/02-data-reader",
+        "owned_files": [
+          "src/adapters/locationData.js",
+          "src/hooks/useLocationData.js"
+        ],
+        "read_only_files": [
+          "src/data/locations.db",
+          "package.json"
+        ],
+        "deliverables": [
+          "Location data adapter module",
+          "Query functions: getAll(), getByDistance(), search()",
+          "Geolocation integration",
+          "Unit tests for adapter"
+        ],
+        "estimated_duration": "4h",
+        "dependencies": [
+          "A01",
+          "A03"
+        ],
+        "dependents": [
+          "A04",
+          "A05",
+          "A07"
+        ],
+        "acceptance_criteria": [
+          "getAll() returns 10 locations",
+          "getByDistance(lat, lng, radius) filters correctly",
+          "search(term) finds locations by name",
+          "Adapter tests pass: npm run test"
+        ],
+        "priority": "P0",
+        "status": "ready",
+        "assigned_to": "Claude Agent 02"
+      },
+      {
+        "id": "A04",
+        "name": "Map UI & Markers",
+        "role": "Frontend Engineer",
+        "objective": "Integrate MapLibre GL, render markers, implement click-to-detail interaction",
+        "lane": "execution",
+        "wave": 2,
+        "branch": "agent/04-map-shell",
+        "owned_files": [
+          "src/components/Map.jsx",
+          "src/components/MapMarker.jsx",
+          "src/styles/map.css"
+        ],
+        "read_only_files": [
+          "src/adapters/locationData.js",
+          "src/data/locations.db",
+          "package.json"
+        ],
+        "deliverables": [
+          "MapLibre GL integration",
+          "Marker rendering from location data",
+          "Click handlers for detail view",
+          "Responsive map sizing",
+          "Map tests with Playwright"
+        ],
+        "estimated_duration": "4h",
+        "dependencies": [
+          "A01",
+          "A02"
+        ],
+        "dependents": [
+          "A05",
+          "A06",
+          "A07",
+          "A10"
+        ],
+        "acceptance_criteria": [
+          "Map renders at correct center (Oakland)",
+          "10 markers appear on map",
+          "Click marker shows location details",
+          "Mobile responsive (tested at 320px)",
+          "Attribution visible"
+        ],
+        "priority": "P0",
+        "status": "ready",
+        "assigned_to": "Claude Agent 04"
+      },
+      {
+        "id": "A05",
+        "name": "Filters & Location Details",
+        "role": "Frontend Engineer",
+        "objective": "Implement filter controls, location detail cards, list-map synchronization",
+        "lane": "execution",
+        "wave": 2,
+        "branch": "agent/05-filter-details",
+        "owned_files": [
+          "src/components/Filters.jsx",
+          "src/components/LocationDetail.jsx",
+          "src/components/LocationList.jsx",
+          "src/styles/filters.css"
+        ],
+        "read_only_files": [
+          "src/adapters/locationData.js",
+          "src/components/Map.jsx",
+          "package.json"
+        ],
+        "deliverables": [
+          "Filter controls: distance, charger type",
+          "Location detail card component",
+          "Location list component",
+          "List-map synchronization",
+          "Filter interaction tests"
+        ],
+        "estimated_duration": "4h",
+        "dependencies": [
+          "A02",
+          "A04"
+        ],
+        "dependents": [
+          "A06",
+          "A07"
+        ],
+        "acceptance_criteria": [
+          "Distance filter updates list and map",
+          "Detail card shows: name, address, hours, amenities",
+          "List highlights selected location on map",
+          "Mobile: filters collapse into dropdown",
+          "Tests pass for filter logic"
+        ],
+        "priority": "P0",
+        "status": "ready",
+        "assigned_to": "Claude Agent 05"
+      },
+      {
+        "id": "A06",
+        "name": "Accessibility & Keyboard Navigation",
+        "role": "Accessibility Engineer",
+        "objective": "Implement keyboard navigation, ARIA labels, contrast validation, reduced motion support",
+        "lane": "execution",
+        "wave": 2,
+        "branch": "agent/06-accessibility",
+        "owned_files": [
+          "src/components/Accessibility.jsx",
+          "src/styles/accessibility.css"
+        ],
+        "read_only_files": [
+          "src/components/Map.jsx",
+          "src/components/Filters.jsx",
+          "src/components/LocationDetail.jsx",
+          "package.json"
+        ],
+        "deliverables": [
+          "Keyboard navigation (Tab, Enter, Arrow keys)",
+          "ARIA labels on all interactive elements",
+          "Color contrast validation (WCAG AA)",
+          "Reduced motion media query support",
+          "Accessibility audit report"
+        ],
+        "estimated_duration": "3h",
+        "dependencies": [
+          "A04",
+          "A05"
+        ],
+        "dependents": [
+          "A07"
+        ],
+        "acceptance_criteria": [
+          "Tab order logical and visible",
+          "All buttons have aria-label",
+          "Text contrast: 4.5:1 minimum (WCAG AA)",
+          "Prefers-reduced-motion respected",
+          "Screen reader tested (NVDA/JAWS)"
+        ],
+        "priority": "P1",
+        "status": "ready",
+        "assigned_to": "Claude Agent 06"
+      },
+      {
+        "id": "A10",
+        "name": "GitHub Pages Integration & Deployment",
+        "role": "DevOps Engineer",
+        "objective": "Verify GitHub Actions workflow, validate base path routing, prepare deployment",
+        "lane": "execution",
+        "wave": 2,
+        "branch": "agent/10-pages-integration",
+        "owned_files": [
+          ".github/workflows/deploy.yml"
+        ],
+        "read_only_files": [
+          "vite.config.js",
+          "package.json"
+        ],
+        "deliverables": [
+          "GitHub Actions workflow configured",
+          "Base path routing validated",
+          "Static artifact checks in place",
+          "Deployment preview tested",
+          "Rollback instructions documented"
+        ],
+        "estimated_duration": "3h",
+        "dependencies": [
+          "A01",
+          "A04",
+          "A05"
+        ],
+        "dependents": [
+          "A07"
+        ],
+        "acceptance_criteria": [
+          "GitHub Actions workflow on main branch",
+          "Workflow triggers on push to main",
+          "Build command: npm run build",
+          "Artifact upload: dist/ folder",
+          "Base path /plug works correctly",
+          "Deployment test successful"
+        ],
+        "priority": "P0",
+        "status": "ready",
+        "assigned_to": "Claude Agent 10"
+      },
+      {
+        "id": "A07",
+        "name": "Integrated Test Suite",
+        "role": "QA Engineer",
+        "objective": "Build end-to-end tests, validate static build, performance benchmarks",
+        "lane": "qa",
+        "wave": 3,
+        "branch": "agent/07-tests",
+        "owned_files": [
+          "src/__tests__/**/*",
+          "playwright.config.js"
+        ],
+        "read_only_files": [
+          "src/components/**",
+          "src/adapters/**",
+          "package.json"
+        ],
+        "deliverables": [
+          "Unit tests for adapters and utilities",
+          "Integration tests for components",
+          "E2E browser tests with Playwright",
+          "Performance benchmarks",
+          "Test coverage report"
+        ],
+        "estimated_duration": "3h",
+        "dependencies": [
+          "A02",
+          "A04",
+          "A05",
+          "A06",
+          "A10"
+        ],
+        "dependents": [],
+        "acceptance_criteria": [
+          "Unit test coverage > 80%",
+          "E2E tests pass on Firefox + Chrome",
+          "Integration validation passes",
+          "npm run test succeeds",
+          "Performance: Lighthouse score > 90"
+        ],
+        "priority": "P0",
+        "status": "ready",
+        "assigned_to": "Claude Agent 07"
+      }
+    ],
+    "waves": [
+      {
+        "id": 1,
+        "name": "Foundations",
+        "description": "Establish shared contracts and boundaries",
+        "agents": [
+          "A01",
+          "A03",
+          "A08",
+          "A09"
+        ],
+        "duration_minutes": 120,
+        "gate": "Coordinator freezes all contracts",
+        "outputs": [
+          "Vite build configuration",
+          "SQLite schema and seed data",
+          "Security and privacy requirements",
+          "Documentation structure"
+        ]
+      },
+      {
+        "id": 2,
+        "name": "Implementation",
+        "description": "Parallel feature development using Wave 1 contracts",
+        "agents": [
+          "A02",
+          "A04",
+          "A05",
+          "A06",
+          "A10"
+        ],
+        "duration_minutes": 240,
+        "gate": "All feature PRs pass branch CI",
+        "outputs": [
+          "Data adapter module",
+          "Map UI with markers",
+          "Filter controls and detail cards",
+          "Accessibility features",
+          "Deployment workflow"
+        ],
+        "dependencies": [
+          1
+        ]
+      },
+      {
+        "id": 3,
+        "name": "Validation & Release",
+        "description": "Integration testing and final deployment",
+        "agents": [
+          "A07",
+          "A08",
+          "A10"
+        ],
+        "duration_minutes": 120,
+        "gate": "All integration validation checks pass",
+        "outputs": [
+          "Full test suite",
+          "Security sign-off",
+          "Deployment validation"
+        ],
+        "dependencies": [
+          2
+        ]
+      }
+    ],
+    "merge_queue": {
+      "type": "serial",
+      "order": [
+        "A01",
+        "A03",
+        "A02",
+        "A04",
+        "A05",
+        "A06",
+        "A09",
+        "A10",
+        "A07",
+        "A08"
+      ],
+      "validation_checklist": [
+        "npm run format:check passes",
+        "npm run lint passes",
+        "npm run typecheck passes",
+        "npm run test passes",
+        "npm run build succeeds",
+        "dist/ contains valid artifacts",
+        "Map loads at correct base path",
+        "Database integrity check passes",
+        "Mobile viewport responsive",
+        "No secrets in artifact",
+        "Artifact size < 5MB"
+      ],
+      "repair_process": "If any merge fails validation, create repair/ branch targeting failure, merge through queue"
+    },
+    "shared_files": {
+      "locked": [
+        "package.json",
+        "package-lock.json",
+        "vite.config.js",
+        ".github/workflows/deploy.yml",
+        "src/styles/main.css"
+      ],
+      "ownership": {
+        "vite.config.js": "A01",
+        "src/data/locations.db": "A03",
+        "src/adapters/locationData.js": "A02",
+        "src/components/Map.jsx": "A04",
+        "src/components/Filters.jsx": "A05",
+        "src/components/LocationDetail.jsx": "A05",
+        ".github/workflows/deploy.yml": "A10",
+        "docs/**": "A09",
+        "src/__tests__/**": "A07"
+      }
+    },
+    "handoffs": [
+      {
+        "source": "COORD",
+        "destination": "A01",
+        "payload": "Branch: agent/01-static-build | Config: vite.config.js frozen | Deliverable: npm run build succeeds"
+      },
+      {
+        "source": "COORD",
+        "destination": "A03",
+        "payload": "Branch: data/03-oakland-locations | Schema: locations.db with 10 seeds | Deliverable: PRAGMA integrity_check = ok"
+      },
+      {
+        "source": "A01",
+        "destination": "A02",
+        "payload": "Contract: Build system configured | Dependency: A03 SQLite ready | Task: Build data adapter"
+      },
+      {
+        "source": "A03",
+        "destination": "A02",
+        "payload": "Contract: Database schema frozen | Dependency: 10-location seed data | Task: Build query functions"
+      },
+      {
+        "source": "A02",
+        "destination": "A04",
+        "payload": "Contract: Location data adapter ready | Dependency: getAll(), getByDistance() | Task: Render map markers"
+      },
+      {
+        "source": "A04",
+        "destination": "A05",
+        "payload": "Contract: Map component ready | Dependency: Click handlers defined | Task: Build filters and details"
+      },
+      {
+        "source": "A05",
+        "destination": "A06",
+        "payload": "Contract: UI components ready | Dependency: Components structure | Task: Add accessibility"
+      },
+      {
+        "source": "A04",
+        "destination": "A10",
+        "payload": "Contract: Map component ready | Dependency: Static build working | Task: Verify Pages deployment"
+      },
+      {
+        "source": "A02",
+        "destination": "A07",
+        "payload": "Contract: Data adapter ready | Dependency: Adapter API | Task: Write adapter tests"
+      },
+      {
+        "source": "A04",
+        "destination": "A07",
+        "payload": "Contract: Map UI ready | Dependency: Component structure | Task: Write E2E tests"
+      }
+    ],
+    "success_criteria": {
+      "wave_1": [
+        "Vite builds successfully: npm run build ✓",
+        "SQLite database integrity validated ✓",
+        "Security baseline established ✓",
+        "Documentation structure in place ✓"
+      ],
+      "wave_2": [
+        "Data adapter loads 10 locations ✓",
+        "Map renders with markers ✓",
+        "Filters respond to input ✓",
+        "Keyboard navigation works ✓",
+        "GitHub Actions workflow configured ✓"
+      ],
+      "wave_3": [
+        "Full test suite passes ✓",
+        "Security audit cleared ✓",
+        "All integration checks pass ✓",
+        "Final PR approved ✓"
+      ],
+      "release": [
+        "main branch deployed ✓",
+        "plug.vln.gg live and working ✓",
+        "All features operational in production ✓",
+        "Temporary branches cleaned up ✓"
+      ]
+    },
+    "timeline": {
+      "phase": "Wave 1",
+      "estimated_total_duration": "7 hours",
+      "wave_1_duration": "2 hours",
+      "wave_2_duration": "4 hours",
+      "wave_3_duration": "1 hour",
+      "review_and_deploy": "1 hour",
+      "critical_path": "COORD → A01 → A02 → A04 → A05 → A06 → A07 → Release"
+    }
+  }
+}
