@@ -18,12 +18,37 @@ export default function Map({ locations, selectedLocation, onSelectLocation, use
 
     try {
       console.log('Initializing MapLibre GL...')
+
+      // Fallback style if external URL fails
+      const fallbackStyle = {
+        version: 8,
+        sources: {
+          osm: {
+            type: 'raster',
+            url: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
+            tileSize: 256,
+          },
+        },
+        layers: [
+          {
+            id: 'osm',
+            type: 'raster',
+            source: 'osm',
+          },
+        ],
+        glyphs: 'https://demotiles.maplibre.org/font/{fontstack}/{range}.pbf',
+      }
+
       map.current = new maplibregl.Map({
         container: mapContainer.current,
-        style: 'https://demotiles.maplibre.org/style.json',
+        style: fallbackStyle,
         center: userLocation ? [userLocation.lng, userLocation.lat] : DEFAULT_CENTER,
         zoom: DEFAULT_ZOOM,
         attributionControl: true,
+        transformRequest: (url, resourceType) => {
+          // Handle errors for external resources
+          return { url }
+        },
       })
 
       // Add zoom and rotation controls
