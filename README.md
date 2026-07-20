@@ -18,9 +18,14 @@ A minimal viable demo for the Next Chapter Project bootcamp entry.
 
 ## Live Demo
 
-**Production:** https://plug.vln.gg
+**🚀 [View the Live Demo](https://plug.vln.gg)**
 
-(Automatically deployed on every push to main)
+**Deployment Details:**
+- **Production URL:** https://plug.vln.gg
+- **Fallback URL:** https://fused-gaming.github.io/plug
+- **Status:** ✅ Live (Automatically deployed on every push to main)
+- **Build:** Vite (pre-built React to static files)
+- **Hosting:** GitHub Pages (plug.vln.gg custom domain)
 
 ## Getting Started
 

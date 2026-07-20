@@ -41,3 +41,11 @@ Thumbs.db
 # Temporary files
 *.tmp
 .tmp/
+
+# SyncPulse workspace files (local state only)
+.syncpulse.local.json
+.syncpulse/cache/
+.syncpulse/logs/
+
+# IDE workspace
+.vscode/workspace.json

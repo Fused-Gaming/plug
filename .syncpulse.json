@@ -1,0 +1,145 @@
+{
+  "workspace": {
+    "name": "charging-station-locator-mvp",
+    "description": "Privacy-first device charging location map - Bootcamp submission",
+    "version": "0.1.0",
+    "initialized_at": "2026-07-20T01:50:00Z",
+    "phase": "Phase 2: MVP Feature Development",
+    "deadline": "2026-07-27T23:59:59Z",
+    "days_remaining": 6
+  },
+  "project": {
+    "type": "web-app",
+    "framework": "react",
+    "build_tool": "vite",
+    "deployment": "github-pages",
+    "deploy_url": "https://plug.vln.gg",
+    "repository": "https://github.com/Fused-Gaming/plug",
+    "branch": "main"
+  },
+  "team": {
+    "members": ["Fused Gaming (AI-Assisted)"],
+    "contact": "j@vln.gg"
+  },
+  "milestones": [
+    {
+      "phase": 1,
+      "name": "Foundation",
+      "days": "1-2",
+      "status": "complete",
+      "tasks": [
+        "Repository & GitHub Pages setup",
+        "React + Vite initialization",
+        "GitHub Actions deployment",
+        "MapLibre integration",
+        "Seed data (10 locations)"
+      ]
+    },
+    {
+      "phase": 2,
+      "name": "MVP Feature Development",
+      "days": "2-4",
+      "status": "in_progress",
+      "tasks": [
+        "Interactive map with markers",
+        "Location detail cards",
+        "Distance-based sorting",
+        "Mobile responsive design",
+        "All data client-side"
+      ],
+      "blockers": []
+    },
+    {
+      "phase": 3,
+      "name": "Polish & Demo Prep",
+      "days": "5-6",
+      "status": "ready",
+      "tasks": [
+        "UI refinements",
+        "Mobile testing",
+        "Performance optimization",
+        "Error handling",
+        "Demo walkthrough"
+      ]
+    },
+    {
+      "phase": 4,
+      "name": "Final Submission",
+      "days": "7",
+      "status": "ready",
+      "tasks": [
+        "Final testing",
+        "GitHub Pages live check",
+        "Bootcamp submission"
+      ]
+    }
+  ],
+  "ecosystem": {
+    "package_manager": "npm",
+    "node_version": "22.22.2",
+    "foundation": {
+      "@h4shed/mcp-core": "1.0.31",
+      "@h4shed/mcp-cli": "1.0.31",
+      "@h4shed/skill-syncpulse": "0.2.20",
+      "@h4shed/syncpulse-hub": "0.1.19",
+      "@h4shed/skill-project-manager": "latest",
+      "@h4shed/skill-ascii-mockup": "latest"
+    },
+    "installed_skills": [
+      "skill-project-manager",
+      "skill-ascii-mockup"
+    ],
+    "total_packages_discovered": 66,
+    "total_node_modules": 286
+  },
+  "artifacts": {
+    "documentation": [
+      "README.md",
+      "ROADMAP.md",
+      "PROJECT_PLAN.md",
+      "DEPLOYMENT.md",
+      "WIREFRAMES.md",
+      "DESIGN_SYSTEM.md",
+      "SYNCPULSE_INSTALL_REPORT.md"
+    ],
+    "configuration": [
+      ".github/workflows/deploy.yml",
+      "vite.config.js",
+      "package.json",
+      "package-lock.json",
+      "CNAME",
+      ".gitignore"
+    ],
+    "source_code": [
+      "index.html",
+      "src/App.jsx",
+      "src/main.jsx",
+      "src/components/Map.jsx",
+      "src/components/LocationList.jsx",
+      "src/data/locations.js",
+      "src/styles/main.css"
+    ]
+  },
+  "status": {
+    "build": "passing",
+    "deployment": "ready",
+    "ci_checks": "all_passing",
+    "security_audit": "5_vulnerabilities_low_priority",
+    "accessibility": "wcag_aa_target",
+    "mobile_responsive": "yes"
+  },
+  "constraints": {
+    "github_pages": "static_files_only",
+    "backend": "not_supported",
+    "server_rendering": "not_supported",
+    "mitigation": "pre_build_react_to_static_dist"
+  },
+  "next_actions": [
+    "Complete Phase 2 MVP feature development (Days 2-4)",
+    "Polish UI and design system implementation",
+    "Mobile device testing",
+    "Final demo preparation and submission"
+  ],
+  "version": "1.0",
+  "schema": "https://syncpulse.h4shed.dev/workspace-schema/1.0.json"
+}
