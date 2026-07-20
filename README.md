@@ -386,7 +386,12 @@ Browser Display (fully client-side)
 - **[DEPLOYMENT.md](DEPLOYMENT.md)** — How deployment works and troubleshooting
 - **[WIREFRAMES.md](WIREFRAMES.md)** — UI layouts for desktop, tablet, mobile
 - **[DESIGN_SYSTEM.md](DESIGN_SYSTEM.md)** — Colors, typography, spacing, components
-- **[CONTRIBUTING.md](CONTRIBUTING.md)** — How to contribute or extend the project
+
+**Developer Guides (docs/):**
+- **[docs/CONTRIBUTING.md](docs/CONTRIBUTING.md)** — How to contribute, development setup, coding standards
+- **[docs/ARCHITECTURE.md](docs/ARCHITECTURE.md)** — System design, technology stack, data flow
+- **[docs/DATA_SOURCES.md](docs/DATA_SOURCES.md)** — OSINT data sourcing, geographic expansion
+- **[docs/SWARM_COORDINATION.md](docs/SWARM_COORDINATION.md)** — Wave 1-3 parallel development framework
 
 **Security & Privacy:**
 - **[SECURITY.md](SECURITY.md)** — Security policy, CSP headers, vulnerability disclosure
