@@ -1,0 +1,75 @@
+version: 2
+updates:
+  # Enable version updates for npm dependencies
+  - package-ecosystem: npm
+    directory: "/"
+    schedule:
+      interval: weekly
+      day: monday
+      time: "09:00"
+    open-pull-requests-limit: 5
+    reviewers:
+      - "jlucus916"
+    allow:
+      - dependency-type: "production"
+      - dependency-type: "development"
+    pull-request-branch-name:
+      separator: "/"
+    rebase-strategy: "auto"
+    commit-message:
+      prefix: "deps:"
+      include: "scope"
+    labels:
+      - "dependencies"
+      - "npm"
+    milestone: 1
+    target-branch: "main"
+    ignore:
+      # Ignore pre-release versions
+      - dependency-name: "*"
+        versions: [">=0.0.0-0", "<1.0.0"]
+
+  # Enable security updates for npm dependencies (higher priority)
+  - package-ecosystem: npm
+    directory: "/"
+    schedule:
+      interval: daily
+    open-pull-requests-limit: 10
+    reviewers:
+      - "jlucus916"
+    allow:
+      - dependency-type: "production"
+      - dependency-type: "development"
+    security-updates-only: true
+    pull-request-branch-name:
+      separator: "/"
+    commit-message:
+      prefix: "security:"
+      include: "scope"
+    labels:
+      - "security"
+      - "dependencies"
+      - "npm"
+    milestone: 1
+    target-branch: "main"
+    rebase-strategy: "auto"
+
+  # Enable GitHub Actions updates
+  - package-ecosystem: github-actions
+    directory: "/"
+    schedule:
+      interval: weekly
+      day: monday
+      time: "10:00"
+    open-pull-requests-limit: 5
+    reviewers:
+      - "jlucus916"
+    labels:
+      - "ci/cd"
+      - "github-actions"
+    pull-request-branch-name:
+      separator: "/"
+    commit-message:
+      prefix: "ci:"
+      include: "scope"
+    target-branch: "main"
