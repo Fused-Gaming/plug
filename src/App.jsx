@@ -3,10 +3,11 @@ import Map from './components/Map'
 import LocationList from './components/LocationList'
 import Filters from './components/Filters'
 import LocationDetail from './components/LocationDetail'
-import { locations as importedLocations } from './data/locations'
+import * as locationsModule from './data/locations'
 import { logInfo, logGeolocationError } from './utils/errorSanitizer'
 
-// Use imported locations with fallback
+// Debug import and use fallback if needed
+const importedLocations = locationsModule?.locations
 const locations = importedLocations && Array.isArray(importedLocations) && importedLocations.length > 0
   ? importedLocations
   : [
