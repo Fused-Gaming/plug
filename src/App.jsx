@@ -85,7 +85,7 @@ export default function App() {
 
       <header className="header">
         <h1>📱 Charging Station Locator</h1>
-        <p>Find device charging nearby</p>
+        <p>Find device charging nearby (v2.0.0 - Wave 4 Secured)</p>
       </header>
 
       <div className="main-content" id="main-content">
