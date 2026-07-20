@@ -1,6 +1,6 @@
 class MockMarker {
-  constructor({ element } = {}) {
-    this.element = element;
+  constructor(config = {}) {
+    this.element = config.element || null;
     this.lngLat = null;
     this.map = null;
   }
@@ -25,15 +25,24 @@ class MockMarker {
 }
 
 class MockMap {
-  constructor(options = {}) {
-    this.options = options;
-    this.container = options.container;
-    this.markers = new Map();
+  constructor(options) {
+    this.options = options || {};
+    this.container = this.options.container || null;
+    this.markers = [];
     this.controls = [];
     this.listeners = {};
-    this.style = options.style;
-    this.center = options.center;
-    this.zoom = options.zoom;
+    this.style = this.options.style;
+    this.center = this.options.center;
+    this.zoom = this.options.zoom;
+    this.loaded = false;
+
+    // Simulate load event after a small delay
+    if (typeof window !== 'undefined') {
+      setTimeout(() => {
+        this.loaded = true;
+        this.fire('load');
+      }, 0);
+    }
   }
 
   on(event, callback) {
@@ -41,9 +50,17 @@ class MockMap {
       this.listeners[event] = [];
     }
     this.listeners[event].push(callback);
-    // Simulate load event
-    if (event === 'load') {
-      setTimeout(() => callback(), 0);
+  }
+
+  fire(event) {
+    if (this.listeners[event]) {
+      this.listeners[event].forEach(callback => {
+        try {
+          callback();
+        } catch (e) {
+          console.error('Error in map event listener:', e);
+        }
+      });
     }
   }
 
@@ -57,15 +74,18 @@ class MockMap {
   }
 
   remove() {
-    this.markers.clear();
     this.listeners = {};
   }
+
+  isLoaded() {
+    return this.loaded;
+  }
 }
+
+function NavigationControl() {}
 
 export default {
   Map: MockMap,
   Marker: MockMarker,
-  NavigationControl: class {
-    constructor() {}
-  },
+  NavigationControl: NavigationControl,
 };
