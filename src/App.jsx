@@ -3,16 +3,36 @@ import Map from './components/Map'
 import LocationList from './components/LocationList'
 import Filters from './components/Filters'
 import LocationDetail from './components/LocationDetail'
-import { locations } from './data/locations'
+import { locations as importedLocations } from './data/locations'
+
+// Use imported locations with fallback
+const locations = importedLocations && Array.isArray(importedLocations) && importedLocations.length > 0
+  ? importedLocations
+  : [
+      {
+        id: 1,
+        name: 'Downtown Oakland Convention Center',
+        lat: 37.8044,
+        lng: -122.2712,
+        address: '10 10th St, Oakland, CA 94607',
+        charger_type: 'Level 2',
+        connectors: 'Tesla, CCS, J1772',
+        power_kw: 7.2,
+        source: 'PlugShare',
+        verified_date: '2026-07-20',
+        hours: '9 AM - 5 PM daily',
+      },
+    ]
 
 console.log('App.jsx loaded, locations:', locations.length)
 
 export default function App() {
-  console.log('App component rendering')
+  console.log('App component rendering with', locations.length, 'locations')
+
   const [selectedLocation, setSelectedLocation] = useState(null)
   const [userLocation, setUserLocation] = useState(null)
-  const [allLocations, setAllLocations] = useState(locations)
-  const [filteredLocations, setFilteredLocations] = useState(locations)
+  const [allLocations, setAllLocations] = useState(locations || [])
+  const [filteredLocations, setFilteredLocations] = useState(locations || [])
 
   useEffect(() => {
     if (navigator.geolocation) {
