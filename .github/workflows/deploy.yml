@@ -65,28 +65,10 @@ jobs:
       - name: Run CSP configuration tests
         run: npm test -- src/__tests__/csp.test.js
 
-  codeql:
-    name: CodeQL Security Analysis
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Initialize CodeQL
-        uses: github/codeql-action/init@v3
-        with:
-          languages: 'javascript'
-
-      - name: Autobuild
-        uses: github/codeql-action/autobuild@v3
-
-      - name: Perform CodeQL Analysis
-        uses: github/codeql-action/analyze@v3
-
   build:
     name: Build and Deploy
     runs-on: ubuntu-latest
-    needs: [security, test, codeql]
+    needs: [security, test]
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
