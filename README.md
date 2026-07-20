@@ -380,12 +380,23 @@ Browser Display (fully client-side)
 
 ### Documentation
 
+**Project Documentation:**
 - **[ROADMAP.md](ROADMAP.md)** — 7-day sprint plan and MVP scope
 - **[PROJECT_PLAN.md](PROJECT_PLAN.md)** — Technical architecture and decisions
 - **[DEPLOYMENT.md](DEPLOYMENT.md)** — How deployment works and troubleshooting
 - **[WIREFRAMES.md](WIREFRAMES.md)** — UI layouts for desktop, tablet, mobile
 - **[DESIGN_SYSTEM.md](DESIGN_SYSTEM.md)** — Colors, typography, spacing, components
 - **[CONTRIBUTING.md](CONTRIBUTING.md)** — How to contribute or extend the project
+
+**Security & Privacy:**
+- **[SECURITY.md](SECURITY.md)** — Security policy, CSP headers, vulnerability disclosure
+- **[PRIVACY.md](PRIVACY.md)** — Privacy policy, zero data collection, GDPR/CCPA compliance
+
+**Wave 1 Orchestration (Swarm Development):**
+- **[swarm-orchestration-plan.md](swarm-orchestration-plan.md)** — 10-agent parallel development framework
+- **[orchestration-payload.json](orchestration-payload.json)** — Machine-readable agent configuration
+- **[WAVE_1_AGENT_TASKS.md](WAVE_1_AGENT_TASKS.md)** — Wave 1 agent task specifications
+- **[WAVE_1_CONTRACTS.md](WAVE_1_CONTRACTS.md)** — Frozen build contracts and locked interfaces
 
 ### Live Help
 
