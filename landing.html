@@ -13,15 +13,15 @@
     }
 
     :root {
-      --primary: #2563eb;
-      --primary-dark: #1e40af;
-      --accent: #f59e0b;
       --text-primary: #1f2937;
       --text-secondary: #6b7280;
-      --bg-light: #f9fafb;
+      --text-light: #9ca3af;
       --bg-white: #ffffff;
+      --bg-light: #f9fafb;
       --border: #e5e7eb;
-      --success: #10b981;
+      --verified: #059669;
+      --community: #d97706;
+      --recheck: #dc2626;
     }
 
     html {
@@ -31,447 +31,442 @@
     body {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
       color: var(--text-primary);
-      line-height: 1.6;
+      line-height: 1.5;
       background: var(--bg-light);
     }
 
-    /* Header & Navigation */
+    /* Header Navigation */
     header {
       background: var(--bg-white);
       border-bottom: 1px solid var(--border);
-      padding: 1rem 2rem;
+      padding: 0.75rem 1.5rem;
       position: sticky;
       top: 0;
       z-index: 100;
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
     }
 
-    .header-container {
-      max-width: 1200px;
+    .header-wrapper {
+      max-width: 1400px;
       margin: 0 auto;
+    }
+
+    .header-top {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      gap: 2rem;
+      margin-bottom: 0.5rem;
     }
 
     .logo {
-      font-size: 1.25rem;
-      font-weight: 700;
-      color: var(--primary);
-      text-decoration: none;
       display: flex;
-      align-items: center;
-      gap: 0.5rem;
+      align-items: baseline;
+      gap: 0.25rem;
+      text-decoration: none;
+      color: var(--text-primary);
+      font-weight: 700;
+      font-size: 0.9rem;
+      letter-spacing: 0.05em;
     }
 
-    .logo-icon {
-      font-size: 1.5rem;
+    .logo small {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      font-weight: 400;
+    }
+
+    .location-indicator {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
     }
 
     nav {
       display: flex;
-      gap: 2rem;
+      gap: 3rem;
       align-items: center;
     }
 
     nav a {
       color: var(--text-secondary);
       text-decoration: none;
-      font-weight: 500;
+      font-size: 0.9rem;
       transition: color 0.2s;
     }
 
     nav a:hover {
-      color: var(--primary);
-    }
-
-    .cta-button {
-      background: var(--primary);
-      color: white;
-      padding: 0.625rem 1.25rem;
-      border-radius: 0.375rem;
-      text-decoration: none;
-      font-weight: 600;
-      transition: background 0.2s;
-      border: none;
-      cursor: pointer;
-      font-size: 1rem;
-    }
-
-    .cta-button:hover {
-      background: var(--primary-dark);
+      color: var(--text-primary);
     }
 
     /* Hero Section */
     .hero {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      color: white;
-      padding: 4rem 2rem;
-      text-align: center;
+      background: var(--bg-white);
+      padding: 2.5rem 1.5rem;
+      border-bottom: 1px solid var(--border);
     }
 
-    .hero-container {
-      max-width: 800px;
+    .hero-content {
+      max-width: 1400px;
       margin: 0 auto;
     }
 
-    .hero h1 {
-      font-size: 3rem;
-      margin-bottom: 1rem;
-      line-height: 1.2;
-      font-weight: 800;
+    .hero-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 2rem;
+      margin-bottom: 1.5rem;
     }
 
-    .hero p {
-      font-size: 1.25rem;
-      margin-bottom: 2rem;
-      opacity: 0.95;
+    .hero-left h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+      color: var(--text-primary);
+    }
+
+    .hero-left p {
+      color: var(--text-secondary);
+      font-size: 1rem;
+      max-width: 600px;
+      line-height: 1.6;
     }
 
     .privacy-badge {
-      display: inline-block;
-      background: rgba(255, 255, 255, 0.2);
-      border: 1px solid rgba(255, 255, 255, 0.3);
-      padding: 0.75rem 1.5rem;
-      border-radius: 2rem;
-      font-size: 0.95rem;
-      margin-bottom: 2rem;
-      backdrop-filter: blur(10px);
-    }
-
-    .privacy-features {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      gap: 1.5rem;
-      margin-top: 3rem;
-      text-align: left;
-    }
-
-    .feature-item {
-      display: flex;
-      gap: 0.75rem;
-      align-items: flex-start;
-    }
-
-    .feature-icon {
-      font-size: 1.5rem;
-      margin-top: 0.25rem;
-    }
-
-    .feature-item strong {
-      display: block;
-    }
-
-    /* Main Content */
-    .main {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 3rem 2rem;
-    }
-
-    .section {
-      margin-bottom: 4rem;
-    }
-
-    .section h2 {
-      font-size: 2rem;
-      margin-bottom: 2rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: #fef3c7;
+      border: 1px solid #fcd34d;
+      padding: 0.5rem 1rem;
+      border-radius: 0.25rem;
+      font-size: 0.85rem;
       color: var(--text-primary);
-    }
-
-    /* Location Cards */
-    .locations-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 1.5rem;
-      margin-bottom: 3rem;
-    }
-
-    .location-card {
-      background: var(--bg-white);
-      border: 1px solid var(--border);
-      border-radius: 0.5rem;
-      padding: 1.5rem;
-      transition: all 0.3s;
-      cursor: pointer;
-    }
-
-    .location-card:hover {
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-      transform: translateY(-2px);
-      border-color: var(--primary);
-    }
-
-    .location-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: start;
       margin-bottom: 1rem;
     }
 
-    .location-title {
-      font-size: 1.25rem;
-      font-weight: 700;
+    .privacy-features {
+      display: flex;
+      gap: 3rem;
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+    }
+
+    .privacy-features strong {
+      display: block;
       color: var(--text-primary);
+      margin-bottom: 0.25rem;
+    }
+
+    .hero-right {
+      flex-shrink: 0;
+    }
+
+    .region-badge {
+      display: inline-block;
+      background: var(--bg-light);
+      border: 1px solid var(--border);
+      padding: 0.5rem 1rem;
+      border-radius: 0.25rem;
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      margin-bottom: 1rem;
+    }
+
+    .power-indicator {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+      letter-spacing: 0.15em;
+    }
+
+    .access-label {
+      font-size: 0.8rem;
+      color: var(--text-light);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* Main Layout */
+    .main-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 1.5rem;
+      display: grid;
+      grid-template-columns: 1fr 350px;
+      gap: 1.5rem;
+    }
+
+    .locations-section h2 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .sort-dropdown {
+      background: var(--bg-white);
+      border: 1px solid var(--border);
+      padding: 0.375rem 0.75rem;
+      border-radius: 0.25rem;
+      font-size: 0.85rem;
+      cursor: pointer;
+      color: var(--text-secondary);
+    }
+
+    .locations-count {
+      background: var(--bg-white);
+      border: 1px solid var(--border);
+      border-radius: 0.25rem;
+      padding: 0.75rem;
+      margin-bottom: 1rem;
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+    }
+
+    /* Location List */
+    .locations-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .location-item {
+      background: var(--bg-white);
+      border: 1px solid var(--border);
+      border-radius: 0.375rem;
+      padding: 1rem;
+      cursor: pointer;
+      transition: all 0.2s;
+      border-left: 3px solid transparent;
+    }
+
+    .location-item:hover {
+      border-color: #3b82f6;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    }
+
+    .location-item.active {
+      border-left-color: #3b82f6;
+      background: #eff6ff;
+    }
+
+    .location-item-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 0.5rem;
+    }
+
+    .location-item-title {
+      font-weight: 600;
+      color: var(--text-primary);
+      font-size: 0.95rem;
     }
 
     .location-badge {
       display: inline-block;
-      background: var(--success);
-      color: white;
-      padding: 0.25rem 0.75rem;
-      border-radius: 1rem;
-      font-size: 0.75rem;
+      padding: 0.25rem 0.625rem;
+      border-radius: 0.25rem;
+      font-size: 0.7rem;
       font-weight: 600;
       text-transform: uppercase;
+      color: white;
+    }
+
+    .location-badge.verified {
+      background: var(--verified);
     }
 
     .location-badge.community {
-      background: #f59e0b;
+      background: var(--community);
     }
 
     .location-badge.recheck {
-      background: #ef4444;
+      background: var(--recheck);
     }
 
-    .location-address {
+    .location-item-address {
       color: var(--text-secondary);
-      font-size: 0.95rem;
-      margin-bottom: 0.75rem;
+      font-size: 0.85rem;
+      margin-bottom: 0.5rem;
     }
 
-    .location-hours {
+    .location-item-hours {
+      font-weight: 500;
+      font-size: 0.85rem;
+      color: var(--text-primary);
+      margin-bottom: 0.5rem;
+    }
+
+    .location-item-amenities {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .amenity-badge {
+      display: inline-block;
       background: var(--bg-light);
-      padding: 0.75rem;
-      border-radius: 0.375rem;
-      font-weight: 600;
-      margin-bottom: 1rem;
-      font-size: 0.95rem;
+      border: 1px solid var(--border);
+      padding: 0.25rem 0.5rem;
+      border-radius: 0.2rem;
+      font-size: 0.75rem;
+      color: var(--text-secondary);
     }
 
-    .location-amenities {
+    .location-item-verified {
+      font-size: 0.75rem;
+      color: var(--text-light);
+      margin-top: 0.5rem;
+    }
+
+    /* Detail Panel */
+    .detail-panel {
+      background: var(--bg-white);
+      border: 1px solid var(--border);
+      border-radius: 0.375rem;
+      padding: 1.5rem;
+      position: sticky;
+      top: 80px;
+      height: fit-content;
+      display: none;
+    }
+
+    .detail-panel.active {
+      display: block;
+    }
+
+    .detail-label {
+      font-size: 0.75rem;
+      color: var(--text-light);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.5rem;
+    }
+
+    .detail-panel h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 1rem;
+    }
+
+    .detail-description {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+    }
+
+    .detail-section {
+      margin-bottom: 1.5rem;
+    }
+
+    .detail-section-title {
+      font-weight: 600;
+      font-size: 0.85rem;
+      color: var(--text-primary);
+      margin-bottom: 0.5rem;
+      text-transform: capitalize;
+    }
+
+    .detail-section-content {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+
+    .detail-amenities {
       display: flex;
       flex-wrap: wrap;
       gap: 0.5rem;
     }
 
-    .amenity-tag {
+    .detail-amenity {
       display: inline-block;
       background: var(--bg-light);
       border: 1px solid var(--border);
       padding: 0.375rem 0.75rem;
       border-radius: 0.25rem;
-      font-size: 0.85rem;
+      font-size: 0.8rem;
       color: var(--text-secondary);
-    }
-
-    /* Stats Section */
-    .stats {
-      background: var(--bg-white);
-      border: 1px solid var(--border);
-      border-radius: 0.5rem;
-      padding: 2rem;
-      margin-bottom: 3rem;
-    }
-
-    .stats-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 2rem;
-      text-align: center;
-    }
-
-    .stat-item h3 {
-      font-size: 2.5rem;
-      color: var(--primary);
-      margin-bottom: 0.5rem;
-    }
-
-    .stat-item p {
-      color: var(--text-secondary);
-      font-weight: 500;
-    }
-
-    /* How It Works */
-    .how-it-works {
-      background: var(--bg-white);
-      border: 1px solid var(--border);
-      border-radius: 0.5rem;
-      padding: 2rem;
-    }
-
-    .steps {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 2rem;
-      margin-top: 2rem;
-    }
-
-    .step {
-      text-align: center;
-    }
-
-    .step-number {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 50px;
-      height: 50px;
-      background: var(--primary);
-      color: white;
-      border-radius: 50%;
-      font-weight: 700;
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-    }
-
-    .step h4 {
-      font-size: 1.1rem;
-      margin-bottom: 0.5rem;
-      color: var(--text-primary);
-    }
-
-    .step p {
-      color: var(--text-secondary);
-      font-size: 0.95rem;
-    }
-
-    /* CTA Section */
-    .cta-section {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      color: white;
-      padding: 3rem 2rem;
-      text-align: center;
-      border-radius: 0.5rem;
-      margin-bottom: 3rem;
-    }
-
-    .cta-section h2 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-      color: white;
-    }
-
-    .cta-section p {
-      font-size: 1.1rem;
-      margin-bottom: 2rem;
-      opacity: 0.95;
-    }
-
-    .cta-button-light {
-      background: white;
-      color: var(--primary);
-      padding: 0.875rem 2rem;
-      border-radius: 0.375rem;
-      text-decoration: none;
-      font-weight: 700;
-      display: inline-block;
-      transition: all 0.2s;
-      border: none;
-      cursor: pointer;
-      font-size: 1rem;
-    }
-
-    .cta-button-light:hover {
-      background: var(--bg-light);
-      transform: scale(1.05);
-    }
-
-    /* Footer */
-    footer {
-      background: var(--text-primary);
-      color: white;
-      padding: 2rem;
-      text-align: center;
-      margin-top: 3rem;
-    }
-
-    .footer-content {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .footer-links {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      margin-bottom: 1rem;
-      flex-wrap: wrap;
-    }
-
-    .footer-links a {
-      color: #d1d5db;
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-
-    .footer-links a:hover {
-      color: white;
-    }
-
-    .footer-divider {
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-      margin: 1.5rem 0;
     }
 
     /* Responsive */
-    @media (max-width: 768px) {
-      .hero h1 {
-        font-size: 2rem;
+    @media (max-width: 1024px) {
+      .main-container {
+        grid-template-columns: 1fr;
       }
 
-      .hero p {
-        font-size: 1rem;
+      .detail-panel {
+        position: static;
+      }
+
+      .hero-header {
+        flex-direction: column;
       }
 
       nav {
+        gap: 1.5rem;
+      }
+
+      .privacy-features {
         flex-direction: column;
         gap: 1rem;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .header-top {
+        flex-direction: column;
+        gap: 1rem;
+        margin-bottom: 0;
+      }
+
+      nav {
         width: 100%;
+        gap: 1rem;
+        flex-direction: column;
       }
 
       nav a {
         display: block;
+        padding: 0.5rem 0;
       }
 
-      .header-container {
-        flex-direction: column;
-        gap: 1rem;
+      .hero-left h1 {
+        font-size: 1.75rem;
+      }
+
+      .hero-left p {
+        font-size: 0.9rem;
       }
 
       .privacy-features {
-        grid-template-columns: 1fr;
-        text-align: center;
+        flex-direction: column;
+        gap: 0.75rem;
+        font-size: 0.85rem;
       }
 
-      .locations-grid {
-        grid-template-columns: 1fr;
+      .locations-section h2 {
+        flex-direction: column;
+        gap: 0.5rem;
       }
 
-      .stats-grid {
-        grid-template-columns: 1fr;
+      .main-container {
+        padding: 1rem;
+        gap: 1rem;
       }
 
-      .steps {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 480px) {
-      body {
-        font-size: 14px;
+      .location-item {
+        padding: 0.75rem;
       }
 
-      .hero h1 {
-        font-size: 1.5rem;
-      }
-
-      .main {
-        padding: 1.5rem 1rem;
-      }
-
-      .section h2 {
-        font-size: 1.5rem;
+      .detail-panel {
+        top: 60px;
       }
     }
   </style>
@@ -479,249 +474,224 @@
 <body>
   <!-- Header -->
   <header>
-    <div class="header-container">
-      <a href="#top" class="logo">
-        <span class="logo-icon">⚡</span>
-        <span>PLUG</span>
-      </a>
-      <nav>
-        <a href="#locations">Find Power</a>
-        <a href="#how-it-works">How It Works</a>
-        <a href="#about">About</a>
-        <a href="/" class="cta-button">Open App</a>
-      </nav>
+    <div class="header-wrapper">
+      <div class="header-top">
+        <a href="#" class="logo">
+          <span>📍</span>
+          <span>OPEN SOURCES</span>
+          <small>of power</small>
+        </a>
+        <div class="location-indicator">📍 Oakland, California</div>
+        <nav>
+          <a href="#how-it-works">How it works</a>
+          <a href="#suggest">+ Suggest a place</a>
+        </nav>
+      </div>
     </div>
   </header>
 
   <!-- Hero Section -->
   <section class="hero">
-    <div class="hero-container">
-      <div class="privacy-badge">
-        🔒 Privacy is part of the service
-      </div>
-      <h1>Power when<br>you need it.</h1>
-      <p>Find a reliable place to charge your phone or essential device—without an account or giving up your privacy.</p>
-
-      <div class="privacy-features">
-        <div class="feature-item">
-          <span class="feature-icon">✓</span>
-          <div>
-            <strong>No Sign-In</strong>
-            <span style="font-size: 0.9rem; opacity: 0.9;">Start immediately</span>
+    <div class="hero-content">
+      <div class="hero-header">
+        <div class="hero-left">
+          <h1>Power when<br>you need it.</h1>
+          <p>Find a reliable place to charge your phone or essential device—without an account or giving up your privacy.</p>
+          <div class="privacy-badge">
+            🔒 <strong>Privacy is part of the service.</strong>
+          </div>
+          <div class="privacy-features">
+            <div>
+              <strong>No sign-in</strong>
+              Start immediately
+            </div>
+            <div>
+              <strong>No location history</strong>
+              Nothing tracked
+            </div>
+            <div>
+              <strong>No tracking</strong>
+              Your data stays yours
+            </div>
           </div>
         </div>
-        <div class="feature-item">
-          <span class="feature-icon">✓</span>
-          <div>
-            <strong>No Tracking</strong>
-            <span style="font-size: 0.9rem; opacity: 0.9;">Your privacy protected</span>
-          </div>
-        </div>
-        <div class="feature-item">
-          <span class="feature-icon">✓</span>
-          <div>
-            <strong>No History</strong>
-            <span style="font-size: 0.9rem; opacity: 0.9;">Nothing stored</span>
-          </div>
+        <div class="hero-right">
+          <div class="region-badge">SAN FRANCISCO BAY</div>
+          <div class="power-indicator">⚡⚡⚡⚡⚡</div>
+          <div class="access-label">Public charging access</div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Main Content -->
-  <main class="main">
+  <div class="main-container">
     <!-- Locations Section -->
-    <section class="section" id="locations">
-      <h2>📍 Nearby Power</h2>
+    <section class="locations-section">
+      <h2>
+        <span>📍 Nearby power</span>
+      </h2>
 
-      <div class="stats">
-        <div class="stats-grid">
-          <div class="stat-item">
-            <h3>10</h3>
-            <p>Locations in Oakland</p>
-          </div>
-          <div class="stat-item">
-            <h3>8</h3>
-            <p>Verified & Current</p>
-          </div>
-          <div class="stat-item">
-            <h3>100%</h3>
-            <p>Free to Use</p>
-          </div>
-        </div>
+      <div class="locations-count">
+        <strong>4 places found</strong>
       </div>
 
-      <div class="locations-grid">
-        <div class="location-card">
-          <div class="location-header">
-            <div>
-              <h3 class="location-title">Downtown Oakland Convention Center</h3>
-              <p class="location-address">10 10th St · Downtown</p>
-            </div>
-            <span class="location-badge">Verified</span>
+      <div class="locations-list">
+        <!-- Oakland Main Library -->
+        <div class="location-item active" onclick="showDetail(0)">
+          <div class="location-item-header">
+            <div class="location-item-title">Oakland Main Library</div>
+            <span class="location-badge verified">Verified</span>
           </div>
-          <div class="location-hours">Open today · 9 AM – 5 PM</div>
-          <div class="location-amenities">
-            <span class="amenity-tag">Tesla Charger</span>
-            <span class="amenity-tag">Level 2</span>
-            <span class="amenity-tag">CCS</span>
+          <div class="location-item-address">125 14th St · Downtown</div>
+          <div class="location-item-hours"><strong>Open today · 10am–8pm</strong></div>
+          <div class="location-item-amenities">
+            <span class="amenity-badge">Indoor outlets</span>
+            <span class="amenity-badge">Free</span>
+            <span class="amenity-badge">Accessible</span>
+            <span class="amenity-badge">Restrooms</span>
           </div>
+          <div class="location-item-verified">● Verified · Checked Jul 18</div>
         </div>
 
-        <div class="location-card">
-          <div class="location-header">
-            <div>
-              <h3 class="location-title">Oakland International Airport Parking</h3>
-              <p class="location-address">9000 Airport Blvd · Airport</p>
-            </div>
-            <span class="location-badge">Verified</span>
+        <!-- 81st Avenue Library -->
+        <div class="location-item" onclick="showDetail(1)">
+          <div class="location-item-header">
+            <div class="location-item-title">81st Avenue Library</div>
+            <span class="location-badge verified">Verified</span>
           </div>
-          <div class="location-hours">Open 24 hours</div>
-          <div class="location-amenities">
-            <span class="amenity-tag">DC Fast Charging</span>
-            <span class="amenity-tag">CCS</span>
-            <span class="amenity-tag">50 kW</span>
+          <div class="location-item-address">1021 81st Ave · East Oakland</div>
+          <div class="location-item-hours"><strong>Open today · 10am–5:30pm</strong></div>
+          <div class="location-item-amenities">
+            <span class="amenity-badge">Indoor outlets</span>
+            <span class="amenity-badge">Free</span>
+            <span class="amenity-badge">Accessible</span>
+            <span class="amenity-badge">Wi-Fi</span>
           </div>
+          <div class="location-item-verified">● Verified · Checked Jul 16</div>
         </div>
 
-        <div class="location-card">
-          <div class="location-header">
-            <div>
-              <h3 class="location-title">Lake Merritt Loop Trail Parking</h3>
-              <p class="location-address">568 Bellevue Ave · Lake Merritt</p>
-            </div>
-            <span class="location-badge">Verified</span>
+        <!-- West Oakland Library -->
+        <div class="location-item" onclick="showDetail(2)">
+          <div class="location-item-header">
+            <div class="location-item-title">West Oakland Library</div>
+            <span class="location-badge community">Community report</span>
           </div>
-          <div class="location-hours">Open 6 AM – 10 PM</div>
-          <div class="location-amenities">
-            <span class="amenity-tag">Level 2</span>
-            <span class="amenity-tag">CCS</span>
-            <span class="amenity-tag">J1772</span>
+          <div class="location-item-address">1801 Adeline St · West Oakland</div>
+          <div class="location-item-hours"><strong>Open today · 10am–5:30pm</strong></div>
+          <div class="location-item-amenities">
+            <span class="amenity-badge">Indoor outlets</span>
+            <span class="amenity-badge">Free</span>
+            <span class="amenity-badge">Indoors</span>
+            <span class="amenity-badge">Wi-Fi</span>
           </div>
+          <div class="location-item-verified">● Community report · Checked Jul 12</div>
         </div>
 
-        <div class="location-card">
-          <div class="location-header">
-            <div>
-              <h3 class="location-title">Jack London District Parking</h3>
-              <p class="location-address">250 2nd St · Jack London</p>
-            </div>
-            <span class="location-badge">Verified</span>
+        <!-- Lake Merritt Station -->
+        <div class="location-item" onclick="showDetail(3)">
+          <div class="location-item-header">
+            <div class="location-item-title">Lake Merritt Station</div>
+            <span class="location-badge recheck">Needs recheck</span>
           </div>
-          <div class="location-hours">Open 24 hours</div>
-          <div class="location-amenities">
-            <span class="amenity-tag">DC Fast</span>
-            <span class="amenity-tag">100 kW</span>
-            <span class="amenity-tag">Premium</span>
+          <div class="location-item-address">800 Madison St · Lake Merritt</div>
+          <div class="location-item-hours"><strong>Transit hours</strong></div>
+          <div class="location-item-amenities">
+            <span class="amenity-badge">USB charging</span>
+            <span class="amenity-badge">Transit</span>
+            <span class="amenity-badge">Public area</span>
           </div>
-        </div>
-
-        <div class="location-card">
-          <div class="location-header">
-            <div>
-              <h3 class="location-title">Grand Lake Shopping Center</h3>
-              <p class="location-address">370 Grand Ave · Grand Lake</p>
-            </div>
-            <span class="location-badge community">Community</span>
-          </div>
-          <div class="location-hours">Open 10 AM – 10 PM</div>
-          <div class="location-amenities">
-            <span class="amenity-tag">Level 2</span>
-            <span class="amenity-tag">Multiple</span>
-            <span class="amenity-tag">Free</span>
-          </div>
-        </div>
-
-        <div class="location-card">
-          <div class="location-header">
-            <div>
-              <h3 class="location-title">Fruitvale BART Station</h3>
-              <p class="location-address">3401 E 12th St · Fruitvale</p>
-            </div>
-            <span class="location-badge recheck">Needs Recheck</span>
-          </div>
-          <div class="location-hours">Transit hours · 5 AM – Midnight</div>
-          <div class="location-amenities">
-            <span class="amenity-tag">USB Charging</span>
-            <span class="amenity-tag">Public Area</span>
-            <span class="amenity-tag">Transit</span>
-          </div>
+          <div class="location-item-verified">● Needs recheck · Checked Jun 03</div>
         </div>
       </div>
     </section>
 
-    <!-- How It Works -->
-    <section class="section" id="how-it-works">
-      <div class="how-it-works">
-        <h2>How It Works</h2>
-        <div class="steps">
-          <div class="step">
-            <div class="step-number">1</div>
-            <h4>Find Your Location</h4>
-            <p>Open the app and allow access to your location</p>
-          </div>
-          <div class="step">
-            <div class="step-number">2</div>
-            <h4>Browse Nearby Power</h4>
-            <p>See all charging locations sorted by distance</p>
-          </div>
-          <div class="step">
-            <div class="step-number">3</div>
-            <h4>Get Details & Hours</h4>
-            <p>Check amenities, verify status, and plan ahead</p>
-          </div>
-          <div class="step">
-            <div class="step-number">4</div>
-            <h4>Share & Contribute</h4>
-            <p>Help community by reporting new locations</p>
-          </div>
+    <!-- Detail Panel -->
+    <aside class="detail-panel active" id="detailPanel">
+      <div class="detail-label">Selected location</div>
+      <h3 id="detailTitle">Oakland Main Library</h3>
+      <div class="detail-description" id="detailDescription">
+        Outlets available near reading tables. Library rules apply.
+      </div>
+
+      <div class="detail-section">
+        <div class="detail-section-title">Access</div>
+        <div class="detail-amenities" id="detailAccess">
+          <span class="detail-amenity">Indoor outlets</span>
         </div>
       </div>
-    </section>
 
-    <!-- About Section -->
-    <section class="section" id="about">
-      <h2>About This Project</h2>
-      <div class="how-it-works">
-        <h3>OPEN SOURCES of power</h3>
-        <p style="margin-top: 1rem; color: var(--text-secondary);">
-          A privacy-first public utility project built on PLUG. Location details are community-maintained.
-          We verify information regularly to ensure accuracy and currency.
-        </p>
-        <p style="margin-top: 1rem; color: var(--text-secondary);">
-          <strong>🎯 Our Mission:</strong> Make it easy for vulnerable populations—including unhoused individuals,
-          travelers, and those in digital deserts—to find reliable charging options without sacrificing privacy.
-        </p>
-        <p style="margin-top: 1rem; color: var(--text-secondary);">
-          <strong>🔐 Privacy Commitment:</strong> We collect zero data about your location or device.
-          No sign-in required. No tracking. No history. Pure utility.
-        </p>
+      <div class="detail-section">
+        <div class="detail-section-title">Hours</div>
+        <div class="detail-section-content" id="detailHours">
+          Open today, 10am–8pm
+        </div>
       </div>
-    </section>
 
-    <!-- CTA Section -->
-    <section class="cta-section">
-      <h2>Ready to Find Power?</h2>
-      <p>Start searching for reliable charging locations right now</p>
-      <a href="/" class="cta-button-light">Launch App</a>
-    </section>
-  </main>
-
-  <!-- Footer -->
-  <footer>
-    <div class="footer-content">
-      <div class="footer-links">
-        <a href="https://github.com/Fused-Gaming/plug" target="_blank" rel="noopener noreferrer">GitHub</a>
-        <a href="#" target="_blank" rel="noopener noreferrer">Report Issue</a>
-        <a href="#" target="_blank" rel="noopener noreferrer">Suggest Location</a>
-        <a href="#" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
+      <div class="detail-section">
+        <div class="detail-section-title">Evidence</div>
+        <div class="detail-section-content" id="detailEvidence">
+          Verified · Jul 18
+        </div>
       </div>
-      <div class="footer-divider"></div>
-      <p>&copy; 2026 PLUG - Open Sources of Power. All rights reserved.</p>
-      <p style="font-size: 0.9rem; opacity: 0.8; margin-top: 0.5rem;">
-        Built for Oakland, CA. Community-maintained charging station locator.
-      </p>
-    </div>
-  </footer>
+
+      <hr style="border: none; border-top: 1px solid var(--border); margin: 1.5rem 0;">
+
+      <div style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.6;">
+        <strong>OPEN SOURCES OF POWER</strong>
+        <p style="margin-top: 0.75rem;">A privacy-first public utility project built on PLUG.</p>
+        <p>Location details are community-maintained. Confirm hours before traveling.</p>
+      </div>
+    </aside>
+  </div>
+
+  <script>
+    const locations = [
+      {
+        title: 'Oakland Main Library',
+        description: 'Outlets available near reading tables. Library rules apply.',
+        access: ['Indoor outlets'],
+        hours: 'Open today, 10am–8pm',
+        evidence: 'Verified · Jul 18'
+      },
+      {
+        title: '81st Avenue Library',
+        description: 'Multiple outlets in study areas and common spaces.',
+        access: ['Indoor outlets', 'Wi-Fi'],
+        hours: 'Open today, 10am–5:30pm',
+        evidence: 'Verified · Jul 16'
+      },
+      {
+        title: 'West Oakland Library',
+        description: 'Charging stations in main reading room.',
+        access: ['Indoor outlets', 'Wi-Fi'],
+        hours: 'Open today, 10am–5:30pm',
+        evidence: 'Community report · Jul 12'
+      },
+      {
+        title: 'Lake Merritt Station',
+        description: 'USB charging ports at transit station.',
+        access: ['USB charging', 'Public area'],
+        hours: 'Transit hours',
+        evidence: 'Needs recheck · Jun 03'
+      }
+    ];
+
+    function showDetail(index) {
+      const items = document.querySelectorAll('.location-item');
+      items.forEach((item, i) => {
+        item.classList.toggle('active', i === index);
+      });
+
+      const loc = locations[index];
+      document.getElementById('detailTitle').textContent = loc.title;
+      document.getElementById('detailDescription').textContent = loc.description;
+      document.getElementById('detailAccess').innerHTML = loc.access
+        .map(a => `<span class="detail-amenity">${a}</span>`)
+        .join('');
+      document.getElementById('detailHours').textContent = loc.hours;
+      document.getElementById('detailEvidence').textContent = loc.evidence;
+    }
+  </script>
 </body>
 </html>
