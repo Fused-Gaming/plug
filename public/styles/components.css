@@ -357,6 +357,14 @@ button {
   border: 1px solid var(--status-recheck-ink);
 }
 
+/* Machine-corroborated listings (pipeline-sourced, never field-checked).
+   Ink-secondary on surface-inset measures ~9.5:1 — AAA. */
+.badge--auto {
+  background: var(--surface-inset);
+  color: var(--ink-secondary);
+  border: 1px solid var(--border-input);
+}
+
 .badge--solid.badge--verified  { background: var(--status-verified);  color: #fff; border-color: transparent; }
 .badge--solid.badge--community { background: var(--status-community); color: #fff; border-color: transparent; }
 .badge--solid.badge--recheck   { background: var(--status-recheck);   color: #fff; border-color: transparent; }
@@ -414,6 +422,7 @@ button {
 .card--verified  { border-left-color: var(--status-verified); }
 .card--community { border-left-color: var(--status-community); }
 .card--recheck   { border-left-color: var(--status-recheck); }
+.card--auto      { border-left-color: var(--border-input); }
 
 .card--interactive:hover {
   box-shadow: var(--shadow-md);

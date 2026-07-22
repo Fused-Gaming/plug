@@ -49,3 +49,7 @@ Thumbs.db
 
 # IDE workspace
 .vscode/workspace.json
+# SQLite sidecar files are never committed (single-writer rule, issue #3)
+data/*.db-wal
+data/*.db-shm
+data/*.db-journal

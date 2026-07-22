@@ -1,0 +1,22 @@
+Data License
+============
+
+The PLUG source code is MIT licensed (see LICENSE). The LOCATION DATA in this
+repository is licensed separately:
+
+data/locations.db, data/raw/, and public/data/locations.json
+------------------------------------------------------------
+Contain data derived from OpenStreetMap, (c) OpenStreetMap contributors,
+available under the Open Database License (ODbL) 1.0:
+https://opendatacommons.org/licenses/odbl/1-0/
+
+As a derived database, these files are themselves distributed under the
+ODbL. If you reuse them, you must attribute "(c) OpenStreetMap contributors"
+and share any further derived databases under the same license.
+Attribution is displayed in the site footer per
+https://www.openstreetmap.org/copyright
+
+Curated location entries (the field-checked listings in landing.html)
+---------------------------------------------------------------------
+Community-collected by PLUG volunteers and released under ODbL 1.0 so the
+combined published dataset carries a single license.
