@@ -1,0 +1,683 @@
+/* ==========================================================================
+   PLUG Component Library
+   --------------------------------------------------------------------------
+   Reusable, framework-free building blocks for GitHub Pages static pages.
+   Depends on: styles/tokens.css (load it first).
+
+   Naming: block__element --modifier (BEM-lite). Mobile-first: base styles
+   target small screens; enhancements arrive at 40/48/64/80rem breakpoints.
+
+   Components: .icon  .skip-link  .site-header  .site-nav  .btn  .badge
+               .chip  .card  .amenity  .field  .table  .stamp  .overline
+               .highlight  .site-footer
+   ========================================================================== */
+
+/* ---- Base reset ---------------------------------------------------------- */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+  color: var(--ink-primary);
+  background: var(--surface-alt);
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  font-weight: var(--weight-bold);
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: var(--action);
+}
+
+a:hover {
+  color: var(--action-hover);
+}
+
+button {
+  font: inherit;
+  color: inherit;
+}
+
+/* Single, consistent focus treatment for every interactive element. */
+:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+/* ---- .container: centered content column -------------------------------- */
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--container-pad);
+}
+
+/* ---- .icon: inline SVG sprite reference ---------------------------------
+   <svg class="icon" aria-hidden="true"><use href="icons/sprite.svg#bolt"/></svg>
+   Icons inherit currentColor. Decorative icons get aria-hidden="true".    */
+.icon {
+  display: inline-block;
+  width: 1.25em;
+  height: 1.25em;
+  flex-shrink: 0;
+  vertical-align: -0.25em;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.icon--sm { width: 1em;    height: 1em;    }
+.icon--lg { width: 1.75em; height: 1.75em; }
+.icon--xl { width: 2.5em;  height: 2.5em;  }
+
+/* Amber-filled variant for the voltage/bolt motif. */
+.icon--volt {
+  stroke: var(--volt);
+  fill: var(--volt-bright);
+  stroke-width: 1.5;
+}
+
+/* ---- .overline: small-caps kicker above headings -------------------------- */
+.overline {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-bold);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+  color: var(--action);
+  margin-bottom: var(--space-2);
+}
+
+/* ---- .highlight: marker-pen emphasis --------------------------------------
+   Ink on --highlight measures 14.04:1 (AAA).                               */
+.highlight {
+  background: linear-gradient(104deg,
+    transparent 0.5%,
+    var(--highlight) 3%,
+    var(--highlight) 97%,
+    transparent 99.5%);
+  padding-inline: 0.15em;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+/* ---- .stamp: postage-stamp label ------------------------------------------ */
+.stamp {
+  display: inline-block;
+  padding: var(--space-2) var(--space-4);
+  border: 2px solid var(--ink-secondary);
+  outline: 2px solid var(--surface);
+  outline-offset: -5px;
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-bold);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--ink-secondary);
+  transform: rotate(-1.5deg);
+}
+
+/* ---- .skip-link: keyboard shortcut to main content ----------------------- */
+.skip-link {
+  position: absolute;
+  left: var(--space-4);
+  top: calc(-1 * var(--space-12));
+  z-index: 200;
+  padding: var(--space-2) var(--space-4);
+  background: var(--action);
+  color: var(--ink-on-invert);
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  transition: top var(--duration-fast) var(--ease);
+}
+
+.skip-link:focus {
+  top: var(--space-2);
+  color: var(--ink-on-invert);
+}
+
+/* ---- .site-header + .site-nav: sticky responsive navigation --------------
+   The amber top stripe is the site's "live wire" — a small handmade cue.  */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--surface);
+  border-top: 4px solid var(--volt-bright);
+  border-bottom: 1px solid var(--border-strong);
+}
+
+.site-header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  min-height: var(--header-height);
+}
+
+.site-header__brand {
+  display: inline-flex;
+  align-items: baseline;
+  gap: var(--space-2);
+  color: var(--ink-primary);
+  text-decoration: none;
+  font-family: var(--font-display);
+  font-weight: var(--weight-bold);
+  font-size: var(--text-lg);
+  letter-spacing: 0.01em;
+}
+
+.site-header__brand .icon {
+  color: var(--action);
+  align-self: center;
+}
+
+.site-header__brand small {
+  font-style: italic;
+  font-weight: var(--weight-regular);
+  font-size: var(--text-sm);
+  color: var(--ink-muted);
+}
+
+.site-header__toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  background: none;
+  border: 2px solid var(--ink-secondary);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+}
+
+.site-header__toggle .icon--close { display: none; }
+
+.site-header__toggle[aria-expanded="true"] .icon--open  { display: none; }
+.site-header__toggle[aria-expanded="true"] .icon--close { display: block; }
+
+/* Nav collapses under the header bar on small screens. */
+.site-nav {
+  display: none;
+  width: 100%;
+  flex-direction: column;
+  gap: var(--space-1);
+  padding-block: var(--space-2) var(--space-4);
+}
+
+.site-nav.is-open {
+  display: flex;
+}
+
+.site-nav a {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3);
+  border-radius: var(--radius-md);
+  color: var(--ink-secondary);
+  text-decoration: none;
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+}
+
+.site-nav a:hover {
+  color: var(--action-hover);
+  background: var(--surface-inset);
+}
+
+@media (min-width: 48rem) {
+  .site-header__toggle {
+    display: none;
+  }
+
+  .site-nav {
+    display: flex;
+    width: auto;
+    flex-direction: row;
+    gap: var(--space-2);
+    padding-block: 0;
+  }
+}
+
+/* ---- .btn: buttons ---------------------------------------------------------
+   Chunky 2px borders + a hard offset shadow on the primary: closer to a
+   letterpress hand-bill than a SaaS gradient pill.                          */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-5);
+  border: 2px solid transparent;
+  border-radius: var(--radius-md);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-bold);
+  text-decoration: none;
+  cursor: pointer;
+  transition: background var(--duration-fast) var(--ease),
+              box-shadow var(--duration-fast) var(--ease),
+              transform var(--duration-fast) var(--ease);
+}
+
+.btn--primary {
+  background: var(--action);
+  border-color: var(--ink-primary);
+  color: var(--ink-on-invert);
+  box-shadow: var(--shadow-press);
+}
+
+.btn--primary:hover {
+  background: var(--action-hover);
+  color: var(--ink-on-invert);
+}
+
+.btn--primary:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0 rgba(28, 25, 23, 0.9);
+}
+
+.btn--secondary {
+  background: var(--surface);
+  color: var(--ink-primary);
+  border-color: var(--ink-secondary);
+}
+
+.btn--secondary:hover {
+  background: var(--surface-inset);
+}
+
+.btn--block {
+  width: 100%;
+}
+
+@media (min-width: 40rem) {
+  .btn--block {
+    width: auto;
+  }
+}
+
+/* ---- .badge: status labels ----------------------------------------------
+   Tinted (default) for inline use; --solid for emphasis on white.         */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-sm);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+.badge--verified {
+  background: var(--status-verified-tint);
+  color: var(--status-verified-ink);
+  border: 1px solid var(--status-verified-ink);
+}
+
+.badge--community {
+  background: var(--status-community-tint);
+  color: var(--status-community-ink);
+  border: 1px solid var(--status-community-ink);
+}
+
+.badge--recheck {
+  background: var(--status-recheck-tint);
+  color: var(--status-recheck-ink);
+  border: 1px solid var(--status-recheck-ink);
+}
+
+.badge--solid.badge--verified  { background: var(--status-verified);  color: #fff; border-color: transparent; }
+.badge--solid.badge--community { background: var(--status-community); color: #fff; border-color: transparent; }
+.badge--solid.badge--recheck   { background: var(--status-recheck);   color: #fff; border-color: transparent; }
+
+/* ---- .chip: toggleable filter (a real <button> with aria-pressed) --------
+   Dashed border = "unpunched ticket"; pressing it inks the ticket in.     */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-3);
+  background: var(--surface);
+  border: 1.5px dashed var(--border-input);
+  border-radius: var(--radius-full);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  color: var(--ink-secondary);
+  cursor: pointer;
+  transition: background var(--duration-fast) var(--ease),
+              border-color var(--duration-fast) var(--ease);
+}
+
+.chip:hover {
+  background: var(--surface-inset);
+  border-color: var(--ink-secondary);
+}
+
+.chip[aria-pressed="true"] {
+  background: var(--ink-primary);
+  border: 1.5px solid var(--ink-primary);
+  color: var(--ink-on-invert);
+}
+
+/* ---- .card: content container --------------------------------------------
+   .card--interactive is for whole-card buttons (location list items).
+   Status modifiers hand-color the spine like tabbed folders in a binder.  */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  box-shadow: var(--shadow-sm);
+}
+
+.card--interactive {
+  display: block;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  border-left: 4px solid var(--border-strong);
+  transition: box-shadow var(--duration-fast) var(--ease),
+              transform var(--duration-fast) var(--ease);
+}
+
+.card--verified  { border-left-color: var(--status-verified); }
+.card--community { border-left-color: var(--status-community); }
+.card--recheck   { border-left-color: var(--status-recheck); }
+
+.card--interactive:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-1px);
+}
+
+.card--interactive[aria-current="true"] {
+  background: var(--action-tint);
+  border-color: var(--ink-secondary);
+}
+
+.card--verified[aria-current="true"]  { border-left-color: var(--status-verified); }
+.card--community[aria-current="true"] { border-left-color: var(--status-community); }
+.card--recheck[aria-current="true"]   { border-left-color: var(--status-recheck); }
+
+.card__header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-2) var(--space-3);
+  margin-bottom: var(--space-3);
+}
+
+.card__title {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: var(--weight-bold);
+  color: var(--ink-primary);
+}
+
+.card__meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-sm);
+  color: var(--ink-secondary);
+  margin-bottom: var(--space-2);
+}
+
+.card__meta .icon {
+  color: var(--ink-muted);
+}
+
+.card__footnote {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-top: var(--space-3);
+  padding-top: var(--space-3);
+  border-top: 1px dashed var(--border-strong);
+  font-size: var(--text-xs);
+  color: var(--ink-muted);
+}
+
+/* ---- .amenity: small descriptive tag ------------------------------------- */
+.amenity-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.amenity {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: var(--space-1) var(--space-2);
+  background: var(--surface-inset);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-size: var(--text-xs);
+  color: var(--ink-secondary);
+}
+
+/* ---- .field: form inputs -------------------------------------------------- */
+.field {
+  width: 100%;
+  padding: var(--space-3) var(--space-4);
+  border: 2px solid var(--border-input);
+  border-radius: var(--radius-md);
+  font: inherit;
+  font-size: var(--text-sm);
+  color: var(--ink-primary);
+  background: var(--surface);
+}
+
+.field::placeholder {
+  color: var(--ink-muted);
+}
+
+.field-label {
+  display: block;
+  margin-bottom: var(--space-3);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-bold);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+  color: var(--ink-secondary);
+}
+
+/* ---- .table: data tables --------------------------------------------------
+   On small screens .table--stack turns each row into a labelled block, so
+   nothing clips at the viewport edge. Give every td a data-label attribute:
+     <td data-label="Status">…</td>
+   From 40rem up it renders as a normal table. Wrap wide non-stacking tables
+   in .table-scroll instead.                                               */
+.table-scroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--text-sm);
+}
+
+.table th {
+  text-align: left;
+  padding: var(--space-3) var(--space-4);
+  background: var(--surface-inset);
+  border-bottom: 2px solid var(--ink-secondary);
+  font-weight: var(--weight-bold);
+  color: var(--ink-primary);
+}
+
+.table td {
+  padding: var(--space-3) var(--space-4);
+  border-bottom: 1px solid var(--border);
+  color: var(--ink-secondary);
+}
+
+@media (max-width: 39.98rem) {
+  .table--stack thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+  }
+
+  .table--stack tr {
+    display: block;
+    background: var(--surface);
+    border: 1px solid var(--border-strong);
+    border-radius: var(--radius-md);
+    padding: var(--space-2) var(--space-4);
+    margin-bottom: var(--space-3);
+  }
+
+  .table--stack td {
+    display: block;
+    padding: var(--space-2) 0;
+    border-bottom: 1px dashed var(--border);
+  }
+
+  .table--stack td:last-child {
+    border-bottom: none;
+  }
+
+  .table--stack td::before {
+    content: attr(data-label);
+    display: block;
+    font-size: var(--text-xs);
+    font-weight: var(--weight-bold);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-wide);
+    color: var(--ink-muted);
+    margin-bottom: var(--space-1);
+  }
+}
+
+/* ---- .site-footer: dark footer -------------------------------------------- */
+.site-footer {
+  background: var(--surface-invert);
+  border-top: 4px solid var(--volt-bright);
+  color: var(--ink-on-invert-soft);
+  padding-block: var(--space-12);
+  margin-top: var(--space-16);
+}
+
+.site-footer__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-8);
+}
+
+.site-footer__brand {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--ink-on-invert);
+  font-family: var(--font-display);
+  font-weight: var(--weight-bold);
+  font-size: var(--text-lg);
+}
+
+.site-footer__brand .icon {
+  color: var(--volt-bright);
+}
+
+.site-footer__heading {
+  font-size: var(--text-xs);
+  font-weight: var(--weight-bold);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+  color: var(--ink-on-invert-muted);
+  margin-bottom: var(--space-4);
+}
+
+.site-footer__links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.site-footer__links a {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--ink-on-invert-soft);
+  text-decoration: none;
+  font-size: var(--text-sm);
+}
+
+.site-footer__links a:hover {
+  color: var(--ink-on-invert);
+  text-decoration: underline;
+}
+
+.site-footer__legal {
+  margin-top: var(--space-10);
+  padding-top: var(--space-6);
+  border-top: 1px solid rgba(168, 162, 158, 0.3);
+  font-size: var(--text-xs);
+  color: var(--ink-on-invert-muted);
+  line-height: var(--leading-loose);
+}
+
+@media (min-width: 40rem) {
+  .site-footer__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 64rem) {
+  .site-footer__grid {
+    grid-template-columns: 2fr 1fr 1fr;
+  }
+}
+
+/* ---- Utilities ------------------------------------------------------------ */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.text-muted     { color: var(--ink-muted); }
+.text-secondary { color: var(--ink-secondary); }

@@ -4,1143 +4,551 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="OPEN SOURCES of power - Find free, reliable device charging in Oakland without giving up your privacy.">
+  <meta name="theme-color" content="#9a3412">
   <title>OPEN SOURCES of power - Free Device Charging Locator</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    :root {
-      --text-primary: #1f2937;
-      --text-secondary: #6b7280;
-      --text-light: #9ca3af;
-      --bg-white: #ffffff;
-      --bg-light: #f9fafb;
-      --border: #e5e7eb;
-      --verified: #059669;
-      --community: #d97706;
-      --recheck: #dc2626;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-      color: var(--text-primary);
-      line-height: 1.5;
-      background: var(--bg-light);
-    }
-
-    /* Header Navigation */
-    header {
-      background: var(--bg-white);
-      border-bottom: 1px solid var(--border);
-      padding: 0.75rem 1.5rem;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-
-    .header-wrapper {
-      max-width: 1400px;
-      margin: 0 auto;
-    }
-
-    .header-top {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 2rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .logo {
-      display: flex;
-      align-items: baseline;
-      gap: 0.25rem;
-      text-decoration: none;
-      color: var(--text-primary);
-      font-weight: 700;
-      font-size: 0.9rem;
-      letter-spacing: 0.05em;
-    }
-
-    .logo small {
-      font-size: 0.8rem;
-      color: var(--text-secondary);
-      font-weight: 400;
-    }
-
-    .location-indicator {
-      color: var(--text-secondary);
-      font-size: 0.9rem;
-    }
-
-    nav {
-      display: flex;
-      gap: 3rem;
-      align-items: center;
-    }
-
-    nav a {
-      color: var(--text-secondary);
-      text-decoration: none;
-      font-size: 0.9rem;
-      transition: color 0.2s;
-    }
-
-    nav a:hover {
-      color: var(--text-primary);
-    }
-
-    /* Hero Section */
-    .hero {
-      background: var(--bg-white);
-      padding: 2.5rem 1.5rem;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .hero-content {
-      max-width: 1400px;
-      margin: 0 auto;
-    }
-
-    .hero-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      gap: 2rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .hero-left h1 {
-      font-size: 2.5rem;
-      font-weight: 700;
-      line-height: 1.2;
-      margin-bottom: 1rem;
-      color: var(--text-primary);
-    }
-
-    .hero-left p {
-      color: var(--text-secondary);
-      font-size: 1rem;
-      max-width: 600px;
-      line-height: 1.6;
-    }
-
-    .privacy-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      background: #fef3c7;
-      border: 1px solid #fcd34d;
-      padding: 0.5rem 1rem;
-      border-radius: 0.25rem;
-      font-size: 0.85rem;
-      color: var(--text-primary);
-      margin-bottom: 1rem;
-    }
-
-    .privacy-features {
-      display: flex;
-      gap: 3rem;
-      font-size: 0.9rem;
-      color: var(--text-secondary);
-    }
-
-    .privacy-features strong {
-      display: block;
-      color: var(--text-primary);
-      margin-bottom: 0.25rem;
-    }
-
-    .hero-right {
-      flex-shrink: 0;
-    }
-
-    .region-badge {
-      display: inline-block;
-      background: var(--bg-light);
-      border: 1px solid var(--border);
-      padding: 0.5rem 1rem;
-      border-radius: 0.25rem;
-      font-size: 0.85rem;
-      color: var(--text-secondary);
-      margin-bottom: 1rem;
-    }
-
-    .power-indicator {
-      font-size: 1.5rem;
-      margin-bottom: 0.5rem;
-      letter-spacing: 0.15em;
-    }
-
-    .access-label {
-      font-size: 0.8rem;
-      color: var(--text-light);
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-
-    /* Main Layout */
-    .main-container {
-      max-width: 1400px;
-      margin: 0 auto;
-      padding: 1.5rem;
-      display: grid;
-      grid-template-columns: 1fr 350px;
-      gap: 1.5rem;
-    }
-
-    .locations-section h2 {
-      font-size: 1.1rem;
-      font-weight: 600;
-      color: var(--text-primary);
-      margin-bottom: 1rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .sort-dropdown {
-      background: var(--bg-white);
-      border: 1px solid var(--border);
-      padding: 0.375rem 0.75rem;
-      border-radius: 0.25rem;
-      font-size: 0.85rem;
-      cursor: pointer;
-      color: var(--text-secondary);
-    }
-
-    .locations-count {
-      background: var(--bg-white);
-      border: 1px solid var(--border);
-      border-radius: 0.25rem;
-      padding: 0.75rem;
-      margin-bottom: 1rem;
-      font-size: 0.9rem;
-      color: var(--text-secondary);
-    }
-
-    /* Location List */
-    .locations-list {
-      display: flex;
-      flex-direction: column;
-      gap: 0.75rem;
-    }
-
-    .location-item {
-      background: var(--bg-white);
-      border: 1px solid var(--border);
-      border-radius: 0.375rem;
-      padding: 1rem;
-      cursor: pointer;
-      transition: all 0.2s;
-      border-left: 3px solid transparent;
-    }
-
-    .location-item:hover {
-      border-color: #3b82f6;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-    }
-
-    .location-item.active {
-      border-left-color: #3b82f6;
-      background: #eff6ff;
-    }
-
-    .location-item-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      margin-bottom: 0.5rem;
-    }
-
-    .location-item-title {
-      font-weight: 600;
-      color: var(--text-primary);
-      font-size: 0.95rem;
-    }
-
-    .location-badge {
-      display: inline-block;
-      padding: 0.25rem 0.625rem;
-      border-radius: 0.25rem;
-      font-size: 0.7rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      color: white;
-    }
-
-    .location-badge.verified {
-      background: var(--verified);
-    }
-
-    .location-badge.community {
-      background: var(--community);
-    }
-
-    .location-badge.recheck {
-      background: var(--recheck);
-    }
-
-    .location-item-address {
-      color: var(--text-secondary);
-      font-size: 0.85rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .location-item-hours {
-      font-weight: 500;
-      font-size: 0.85rem;
-      color: var(--text-primary);
-      margin-bottom: 0.5rem;
-    }
-
-    .location-item-amenities {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.4rem;
-    }
-
-    .amenity-badge {
-      display: inline-block;
-      background: var(--bg-light);
-      border: 1px solid var(--border);
-      padding: 0.25rem 0.5rem;
-      border-radius: 0.2rem;
-      font-size: 0.75rem;
-      color: var(--text-secondary);
-    }
-
-    .location-item-verified {
-      font-size: 0.75rem;
-      color: var(--text-light);
-      margin-top: 0.5rem;
-    }
-
-    /* Detail Panel */
-    .detail-panel {
-      background: var(--bg-white);
-      border: 1px solid var(--border);
-      border-radius: 0.375rem;
-      padding: 1.5rem;
-      position: sticky;
-      top: 80px;
-      height: fit-content;
-      display: none;
-    }
-
-    .detail-panel.active {
-      display: block;
-    }
-
-    .detail-label {
-      font-size: 0.75rem;
-      color: var(--text-light);
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      margin-bottom: 0.5rem;
-    }
-
-    .detail-panel h3 {
-      font-size: 1.25rem;
-      font-weight: 700;
-      color: var(--text-primary);
-      margin-bottom: 1rem;
-    }
-
-    .detail-description {
-      font-size: 0.9rem;
-      color: var(--text-secondary);
-      margin-bottom: 1.5rem;
-      line-height: 1.6;
-    }
-
-    .detail-section {
-      margin-bottom: 1.5rem;
-    }
-
-    .detail-section-title {
-      font-weight: 600;
-      font-size: 0.85rem;
-      color: var(--text-primary);
-      margin-bottom: 0.5rem;
-      text-transform: capitalize;
-    }
-
-    .detail-section-content {
-      font-size: 0.9rem;
-      color: var(--text-secondary);
-      line-height: 1.5;
-    }
-
-    .detail-amenities {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-    }
-
-    .detail-amenity {
-      display: inline-block;
-      background: var(--bg-light);
-      border: 1px solid var(--border);
-      padding: 0.375rem 0.75rem;
-      border-radius: 0.25rem;
-      font-size: 0.8rem;
-      color: var(--text-secondary);
-    }
-
-    /* Search and Filters */
-    .search-section {
-      background: var(--bg-white);
-      border-bottom: 1px solid var(--border);
-      padding: 1.5rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .search-container {
-      max-width: 1400px;
-      margin: 0 auto;
-    }
-
-    .search-bar {
-      display: flex;
-      gap: 1rem;
-      margin-bottom: 1rem;
-      align-items: center;
-    }
-
-    .search-input {
-      flex: 1;
-      padding: 0.75rem;
-      border: 1px solid var(--border);
-      border-radius: 0.375rem;
-      font-size: 0.95rem;
-      font-family: inherit;
-      color: var(--text-primary);
-    }
-
-    .search-input::placeholder {
-      color: var(--text-light);
-    }
-
-    .search-button {
-      padding: 0.75rem 1.5rem;
-      background: #3b82f6;
-      color: white;
-      border: none;
-      border-radius: 0.375rem;
-      cursor: pointer;
-      font-weight: 600;
-      transition: background 0.2s;
-    }
-
-    .search-button:hover {
-      background: #2563eb;
-    }
-
-    .location-button {
-      padding: 0.75rem 1.5rem;
-      background: var(--bg-light);
-      color: var(--text-primary);
-      border: 1px solid var(--border);
-      border-radius: 0.375rem;
-      cursor: pointer;
-      font-weight: 600;
-      transition: all 0.2s;
-    }
-
-    .location-button:hover {
-      background: var(--border);
-    }
-
-    .filters {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-    }
-
-    .filter-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.5rem 0.75rem;
-      background: var(--bg-light);
-      border: 1px solid var(--border);
-      border-radius: 0.25rem;
-      cursor: pointer;
-      font-size: 0.85rem;
-      transition: all 0.2s;
-    }
-
-    .filter-badge:hover {
-      background: var(--border);
-    }
-
-    .filter-badge.active {
-      background: #3b82f6;
-      color: white;
-      border-color: #3b82f6;
-    }
-
-    .filter-label {
-      font-size: 0.8rem;
-      color: var(--text-secondary);
-      font-weight: 600;
-      text-transform: uppercase;
-      margin-bottom: 0.5rem;
-      display: block;
-    }
-
-    /* Privacy & About Sections */
-    .info-section {
-      background: var(--bg-white);
-      border-bottom: 1px solid var(--border);
-      padding: 3rem 1.5rem;
-    }
-
-    .info-content {
-      max-width: 1400px;
-      margin: 0 auto;
-    }
-
-    .info-section h2 {
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: var(--text-primary);
-      margin-bottom: 1.5rem;
-    }
-
-    .info-section p {
-      color: var(--text-secondary);
-      font-size: 0.95rem;
-      line-height: 1.7;
-      margin-bottom: 1rem;
-      max-width: 800px;
-    }
-
-    .info-section strong {
-      color: var(--text-primary);
-    }
-
-    .privacy-list {
-      list-style: none;
-      padding: 0;
-      margin: 1rem 0;
-    }
-
-    .privacy-list li {
-      padding: 0.75rem 0;
-      color: var(--text-secondary);
-      font-size: 0.95rem;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .privacy-list li:last-child {
-      border-bottom: none;
-    }
-
-    .privacy-list strong {
-      color: var(--text-primary);
-      display: block;
-      margin-bottom: 0.25rem;
-    }
-
-    .verification-table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 1.5rem 0;
-      font-size: 0.9rem;
-    }
-
-    .verification-table th {
-      text-align: left;
-      padding: 0.75rem;
-      background: var(--bg-light);
-      border-bottom: 1px solid var(--border);
-      font-weight: 600;
-      color: var(--text-primary);
-    }
-
-    .verification-table td {
-      padding: 0.75rem;
-      border-bottom: 1px solid var(--border);
-      color: var(--text-secondary);
-    }
-
-    /* Footer */
-    footer {
-      background: var(--bg-light);
-      border-top: 1px solid var(--border);
-      padding: 2rem 1.5rem;
-      text-align: center;
-      font-size: 0.85rem;
-      color: var(--text-secondary);
-    }
-
-    .footer-content {
-      max-width: 1400px;
-      margin: 0 auto;
-    }
-
-    footer a {
-      color: #3b82f6;
-      text-decoration: none;
-    }
-
-    footer a:hover {
-      text-decoration: underline;
-    }
-
-    /* Responsive */
-    @media (max-width: 1024px) {
-      .main-container {
-        grid-template-columns: 1fr;
-      }
-
-      .detail-panel {
-        position: static;
-      }
-
-      .hero-header {
-        flex-direction: column;
-      }
-
-      nav {
-        gap: 1.5rem;
-      }
-
-      .privacy-features {
-        flex-direction: column;
-        gap: 1rem;
-      }
-    }
-
-    @media (max-width: 640px) {
-      .header-top {
-        flex-direction: column;
-        gap: 1rem;
-        margin-bottom: 0;
-      }
-
-      nav {
-        width: 100%;
-        gap: 1rem;
-        flex-direction: column;
-      }
-
-      nav a {
-        display: block;
-        padding: 0.5rem 0;
-      }
-
-      .hero-left h1 {
-        font-size: 1.75rem;
-      }
-
-      .hero-left p {
-        font-size: 0.9rem;
-      }
-
-      .privacy-features {
-        flex-direction: column;
-        gap: 0.75rem;
-        font-size: 0.85rem;
-      }
-
-      .locations-section h2 {
-        flex-direction: column;
-        gap: 0.5rem;
-      }
-
-      .main-container {
-        padding: 1rem;
-        gap: 1rem;
-      }
-
-      .location-item {
-        padding: 0.75rem;
-      }
-
-      .detail-panel {
-        top: 60px;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="styles/tokens.css">
+  <link rel="stylesheet" href="styles/components.css">
+  <link rel="stylesheet" href="styles/landing.css">
 </head>
 <body>
-  <!-- Header -->
-  <header>
-    <div class="header-wrapper">
-      <div class="header-top">
-        <a href="#" class="logo">
-          <span>📍</span>
-          <span>OPEN SOURCES</span>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- Component: .site-header -->
+  <header class="site-header">
+    <div class="container">
+      <div class="site-header__inner">
+        <a href="#" class="site-header__brand">
+          <svg class="icon" aria-hidden="true"><use href="icons/sprite.svg#plug"/></svg>
+          <span>Open Sources</span>
           <small>of power</small>
         </a>
-        <div class="location-indicator">📍 Oakland, California</div>
-        <nav>
-          <a href="#how-it-works">How it works</a>
-          <a href="#suggest">+ Suggest a place</a>
+        <button class="site-header__toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Toggle navigation">
+          <svg class="icon icon--open" aria-hidden="true"><use href="icons/sprite.svg#menu"/></svg>
+          <svg class="icon icon--close" aria-hidden="true"><use href="icons/sprite.svg#close"/></svg>
+        </button>
+        <nav class="site-nav" id="site-nav" aria-label="Primary">
+          <a href="#locations">
+            <svg class="icon icon--sm" aria-hidden="true"><use href="icons/sprite.svg#pin"/></svg>
+            Oakland, California
+          </a>
+          <a href="#how-it-works">
+            <svg class="icon icon--sm" aria-hidden="true"><use href="icons/sprite.svg#shield-check"/></svg>
+            How it works
+          </a>
+          <a href="#suggest">
+            <svg class="icon icon--sm" aria-hidden="true"><use href="icons/sprite.svg#users"/></svg>
+            Suggest a place
+          </a>
         </nav>
       </div>
     </div>
   </header>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="hero-content">
-      <div class="hero-header">
-        <div class="hero-left">
-          <h1>Power when<br>you need it.</h1>
-          <p>Find a reliable place to charge your phone or essential device—without an account or giving up your privacy.</p>
-          <div class="privacy-badge">
-            🔒 <strong>Privacy is part of the service.</strong>
-          </div>
-          <div class="privacy-features">
-            <div>
-              <strong>No sign-in</strong>
-              Start immediately
+  <main id="main">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero__grid">
+          <div>
+            <span class="overline">A community field guide &middot; Oakland, CA</span>
+            <h1>Power when<br><span class="highlight">you need it.</span></h1>
+            <p class="hero__lede">Find a reliable place to charge your phone or essential device&mdash;without an account or giving up your privacy. Every spot on this list was walked to and checked by a neighbor.</p>
+            <p class="hero__privacy-badge">
+              <svg class="icon" aria-hidden="true"><use href="icons/sprite.svg#lock"/></svg>
+              <strong>Privacy is part of the service.</strong>
+            </p>
+            <div class="hero__features">
+              <div>
+                <strong>
+                  <svg class="icon icon--sm" aria-hidden="true"><use href="icons/sprite.svg#check-circle"/></svg>
+                  No sign-in
+                </strong>
+                Start immediately
+              </div>
+              <div>
+                <strong>
+                  <svg class="icon icon--sm" aria-hidden="true"><use href="icons/sprite.svg#pin"/></svg>
+                  No location history
+                </strong>
+                Nothing tracked
+              </div>
+              <div>
+                <strong>
+                  <svg class="icon icon--sm" aria-hidden="true"><use href="icons/sprite.svg#shield-check"/></svg>
+                  No tracking
+                </strong>
+                Your data stays yours
+              </div>
             </div>
+          </div>
+          <div class="hero__aside">
+            <div class="stamp">San Francisco Bay</div>
             <div>
-              <strong>No location history</strong>
-              Nothing tracked
+              <div class="hero__power" role="img" aria-label="Public charging access rating: 5 out of 5">
+                <svg class="icon icon--volt" aria-hidden="true"><use href="icons/sprite.svg#bolt"/></svg>
+                <svg class="icon icon--volt" aria-hidden="true"><use href="icons/sprite.svg#bolt"/></svg>
+                <svg class="icon icon--volt" aria-hidden="true"><use href="icons/sprite.svg#bolt"/></svg>
+                <svg class="icon icon--volt" aria-hidden="true"><use href="icons/sprite.svg#bolt"/></svg>
+                <svg class="icon icon--volt" aria-hidden="true"><use href="icons/sprite.svg#bolt"/></svg>
+              </div>
+              <div class="hero__access-label">Public charging access</div>
             </div>
-            <div>
-              <strong>No tracking</strong>
-              Your data stays yours
-            </div>
           </div>
-        </div>
-        <div class="hero-right">
-          <div class="region-badge">SAN FRANCISCO BAY</div>
-          <div class="power-indicator">⚡⚡⚡⚡⚡</div>
-          <div class="access-label">Public charging access</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Search & Filters Section -->
-  <section class="search-section">
-    <div class="search-container">
-      <div class="search-bar">
-        <input type="text" class="search-input" id="searchInput" placeholder="Search by location, address, or landmark...">
-        <button class="search-button" onclick="performSearch()">Search</button>
-        <button class="location-button" onclick="useMyLocation()" title="Use your device location">📍 My location</button>
-      </div>
-      <div>
-        <label class="filter-label">Quick filters</label>
-        <div class="filters">
-          <span class="filter-badge" onclick="toggleFilter(this)">🕐 Open now</span>
-          <span class="filter-badge" onclick="toggleFilter(this)">💰 Free</span>
-          <span class="filter-badge" onclick="toggleFilter(this)">🏠 Indoor</span>
-          <span class="filter-badge" onclick="toggleFilter(this)">🌳 Outdoor</span>
-          <span class="filter-badge" onclick="toggleFilter(this)">♿ ADA accessible</span>
-          <span class="filter-badge" onclick="toggleFilter(this)">🔌 USB charging</span>
-          <span class="filter-badge" onclick="toggleFilter(this)">⚡ Wall outlet</span>
-          <span class="filter-badge" onclick="toggleFilter(this)">✓ Recently verified</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Main Content -->
-  <div class="main-container">
-    <!-- Locations Section -->
-    <section class="locations-section">
-      <h2>
-        <span>📍 Nearby power</span>
-      </h2>
-
-      <div class="locations-count">
-        <strong>4 places found</strong>
-      </div>
-
-      <div class="locations-list">
-        <!-- Oakland Main Library -->
-        <div class="location-item active" onclick="showDetail(0)">
-          <div class="location-item-header">
-            <div class="location-item-title">Oakland Main Library</div>
-            <span class="location-badge verified">Verified</span>
-          </div>
-          <div class="location-item-address">125 14th St · Downtown</div>
-          <div class="location-item-hours"><strong>Open today · 10am–8pm</strong></div>
-          <div class="location-item-amenities">
-            <span class="amenity-badge">Indoor outlets</span>
-            <span class="amenity-badge">Free</span>
-            <span class="amenity-badge">Accessible</span>
-            <span class="amenity-badge">Restrooms</span>
-          </div>
-          <div class="location-item-verified">● Verified · Checked Jul 18</div>
-        </div>
-
-        <!-- 81st Avenue Library -->
-        <div class="location-item" onclick="showDetail(1)">
-          <div class="location-item-header">
-            <div class="location-item-title">81st Avenue Library</div>
-            <span class="location-badge verified">Verified</span>
-          </div>
-          <div class="location-item-address">1021 81st Ave · East Oakland</div>
-          <div class="location-item-hours"><strong>Open today · 10am–5:30pm</strong></div>
-          <div class="location-item-amenities">
-            <span class="amenity-badge">Indoor outlets</span>
-            <span class="amenity-badge">Free</span>
-            <span class="amenity-badge">Accessible</span>
-            <span class="amenity-badge">Wi-Fi</span>
-          </div>
-          <div class="location-item-verified">● Verified · Checked Jul 16</div>
-        </div>
-
-        <!-- West Oakland Library -->
-        <div class="location-item" onclick="showDetail(2)">
-          <div class="location-item-header">
-            <div class="location-item-title">West Oakland Library</div>
-            <span class="location-badge community">Community report</span>
-          </div>
-          <div class="location-item-address">1801 Adeline St · West Oakland</div>
-          <div class="location-item-hours"><strong>Open today · 10am–5:30pm</strong></div>
-          <div class="location-item-amenities">
-            <span class="amenity-badge">Indoor outlets</span>
-            <span class="amenity-badge">Free</span>
-            <span class="amenity-badge">Indoors</span>
-            <span class="amenity-badge">Wi-Fi</span>
-          </div>
-          <div class="location-item-verified">● Community report · Checked Jul 12</div>
-        </div>
-
-        <!-- Lake Merritt Station -->
-        <div class="location-item" onclick="showDetail(3)">
-          <div class="location-item-header">
-            <div class="location-item-title">Lake Merritt Station</div>
-            <span class="location-badge recheck">Needs recheck</span>
-          </div>
-          <div class="location-item-address">800 Madison St · Lake Merritt</div>
-          <div class="location-item-hours"><strong>Transit hours</strong></div>
-          <div class="location-item-amenities">
-            <span class="amenity-badge">USB charging</span>
-            <span class="amenity-badge">Transit</span>
-            <span class="amenity-badge">Public area</span>
-          </div>
-          <div class="location-item-verified">● Needs recheck · Checked Jun 03</div>
         </div>
       </div>
     </section>
 
-    <!-- Detail Panel -->
-    <aside class="detail-panel active" id="detailPanel">
-      <div class="detail-label">Selected location</div>
-      <h3 id="detailTitle">Oakland Main Library</h3>
-      <div class="detail-description" id="detailDescription">
-        Outlets available near reading tables. Library rules apply.
+    <!-- Search & filters -->
+    <section class="search-section" aria-label="Search and filters">
+      <div class="container">
+        <form class="search-bar" id="searchForm" role="search">
+          <label class="visually-hidden" for="searchInput">Search by location, address, or landmark</label>
+          <input type="search" class="field" id="searchInput" placeholder="Search by location, address, or landmark...">
+          <div class="search-bar__actions">
+            <button class="btn btn--primary" type="submit">
+              <svg class="icon icon--sm" aria-hidden="true"><use href="icons/sprite.svg#search"/></svg>
+              Search
+            </button>
+            <button class="btn btn--secondary" type="button" id="locateButton" title="Use your device location">
+              <svg class="icon icon--sm" aria-hidden="true"><use href="icons/sprite.svg#locate"/></svg>
+              My location
+            </button>
+          </div>
+        </form>
+        <fieldset style="border:none">
+          <legend class="field-label">Quick filters</legend>
+          <div class="filters" id="filters">
+            <button class="chip" type="button" aria-pressed="false" data-filter="open">
+              <svg class="icon icon--sm" aria-hidden="true"><use href="icons/sprite.svg#clock"/></svg>
+              Open now
+            </button>
+            <button class="chip" type="button" aria-pressed="false" data-filter="free">
+              <svg class="icon icon--sm" aria-hidden="true"><use href="icons/sprite.svg#free"/></svg>
+              Free
+            </button>
+            <button class="chip" type="button" aria-pressed="false" data-filter="indoor">
+              <svg class="icon icon--sm" aria-hidden="true"><use href="icons/sprite.svg#home"/></svg>
+              Indoor
+            </button>
+            <button class="chip" type="button" aria-pressed="false" data-filter="outdoor">
+              <svg class="icon icon--sm" aria-hidden="true"><use href="icons/sprite.svg#tree"/></svg>
+              Outdoor
+            </button>
+            <button class="chip" type="button" aria-pressed="false" data-filter="accessible">
+              <svg class="icon icon--sm" aria-hidden="true"><use href="icons/sprite.svg#accessibility"/></svg>
+              ADA accessible
+            </button>
+            <button class="chip" type="button" aria-pressed="false" data-filter="usb">
+              <svg class="icon icon--sm" aria-hidden="true"><use href="icons/sprite.svg#usb"/></svg>
+              USB charging
+            </button>
+            <button class="chip" type="button" aria-pressed="false" data-filter="outlet">
+              <svg class="icon icon--sm" aria-hidden="true"><use href="icons/sprite.svg#bolt"/></svg>
+              Wall outlet
+            </button>
+            <button class="chip" type="button" aria-pressed="false" data-filter="verified">
+              <svg class="icon icon--sm" aria-hidden="true"><use href="icons/sprite.svg#check"/></svg>
+              Recently verified
+            </button>
+          </div>
+        </fieldset>
       </div>
+    </section>
 
-      <div class="detail-section">
-        <div class="detail-section-title">Access</div>
-        <div class="detail-amenities" id="detailAccess">
-          <span class="detail-amenity">Indoor outlets</span>
+    <!-- Locations + detail panel -->
+    <div class="container main-layout" id="locations">
+      <section class="locations-section" aria-label="Nearby charging locations">
+        <h2 class="locations-section__header">
+          <svg class="icon" aria-hidden="true"><use href="icons/sprite.svg#pin"/></svg>
+          Nearby power
+        </h2>
+
+        <p class="locations-count card" id="locationsCount" aria-live="polite">
+          <strong>4 places found</strong>
+        </p>
+
+        <div class="locations-list" id="locationsList">
+          <button class="card card--interactive card--verified" type="button" aria-current="true" data-index="0">
+            <span class="card__header">
+              <span class="card__title">Oakland Main Library</span>
+              <span class="badge badge--verified">
+                <svg class="icon icon--sm" aria-hidden="true"><use href="icons/sprite.svg#check-circle"/></svg>
+                Verified
+              </span>
+            </span>
+            <span class="card__meta">
+              <svg class="icon icon--sm" aria-hidden="true"><use href="icons/sprite.svg#pin"/></svg>
+              125 14th St &middot; Downtown
+            </span>
+            <span class="card__meta">
+              <svg class="icon icon--sm" aria-hidden="true"><use href="icons/sprite.svg#clock"/></svg>
+              <strong>Open today &middot; 10am&ndash;8pm</strong>
+            </span>
+            <span class="amenity-list">
+              <span class="amenity">Indoor outlets</span>
+              <span class="amenity">Free</span>
+              <span class="amenity">Accessible</span>
+              <span class="amenity">Restrooms</span>
+            </span>
+            <span class="card__footnote">
+              <svg class="icon icon--sm" aria-hidden="true"><use href="icons/sprite.svg#check"/></svg>
+              Verified &middot; Checked Jul 18
+            </span>
+          </button>
+
+          <button class="card card--interactive card--verified" type="button" aria-current="false" data-index="1">
+            <span class="card__header">
+              <span class="card__title">81st Avenue Library</span>
+              <span class="badge badge--verified">
+                <svg class="icon icon--sm" aria-hidden="true"><use href="icons/sprite.svg#check-circle"/></svg>
+                Verified
+              </span>
+            </span>
+            <span class="card__meta">
+              <svg class="icon icon--sm" aria-hidden="true"><use href="icons/sprite.svg#pin"/></svg>
+              1021 81st Ave &middot; East Oakland
+            </span>
+            <span class="card__meta">
+              <svg class="icon icon--sm" aria-hidden="true"><use href="icons/sprite.svg#clock"/></svg>
+              <strong>Open today &middot; 10am&ndash;5:30pm</strong>
+            </span>
+            <span class="amenity-list">
+              <span class="amenity">Indoor outlets</span>
+              <span class="amenity">Free</span>
+              <span class="amenity">Accessible</span>
+              <span class="amenity">Wi-Fi</span>
+            </span>
+            <span class="card__footnote">
+              <svg class="icon icon--sm" aria-hidden="true"><use href="icons/sprite.svg#check"/></svg>
+              Verified &middot; Checked Jul 16
+            </span>
+          </button>
+
+          <button class="card card--interactive card--community" type="button" aria-current="false" data-index="2">
+            <span class="card__header">
+              <span class="card__title">West Oakland Library</span>
+              <span class="badge badge--community">
+                <svg class="icon icon--sm" aria-hidden="true"><use href="icons/sprite.svg#users"/></svg>
+                Community report
+              </span>
+            </span>
+            <span class="card__meta">
+              <svg class="icon icon--sm" aria-hidden="true"><use href="icons/sprite.svg#pin"/></svg>
+              1801 Adeline St &middot; West Oakland
+            </span>
+            <span class="card__meta">
+              <svg class="icon icon--sm" aria-hidden="true"><use href="icons/sprite.svg#clock"/></svg>
+              <strong>Open today &middot; 10am&ndash;5:30pm</strong>
+            </span>
+            <span class="amenity-list">
+              <span class="amenity">Indoor outlets</span>
+              <span class="amenity">Free</span>
+              <span class="amenity">Indoors</span>
+              <span class="amenity">Wi-Fi</span>
+            </span>
+            <span class="card__footnote">
+              <svg class="icon icon--sm" aria-hidden="true"><use href="icons/sprite.svg#users"/></svg>
+              Community report &middot; Checked Jul 12
+            </span>
+          </button>
+
+          <button class="card card--interactive card--recheck" type="button" aria-current="false" data-index="3">
+            <span class="card__header">
+              <span class="card__title">Lake Merritt Station</span>
+              <span class="badge badge--recheck">
+                <svg class="icon icon--sm" aria-hidden="true"><use href="icons/sprite.svg#alert"/></svg>
+                Needs recheck
+              </span>
+            </span>
+            <span class="card__meta">
+              <svg class="icon icon--sm" aria-hidden="true"><use href="icons/sprite.svg#pin"/></svg>
+              800 Madison St &middot; Lake Merritt
+            </span>
+            <span class="card__meta">
+              <svg class="icon icon--sm" aria-hidden="true"><use href="icons/sprite.svg#clock"/></svg>
+              <strong>Transit hours</strong>
+            </span>
+            <span class="amenity-list">
+              <span class="amenity">USB charging</span>
+              <span class="amenity">Transit</span>
+              <span class="amenity">Public area</span>
+            </span>
+            <span class="card__footnote">
+              <svg class="icon icon--sm" aria-hidden="true"><use href="icons/sprite.svg#alert"/></svg>
+              Needs recheck &middot; Checked Jun 03
+            </span>
+          </button>
         </div>
-      </div>
+      </section>
 
-      <div class="detail-section">
-        <div class="detail-section-title">Hours</div>
-        <div class="detail-section-content" id="detailHours">
-          Open today, 10am–8pm
+      <!-- Detail panel -->
+      <aside class="card detail-panel" id="detailPanel" aria-label="Selected location details">
+        <p class="overline">Selected location</p>
+        <h3 id="detailTitle">Oakland Main Library</h3>
+        <p class="detail-panel__description" id="detailDescription">
+          Outlets available near reading tables. Library rules apply.
+        </p>
+
+        <div class="detail-panel__section">
+          <h4 class="detail-panel__section-title">
+            <svg class="icon icon--sm" aria-hidden="true"><use href="icons/sprite.svg#bolt"/></svg>
+            Access
+          </h4>
+          <div class="amenity-list" id="detailAccess">
+            <span class="amenity">Indoor outlets</span>
+          </div>
         </div>
-      </div>
 
-      <div class="detail-section">
-        <div class="detail-section-title">Evidence</div>
-        <div class="detail-section-content" id="detailEvidence">
-          Verified · Jul 18
+        <div class="detail-panel__section">
+          <h4 class="detail-panel__section-title">
+            <svg class="icon icon--sm" aria-hidden="true"><use href="icons/sprite.svg#clock"/></svg>
+            Hours
+          </h4>
+          <p class="detail-panel__section-content" id="detailHours">
+            Open today, 10am&ndash;8pm
+          </p>
         </div>
+
+        <div class="detail-panel__section">
+          <h4 class="detail-panel__section-title">
+            <svg class="icon icon--sm" aria-hidden="true"><use href="icons/sprite.svg#shield-check"/></svg>
+            Evidence
+          </h4>
+          <p class="detail-panel__section-content" id="detailEvidence">
+            Verified &middot; Jul 18
+          </p>
+        </div>
+
+        <div class="detail-panel__note">
+          <strong>Open Sources of Power</strong>
+          <p>A privacy-first public utility project built on PLUG.</p>
+          <p>Location details are community-maintained. Confirm hours before traveling.</p>
+        </div>
+      </aside>
+    </div>
+
+    <!-- How verification works -->
+    <section class="info-section" id="how-it-works">
+      <div class="container">
+        <span class="overline">Trust, on foot</span>
+        <h2>
+          <svg class="icon" aria-hidden="true"><use href="icons/sprite.svg#shield-check"/></svg>
+          How verification works
+        </h2>
+        <p>Nobody scrapes this list from an API. Every charging location in this directory has been checked one of these ways:</p>
+        <table class="table table--stack">
+          <thead>
+            <tr>
+              <th scope="col">Status</th>
+              <th scope="col">What it means</th>
+              <th scope="col">How often we check</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td data-label="Status"><span class="badge badge--solid badge--verified">Verified</span></td>
+              <td data-label="What it means">Physically checked by a trusted contributor</td>
+              <td data-label="How often we check">Quarterly</td>
+            </tr>
+            <tr>
+              <td data-label="Status"><span class="badge badge--solid badge--community">Community Report</span></td>
+              <td data-label="What it means">Submitted by a community member, awaiting confirmation</td>
+              <td data-label="How often we check">Within 30 days</td>
+            </tr>
+            <tr>
+              <td data-label="Status"><span class="badge badge--solid badge--recheck">Needs Recheck</span></td>
+              <td data-label="What it means">Last verified over 90 days ago</td>
+              <td data-label="How often we check">Pending update</td>
+            </tr>
+          </tbody>
+        </table>
+        <p><strong>Why this matters:</strong> Public facilities change their policies, hours, and availability. We work with the community to keep information current and accurate.</p>
       </div>
+    </section>
 
-      <hr style="border: none; border-top: 1px solid var(--border); margin: 1.5rem 0;">
+    <!-- About -->
+    <section class="info-section" id="suggest">
+      <div class="container">
+        <span class="overline">Why we made this</span>
+        <h2>
+          <svg class="icon" aria-hidden="true"><use href="icons/sprite.svg#plug"/></svg>
+          About Open Sources of Power
+        </h2>
+        <p>Device charging access is essential for safety, employment, and dignity. For people experiencing homelessness, a dead phone means lost contact with shelters, employers, and emergency services. Yet reliable information about where to charge is scattered, paywalled, or sold to data brokers.</p>
 
-      <div style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.6;">
-        <strong>OPEN SOURCES OF POWER</strong>
-        <p style="margin-top: 0.75rem;">A privacy-first public utility project built on PLUG.</p>
-        <p>Location details are community-maintained. Confirm hours before traveling.</p>
+        <p><strong>We built this tool to:</strong></p>
+        <ul class="info-list">
+          <li>
+            <svg class="icon icon--sm" aria-hidden="true"><use href="icons/sprite.svg#users"/></svg>
+            <span>
+              <strong>Serve vulnerable populations</strong>
+              Make it easy to find free, public charging without signing up or giving up location history.
+            </span>
+          </li>
+          <li>
+            <svg class="icon icon--sm" aria-hidden="true"><use href="icons/sprite.svg#pin"/></svg>
+            <span>
+              <strong>Centralize fragmented information</strong>
+              One trusted source for device charging across Oakland, verified by the community.
+            </span>
+          </li>
+          <li>
+            <svg class="icon icon--sm" aria-hidden="true"><use href="icons/sprite.svg#lock"/></svg>
+            <span>
+              <strong>Respect your privacy</strong>
+              No accounts, no tracking, no data collection. Your location history stays on your device.
+            </span>
+          </li>
+          <li>
+            <svg class="icon icon--sm" aria-hidden="true"><use href="icons/sprite.svg#check-circle"/></svg>
+            <span>
+              <strong>Support community contributions</strong>
+              Anyone can suggest locations or report changes. (Coming soon: moderated submissions.)
+            </span>
+          </li>
+        </ul>
+
+        <p><strong>How you can help:</strong></p>
+        <ul class="info-list">
+          <li>
+            <svg class="icon icon--sm" aria-hidden="true"><use href="icons/sprite.svg#alert"/></svg>
+            <span>
+              <strong>Report changes</strong>
+              If hours or access have changed, let us know via the "Report an update" link on any location.
+            </span>
+          </li>
+          <li>
+            <svg class="icon icon--sm" aria-hidden="true"><use href="icons/sprite.svg#pin"/></svg>
+            <span>
+              <strong>Suggest new locations</strong>
+              Found a place with reliable charging? Submit it (feature launching soon).
+            </span>
+          </li>
+          <li>
+            <svg class="icon icon--sm" aria-hidden="true"><use href="icons/sprite.svg#shield-check"/></svg>
+            <span>
+              <strong>Verify information</strong>
+              Join our community of volunteers who physically verify locations quarterly.
+            </span>
+          </li>
+        </ul>
+
+        <p class="info-callout">
+          <strong>Built on PLUG</strong> &mdash; An open-source project by Fused Gaming.
+          <a href="https://github.com/fused-gaming/plug" target="_blank" rel="noopener">View the code
+            <svg class="icon icon--sm" aria-hidden="true"><use href="icons/sprite.svg#arrow-right"/></svg></a>
+        </p>
       </div>
-    </aside>
-  </div>
+    </section>
 
-  <!-- How Verification Works Section -->
-  <section class="info-section" id="how-it-works">
-    <div class="info-content">
-      <h2>How Verification Works</h2>
-      <p>Every charging location in this directory has been verified using one of these methods:</p>
-      <table class="verification-table">
-        <thead>
-          <tr>
-            <th>Status</th>
-            <th>What It Means</th>
-            <th>How Often We Check</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><span class="location-badge verified">Verified</span></td>
-            <td>Physically checked by a trusted contributor</td>
-            <td>Quarterly</td>
-          </tr>
-          <tr>
-            <td><span class="location-badge community">Community Report</span></td>
-            <td>Submitted by a community member, awaiting confirmation</td>
-            <td>Within 30 days</td>
-          </tr>
-          <tr>
-            <td><span class="location-badge recheck">Needs Recheck</span></td>
-            <td>Last verified over 90 days ago</td>
-            <td>Pending update</td>
-          </tr>
-        </tbody>
-      </table>
-      <p><strong>Why this matters:</strong> Public facilities change their policies, hours, and availability. We work with the community to keep information current and accurate.</p>
-    </div>
-  </section>
+    <!-- Privacy -->
+    <section class="info-section">
+      <div class="container">
+        <span class="overline">No fine print</span>
+        <h2>
+          <svg class="icon" aria-hidden="true"><use href="icons/sprite.svg#lock"/></svg>
+          Privacy Policy
+        </h2>
+        <p>Your privacy is not a feature we added&mdash;it's the foundation of how this tool works.</p>
 
-  <!-- About Section -->
-  <section class="info-section">
-    <div class="info-content">
-      <h2>About Open Sources of Power</h2>
-      <p>Device charging access is essential for safety, employment, and dignity. For people experiencing homelessness, a dead phone means lost contact with shelters, employers, and emergency services. Yet reliable information about where to charge is scattered, paywalled, or sold to data brokers.</p>
+        <ul class="info-list">
+          <li>
+            <svg class="icon icon--sm" aria-hidden="true"><use href="icons/sprite.svg#users"/></svg>
+            <span>
+              <strong>No accounts</strong>
+              This site doesn't require registration, login, or any personal information.
+            </span>
+          </li>
+          <li>
+            <svg class="icon icon--sm" aria-hidden="true"><use href="icons/sprite.svg#pin"/></svg>
+            <span>
+              <strong>No location tracking</strong>
+              We never intentionally store or transmit your device location. Geolocation is only used locally on your device to calculate distances.
+            </span>
+          </li>
+          <li>
+            <svg class="icon icon--sm" aria-hidden="true"><use href="icons/sprite.svg#shield-check"/></svg>
+            <span>
+              <strong>No data collection</strong>
+              We don't use analytics, cookies, or tracking pixels that follow you across the web.
+            </span>
+          </li>
+          <li>
+            <svg class="icon icon--sm" aria-hidden="true"><use href="icons/sprite.svg#free"/></svg>
+            <span>
+              <strong>No third-party data sales</strong>
+              We don't sell your information to data brokers, marketing firms, or anyone else.
+            </span>
+          </li>
+          <li>
+            <svg class="icon icon--sm" aria-hidden="true"><use href="icons/sprite.svg#locate"/></svg>
+            <span>
+              <strong>Geolocation is optional</strong>
+              The "My location" button only works if you allow it. You can search without granting permission.
+            </span>
+          </li>
+          <li>
+            <svg class="icon icon--sm" aria-hidden="true"><use href="icons/sprite.svg#info"/></svg>
+            <span>
+              <strong>This is a static site</strong>
+              There is no backend server storing your visits. The site runs entirely in your browser.
+            </span>
+          </li>
+        </ul>
 
-      <p><strong>We built this tool to:</strong></p>
-      <ul class="privacy-list">
-        <li>
-          <strong>Serve vulnerable populations</strong>
-          Make it easy to find free, public charging without signing up or giving up location history.
-        </li>
-        <li>
-          <strong>Centralize fragmented information</strong>
-          One trusted source for device charging across Oakland, verified by the community.
-        </li>
-        <li>
-          <strong>Respect your privacy</strong>
-          No accounts, no tracking, no data collection. Your location history stays on your device.
-        </li>
-        <li>
-          <strong>Support community contributions</strong>
-          Anyone can suggest locations or report changes. (Coming soon: moderated submissions.)
-        </li>
-      </ul>
+        <p class="info-callout">
+          <strong>Questions about privacy?</strong>
+          This site is open-source and hosted on GitHub. You can audit the code yourself to verify our privacy claims.
+          <a href="https://github.com/fused-gaming/plug/blob/main/SECURITY.md" target="_blank" rel="noopener">Read our security documentation
+            <svg class="icon icon--sm" aria-hidden="true"><use href="icons/sprite.svg#arrow-right"/></svg></a>
+        </p>
+      </div>
+    </section>
+  </main>
 
-      <p><strong>How you can help:</strong></p>
-      <ul class="privacy-list">
-        <li>
-          <strong>Report changes</strong>
-          If hours or access have changed, let us know via the "Report an update" link on any location.
-        </li>
-        <li>
-          <strong>Suggest new locations</strong>
-          Found a place with reliable charging? Submit it (feature launching soon).
-        </li>
-        <li>
-          <strong>Verify information</strong>
-          Join our community of volunteers who physically verify locations quarterly.
-        </li>
-      </ul>
-
-      <p style="margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--border);">
-        <strong>Built on PLUG</strong> — An open-source project by Fused Gaming.
-        <a href="https://github.com/fused-gaming/plug" target="_blank" rel="noopener">View the code →</a>
-      </p>
-    </div>
-  </section>
-
-  <!-- Privacy Section -->
-  <section class="info-section">
-    <div class="info-content">
-      <h2>Privacy Policy</h2>
-      <p>Your privacy is not a feature we added—it's the foundation of how this tool works.</p>
-
-      <ul class="privacy-list">
-        <li>
-          <strong>No accounts</strong>
-          This site doesn't require registration, login, or any personal information.
-        </li>
-        <li>
-          <strong>No location tracking</strong>
-          We never intentionally store or transmit your device location. Geolocation is only used locally on your device to calculate distances.
-        </li>
-        <li>
-          <strong>No data collection</strong>
-          We don't use analytics, cookies, or tracking pixels that follow you across the web.
-        </li>
-        <li>
-          <strong>No third-party data sales</strong>
-          We don't sell your information to data brokers, marketing firms, or anyone else.
-        </li>
-        <li>
-          <strong>Geolocation is optional</strong>
-          The "Use my location" button only works if you allow it. You can search without granting permission.
-        </li>
-        <li>
-          <strong>This is a static site</strong>
-          There is no backend server storing your visits. The site runs entirely in your browser.
-        </li>
-      </ul>
-
-      <p style="margin-top: 1.5rem; padding: 1rem; background: var(--bg-light); border-left: 3px solid #3b82f6; border-radius: 0.25rem;">
-        <strong>Questions about privacy?</strong>
-        This site is open-source and hosted on GitHub. You can audit the code yourself to verify our privacy claims.
-        <a href="https://github.com/fused-gaming/plug/blob/main/SECURITY.md" target="_blank" rel="noopener">Read our security documentation →</a>
-      </p>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <div class="footer-content">
-      <p>
-        <strong>Open Sources of Power</strong> — Find free device charging in Oakland, without tracking.
-        <br>
-        <a href="#how-it-works">How verification works</a> ·
-        <a href="https://github.com/fused-gaming/plug" target="_blank" rel="noopener">GitHub</a> ·
-        <a href="https://github.com/fused-gaming/plug/blob/main/SECURITY.md" target="_blank" rel="noopener">Security</a>
-      </p>
-      <p style="margin-top: 0.75rem; font-size: 0.8rem;">
-        Built on <strong>PLUG</strong> by Fused Gaming · MIT License · Last updated July 22, 2026
+  <!-- Component: .site-footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="site-footer__grid">
+        <div>
+          <p class="site-footer__brand">
+            <svg class="icon" aria-hidden="true"><use href="icons/sprite.svg#plug"/></svg>
+            Open Sources of Power
+          </p>
+          <p style="margin-top: var(--space-3); font-size: var(--text-sm);">
+            Find free device charging in Oakland, without tracking.
+          </p>
+        </div>
+        <nav aria-label="Footer resources">
+          <h4 class="site-footer__heading">Resources</h4>
+          <ul class="site-footer__links">
+            <li><a href="#how-it-works">
+              <svg class="icon icon--sm" aria-hidden="true"><use href="icons/sprite.svg#shield-check"/></svg>
+              How verification works</a></li>
+            <li><a href="#suggest">
+              <svg class="icon icon--sm" aria-hidden="true"><use href="icons/sprite.svg#users"/></svg>
+              Suggest a place</a></li>
+          </ul>
+        </nav>
+        <nav aria-label="Footer project links">
+          <h4 class="site-footer__heading">Project</h4>
+          <ul class="site-footer__links">
+            <li><a href="https://github.com/fused-gaming/plug" target="_blank" rel="noopener">
+              <svg class="icon icon--sm" aria-hidden="true"><use href="icons/sprite.svg#github"/></svg>
+              GitHub</a></li>
+            <li><a href="https://github.com/fused-gaming/plug/blob/main/SECURITY.md" target="_blank" rel="noopener">
+              <svg class="icon icon--sm" aria-hidden="true"><use href="icons/sprite.svg#lock"/></svg>
+              Security</a></li>
+          </ul>
+        </nav>
+      </div>
+      <p class="site-footer__legal">
+        Made with care in Oakland &mdash; by neighbors, for neighbors. No trackers were harmed (or used) in the making of this site.<br>
+        Built on <strong style="color: var(--ink-on-invert)">PLUG</strong> by Fused Gaming &middot; MIT License &middot; Last updated July 22, 2026
       </p>
     </div>
   </footer>
 
-  <script>
-    const locations = [
-      {
-        title: 'Oakland Main Library',
-        address: '125 14th St · Downtown',
-        description: 'Outlets available near reading tables. Library rules apply.',
-        access: ['Indoor outlets'],
-        hours: 'Open today, 10am–8pm',
-        evidence: 'Verified · Jul 18',
-        tags: ['free', 'indoor', 'accessible', 'outlet']
-      },
-      {
-        title: '81st Avenue Library',
-        address: '1021 81st Ave · East Oakland',
-        description: 'Multiple outlets in study areas and common spaces.',
-        access: ['Indoor outlets', 'Wi-Fi'],
-        hours: 'Open today, 10am–5:30pm',
-        evidence: 'Verified · Jul 16',
-        tags: ['free', 'indoor', 'accessible', 'outlet', 'wifi']
-      },
-      {
-        title: 'West Oakland Library',
-        address: '1801 Adeline St · West Oakland',
-        description: 'Charging stations in main reading room.',
-        access: ['Indoor outlets', 'Wi-Fi'],
-        hours: 'Open today, 10am–5:30pm',
-        evidence: 'Community report · Jul 12',
-        tags: ['free', 'indoor', 'outlet', 'wifi']
-      },
-      {
-        title: 'Lake Merritt Station',
-        address: '800 Madison St · Lake Merritt',
-        description: 'USB charging ports at transit station.',
-        access: ['USB charging', 'Public area'],
-        hours: 'Transit hours',
-        evidence: 'Needs recheck · Jun 03',
-        tags: ['free', 'outdoor', 'usb', 'transit']
-      }
-    ];
-
-    function showDetail(index) {
-      const items = document.querySelectorAll('.location-item');
-      items.forEach((item, i) => {
-        item.classList.toggle('active', i === index);
-      });
-
-      const loc = locations[index];
-      document.getElementById('detailTitle').textContent = loc.title;
-      document.getElementById('detailDescription').textContent = loc.description;
-      document.getElementById('detailAccess').innerHTML = loc.access
-        .map(a => `<span class="detail-amenity">${a}</span>`)
-        .join('');
-      document.getElementById('detailHours').textContent = loc.hours;
-      document.getElementById('detailEvidence').textContent = loc.evidence;
-    }
-
-    function performSearch() {
-      const query = document.getElementById('searchInput').value.toLowerCase();
-      const items = document.querySelectorAll('.location-item');
-      let found = 0;
-
-      items.forEach((item, index) => {
-        const loc = locations[index];
-        const matches = loc.title.toLowerCase().includes(query) ||
-                       loc.address.toLowerCase().includes(query) ||
-                       loc.description.toLowerCase().includes(query);
-
-        item.style.display = matches ? 'block' : 'none';
-        if (matches) found++;
-      });
-
-      if (found === 0) {
-        alert('No locations found matching "' + query + '". Try a different search.');
-      }
-    }
-
-    function toggleFilter(element) {
-      element.classList.toggle('active');
-      applyFilters();
-    }
-
-    function applyFilters() {
-      const activeFilters = Array.from(document.querySelectorAll('.filter-badge.active'))
-        .map(el => el.textContent.toLowerCase());
-
-      const items = document.querySelectorAll('.location-item');
-      items.forEach((item, index) => {
-        const loc = locations[index];
-        const locTags = loc.tags.map(t => t.toLowerCase());
-
-        if (activeFilters.length === 0) {
-          item.style.display = 'block';
-        } else {
-          const hasAll = activeFilters.every(filter => {
-            if (filter.includes('open now')) return true;
-            if (filter.includes('free')) return locTags.includes('free');
-            if (filter.includes('indoor')) return locTags.includes('indoor');
-            if (filter.includes('outdoor')) return locTags.includes('outdoor');
-            if (filter.includes('accessible')) return locTags.includes('accessible');
-            if (filter.includes('usb')) return locTags.includes('usb');
-            if (filter.includes('outlet')) return locTags.includes('outlet');
-            if (filter.includes('recently')) return true;
-            return true;
-          });
-          item.style.display = hasAll ? 'block' : 'none';
-        }
-      });
-    }
-
-    function useMyLocation() {
-      if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(
-          position => {
-            alert('Location detected at ' + position.coords.latitude.toFixed(4) + ', ' +
-                  position.coords.longitude.toFixed(4) +
-                  '.\n\nThis location is only used to calculate distances and is not stored.');
-          },
-          error => {
-            alert('Location permission denied or unavailable.');
-          }
-        );
-      } else {
-        alert('Geolocation is not supported by your browser.');
-      }
-    }
-
-    document.getElementById('searchInput').addEventListener('keypress', function(e) {
-      if (e.key === 'Enter') performSearch();
-    });
-  </script>
+  <script src="scripts/landing.js"></script>
 </body>
 </html>

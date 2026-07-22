@@ -3,11 +3,14 @@
 [![Build Status](https://github.com/fused-gaming/plug/actions/workflows/deploy.yml/badge.svg?branch=main)](https://github.com/fused-gaming/plug/actions)
 [![Deployment Status](https://img.shields.io/badge/deployment-live-success?logo=github)](https://plug.vln.gg)
 [![Security: 0 Vulnerabilities](https://img.shields.io/badge/security-0%20vulnerabilities-success)](SECURITY_SCANNING.md)
-[![Tests: 36 Passing](https://img.shields.io/badge/tests-36%20passing-success)](#)
+[![Tests: 66 Passing](https://img.shields.io/badge/tests-66%20passing-success)](#)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
 [![Version: 2.0.0](https://img.shields.io/badge/version-2.0.0-blue)](#)
 [![React: 18.2.0](https://img.shields.io/badge/react-18.2.0-61dafb?logo=react)](https://react.dev)
 [![Vite: 6.4.3](https://img.shields.io/badge/vite-6.4.3-646cff?logo=vite)](https://vitejs.dev)
+[![Accessibility: WCAG 2.1 AA](https://img.shields.io/badge/accessibility-WCAG%202.1%20AA-047857)](docs/04-design/COMPONENT_LIBRARY.md#color-palette--wcag-21-graded)
+[![Design System: documented](https://img.shields.io/badge/design%20system-documented-9a3412)](docs/04-design/COMPONENT_LIBRARY.md)
+[![Icons: SVG sprite](https://img.shields.io/badge/icons-SVG%20sprite-9a3412)](public/icons/sprite.svg)
 <img width="2252" height="840" alt="image" src="https://github.com/user-attachments/assets/70e26e30-fbec-466c-9f3d-a3ef3f7d1e6a" />
 
 A privacy-first, interactive map to help vulnerable populations discover free, reliable device-charging options. Built as a bootcamp MVP demonstrating responsive web design, geolocation services, and GitHub Pages static site deployment.
@@ -124,6 +127,7 @@ Build a minimal viable demo showing that a privacy-first, community-driven charg
 - **Custom Domain** — plug.vln.gg configured via CNAME
 - **Static Site** — No backend required; runs entirely client-side
 - **Privacy-First** — No accounts, no tracking, no data collection
+- **Design System** — Token-driven landing page with WCAG 2.1 graded palette, reusable HTML/CSS components, and an SVG icon sprite ([docs](docs/04-design/COMPONENT_LIBRARY.md))
 
 ### 🔜 Next Features (Post-MVP / Phase 4+)
 
@@ -291,6 +295,11 @@ plug/
 ├── package.json                 # Dependencies and scripts
 ├── .github/workflows/
 │   └── deploy.yml               # GitHub Actions deployment pipeline
+├── landing.html                 # Static landing page (becomes dist/index.html)
+├── public/
+│   ├── styles/                  # Design system: tokens.css, components.css, landing.css
+│   ├── icons/sprite.svg         # SVG icon sprite (no emojis)
+│   └── scripts/landing.js       # Landing page behavior (search, filters, nav)
 ├── CNAME                        # Custom domain configuration
 ├── README.md                    # This file
 ├── ROADMAP.md                   # 7-day sprint plan

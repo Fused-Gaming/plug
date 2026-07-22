@@ -4,7 +4,8 @@ Design system, wireframes, and responsive strategy for the MVP.
 
 ## What's Here
 
-- **[Design System](design-system.md)** — Colors, typography, spacing, component tokens
+- **[Component Library](COMPONENT_LIBRARY.md)** — ⭐ **Authoritative.** The design system actually shipped on the landing page: WCAG-graded palette, breakpoints, SVG iconography, reusable HTML/CSS components
+- **[Design System](design-system.md)** — (Historical) Colors, typography, spacing for the original map-app concept
 - **[Wireframes](wireframes.md)** — UI layouts for desktop, tablet, mobile
 - **[Responsive Strategy](responsive-strategy.md)** — Mobile-first approach and breakpoints
 
