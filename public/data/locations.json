@@ -1,0 +1,709 @@
+{
+ "meta": {
+  "license": "Location data (c) OpenStreetMap contributors, ODbL 1.0 — see LICENSE-DATA",
+  "disclaimer": "Auto-listed entries are machine-corroborated from public data; outlet availability is inferred from venue category and has not been field-checked.",
+  "count": 39
+ },
+ "venues": [
+  {
+   "id": "node/1064600787",
+   "name": "African American Museum and Library at Oakland",
+   "lat": 37.806114,
+   "lon": -122.276415,
+   "category": "library",
+   "indoor": true,
+   "access": "public",
+   "hours": "Mo-Th, Sa 10:00-17:30; Fr 12:00-17:30; PH off",
+   "address": "659 14th Street",
+   "amenities": [
+    "Indoor outlets (likely)",
+    "Free",
+    "Wi-Fi"
+   ],
+   "source": "osm",
+   "tier": "auto"
+  },
+  {
+   "id": "node/13987240865",
+   "name": "Morrison Library",
+   "lat": 37.872459,
+   "lon": -122.259782,
+   "category": "library",
+   "indoor": true,
+   "access": "public",
+   "hours": "See website",
+   "address": "101 Doe Library",
+   "amenities": [
+    "Indoor outlets (likely)",
+    "Free",
+    "Wi-Fi"
+   ],
+   "source": "osm",
+   "tier": "auto"
+  },
+  {
+   "id": "node/13987240866",
+   "name": "North Reading Room",
+   "lat": 37.872435,
+   "lon": -122.259496,
+   "category": "library",
+   "indoor": true,
+   "access": "public",
+   "hours": "See website",
+   "address": "200 Doe Library",
+   "amenities": [
+    "Indoor outlets (likely)",
+    "Free",
+    "Wi-Fi"
+   ],
+   "source": "osm",
+   "tier": "auto"
+  },
+  {
+   "id": "node/2794679680",
+   "name": "Temescal Tool Lending Library",
+   "lat": 37.838185,
+   "lon": -122.262612,
+   "category": "library",
+   "indoor": true,
+   "access": "public",
+   "hours": "Mo 10:00-17:30; Tu-We 10:00-20:00; Th 10:00-17:30; Fr 12:00-17:30; Sa 10:00-17:30",
+   "address": null,
+   "amenities": [
+    "Indoor outlets (likely)",
+    "Free"
+   ],
+   "source": "osm",
+   "tier": "auto"
+  },
+  {
+   "id": "node/368169064",
+   "name": "Elmhurst Branch Oakland Public Library",
+   "lat": 37.751544,
+   "lon": -122.174909,
+   "category": "library",
+   "indoor": true,
+   "access": "public",
+   "hours": "Mo 10:00-17:30; Tu-We 10:00-20:00; Th 10:00-17:30; Fr 12:00-17:30; Sa 10:00-17:30",
+   "address": null,
+   "amenities": [
+    "Indoor outlets (likely)",
+    "Free"
+   ],
+   "source": "osm",
+   "tier": "auto"
+  },
+  {
+   "id": "node/368169274",
+   "name": "Albany Branch Alameda County Library",
+   "lat": 37.887916,
+   "lon": -122.293407,
+   "category": "library",
+   "indoor": true,
+   "access": "public",
+   "hours": "Su 13:00-17:00; Mo 12:00-18:00; Tu, We 12:00-20:00; Th 10:00-18:00; Sa 10:00-17:00",
+   "address": null,
+   "amenities": [
+    "Indoor outlets (likely)",
+    "Free",
+    "Accessible"
+   ],
+   "source": "osm",
+   "tier": "auto"
+  },
+  {
+   "id": "node/368169423",
+   "name": "Eastmont Branch Oakland Public Library",
+   "lat": 37.768561,
+   "lon": -122.176198,
+   "category": "library",
+   "indoor": true,
+   "access": "public",
+   "hours": "Mo 09:00-19:00; Tu-Th 09:00-17:30; Fr 12:00-17:30",
+   "address": null,
+   "amenities": [
+    "Indoor outlets (likely)",
+    "Free"
+   ],
+   "source": "osm",
+   "tier": "auto"
+  },
+  {
+   "id": "node/368169425",
+   "name": "Martin Luther King Junior Branch Oakland Public Library",
+   "lat": 37.760614,
+   "lon": -122.190774,
+   "category": "library",
+   "indoor": true,
+   "access": "public",
+   "hours": "Mo 10:00-17:30; Tu-We 10:00-20:00; Th 10:00-17:30; Fr 12:00-17:30; Sa 10:00-17:30",
+   "address": null,
+   "amenities": [
+    "Indoor outlets (likely)",
+    "Free"
+   ],
+   "source": "osm",
+   "tier": "auto"
+  },
+  {
+   "id": "node/368169433",
+   "name": "Asian Branch Oakland Public Library",
+   "lat": 37.800899,
+   "lon": -122.271086,
+   "category": "library",
+   "indoor": true,
+   "access": "public",
+   "hours": "Mo 10:00-17:30; Tu-We 10:00-20:00; Th 10:00-17:30; Fr 12:00-17:30; Sa 10:00-17:30",
+   "address": null,
+   "amenities": [
+    "Indoor outlets (likely)",
+    "Free",
+    "Accessible"
+   ],
+   "source": "osm",
+   "tier": "auto"
+  },
+  {
+   "id": "node/368170825",
+   "name": "West End Branch - Alameda Free Library",
+   "lat": 37.77305,
+   "lon": -122.273038,
+   "category": "library",
+   "indoor": true,
+   "access": "public",
+   "hours": "Mo-Tu 10:00-20:00; We 12:00-17:00; Th 10:00-17:00; Sa 10:00-17:00; PH off",
+   "address": "788 Santa Clara Avenue",
+   "amenities": [
+    "Indoor outlets (likely)",
+    "Free",
+    "Wi-Fi"
+   ],
+   "source": "osm",
+   "tier": "auto"
+  },
+  {
+   "id": "node/4098677195",
+   "name": "César E. Chávez Branch Oakland Public Library",
+   "lat": 37.776024,
+   "lon": -122.225052,
+   "category": "library",
+   "indoor": true,
+   "access": "public",
+   "hours": "Mo 10:00-17:30; Tu-We 10:00-20:00; Th 10:00-17:30; Fr 12:00-17:30; Sa-Su 10:00-17:30; PH off",
+   "address": "3301 East 12th Street",
+   "amenities": [
+    "Indoor outlets (likely)",
+    "Free",
+    "Wi-Fi"
+   ],
+   "source": "osm",
+   "tier": "auto"
+  },
+  {
+   "id": "node/4124184017",
+   "name": "Kresge Engineering & Mathematical Sciences Library",
+   "lat": 37.873995,
+   "lon": -122.258186,
+   "category": "library",
+   "indoor": true,
+   "access": "public",
+   "hours": "See website",
+   "address": "B120 Grimes Engineering Center",
+   "amenities": [
+    "Indoor outlets (likely)",
+    "Free",
+    "Wi-Fi"
+   ],
+   "source": "osm",
+   "tier": "auto"
+  },
+  {
+   "id": "node/4124184024",
+   "name": "Social Research Library",
+   "lat": 37.873614,
+   "lon": -122.261117,
+   "category": "library",
+   "indoor": true,
+   "access": "public",
+   "hours": "See website",
+   "address": null,
+   "amenities": [
+    "Indoor outlets (likely)",
+    "Free",
+    "Wi-Fi"
+   ],
+   "source": "osm",
+   "tier": "auto"
+  },
+  {
+   "id": "node/8850719967",
+   "name": "Albany Community Center",
+   "lat": 37.888025,
+   "lon": -122.292969,
+   "category": "community_centre",
+   "indoor": true,
+   "access": "public",
+   "hours": "Mo 08:30-19:00; Tu-Fr 08:30-17:00",
+   "address": "1249 Marin Avenue",
+   "amenities": [
+    "Indoor outlets (likely)",
+    "Free",
+    "Accessible"
+   ],
+   "source": "osm",
+   "tier": "auto"
+  },
+  {
+   "id": "relation/21101411",
+   "name": "Doe Memorial Library",
+   "lat": 37.872187,
+   "lon": -122.259513,
+   "category": "library",
+   "indoor": true,
+   "access": "public",
+   "hours": "See website",
+   "address": null,
+   "amenities": [
+    "Indoor outlets (likely)",
+    "Free",
+    "Wi-Fi"
+   ],
+   "source": "osm",
+   "tier": "auto"
+  },
+  {
+   "id": "relation/5406935",
+   "name": "Berkeley Public Library - Tarea Hall Pittman South Branch",
+   "lat": 37.856356,
+   "lon": -122.270993,
+   "category": "library",
+   "indoor": true,
+   "access": "public",
+   "hours": "Mo,Fr-Su 10:00-18:00; Tu-We 10:00-20:00; Th 12:00-20:00",
+   "address": "1901 Russell Street",
+   "amenities": [
+    "Indoor outlets (likely)",
+    "Free"
+   ],
+   "source": "osm",
+   "tier": "auto"
+  },
+  {
+   "id": "way/118422329",
+   "name": "Dimond Branch Oakland Public Library",
+   "lat": 37.801479,
+   "lon": -122.216075,
+   "category": "library",
+   "indoor": true,
+   "access": "public",
+   "hours": "Mo 10:00-17:30; Tu-We 10:00-20:00; Th 10:00-17:30; Fr 12:00-17:30; Sa 10:00-17:30",
+   "address": "3565 Fruitvale Avenue",
+   "amenities": [
+    "Indoor outlets (likely)",
+    "Free"
+   ],
+   "source": "osm",
+   "tier": "auto"
+  },
+  {
+   "id": "way/125686118",
+   "name": "Temescal Branch Oakland Public Library",
+   "lat": 37.838233,
+   "lon": -122.262532,
+   "category": "library",
+   "indoor": true,
+   "access": "public",
+   "hours": "Mo 10:00-17:30; Tu-We 10:00-20:00; Th 10:00-17:30; Fr 12:00-17:30; Sa 10:00-17:30",
+   "address": "5205 Telegraph Avenue",
+   "amenities": [
+    "Indoor outlets (likely)",
+    "Free",
+    "Wi-Fi"
+   ],
+   "source": "osm",
+   "tier": "auto"
+  },
+  {
+   "id": "way/135671462",
+   "name": "Golden Gate Branch Oakland Public Library",
+   "lat": 37.83923,
+   "lon": -122.282224,
+   "category": "library",
+   "indoor": true,
+   "access": "public",
+   "hours": "Mo 10:00-17:30; Tu-We 10:00-20:00; Th 10:00-17:30; Fr 12:00-17:30; Sa 10:00-17:30",
+   "address": "5606 San Pablo Avenue",
+   "amenities": [
+    "Indoor outlets (likely)",
+    "Free",
+    "Accessible"
+   ],
+   "source": "osm",
+   "tier": "auto"
+  },
+  {
+   "id": "way/230610300",
+   "name": "Alameda Free Library Main Branch",
+   "lat": 37.766757,
+   "lon": -122.242292,
+   "category": "library",
+   "indoor": true,
+   "access": "public",
+   "hours": "Mo-Tu 10:00-20:00; We 12:00-20:00; Th-Sa 10:00-17:00; Su 12:00-17:00; PH off",
+   "address": "1550 Oak Street",
+   "amenities": [
+    "Indoor outlets (likely)",
+    "Free",
+    "Wi-Fi",
+    "Accessible"
+   ],
+   "source": "osm",
+   "tier": "auto"
+  },
+  {
+   "id": "way/24024508",
+   "name": "Bancroft Library",
+   "lat": 37.872245,
+   "lon": -122.258881,
+   "category": "library",
+   "indoor": true,
+   "access": "public",
+   "hours": "See website",
+   "address": null,
+   "amenities": [
+    "Indoor outlets (likely)",
+    "Free",
+    "Wi-Fi"
+   ],
+   "source": "osm",
+   "tier": "auto"
+  },
+  {
+   "id": "way/24025047",
+   "name": "Hargrove Music Library",
+   "lat": 37.87045,
+   "lon": -122.256139,
+   "category": "library",
+   "indoor": true,
+   "access": "public",
+   "hours": "See website",
+   "address": null,
+   "amenities": [
+    "Indoor outlets (likely)",
+    "Free",
+    "Wi-Fi",
+    "Accessible"
+   ],
+   "source": "osm",
+   "tier": "auto"
+  },
+  {
+   "id": "way/27808403",
+   "name": "Lakeside Garden Center",
+   "lat": 37.807112,
+   "lon": -122.258663,
+   "category": "community_centre",
+   "indoor": true,
+   "access": "public",
+   "hours": "Mo-Fr 09:00-16:00",
+   "address": "666 Bellevue Avenue",
+   "amenities": [
+    "Indoor outlets (likely)",
+    "Free",
+    "Accessible"
+   ],
+   "source": "osm",
+   "tier": "auto"
+  },
+  {
+   "id": "way/28006024",
+   "name": "Central Branch Berkeley Public Library",
+   "lat": 37.867962,
+   "lon": -122.268657,
+   "category": "library",
+   "indoor": true,
+   "access": "public",
+   "hours": "Mo 12:00-20:00; Tu 10:00-20:00; We-Sa 10:00-18:00",
+   "address": "2090 Kittredge Street",
+   "amenities": [
+    "Indoor outlets (likely)",
+    "Free",
+    "Wi-Fi",
+    "Accessible"
+   ],
+   "source": "osm",
+   "tier": "auto"
+  },
+  {
+   "id": "way/28293990",
+   "name": "Veterans Memorial Building Senior Center",
+   "lat": 37.811426,
+   "lon": -122.261295,
+   "category": "community_centre",
+   "indoor": true,
+   "access": "public",
+   "hours": "Mo-Fr 09:00-16:30",
+   "address": "200 Grand Avenue",
+   "amenities": [
+    "Indoor outlets (likely)",
+    "Free"
+   ],
+   "source": "osm",
+   "tier": "auto"
+  },
+  {
+   "id": "way/28376124",
+   "name": "Main Branch Oakland Public Library",
+   "lat": 37.800967,
+   "lon": -122.263703,
+   "category": "library",
+   "indoor": true,
+   "access": "public",
+   "hours": "Mo-Th 10:00-20:00; Fr 12:00- 17:30; Sa-Su 10:00-17:30",
+   "address": "125 14th Street",
+   "amenities": [
+    "Indoor outlets (likely)",
+    "Free",
+    "Wi-Fi"
+   ],
+   "source": "osm",
+   "tier": "auto"
+  },
+  {
+   "id": "way/28922004",
+   "name": "Berkeley Public Library North Branch",
+   "lat": 37.885447,
+   "lon": -122.275436,
+   "category": "library",
+   "indoor": true,
+   "access": "public",
+   "hours": "Mo-Tu 10:00-18:00; We-Th 12:00-20:00; Fr-Sa 10:00-18:00",
+   "address": "1170 The Alameda",
+   "amenities": [
+    "Indoor outlets (likely)",
+    "Free",
+    "Wi-Fi",
+    "Accessible"
+   ],
+   "source": "osm",
+   "tier": "auto"
+  },
+  {
+   "id": "way/311006347",
+   "name": "Melrose Branch Oakland Public Library",
+   "lat": 37.772439,
+   "lon": -122.207635,
+   "category": "library",
+   "indoor": true,
+   "access": "public",
+   "hours": "Mo 10:00-17:30; Tu-We 10:00-20:00; Th 10:00-17:30; Fr 12:00-17:30; Sa 10:00-17:30",
+   "address": "4805 Foothill Boulevard",
+   "amenities": [
+    "Indoor outlets (likely)",
+    "Free"
+   ],
+   "source": "osm",
+   "tier": "auto"
+  },
+  {
+   "id": "way/31722830",
+   "name": "West Branch Berkeley Public Library",
+   "lat": 37.86955,
+   "lon": -122.29095,
+   "category": "library",
+   "indoor": true,
+   "access": "public",
+   "hours": "Mo-Sa 10:00-18:00",
+   "address": "1125 University Avenue",
+   "amenities": [
+    "Indoor outlets (likely)",
+    "Free",
+    "Wi-Fi",
+    "Accessible"
+   ],
+   "source": "osm",
+   "tier": "auto"
+  },
+  {
+   "id": "way/318127797",
+   "name": "Claremont Branch Berkeley Public Library",
+   "lat": 37.85653,
+   "lon": -122.254471,
+   "category": "library",
+   "indoor": true,
+   "access": "public",
+   "hours": "Mo 10:00-18:00; Tu-We 10:00-20:00; Th 12:00-20:00; Fr-Sa 10:00-18:00",
+   "address": "2940 Benvenue Avenue",
+   "amenities": [
+    "Indoor outlets (likely)",
+    "Free",
+    "Accessible"
+   ],
+   "source": "osm",
+   "tier": "auto"
+  },
+  {
+   "id": "way/36977219",
+   "name": "Lakeview Branch Oakland Public Library",
+   "lat": 37.809182,
+   "lon": -122.248961,
+   "category": "library",
+   "indoor": true,
+   "access": "public",
+   "hours": "Mo 10:00-17:30; Tu-We 10:00-20:00; Th 10:00-17:30; Fr 12:00-17:30; Sa 10:00-17:30",
+   "address": "550 El Embarcadero",
+   "amenities": [
+    "Indoor outlets (likely)",
+    "Free",
+    "Wi-Fi",
+    "Accessible"
+   ],
+   "source": "osm",
+   "tier": "auto"
+  },
+  {
+   "id": "way/376599077",
+   "name": "Brookfield Village Branch Oakland Public Library",
+   "lat": 37.737356,
+   "lon": -122.188608,
+   "category": "library",
+   "indoor": true,
+   "access": "public",
+   "hours": "Mo 10:00-17:30; Tu-We 10:00-20:00; Th 10:00-17:30; Fr 12:00-17:30; Sa 10:00-17:30",
+   "address": "9255",
+   "amenities": [
+    "Indoor outlets (likely)",
+    "Free"
+   ],
+   "source": "osm",
+   "tier": "auto"
+  },
+  {
+   "id": "way/392017852",
+   "name": "San Leandro Community Library",
+   "lat": 37.726026,
+   "lon": -122.154044,
+   "category": "library",
+   "indoor": true,
+   "access": "public",
+   "hours": "Mo-Th 10:00-20:00; Sa 10:00-17:00; Su 13:00-17:00; PH off",
+   "address": "300 Estudillo Avenue",
+   "amenities": [
+    "Indoor outlets (likely)",
+    "Free",
+    "Wi-Fi"
+   ],
+   "source": "osm",
+   "tier": "auto"
+  },
+  {
+   "id": "way/395220400",
+   "name": "Piedmont Avenue Branch Oakland Public Library",
+   "lat": 37.827832,
+   "lon": -122.248162,
+   "category": "library",
+   "indoor": true,
+   "access": "public",
+   "hours": "Mo 10:00-17:30; Tu-We 10:00-20:00; Th 10:00-17:30; Fr 12:00-17:30; Sa 10:00-17:30; PH off",
+   "address": "80 Echo Avenue",
+   "amenities": [
+    "Indoor outlets (likely)",
+    "Free",
+    "Wi-Fi"
+   ],
+   "source": "osm",
+   "tier": "auto"
+  },
+  {
+   "id": "way/414837835",
+   "name": "81st Avenue Branch Oakland Public Library",
+   "lat": 37.753366,
+   "lon": -122.185613,
+   "category": "library",
+   "indoor": true,
+   "access": "public",
+   "hours": "Sa-Mo 10:00-17:30; Tu, We 10:00-20:00; Th 10:00-17:30; Fr 12:00-17:30",
+   "address": "1021 81st Avenue",
+   "amenities": [
+    "Indoor outlets (likely)",
+    "Free",
+    "Wi-Fi"
+   ],
+   "source": "osm",
+   "tier": "auto"
+  },
+  {
+   "id": "way/43255308",
+   "name": "Rockridge Branch Oakland Public Library",
+   "lat": 37.839949,
+   "lon": -122.251102,
+   "category": "library",
+   "indoor": true,
+   "access": "public",
+   "hours": "Mo,Th,Sa 10:00-17:30; Tu-We 10:00-20:00; Fr 12:00-17:30; Su off",
+   "address": "5372 College Avenue",
+   "amenities": [
+    "Indoor outlets (likely)",
+    "Free",
+    "Wi-Fi",
+    "Accessible"
+   ],
+   "source": "osm",
+   "tier": "auto"
+  },
+  {
+   "id": "way/43919891",
+   "name": "West Oakland Branch Oakland Public Library",
+   "lat": 37.812998,
+   "lon": -122.28534,
+   "category": "library",
+   "indoor": true,
+   "access": "public",
+   "hours": "Mo 10:00-17:30; Tu-We 10:00-20:00; Th 10:00-17:30; Fr 12:00-17:30; Sa 10:00-17:30",
+   "address": "1801 Adeline Street",
+   "amenities": [
+    "Indoor outlets (likely)",
+    "Free"
+   ],
+   "source": "osm",
+   "tier": "auto"
+  },
+  {
+   "id": "way/475331878",
+   "name": "Montclair Branch Oakland Public Library",
+   "lat": 37.831983,
+   "lon": -122.214169,
+   "category": "library",
+   "indoor": true,
+   "access": "public",
+   "hours": "Mo 10:00-17:30; Tu-We 10:00-20:00; Th 10:00-17:30; Fr 12:00-17:30; Sa 10:00-17:30; PH off",
+   "address": "1687 Mountain Boulevard",
+   "amenities": [
+    "Indoor outlets (likely)",
+    "Free",
+    "Wi-Fi"
+   ],
+   "source": "osm",
+   "tier": "auto"
+  },
+  {
+   "id": "way/485190272",
+   "name": "Bay Farm Island Branch - Alameda Free Library",
+   "lat": 37.736771,
+   "lon": -122.241622,
+   "category": "library",
+   "indoor": true,
+   "access": "public",
+   "hours": "Mo-Tu 10:00-20:00; We 12:00-17:00; Th 10:00-17:00; Sa 10:00-17:00; PH off",
+   "address": "3221 Mecartney Road",
+   "amenities": [
+    "Indoor outlets (likely)",
+    "Free",
+    "Wi-Fi",
+    "Accessible"
+   ],
+   "source": "osm",
+   "tier": "auto"
+  }
+ ]
+}

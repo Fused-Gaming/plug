@@ -1,0 +1,2413 @@
+{
+ "elements": [
+  {
+   "type": "node",
+   "id": 286632638,
+   "lat": 37.8689327,
+   "lon": -122.2566295,
+   "tags": {
+    "amenity": "community_centre",
+    "check_date": "2024-07-31",
+    "name": "University YWCA"
+   }
+  },
+  {
+   "type": "node",
+   "id": 368169020,
+   "lat": 37.708819,
+   "lon": -122.1341316,
+   "tags": {
+    "addr:state": "CA",
+    "amenity": "library",
+    "ele": "15",
+    "gnis:feature_id": "1692942",
+    "name": "South Branch San Leandro Community Library",
+    "source": "USGS Geonames"
+   }
+  },
+  {
+   "type": "node",
+   "id": 368169064,
+   "lat": 37.7515442,
+   "lon": -122.1749085,
+   "tags": {
+    "addr:state": "CA",
+    "amenity": "library",
+    "ele": "11",
+    "gnis:feature_id": "1676076",
+    "name": "Elmhurst Branch Oakland Public Library",
+    "opening_hours": "Mo 10:00-17:30; Tu-We 10:00-20:00; Th 10:00-17:30; Fr 12:00-17:30; Sa 10:00-17:30",
+    "source": "USGS Geonames",
+    "wikidata": "Q66362565"
+   }
+  },
+  {
+   "type": "node",
+   "id": 368169274,
+   "lat": 37.8879164,
+   "lon": -122.2934073,
+   "tags": {
+    "addr:state": "CA",
+    "alt_name": "Albany Library",
+    "amenity": "library",
+    "email": "albany@aclibrary.org",
+    "gnis:feature_id": "1675990",
+    "name": "Albany Branch Alameda County Library",
+    "opening_hours": "Su 13:00-17:00; Mo 12:00-18:00; Tu, We 12:00-20:00; Th 10:00-18:00; Sa 10:00-17:00",
+    "operator": "Alameda County Public Library",
+    "phone": "+1 510-526-3720",
+    "source": "USGS Geonames",
+    "website": "https://aclibrary.org/locations/ALB/",
+    "wheelchair": "yes",
+    "wikidata": "Q66166764",
+    "wikipedia": "en:Alameda County Library"
+   }
+  },
+  {
+   "type": "node",
+   "id": 368169423,
+   "lat": 37.7685608,
+   "lon": -122.1761978,
+   "tags": {
+    "addr:state": "CA",
+    "amenity": "library",
+    "ele": "24",
+    "gnis:feature_id": "1676071",
+    "name": "Eastmont Branch Oakland Public Library",
+    "opening_hours": "Mo 09:00-19:00; Tu-Th 09:00-17:30; Fr 12:00-17:30",
+    "source": "USGS Geonames",
+    "wikidata": "Q66362564"
+   }
+  },
+  {
+   "type": "node",
+   "id": 368169425,
+   "lat": 37.760614,
+   "lon": -122.1907738,
+   "tags": {
+    "addr:state": "CA",
+    "amenity": "library",
+    "ele": "8",
+    "gnis:feature_id": "1676062",
+    "name": "Martin Luther King Junior Branch Oakland Public Library",
+    "opening_hours": "Mo 10:00-17:30; Tu-We 10:00-20:00; Th 10:00-17:30; Fr 12:00-17:30; Sa 10:00-17:30",
+    "source": "USGS Geonames"
+   }
+  },
+  {
+   "type": "node",
+   "id": 368169426,
+   "lat": 37.7835392,
+   "lon": -122.2224681,
+   "tags": {
+    "addr:state": "CA",
+    "amenity": "library",
+    "ele": "24",
+    "gnis:feature_id": "1676061",
+    "name": "Latin American Branch Oakland Public Library",
+    "source": "USGS Geonames"
+   }
+  },
+  {
+   "type": "node",
+   "id": 368169433,
+   "lat": 37.8008995,
+   "lon": -122.2710864,
+   "tags": {
+    "addr:state": "CA",
+    "amenity": "library",
+    "contact:phone": "+1-510-238-3400",
+    "ele": "12",
+    "gnis:feature_id": "1676055",
+    "name": "Asian Branch Oakland Public Library",
+    "opening_hours": "Mo 10:00-17:30; Tu-We 10:00-20:00; Th 10:00-17:30; Fr 12:00-17:30; Sa 10:00-17:30",
+    "source": "USGS Geonames",
+    "wheelchair": "yes",
+    "wikidata": "Q66362560"
+   }
+  },
+  {
+   "type": "node",
+   "id": 368169560,
+   "lat": 37.8408105,
+   "lon": -122.1227933,
+   "tags": {
+    "addr:city": "Moraga",
+    "addr:housenumber": "1500",
+    "addr:postcode": "94556",
+    "addr:state": "CA",
+    "addr:street": "Saint Mary's Road",
+    "amenity": "library",
+    "ele": "164",
+    "gnis:feature_id": "1723575",
+    "name": "Moraga Branch Contra Costa County Library",
+    "source": "USGS Geonames",
+    "website": "https://ccclib.org/locations/15/",
+    "wikidata": "Q66237502"
+   }
+  },
+  {
+   "type": "node",
+   "id": 368170825,
+   "lat": 37.7730498,
+   "lon": -122.2730379,
+   "tags": {
+    "addr:city": "Alameda",
+    "addr:housenumber": "788",
+    "addr:postcode": "94501",
+    "addr:state": "CA",
+    "addr:street": "Santa Clara Avenue",
+    "amenity": "library",
+    "ele": "7",
+    "gnis:feature_id": "1962013",
+    "internet_access": "wlan",
+    "internet_access:fee": "no",
+    "name": "West End Branch - Alameda Free Library",
+    "opening_hours": "Mo-Tu 10:00-20:00; We 12:00-17:00; Th 10:00-17:00; Sa 10:00-17:00; PH off",
+    "phone": "+1-510-747-7767",
+    "source": "USGS Geonames",
+    "website": "https://www.alamedafree.org/Locations/West-End-Branch"
+   }
+  },
+  {
+   "type": "node",
+   "id": 1064600787,
+   "lat": 37.8061138,
+   "lon": -122.2764151,
+   "tags": {
+    "addr:city": "Oakland",
+    "addr:housenumber": "659",
+    "addr:postcode": "94612",
+    "addr:state": "CA",
+    "addr:street": "14th Street",
+    "amenity": "library",
+    "internet_access": "wlan",
+    "internet_access:fee": "no",
+    "name": "African American Museum and Library at Oakland",
+    "opening_hours": "Mo-Th, Sa 10:00-17:30; Fr 12:00-17:30; PH off",
+    "phone": "+1-510-637-0200",
+    "wikidata": "Q4689671",
+    "wikipedia": "en:African American Museum and Library at Oakland"
+   }
+  },
+  {
+   "type": "node",
+   "id": 1250624743,
+   "lat": 37.8728354,
+   "lon": -122.2594817,
+   "tags": {
+    "amenity": "library",
+    "layer": "-1",
+    "location": "underground",
+    "name": "Main Stacks",
+    "official_name": "David Pierpont Gardner Stacks"
+   }
+  },
+  {
+   "type": "node",
+   "id": 1328041811,
+   "lat": 37.8738174,
+   "lon": -122.2589305,
+   "tags": {
+    "addr:housenumber": "412",
+    "addr:street": "McLaughlin Hall",
+    "alt_name": "Institute of Transportation Studies Library",
+    "amenity": "library",
+    "level": "4",
+    "name": "Harmer E. Davis Transportation Library",
+    "source": "Bing",
+    "wikidata": "Q7835174"
+   }
+  },
+  {
+   "type": "node",
+   "id": 1328042658,
+   "lat": 37.8740281,
+   "lon": -122.259657,
+   "tags": {
+    "addr:city": "Berkeley",
+    "addr:housenumber": "50",
+    "addr:postcode": "94720",
+    "addr:street": "McCone Hall",
+    "amenity": "library",
+    "internet_access": "yes",
+    "internet_access:fee": "no",
+    "name": "Earth Sciences and Map Library",
+    "website": "https://www.lib.berkeley.edu/visit/earth-sciences"
+   }
+  },
+  {
+   "type": "node",
+   "id": 1421106375,
+   "lat": 37.7997757,
+   "lon": -122.2644287,
+   "tags": {
+    "amenity": "library",
+    "name": "Alameda County Law Library",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "type": "node",
+   "id": 1633459013,
+   "lat": 37.8697651,
+   "lon": -122.2533729,
+   "tags": {
+    "amenity": "library",
+    "check_date": "2024-10-21",
+    "name": "Berkeley Law Library",
+    "website": "https://www.law.berkeley.edu/library/",
+    "wikidata": "Q123118578"
+   }
+  },
+  {
+   "type": "node",
+   "id": 2066705865,
+   "lat": 37.780532,
+   "lon": -122.2781949,
+   "tags": {
+    "amenity": "library",
+    "name": "College of Alameda Library"
+   }
+  },
+  {
+   "type": "node",
+   "id": 2427751948,
+   "lat": 37.8708019,
+   "lon": -122.2545822,
+   "tags": {
+    "amenity": "library",
+    "check_date": "2024-09-30",
+    "layer": "1",
+    "level": "2",
+    "name": "Environmental Design Library",
+    "operator": "University of California, Berkeley",
+    "operator:wikidata": "Q168756",
+    "toilets:wheelchair": "yes",
+    "website": "https://www.lib.berkeley.edu/visit/environmental-design",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "type": "node",
+   "id": 2427751968,
+   "lat": 37.8691357,
+   "lon": -122.2550293,
+   "tags": {
+    "amenity": "library",
+    "internet_access": "wlan",
+    "level": "2",
+    "name": "Anthropology Reading Room",
+    "official_name": "Constance Chiang Pan Anthropology Reading Room",
+    "operator": "University of California, Berkeley - Anthropology Department",
+    "operator:type": "university",
+    "website": "https://anthropology.berkeley.edu/about/constance-chiang-pan-anthropology-reading-room"
+   }
+  },
+  {
+   "type": "node",
+   "id": 2794679680,
+   "lat": 37.838185,
+   "lon": -122.2626116,
+   "tags": {
+    "amenity": "library",
+    "contact:website": "https://oaklandlibrary.org/otll/",
+    "entrance": "yes",
+    "name": "Temescal Tool Lending Library",
+    "opening_hours": "Mo 10:00-17:30; Tu-We 10:00-20:00; Th 10:00-17:30; Fr 12:00-17:30; Sa 10:00-17:30",
+    "phone": "+1-510-597-5089"
+   }
+  },
+  {
+   "type": "node",
+   "id": 3054731034,
+   "lat": 37.7790856,
+   "lon": -122.2861153,
+   "tags": {
+    "amenity": "community_centre",
+    "name": "Boys & Girls Club of Alameda",
+    "website": "https://alamedabgc.org/"
+   }
+  },
+  {
+   "type": "node",
+   "id": 3190940377,
+   "lat": 37.8558152,
+   "lon": -122.2683904,
+   "tags": {
+    "addr:city": "Berkeley",
+    "addr:housenumber": "2921",
+    "addr:postcode": "94703",
+    "addr:state": "CA",
+    "addr:street": "Adeline Street",
+    "amenity": "community_centre",
+    "name": "East Bay Community Law Center",
+    "operator": "East Bay Community Law Center"
+   }
+  },
+  {
+   "type": "node",
+   "id": 3539479319,
+   "lat": 37.7115536,
+   "lon": -122.2129958,
+   "tags": {
+    "amenity": "device_charging_station",
+    "lastcheck": "15-May-2015",
+    "lastcheck:status": "needs_repair",
+    "lastcheck:statusnote": "USB charging points are not working.",
+    "note": "Charging lounge with chairs, USB and AC power sockets.",
+    "operator": "Southwest Airlines",
+    "security_zone": "Gate Area",
+    "socket:30_pin_dock": "no",
+    "socket:bs1363": "no",
+    "socket:device:USB-A": "yes",
+    "socket:device:USB-C": "no",
+    "socket:device:lightning": "no",
+    "socket:nema_5_15": "yes"
+   }
+  },
+  {
+   "type": "node",
+   "id": 3981344385,
+   "lat": 37.8069282,
+   "lon": -122.269325,
+   "tags": {
+    "amenity": "community_centre",
+    "name": "Lions Center for the Blind"
+   }
+  },
+  {
+   "type": "node",
+   "id": 3992959602,
+   "lat": 37.8006498,
+   "lon": -122.2708699,
+   "tags": {
+    "amenity": "community_centre",
+    "name": "Oakland Asian Cultural Center",
+    "wikidata": "Q22077816"
+   }
+  },
+  {
+   "type": "node",
+   "id": 4098677195,
+   "lat": 37.7760236,
+   "lon": -122.2250519,
+   "tags": {
+    "addr:city": "Oakland",
+    "addr:housenumber": "3301",
+    "addr:postcode": "94601",
+    "addr:state": "CA",
+    "addr:street": "East 12th Street",
+    "addr:unit": "Suite 271",
+    "amenity": "library",
+    "internet_access": "wlan",
+    "internet_access:fee": "no",
+    "name": "César E. Chávez Branch Oakland Public Library",
+    "opening_hours": "Mo 10:00-17:30; Tu-We 10:00-20:00; Th 10:00-17:30; Fr 12:00-17:30; Sa-Su 10:00-17:30; PH off",
+    "phone": "+1-510-535-5620",
+    "source": "Bing;https://oaklandlibrary.org/locations/CCA/",
+    "wikidata": "Q66362562"
+   }
+  },
+  {
+   "type": "node",
+   "id": 4121837398,
+   "lat": 37.8713738,
+   "lon": -122.2626838,
+   "tags": {
+    "amenity": "library",
+    "name": "Marian Koshland Bioscience & Natural Resources Library",
+    "website": "https://www.lib.berkeley.edu/visit/bioscience",
+    "wikidata": "Q56628012"
+   }
+  },
+  {
+   "type": "node",
+   "id": 4121844989,
+   "lat": 37.8702308,
+   "lon": -122.2544214,
+   "tags": {
+    "amenity": "library",
+    "name": "Environmental Design Archives"
+   }
+  },
+  {
+   "type": "node",
+   "id": 4124184017,
+   "lat": 37.8739952,
+   "lon": -122.258186,
+   "tags": {
+    "addr:housenumber": "B120",
+    "addr:street": "Grimes Engineering Center",
+    "amenity": "library",
+    "internet_access": "wlan",
+    "internet_access:fee": "customers",
+    "layer": "-1",
+    "level": "1",
+    "name": "Kresge Engineering & Mathematical Sciences Library",
+    "opening_hours": "See website",
+    "operator": "UC Berkeley Library",
+    "operator:type": "university",
+    "website": "https://www.lib.berkeley.edu/visit/engineering"
+   }
+  },
+  {
+   "type": "node",
+   "id": 4124184018,
+   "lat": 37.8725411,
+   "lon": -122.2558076,
+   "tags": {
+    "addr:housenumber": "100",
+    "addr:street": "Hildebrand Hall",
+    "amenity": "library",
+    "internet_access": "wlan",
+    "name": "Chemistry, Astronomy & Physics Library",
+    "operator": "UC Berkeley Library",
+    "operator:type": "university",
+    "website": "https://www.lib.berkeley.edu/visit/chemistry",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "type": "node",
+   "id": 4124184020,
+   "lat": 37.8671753,
+   "lon": -122.2578435,
+   "tags": {
+    "amenity": "library",
+    "name": "Institute for Research on Labor and Employment Library"
+   }
+  },
+  {
+   "type": "node",
+   "id": 4124184021,
+   "lat": 37.8715709,
+   "lon": -122.2574305,
+   "tags": {
+    "amenity": "library",
+    "name": "Ethnic Studies Library"
+   }
+  },
+  {
+   "type": "node",
+   "id": 4124184024,
+   "lat": 37.8736138,
+   "lon": -122.2611175,
+   "tags": {
+    "amenity": "library",
+    "internet_access": "wlan",
+    "internet_access:fee": "no",
+    "level": "2",
+    "name": "Social Research Library",
+    "opening_hours": "See website",
+    "operator": "UC Berkeley Library",
+    "operator:type": "university",
+    "ref:addr": "227",
+    "website": "https://www.lib.berkeley.edu/visit/social-research"
+   }
+  },
+  {
+   "type": "node",
+   "id": 4124184025,
+   "lat": 37.8710437,
+   "lon": -122.2579066,
+   "tags": {
+    "amenity": "library",
+    "name": "Institute of Governmental Studies Library"
+   }
+  },
+  {
+   "type": "node",
+   "id": 4124184028,
+   "lat": 37.8714803,
+   "lon": -122.253854,
+   "tags": {
+    "access": "permissive",
+    "amenity": "library",
+    "internet_access": "wlan",
+    "level:ref": "2;3",
+    "name": "Thomas J. Long Business Library",
+    "website": "https://www.lib.berkeley.edu/visit/business",
+    "wikidata": "Q63198329"
+   }
+  },
+  {
+   "type": "node",
+   "id": 4159732335,
+   "lat": 37.7858556,
+   "lon": -122.2196116,
+   "tags": {
+    "amenity": "library",
+    "name": "Patten University Library",
+    "source": "Bing"
+   }
+  },
+  {
+   "type": "node",
+   "id": 4253128648,
+   "lat": 37.8708584,
+   "lon": -122.2579691,
+   "tags": {
+    "amenity": "library",
+    "name": "Howison Philosophy Library"
+   }
+  },
+  {
+   "type": "node",
+   "id": 4316619331,
+   "lat": 37.7966801,
+   "lon": -122.2626056,
+   "tags": {
+    "amenity": "library",
+    "name": "Laney College Library"
+   }
+  },
+  {
+   "type": "node",
+   "id": 4782299763,
+   "lat": 37.8702688,
+   "lon": -122.2923517,
+   "tags": {
+    "addr:country": "US",
+    "addr:housenumber": "1901",
+    "addr:state": "CA",
+    "addr:street": "San Pablo Avenue",
+    "amenity": "community_centre",
+    "description": "Dance: Capoeira, Afro Brazilian West African, Zumba, Ballet, Percussion",
+    "name": "Casa de Cultura",
+    "website": "https://brasarte.com/"
+   }
+  },
+  {
+   "type": "node",
+   "id": 5231663823,
+   "lat": 37.8662837,
+   "lon": -122.260027,
+   "tags": {
+    "addr:housenumber": "2407",
+    "addr:postcode": "94704",
+    "addr:street": "Dana Street",
+    "amenity": "community_centre",
+    "name": "McKinley Hall"
+   }
+  },
+  {
+   "type": "node",
+   "id": 5285594883,
+   "lat": 37.8358139,
+   "lon": -122.2819165,
+   "tags": {
+    "amenity": "community_centre",
+    "name": "Emeryville Center of Community Life"
+   }
+  },
+  {
+   "type": "node",
+   "id": 8343655572,
+   "lat": 37.8531535,
+   "lon": -122.23368,
+   "tags": {
+    "amenity": "library",
+    "name": "Hiller Library",
+    "operator": "Bentley School"
+   }
+  },
+  {
+   "type": "node",
+   "id": 8850719967,
+   "lat": 37.8880249,
+   "lon": -122.2929685,
+   "tags": {
+    "addr:city": "Albany",
+    "addr:country": "US",
+    "addr:housenumber": "1249",
+    "addr:state": "CA",
+    "addr:street": "Marin Avenue",
+    "amenity": "community_centre",
+    "ele": "19",
+    "gnis:feature_id": "1701428",
+    "name": "Albany Community Center",
+    "opening_hours": "Mo 08:30-19:00; Tu-Fr 08:30-17:00",
+    "operator": "City of Albany Recreation & Community Services Department",
+    "phone": "+1 510-524-9283",
+    "source": "USGS Geonames",
+    "website": "https://www.albanyca.org/Home/Components/FacilityDirectory/FacilityDirectory/75/1660",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "type": "node",
+   "id": 8853551949,
+   "lat": 37.8877996,
+   "lon": -122.2942742,
+   "tags": {
+    "amenity": "community_centre",
+    "name": "Center for Creative Growth",
+    "phone": "+1-510-527-2100",
+    "website": "https://creativegrowth.com/"
+   }
+  },
+  {
+   "type": "node",
+   "id": 9445868663,
+   "lat": 37.8711131,
+   "lon": -122.2661288,
+   "tags": {
+    "addr:city": "Berkeley",
+    "addr:housenumber": "2155",
+    "addr:state": "CA",
+    "addr:street": "Center Street",
+    "amenity": "library",
+    "name": "Berkeley Art Museum and Pacific Film Archive Film Library",
+    "website": "https://bampfa.org/visit/library-study-centers"
+   }
+  },
+  {
+   "type": "node",
+   "id": 10288955936,
+   "lat": 37.8051386,
+   "lon": -122.2698799,
+   "tags": {
+    "addr:housenumber": "420",
+    "addr:street": "15th Street",
+    "amenity": "library",
+    "name": "Lincoln University Library",
+    "operator": "Lincoln University"
+   }
+  },
+  {
+   "type": "node",
+   "id": 10547827797,
+   "lat": 37.840148,
+   "lon": -122.2622994,
+   "tags": {
+    "addr:housenumber": "507",
+    "addr:street": "55th Street",
+    "amenity": "community_centre",
+    "check_date": "2023-01-12",
+    "name": "East Bay Community Space"
+   }
+  },
+  {
+   "type": "node",
+   "id": 10795912693,
+   "lat": 37.8037013,
+   "lon": -122.2724438,
+   "tags": {
+    "amenity": "community_centre",
+    "name": "Museum of Children's Arts MOCHA",
+    "website": "https://www.mocha.org/"
+   }
+  },
+  {
+   "type": "node",
+   "id": 11015328422,
+   "lat": 37.7787334,
+   "lon": -122.1636979,
+   "tags": {
+    "amenity": "community_centre",
+    "name": "Monte Vista Villas"
+   }
+  },
+  {
+   "type": "node",
+   "id": 11501414127,
+   "lat": 37.8103993,
+   "lon": -122.2460748,
+   "tags": {
+    "amenity": "community_centre",
+    "community_centre:for": "lgbtq",
+    "lgbtq": "primary",
+    "name": "Oakland LGBTQ Community Center",
+    "website": "https://www.oaklandlgbtqcenter.org/"
+   }
+  },
+  {
+   "type": "node",
+   "id": 11504270781,
+   "lat": 37.7888274,
+   "lon": -122.1663179,
+   "tags": {
+    "amenity": "library",
+    "name": "Merritt College Library",
+    "operator:wikidata": "Q6820339",
+    "website": "https://www.merritt.edu/library/about-the-library/"
+   }
+  },
+  {
+   "type": "node",
+   "id": 12100018495,
+   "lat": 37.7709562,
+   "lon": -122.2552935,
+   "tags": {
+    "addr:city": "Alameda",
+    "addr:housenumber": "1724",
+    "addr:postcode": "94501",
+    "addr:state": "CA",
+    "addr:street": "Santa Clara Avenue",
+    "amenity": "community_centre",
+    "community_centre": "youth_centre",
+    "name": "Girls Inc.",
+    "operator": "Girls Inc.",
+    "operator:type": "private_non_profit",
+    "website": "https://girlsincislandcity.org/"
+   }
+  },
+  {
+   "type": "node",
+   "id": 12731790897,
+   "lat": 37.8681381,
+   "lon": -122.2867815,
+   "tags": {
+    "addr:housenumber": "1250",
+    "addr:street": "Addison Street",
+    "addr:unit": "G",
+    "amenity": "community_centre",
+    "check_date": "2025-04-05",
+    "name": "Berkeley Herbal Center",
+    "website": "https://www.berkeleyherbalcenter.org/"
+   }
+  },
+  {
+   "type": "node",
+   "id": 12799032755,
+   "lat": 37.848503,
+   "lon": -122.2723747,
+   "tags": {
+    "addr:city": "Berkeley",
+    "addr:housenumber": "1740",
+    "addr:postcode": "94703",
+    "addr:state": "CA",
+    "addr:street": "Alcatraz Avenue",
+    "amenity": "community_centre",
+    "community_centre": "youth_centre",
+    "name": "Youth Spirit Artworks",
+    "website": "https://youthspiritartworks.org/"
+   }
+  },
+  {
+   "type": "node",
+   "id": 12843328371,
+   "lat": 37.8671997,
+   "lon": -122.2865926,
+   "tags": {
+    "addr:city": "Berkeley",
+    "addr:housenumber": "1255",
+    "addr:state": "CA",
+    "addr:street": "Allston Way",
+    "amenity": "community_centre",
+    "community_centre": "youth_centre",
+    "name": "Berkeley Youth Alternatives",
+    "website": "https://www.byaonline.org"
+   }
+  },
+  {
+   "type": "node",
+   "id": 12876524915,
+   "lat": 37.8145718,
+   "lon": -122.2806567,
+   "tags": {
+    "amenity": "community_centre",
+    "name": "Eritrean Community Cultural Civic Center"
+   }
+  },
+  {
+   "type": "node",
+   "id": 13975959299,
+   "lat": 37.8475957,
+   "lon": -122.2606814,
+   "tags": {
+    "addr:city": "Oakland",
+    "addr:housenumber": "6116",
+    "addr:postcode": "94609",
+    "addr:state": "CA",
+    "addr:street": "Telegraph Avenue",
+    "amenity": "community_centre",
+    "community_centre": "cultural_centre",
+    "contact:facebook": "https://www.facebook.com/p/Oakland-Ethiopian-Community-and-Cultural-Center-100076252394910/",
+    "description": "ECCC is a non-profit organization that supports the 20,000 members of the Bay Area (CA) community.",
+    "name": "Ethiopian Community Cultural Center",
+    "phone": "+1-510-268-4770"
+   }
+  },
+  {
+   "type": "node",
+   "id": 13987240865,
+   "lat": 37.8724588,
+   "lon": -122.2597817,
+   "tags": {
+    "access": "yes",
+    "addr:housenumber": "101",
+    "addr:street": "Doe Library",
+    "air_conditioning": "yes",
+    "amenity": "library",
+    "internet_access": "wlan",
+    "internet_access:fee": "customers",
+    "name": "Morrison Library",
+    "opening_hours": "See website",
+    "operator": "UC Berkely Library",
+    "operator:type": "university",
+    "website": "https://www.lib.berkeley.edu/visit/morrison"
+   }
+  },
+  {
+   "type": "node",
+   "id": 13987240866,
+   "lat": 37.8724352,
+   "lon": -122.2594958,
+   "tags": {
+    "access": "yes",
+    "addr:housenumber": "200",
+    "addr:street": "Doe Library",
+    "amenity": "library",
+    "internet_access": "wlan",
+    "internet_access:fee": "customers",
+    "level": "2",
+    "name": "North Reading Room",
+    "opening_hours": "See website",
+    "operator": "UC Berkeley Library",
+    "operator:type": "university"
+   }
+  },
+  {
+   "type": "node",
+   "id": 14003340443,
+   "lat": 37.8595145,
+   "lon": -122.2691647,
+   "tags": {
+    "access": "permissive",
+    "amenity": "community_centre",
+    "community_centre": "community_hall",
+    "name": "Community Room",
+    "operator": "Sports Basement",
+    "operator:type": "business",
+    "website": "https://www.sportsbasement.com/blogs/community-spaces/community-room-1"
+   }
+  },
+  {
+   "type": "way",
+   "id": 23553106,
+   "center": {
+    "lat": 37.7813194,
+    "lon": -122.1823201
+   },
+   "tags": {
+    "addr:city": "Oakland",
+    "addr:state": "CA",
+    "addr:street": "Kapiolani Road",
+    "amenity": "library",
+    "building": "yes",
+    "building:levels": "2",
+    "name": "F. W. Olin Library",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "type": "way",
+   "id": 24024349,
+   "center": {
+    "lat": 37.8735394,
+    "lon": -122.2603434
+   },
+   "tags": {
+    "amenity": "library",
+    "building": "yes",
+    "building:levels": "3",
+    "name": "C V Starr East Asian Library",
+    "name:etymology:wikidata": "Q183340",
+    "name:etymology:wikipedia": "en:Cornelius Vander Starr",
+    "website": "https://www.lib.berkeley.edu/visit/east-asian",
+    "wikidata": "Q118903541"
+   }
+  },
+  {
+   "type": "way",
+   "id": 24024508,
+   "center": {
+    "lat": 37.872245,
+    "lon": -122.2588813
+   },
+   "tags": {
+    "addr:state": "CA",
+    "air_conditioning": "yes",
+    "alt_name": "Doe Annex",
+    "amenity": "library",
+    "architect": "Arthur Brown Jr.",
+    "building": "yes",
+    "building:levels": "5",
+    "ele": "91",
+    "gnis:feature_id": "1656666",
+    "internet_access": "wlan",
+    "internet_access:fee": "customers",
+    "name": "Bancroft Library",
+    "opening_hours": "See website",
+    "renovated": "2008",
+    "source": "USGS Geonames",
+    "start_date": "1949",
+    "website": "https://www.lib.berkeley.edu/visit/bancroft",
+    "wikidata": "Q4854158",
+    "wikipedia": "en:Bancroft Library"
+   }
+  },
+  {
+   "type": "way",
+   "id": 24025047,
+   "center": {
+    "lat": 37.8704496,
+    "lon": -122.2561392
+   },
+   "tags": {
+    "access": "yes",
+    "addr:city": "Berkeley",
+    "addr:postcode": "94720",
+    "addr:state": "CA",
+    "air_conditioning": "yes",
+    "amenity": "library",
+    "building": "university",
+    "building:levels": "3",
+    "internet_access": "yes",
+    "internet_access:fee": "customers",
+    "name": "Hargrove Music Library",
+    "opening_hours": "See website",
+    "operator": "University of California, Berkeley",
+    "operator:type": "university",
+    "phone": "+1-510-642-2623",
+    "website": "https://www.lib.berkeley.edu/libraries/music-library",
+    "wheelchair": "yes",
+    "wikidata": "Q83231227"
+   }
+  },
+  {
+   "type": "way",
+   "id": 25207153,
+   "center": {
+    "lat": 37.8121847,
+    "lon": -122.2860974
+   },
+   "tags": {
+    "addr:housenumber": "1269",
+    "addr:street": "18th Street",
+    "alt_name": "deFremery Recreation Center",
+    "amenity": "community_centre",
+    "building": "yes",
+    "contact:website": "http://www2.oaklandnet.com/Government/o/opr/s/facility/OAK029383",
+    "historic": "building",
+    "name": "de Fremery Recreation Center"
+   }
+  },
+  {
+   "type": "way",
+   "id": 26968878,
+   "center": {
+    "lat": 37.8005565,
+    "lon": -122.2486564
+   },
+   "tags": {
+    "addr:housenumber": "1969",
+    "amenity": "community_centre",
+    "building": "yes",
+    "contact:website": "http://www2.oaklandnet.com/Government/o/opr/s/facility/OAK029386",
+    "name": "FM Smith Recreation Center"
+   }
+  },
+  {
+   "type": "way",
+   "id": 27808403,
+   "center": {
+    "lat": 37.8071121,
+    "lon": -122.2586626
+   },
+   "tags": {
+    "addr:housenumber": "666",
+    "addr:street": "Bellevue Avenue",
+    "alt_name": "Marsha J. Corprew Garden Center",
+    "amenity": "community_centre",
+    "building": "yes",
+    "check_date:opening_hours": "2024-04-03",
+    "internet_access": "no",
+    "name": "Lakeside Garden Center",
+    "opening_hours": "Mo-Fr 09:00-16:00",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "type": "way",
+   "id": 28006024,
+   "center": {
+    "lat": 37.8679625,
+    "lon": -122.2686573
+   },
+   "tags": {
+    "addr:city": "Berkeley",
+    "addr:country": "US",
+    "addr:housenumber": "2090",
+    "addr:postcode": "94704",
+    "addr:state": "CA",
+    "addr:street": "Kittredge Street",
+    "amenity": "library",
+    "building": "public",
+    "contact:facebook": "https://www.facebook.com/berkeleypubliclibrary",
+    "contact:instagram": "https://www.instagram.com/berkeleypubliclibrary/",
+    "contact:twitter": "https://twitter.com/BerkeleyPublic",
+    "ele": "56",
+    "gnis:feature_id": "1661728",
+    "internet_access": "wlan",
+    "internet_access:fee": "no",
+    "name": "Central Branch Berkeley Public Library",
+    "opening_hours": "Mo 12:00-20:00; Tu 10:00-20:00; We-Sa 10:00-18:00",
+    "phone": "+1 510 9816100",
+    "source": "USGS Geonames",
+    "website": "https://www.berkeleypubliclibrary.org/",
+    "wheelchair": "yes",
+    "wikidata": "Q66157553",
+    "wikipedia": "en:Berkeley Public Library"
+   }
+  },
+  {
+   "type": "way",
+   "id": 28293990,
+   "center": {
+    "lat": 37.8114258,
+    "lon": -122.261295
+   },
+   "tags": {
+    "addr:city": "Oakland",
+    "addr:housenumber": "200",
+    "addr:state": "CA",
+    "addr:street": "Grand Avenue",
+    "alt_name": "Downtown Oakland Senior Center",
+    "amenity": "community_centre",
+    "building": "government",
+    "community_centre": "community_hall",
+    "community_centre:for": "senior",
+    "contact:website": "http://www2.oaklandnet.com/Government/o/DHS/s/AAS/o/SeniorCenters/Downtown/index.htm",
+    "ele": "4",
+    "gnis:feature_id": "1666758",
+    "name": "Veterans Memorial Building Senior Center",
+    "opening_hours": "Mo-Fr 09:00-16:30",
+    "source": "USGS Geonames"
+   }
+  },
+  {
+   "type": "way",
+   "id": 28376124,
+   "center": {
+    "lat": 37.8009665,
+    "lon": -122.263703
+   },
+   "tags": {
+    "addr:city": "Oakland",
+    "addr:housenumber": "125",
+    "addr:postcode": "94612",
+    "addr:state": "CA",
+    "addr:street": "14th Street",
+    "amenity": "library",
+    "building": "yes",
+    "building:levels": "3",
+    "contact:website": "http://oaklandlibrary.org/locations/main-library",
+    "gnis:feature_id": "1661751",
+    "internet_access": "wlan",
+    "internet_access:fee": "no",
+    "name": "Main Branch Oakland Public Library",
+    "opening_hours": "Mo-Th 10:00-20:00; Fr 12:00- 17:30; Sa-Su 10:00-17:30",
+    "phone": "+1-510-238-3134"
+   }
+  },
+  {
+   "type": "way",
+   "id": 28922004,
+   "center": {
+    "lat": 37.8854469,
+    "lon": -122.2754364
+   },
+   "tags": {
+    "addr:city": "Berkeley",
+    "addr:country": "US",
+    "addr:housenumber": "1170",
+    "addr:postcode": "94703",
+    "addr:state": "CA",
+    "addr:street": "The Alameda",
+    "alt_name": "North Berkeley Branch Berkeley Public Library",
+    "amenity": "library",
+    "building": "public",
+    "building:levels": "1",
+    "ele": "61",
+    "gnis:feature_id": "1676026",
+    "internet_access": "wlan",
+    "internet_access:fee": "no",
+    "name": "Berkeley Public Library North Branch",
+    "opening_hours": "Mo-Tu 10:00-18:00; We-Th 12:00-20:00; Fr-Sa 10:00-18:00",
+    "phone": "+1 510 9816250",
+    "roof:levels": "0",
+    "source": "USGS Geonames",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "type": "way",
+   "id": 31424293,
+   "center": {
+    "lat": 37.8830574,
+    "lon": -122.187881
+   },
+   "tags": {
+    "addr:city": "Orinda",
+    "addr:country": "US",
+    "addr:housenumber": "28",
+    "addr:postcode": "94563",
+    "addr:state": "CA",
+    "addr:street": "Orinda Way",
+    "amenity": "community_centre",
+    "building": "public",
+    "name": "Orinda Civic Center"
+   }
+  },
+  {
+   "type": "way",
+   "id": 31722830,
+   "center": {
+    "lat": 37.8695498,
+    "lon": -122.2909499
+   },
+   "tags": {
+    "addr:city": "Berkeley",
+    "addr:country": "US",
+    "addr:housenumber": "1125",
+    "addr:postcode": "94702",
+    "addr:state": "CA",
+    "addr:street": "University Avenue",
+    "amenity": "library",
+    "building": "yes",
+    "ele": "17",
+    "gnis:feature_id": "1676051",
+    "internet_access": "wlan",
+    "internet_access:fee": "no",
+    "name": "West Branch Berkeley Public Library",
+    "opening_hours": "Mo-Sa 10:00-18:00",
+    "source": "USGS Geonames",
+    "website": "https://www.berkeleypubliclibrary.org/locations/west-branch",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "type": "way",
+   "id": 34667649,
+   "center": {
+    "lat": 37.8424687,
+    "lon": -122.2689912
+   },
+   "tags": {
+    "amenity": "community_centre",
+    "name": "North Oakland Senior Center"
+   }
+  },
+  {
+   "type": "way",
+   "id": 36977219,
+   "center": {
+    "lat": 37.8091825,
+    "lon": -122.2489607
+   },
+   "tags": {
+    "addr:city": "Oakland",
+    "addr:housenumber": "550",
+    "addr:state": "CA",
+    "addr:street": "El Embarcadero",
+    "amenity": "library",
+    "building": "government",
+    "ele": "3",
+    "gnis:feature_id": "1676060",
+    "internet_access": "wlan",
+    "name": "Lakeview Branch Oakland Public Library",
+    "opening_hours": "Mo 10:00-17:30; Tu-We 10:00-20:00; Th 10:00-17:30; Fr 12:00-17:30; Sa 10:00-17:30",
+    "roof:shape": "hipped",
+    "source": "USGS Geonames",
+    "wheelchair": "yes",
+    "wikidata": "Q66362568"
+   }
+  },
+  {
+   "type": "way",
+   "id": 36979430,
+   "center": {
+    "lat": 37.8125453,
+    "lon": -122.2691587
+   },
+   "tags": {
+    "addr:housenumber": "2273",
+    "addr:street": "Telegraph Avenue",
+    "amenity": "community_centre",
+    "building": "yes",
+    "name": "Department of Make Believe"
+   }
+  },
+  {
+   "type": "way",
+   "id": 43255308,
+   "center": {
+    "lat": 37.8399494,
+    "lon": -122.2511018
+   },
+   "tags": {
+    "access": "yes",
+    "addr:city": "Oakland",
+    "addr:housenumber": "5372",
+    "addr:street": "College Avenue",
+    "amenity": "library",
+    "building": "public",
+    "check_date": "2023-12-21",
+    "internet_access": "wlan",
+    "internet_access:fee": "no",
+    "name": "Rockridge Branch Oakland Public Library",
+    "opening_hours": "Mo,Th,Sa 10:00-17:30; Tu-We 10:00-20:00; Fr 12:00-17:30; Su off",
+    "website": "https://www.oaklandlibrary.org/locations/rockridge-branch",
+    "wheelchair": "yes",
+    "wikidata": "Q66362574"
+   }
+  },
+  {
+   "type": "way",
+   "id": 43919891,
+   "center": {
+    "lat": 37.8129976,
+    "lon": -122.2853402
+   },
+   "tags": {
+    "addr:housenumber": "1801",
+    "addr:state": "CA",
+    "addr:street": "Adeline Street",
+    "amenity": "library",
+    "building": "yes",
+    "ele": "6",
+    "gnis:feature_id": "1676069",
+    "name": "West Oakland Branch Oakland Public Library",
+    "opening_hours": "Mo 10:00-17:30; Tu-We 10:00-20:00; Th 10:00-17:30; Fr 12:00-17:30; Sa 10:00-17:30",
+    "source": "USGS Geonames",
+    "wikidata": "Q66362576"
+   }
+  },
+  {
+   "type": "way",
+   "id": 44032539,
+   "center": {
+    "lat": 37.8120194,
+    "lon": -122.2848148
+   },
+   "tags": {
+    "addr:housenumber": "1724",
+    "addr:street": "Adeline Street",
+    "amenity": "community_centre",
+    "name": "West Oakland Senior Center"
+   }
+  },
+  {
+   "type": "way",
+   "id": 52225586,
+   "center": {
+    "lat": 37.8024514,
+    "lon": -122.1881757
+   },
+   "tags": {
+    "amenity": "library",
+    "building": "library",
+    "name": "Cusing Library"
+   }
+  },
+  {
+   "type": "way",
+   "id": 52380678,
+   "center": {
+    "lat": 37.8087102,
+    "lon": -122.2047883
+   },
+   "tags": {
+    "amenity": "library",
+    "building": "library",
+    "name": "Head-Royce Read Library",
+    "operator": "Head-Royce School"
+   }
+  },
+  {
+   "type": "way",
+   "id": 60117887,
+   "center": {
+    "lat": 37.8755432,
+    "lon": -122.2618741
+   },
+   "tags": {
+    "addr:city": "Berkeley",
+    "addr:housenumber": "2400",
+    "addr:street": "Ridge Road",
+    "amenity": "library",
+    "building": "university",
+    "name": "Graduate Theological Union Hewlett Library"
+   }
+  },
+  {
+   "type": "way",
+   "id": 68675196,
+   "center": {
+    "lat": 37.8543585,
+    "lon": -122.2729355
+   },
+   "tags": {
+    "addr:city": "Berkeley",
+    "addr:country": "US",
+    "addr:housenumber": "2930",
+    "addr:state": "CA",
+    "addr:street": "Ellis Street",
+    "alt_name": "South Berkeley Senior Center",
+    "amenity": "community_centre",
+    "building": "public",
+    "community_centre:for": "senior",
+    "ele": "32",
+    "gnis:feature_id": "2086839",
+    "name": "Judge Henry Ramsey Jr. South Berkeley Senior Center",
+    "official_name": "Judge Henry Ramsey Jr. South Berkeley Senior Center",
+    "operator": "City of Berkeley",
+    "source": "USGS Geonames",
+    "website": "https://berkeleyca.gov/community-recreation/seniors/senior-centers/judge-henry-ramsey-jr-south-berkeley-senior-center"
+   }
+  },
+  {
+   "type": "way",
+   "id": 73978282,
+   "center": {
+    "lat": 37.8565285,
+    "lon": -122.2735447
+   },
+   "tags": {
+    "addr:city": "Berkeley",
+    "addr:housenumber": "1730",
+    "addr:postcode": "94703",
+    "addr:state": "CA",
+    "addr:street": "Oregon Street",
+    "amenity": "community_centre",
+    "building": "school",
+    "building:levels": "1",
+    "name": "Martin Luther King Jr. Youth Services Center",
+    "name:etymology:wikidata": "Q8027",
+    "roof:levels": "0",
+    "website": "https://www.cityofberkeley.info/Parks_Rec_Waterfront/Recreation/MLK_Jr__Youth_Services_Center.aspx"
+   }
+  },
+  {
+   "type": "way",
+   "id": 81458139,
+   "center": {
+    "lat": 37.7577664,
+    "lon": -122.1630413
+   },
+   "tags": {
+    "addr:housenumber": "2449",
+    "addr:street": "88th Avenue",
+    "amenity": "community_centre",
+    "building": "yes",
+    "name": "Youth UpRising",
+    "website": "https://www.youthuprising.org/"
+   }
+  },
+  {
+   "type": "way",
+   "id": 104441907,
+   "center": {
+    "lat": 37.8454617,
+    "lon": -122.2635507
+   },
+   "tags": {
+    "addr:city": "Oakland",
+    "addr:housenumber": "560",
+    "addr:state": "CA",
+    "addr:street": "59th Street",
+    "amenity": "community_centre",
+    "building": "yes",
+    "name": "Bushrod Recreation Center",
+    "source": "bing"
+   }
+  },
+  {
+   "type": "way",
+   "id": 107236636,
+   "center": {
+    "lat": 37.7926623,
+    "lon": -122.2483446
+   },
+   "tags": {
+    "amenity": "community_centre",
+    "building": "yes",
+    "name": "Franklin Recreation Center",
+    "website": "https://www.oaklandca.gov/Community/Parks-Facilities/Recreation-Centers/Franklin-Recreation-Center"
+   }
+  },
+  {
+   "type": "way",
+   "id": 107246805,
+   "center": {
+    "lat": 37.7940659,
+    "lon": -122.2279974
+   },
+   "tags": {
+    "addr:housenumber": "2701",
+    "addr:street": "22nd Avenue",
+    "amenity": "community_centre",
+    "building": "yes",
+    "name": "Manzanita Recreation Center",
+    "official_name": "Ernest A. Robinson II Manzanita Recreation Center",
+    "operator": "City of Oakland"
+   }
+  },
+  {
+   "type": "way",
+   "id": 107246811,
+   "center": {
+    "lat": 37.7819689,
+    "lon": -122.205249
+   },
+   "tags": {
+    "addr:city": "Oakland",
+    "addr:housenumber": "2535",
+    "addr:postcode": "94601",
+    "addr:state": "CA",
+    "addr:street": "High Street",
+    "amenity": "community_centre",
+    "building": "yes",
+    "community_centre:for": "juvenile",
+    "drinking_water": "yes",
+    "name": "Brookdale Recreation Center",
+    "source": "bing",
+    "toilets": "yes"
+   }
+  },
+  {
+   "type": "way",
+   "id": 112758049,
+   "center": {
+    "lat": 37.8021647,
+    "lon": -122.2706005
+   },
+   "tags": {
+    "amenity": "community_centre",
+    "building": "yes",
+    "name": "The Salvation Army Oakland Chinatown Corps and Community Center",
+    "operator": "The Salvation Army",
+    "operator:type": "charitable",
+    "operator:wikidata": "Q188307",
+    "source": "bing-approx"
+   }
+  },
+  {
+   "type": "way",
+   "id": 118422329,
+   "center": {
+    "lat": 37.8014785,
+    "lon": -122.2160748
+   },
+   "tags": {
+    "addr:housenumber": "3565",
+    "addr:postcode": "94602",
+    "addr:state": "CA",
+    "addr:street": "Fruitvale Avenue",
+    "amenity": "library",
+    "building": "yes",
+    "contact:phone": "+1-510-482-7844",
+    "ele": "56",
+    "gnis:feature_id": "1676057",
+    "name": "Dimond Branch Oakland Public Library",
+    "opening_hours": "Mo 10:00-17:30; Tu-We 10:00-20:00; Th 10:00-17:30; Fr 12:00-17:30; Sa 10:00-17:30",
+    "source": "USGS Geonames",
+    "wikidata": "Q66362563"
+   }
+  },
+  {
+   "type": "way",
+   "id": 125686118,
+   "center": {
+    "lat": 37.8382334,
+    "lon": -122.2625318
+   },
+   "tags": {
+    "addr:housenumber": "5205",
+    "addr:street": "Telegraph Avenue",
+    "amenity": "library",
+    "building": "yes",
+    "check_date": "2025-06-17",
+    "contact:website": "https://oaklandlibrary.org/locations/TMA/",
+    "historic": "yes",
+    "internet_access": "wlan",
+    "internet_access:fee": "no",
+    "name": "Temescal Branch Oakland Public Library",
+    "opening_hours": "Mo 10:00-17:30; Tu-We 10:00-20:00; Th 10:00-17:30; Fr 12:00-17:30; Sa 10:00-17:30",
+    "phone": "+1-510-597-5089",
+    "wikidata": "Q66362575"
+   }
+  },
+  {
+   "type": "way",
+   "id": 135671462,
+   "center": {
+    "lat": 37.8392304,
+    "lon": -122.2822245
+   },
+   "tags": {
+    "addr:housenumber": "5606",
+    "addr:postcode": "94608",
+    "addr:state": "CA",
+    "addr:street": "San Pablo Avenue",
+    "amenity": "library",
+    "building": "library",
+    "check_date": "2023-08-08",
+    "ele": "13",
+    "gnis:feature_id": "1676014",
+    "heritage": "2;8",
+    "name": "Golden Gate Branch Oakland Public Library",
+    "opening_hours": "Mo 10:00-17:30; Tu-We 10:00-20:00; Th 10:00-17:30; Fr 12:00-17:30; Sa 10:00-17:30",
+    "operator": "Oakland Public Library",
+    "phone": "+1-510-597-5023",
+    "source": "USGS Geonames",
+    "website": "https://oaklandlibrary.org/locations/GGA/",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "type": "way",
+   "id": 157154824,
+   "center": {
+    "lat": 37.8491638,
+    "lon": -122.2868701
+   },
+   "tags": {
+    "addr:city": "Oakland",
+    "addr:country": "US",
+    "addr:housenumber": "1140",
+    "addr:postcode": "94608",
+    "addr:state": "CA",
+    "addr:street": "66th Street",
+    "amenity": "community_centre",
+    "building": "yes",
+    "community_centre:for": "senior",
+    "name": "Fratellanza Club",
+    "website": "http://fratellanzaclub.com"
+   }
+  },
+  {
+   "type": "way",
+   "id": 230610300,
+   "center": {
+    "lat": 37.7667567,
+    "lon": -122.2422916
+   },
+   "tags": {
+    "access": "yes",
+    "addr:city": "Alameda",
+    "addr:housenumber": "1550",
+    "addr:postcode": "94501",
+    "addr:state": "CA",
+    "addr:street": "Oak Street",
+    "air_conditioning": "yes",
+    "amenity": "library",
+    "building": "yes",
+    "ele": "10",
+    "gnis:feature_id": "1661725",
+    "internet_access": "wlan",
+    "internet_access:fee": "no",
+    "name": "Alameda Free Library Main Branch",
+    "opening_hours": "Mo-Tu 10:00-20:00; We 12:00-20:00; Th-Sa 10:00-17:00; Su 12:00-17:00; PH off",
+    "operator": "City of Alameda",
+    "operator:type": "government",
+    "phone": "+1-510-747-7740",
+    "source": "USGS Geonames",
+    "website": "https://www.alamedafree.org",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "type": "way",
+   "id": 263313197,
+   "center": {
+    "lat": 37.8824687,
+    "lon": -122.1873924
+   },
+   "tags": {
+    "addr:city": "Orinda",
+    "addr:country": "US",
+    "addr:housenumber": "26",
+    "addr:postcode": "94563",
+    "addr:state": "CA",
+    "addr:street": "Orinda Way",
+    "air_conditioning": "yes",
+    "amenity": "library",
+    "building": "public",
+    "internet_access": "wlan",
+    "internet_access:fee": "no",
+    "internet_access:ssid": "CCCLIBRARY",
+    "name": "Orinda Library",
+    "website": "https://ccclib.org/locations/19/"
+   }
+  },
+  {
+   "type": "way",
+   "id": 311006347,
+   "center": {
+    "lat": 37.7724393,
+    "lon": -122.2076348
+   },
+   "tags": {
+    "addr:housenumber": "4805",
+    "addr:state": "CA",
+    "addr:street": "Foothill Boulevard",
+    "amenity": "library",
+    "building": "yes",
+    "ele": "13",
+    "gnis:feature_id": "1676063",
+    "name": "Melrose Branch Oakland Public Library",
+    "opening_hours": "Mo 10:00-17:30; Tu-We 10:00-20:00; Th 10:00-17:30; Fr 12:00-17:30; Sa 10:00-17:30",
+    "source": "USGS Geonames",
+    "wikidata": "Q66362570"
+   }
+  },
+  {
+   "type": "way",
+   "id": 313188875,
+   "center": {
+    "lat": 37.8692338,
+    "lon": -122.2529598
+   },
+   "tags": {
+    "addr:housenumber": "2736",
+    "addr:street": "Bancroft Way",
+    "amenity": "community_centre",
+    "building": "yes",
+    "community_centre:for": "student;religious",
+    "name": "Berkeley Hillel Reutlinger Center",
+    "religion": "jewish"
+   }
+  },
+  {
+   "type": "way",
+   "id": 318127797,
+   "center": {
+    "lat": 37.8565299,
+    "lon": -122.2544712
+   },
+   "tags": {
+    "addr:housenumber": "2940",
+    "addr:state": "CA",
+    "addr:street": "Benvenue Avenue",
+    "alt_name": "Claremont Branch Library",
+    "amenity": "library",
+    "building": "library",
+    "ele": "71",
+    "gnis:feature_id": "1676004",
+    "name": "Claremont Branch Berkeley Public Library",
+    "network": "Berkeley Public Library",
+    "opening_hours": "Mo 10:00-18:00; Tu-We 10:00-20:00; Th 12:00-20:00; Fr-Sa 10:00-18:00",
+    "operator": "City of Berkeley",
+    "source": "USGS Geonames",
+    "website": "https://www.berkeleypubliclibrary.org/locations/claremont-branch",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "type": "way",
+   "id": 372782926,
+   "center": {
+    "lat": 37.7784787,
+    "lon": -122.2250776
+   },
+   "tags": {
+    "addr:housenumber": "1470",
+    "addr:street": "Fruitvale Avenue",
+    "amenity": "community_centre",
+    "building": "yes",
+    "name": "Spanish Speaking Citizens' Foundation"
+   }
+  },
+  {
+   "type": "way",
+   "id": 376427450,
+   "center": {
+    "lat": 37.7998254,
+    "lon": -122.2700311
+   },
+   "tags": {
+    "addr:housenumber": "316",
+    "addr:street": "9th Street",
+    "amenity": "community_centre",
+    "building": "commercial",
+    "name": "Shoong Family Chinese Cultural Center",
+    "source": "Bing"
+   }
+  },
+  {
+   "type": "way",
+   "id": 376599077,
+   "center": {
+    "lat": 37.7373556,
+    "lon": -122.1886084
+   },
+   "tags": {
+    "addr:housenumber": "9255",
+    "addr:state": "CA",
+    "amenity": "library",
+    "building": "yes",
+    "contact:phone": "+1-510-615-5725",
+    "ele": "7",
+    "gnis:feature_id": "1692770",
+    "name": "Brookfield Village Branch Oakland Public Library",
+    "opening_hours": "Mo 10:00-17:30; Tu-We 10:00-20:00; Th 10:00-17:30; Fr 12:00-17:30; Sa 10:00-17:30",
+    "source": "USGS Geonames"
+   }
+  },
+  {
+   "type": "way",
+   "id": 390271193,
+   "center": {
+    "lat": 37.7657868,
+    "lon": -122.2000527
+   },
+   "tags": {
+    "addr:housenumber": "5800",
+    "addr:street": "International Boulevard",
+    "amenity": "community_centre",
+    "building": "public",
+    "name": "Rainbow Recreation Center",
+    "operator": "City of Oakland"
+   }
+  },
+  {
+   "type": "way",
+   "id": 392017852,
+   "center": {
+    "lat": 37.726026,
+    "lon": -122.1540438
+   },
+   "tags": {
+    "addr:city": "San Leandro",
+    "addr:housenumber": "300",
+    "addr:postcode": "94577",
+    "addr:state": "CA",
+    "addr:street": "Estudillo Avenue",
+    "amenity": "library",
+    "building": "yes",
+    "ele": "18",
+    "gnis:feature_id": "1692932",
+    "internet_access": "wlan",
+    "internet_access:fee": "no",
+    "name": "San Leandro Community Library",
+    "opening_hours": "Mo-Th 10:00-20:00; Sa 10:00-17:00; Su 13:00-17:00; PH off",
+    "phone": "+1-510-577-3971",
+    "source": "USGS Geonames"
+   }
+  },
+  {
+   "type": "way",
+   "id": 395161002,
+   "center": {
+    "lat": 37.8132534,
+    "lon": -122.2734736
+   },
+   "tags": {
+    "amenity": "community_centre",
+    "building": "yes",
+    "name": "St. Vincent De Paul Community Center",
+    "source": "Bing",
+    "website": "https://www.svdp-alameda.org/"
+   }
+  },
+  {
+   "type": "way",
+   "id": 395220400,
+   "center": {
+    "lat": 37.8278322,
+    "lon": -122.2481617
+   },
+   "tags": {
+    "addr:city": "Oakland",
+    "addr:housenumber": "80",
+    "addr:postcode": "94611",
+    "addr:state": "CA",
+    "addr:street": "Echo Avenue",
+    "amenity": "library",
+    "building": "yes",
+    "ele": "34",
+    "gnis:feature_id": "1676066",
+    "internet_access": "wlan",
+    "internet_access:fee": "no",
+    "name": "Piedmont Avenue Branch Oakland Public Library",
+    "opening_hours": "Mo 10:00-17:30; Tu-We 10:00-20:00; Th 10:00-17:30; Fr 12:00-17:30; Sa 10:00-17:30; PH off",
+    "operator": "Oakland Public Library",
+    "operator:type": "government",
+    "phone": "+1-510-597-5011",
+    "source": "USGS Geonames",
+    "website": "https://www.oaklandlibrary.org/locations/piedmont-avenue-branch",
+    "wikidata": "Q66362573"
+   }
+  },
+  {
+   "type": "way",
+   "id": 412109090,
+   "center": {
+    "lat": 37.8461089,
+    "lon": -122.2854567
+   },
+   "tags": {
+    "amenity": "community_centre",
+    "leisure": "garden",
+    "name": "A Place for Sustainable Living",
+    "website": "https://www.place.community/"
+   }
+  },
+  {
+   "type": "way",
+   "id": 414837835,
+   "center": {
+    "lat": 37.7533661,
+    "lon": -122.185613
+   },
+   "tags": {
+    "addr:city": "Oakland",
+    "addr:housenumber": "1021",
+    "addr:postcode": "94621",
+    "addr:state": "CA",
+    "addr:street": "81st Avenue",
+    "amenity": "library",
+    "building": "yes",
+    "internet_access": "wlan",
+    "internet_access:fee": "no",
+    "name": "81st Avenue Branch Oakland Public Library",
+    "opening_hours": "Sa-Mo 10:00-17:30; Tu, We 10:00-20:00; Th 10:00-17:30; Fr 12:00-17:30",
+    "phone": "+1-510-615-5812",
+    "source": "Bing",
+    "wikidata": "Q66362559"
+   }
+  },
+  {
+   "type": "way",
+   "id": 435326929,
+   "center": {
+    "lat": 37.8449022,
+    "lon": -122.2823892
+   },
+   "tags": {
+    "addr:city": "Oakland",
+    "addr:country": "US",
+    "addr:housenumber": "1075",
+    "addr:state": "CA",
+    "addr:street": "62nd Street",
+    "alt_name": "Charles Porter Recreation Center;Golden Gate Recreation Center",
+    "amenity": "community_centre",
+    "building": "public",
+    "name": "Charles Porter Golden Gate Recreation Center",
+    "old_name": "Golden Gate Community Center",
+    "operator": "City of Oakland",
+    "source": "Bing"
+   }
+  },
+  {
+   "type": "way",
+   "id": 435405124,
+   "center": {
+    "lat": 37.821259,
+    "lon": -122.2642734
+   },
+   "tags": {
+    "alt_name": "Health Education Center",
+    "amenity": "library",
+    "building": "yes",
+    "name": "John A Graziano Memorial Library",
+    "source": "Bing"
+   }
+  },
+  {
+   "type": "way",
+   "id": 438355756,
+   "center": {
+    "lat": 37.8256039,
+    "lon": -122.1303842
+   },
+   "tags": {
+    "amenity": "library",
+    "building": "yes"
+   }
+  },
+  {
+   "type": "way",
+   "id": 440884927,
+   "center": {
+    "lat": 37.8002811,
+    "lon": -122.2687286
+   },
+   "tags": {
+    "amenity": "community_centre",
+    "building": "yes",
+    "building:levels": "2",
+    "name": "Lincoln Neighborhood Center"
+   }
+  },
+  {
+   "type": "way",
+   "id": 446619550,
+   "center": {
+    "lat": 37.809167,
+    "lon": -122.2602873
+   },
+   "tags": {
+    "amenity": "library",
+    "building": "yes",
+    "name": "Alice's Reading Room"
+   }
+  },
+  {
+   "type": "way",
+   "id": 464457431,
+   "center": {
+    "lat": 37.7817256,
+    "lon": -122.2053214
+   },
+   "tags": {
+    "addr:city": "Oakland",
+    "addr:housenumber": "2521",
+    "addr:postcode": "94601",
+    "addr:state": "CA",
+    "addr:street": "High Street",
+    "amenity": "community_centre",
+    "building": "yes",
+    "name": "Brookdale Discovery Center"
+   }
+  },
+  {
+   "type": "way",
+   "id": 466046481,
+   "center": {
+    "lat": 37.7730392,
+    "lon": -122.2730222
+   },
+   "tags": {
+    "addr:housenumber": "788",
+    "addr:street": "Santa Clara Avenue",
+    "amenity": "library",
+    "building": "yes"
+   }
+  },
+  {
+   "type": "way",
+   "id": 467707976,
+   "center": {
+    "lat": 37.8700036,
+    "lon": -122.2725439
+   },
+   "tags": {
+    "addr:city": "Berkeley",
+    "addr:housenumber": "2111",
+    "addr:postcode": "94704",
+    "addr:state": "CA",
+    "addr:street": "Martin Luther King Jr Way",
+    "alt_name": "Berkeley Teen Center",
+    "amenity": "community_centre",
+    "community_centre": "youth_centre",
+    "community_centre:for": "juvenile",
+    "landuse": "institutional",
+    "name": "YMCA PG&E Teen Center",
+    "operator": "YMCA Central Bay Area",
+    "website": "https://ymcacba.org/index.php/locations/teen-center"
+   }
+  },
+  {
+   "type": "way",
+   "id": 471289300,
+   "center": {
+    "lat": 37.8339748,
+    "lon": -122.2797713
+   },
+   "tags": {
+    "addr:country": "US",
+    "addr:housenumber": "4321",
+    "addr:state": "CA",
+    "addr:street": "Salem Street",
+    "amenity": "community_centre",
+    "building": "yes",
+    "community_centre:for": "senior",
+    "ele": "15",
+    "gnis:feature_id": "1961860",
+    "name": "Emeryville Senior Center",
+    "source": "USGS Geonames",
+    "website": "https://www.emeryville.org/Recreation/Senior-Center"
+   }
+  },
+  {
+   "type": "way",
+   "id": 475331878,
+   "center": {
+    "lat": 37.8319833,
+    "lon": -122.2141687
+   },
+   "tags": {
+    "addr:city": "Oakland",
+    "addr:housenumber": "1687",
+    "addr:postcode": "94611",
+    "addr:state": "CA",
+    "addr:street": "Mountain Boulevard",
+    "amenity": "library",
+    "building": "yes",
+    "contact:phone": "+1-510-482-7810",
+    "contact:website": "http://oaklandlibrary.org/using-library/locations-hours#jumpbranch254",
+    "ele": "193",
+    "gnis:feature_id": "1676064",
+    "internet_access": "wlan",
+    "internet_access:fee": "no",
+    "name": "Montclair Branch Oakland Public Library",
+    "opening_hours": "Mo 10:00-17:30; Tu-We 10:00-20:00; Th 10:00-17:30; Fr 12:00-17:30; Sa 10:00-17:30; PH off",
+    "source": "USGS Geonames",
+    "wikidata": "Q66362571"
+   }
+  },
+  {
+   "type": "way",
+   "id": 477465436,
+   "center": {
+    "lat": 37.7852716,
+    "lon": -122.1683324
+   },
+   "tags": {
+    "amenity": "community_centre",
+    "building": "yes"
+   }
+  },
+  {
+   "type": "way",
+   "id": 478114061,
+   "center": {
+    "lat": 37.720922,
+    "lon": -122.1588111
+   },
+   "tags": {
+    "addr:housenumber": "1550",
+    "addr:postcode": "94577",
+    "addr:street": "San Leandro Boulevard",
+    "amenity": "community_centre",
+    "building": "yes",
+    "name": "Deaf Community Center"
+   }
+  },
+  {
+   "type": "way",
+   "id": 479030247,
+   "center": {
+    "lat": 37.8837572,
+    "lon": -122.2992919
+   },
+   "tags": {
+    "amenity": "community_centre",
+    "building": "yes"
+   }
+  },
+  {
+   "type": "way",
+   "id": 485190272,
+   "center": {
+    "lat": 37.7367708,
+    "lon": -122.2416216
+   },
+   "tags": {
+    "access": "yes",
+    "addr:city": "Alameda",
+    "addr:housenumber": "3221",
+    "addr:postcode": "94502",
+    "addr:state": "CA",
+    "addr:street": "Mecartney Road",
+    "amenity": "library",
+    "building": "yes",
+    "internet_access": "yes",
+    "internet_access:fee": "no",
+    "name": "Bay Farm Island Branch - Alameda Free Library",
+    "opening_hours": "Mo-Tu 10:00-20:00; We 12:00-17:00; Th 10:00-17:00; Sa 10:00-17:00; PH off",
+    "phone": "+1-510-747-7787",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "type": "way",
+   "id": 560051803,
+   "center": {
+    "lat": 37.8523854,
+    "lon": -122.1267823
+   },
+   "tags": {
+    "amenity": "community_centre",
+    "name": "Hacienda De Las Flores"
+   }
+  },
+  {
+   "type": "way",
+   "id": 821918472,
+   "center": {
+    "lat": 37.8720589,
+    "lon": -122.297443
+   },
+   "tags": {
+    "addr:country": "US",
+    "addr:housenumber": "1700;1718;1720",
+    "addr:state": "CA",
+    "addr:street": "Eighth Street",
+    "amenity": "community_centre",
+    "building": "yes",
+    "name": "James Kenney Recreation Center",
+    "operator": "City of Berkeley"
+   }
+  },
+  {
+   "type": "way",
+   "id": 874507299,
+   "center": {
+    "lat": 37.8638384,
+    "lon": -122.1896727
+   },
+   "tags": {
+    "addr:city": "Orinda",
+    "addr:housenumber": "20",
+    "addr:postcode": "94563",
+    "addr:state": "CA",
+    "addr:street": "Orinda Fields Lane",
+    "amenity": "community_centre",
+    "building": "yes",
+    "name": "Wilder Art & Garden Center"
+   }
+  },
+  {
+   "type": "way",
+   "id": 886286399,
+   "center": {
+    "lat": 37.841612,
+    "lon": -122.1444702
+   },
+   "tags": {
+    "amenity": "library",
+    "building": "yes",
+    "name": "Miramonte High School Library"
+   }
+  },
+  {
+   "type": "way",
+   "id": 1116700543,
+   "center": {
+    "lat": 37.8868272,
+    "lon": -122.3013823
+   },
+   "tags": {
+    "amenity": "library",
+    "building": "school",
+    "height": "5",
+    "internet_access": "wlan",
+    "internet_access:fee": "no",
+    "level": "1",
+    "operator": "ACU",
+    "operator:type": "school",
+    "roof:colour": "black",
+    "roof:shape": "pitched"
+   }
+  },
+  {
+   "type": "way",
+   "id": 1229781078,
+   "center": {
+    "lat": 37.7899299,
+    "lon": -122.2032607
+   },
+   "tags": {
+    "amenity": "community_centre",
+    "building": "yes",
+    "name": "Allendale Recreation Center",
+    "website": "https://www.oaklandca.gov/topics/allendale-recreation-center"
+   }
+  },
+  {
+   "type": "way",
+   "id": 1509844815,
+   "center": {
+    "lat": 37.8236898,
+    "lon": -122.2614077
+   },
+   "tags": {
+    "addr:city": "Oakland",
+    "addr:housenumber": "3612",
+    "addr:state": "CA",
+    "addr:street": "Webster Street",
+    "amenity": "community_centre",
+    "building": "yes",
+    "building:levels": "2",
+    "name": "Mosswood Recreation Center",
+    "note": "new building opened May 2026",
+    "website": "https://www.oaklandca.gov/Community/Parks-Facilities/Recreation-Centers/Mosswood-Recreation-Center"
+   }
+  },
+  {
+   "type": "relation",
+   "id": 2834450,
+   "center": {
+    "lat": 37.8551421,
+    "lon": -122.2834107
+   },
+   "tags": {
+    "addr:city": "Berkeley",
+    "addr:country": "US",
+    "addr:housenumber": "2800",
+    "addr:state": "CA",
+    "addr:street": "Park Street",
+    "alt_name": "Frances Albrier Recreation Center",
+    "amenity": "community_centre",
+    "building": "public",
+    "ele": "20",
+    "gnis:feature_id": "2086825",
+    "name": "Frances Albrier Community Center",
+    "operator": "City of Berkeley",
+    "source": "USGS Geonames",
+    "type": "multipolygon",
+    "website": "https://berkeleyca.gov/community-recreation/parks-recreation/facilities/frances-albrier-community-center"
+   }
+  },
+  {
+   "type": "relation",
+   "id": 5406935,
+   "center": {
+    "lat": 37.8563563,
+    "lon": -122.2709931
+   },
+   "tags": {
+    "addr:city": "Berkeley",
+    "addr:housenumber": "1901",
+    "addr:postcode": "94703",
+    "addr:street": "Russell Street",
+    "amenity": "library",
+    "building": "yes",
+    "check_date": "2025-01-19",
+    "name": "Berkeley Public Library - Tarea Hall Pittman South Branch",
+    "opening_hours": "Mo,Fr-Su 10:00-18:00; Tu-We 10:00-20:00; Th 12:00-20:00",
+    "operator": "City of Berkeley",
+    "type": "multipolygon",
+    "website": "https://www.berkeleypubliclibrary.org/locations/south-branch",
+    "wikidata": "Q66157559"
+   }
+  },
+  {
+   "type": "relation",
+   "id": 6827544,
+   "center": {
+    "lat": 37.7736244,
+    "lon": -122.265167
+   },
+   "tags": {
+    "addr:city": "Alameda",
+    "addr:housenumber": "1155",
+    "addr:postcode": "94501",
+    "addr:state": "CA",
+    "addr:street": "Santa Clara Avenue",
+    "amenity": "community_centre",
+    "building": "social_facility",
+    "community_centre": "senior_centre",
+    "community_centre:for": "senior",
+    "ele": "8",
+    "gnis:feature_id": "1670756",
+    "name": "Mastick Senior Center",
+    "phone": "+1-510-747-7500",
+    "source": "USGS Geonames",
+    "type": "multipolygon",
+    "website": "https://mastickcenter.com/",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "type": "relation",
+   "id": 6958495,
+   "center": {
+    "lat": 37.7942374,
+    "lon": -122.2527533
+   },
+   "tags": {
+    "addr:housenumber": "655",
+    "addr:street": "International Boulevard",
+    "amenity": "community_centre",
+    "building": "yes",
+    "name": "Clinton Community Center",
+    "type": "multipolygon"
+   }
+  },
+  {
+   "type": "relation",
+   "id": 12563891,
+   "center": {
+    "lat": 37.8816755,
+    "lon": -122.2686597
+   },
+   "tags": {
+    "addr:city": "Berkeley",
+    "addr:country": "US",
+    "addr:housenumber": "1414",
+    "addr:postcode": "94709",
+    "addr:state": "CA",
+    "addr:street": "Walnut Street",
+    "alt_name": "Jewish Community Center of the East Bay",
+    "amenity": "community_centre",
+    "building": "school",
+    "building:levels": "1",
+    "name": "JCC East Bay",
+    "old_name": "Berkeley Richmond Jewish Community Center;Garfield Junior High School",
+    "opening_hours:signed": "no",
+    "type": "multipolygon",
+    "website": "https://www.jcceastbay.org/"
+   }
+  },
+  {
+   "type": "relation",
+   "id": 21101300,
+   "center": {
+    "lat": 37.87269,
+    "lon": -122.2589567
+   },
+   "tags": {
+    "alt_name": "Gardner Stacks",
+    "amenity": "library",
+    "architect": "Esherick Homsey Dodge and Davis",
+    "building": "library",
+    "building:levels": "4",
+    "building:levels:underground": "3",
+    "layer": "1",
+    "name": "Main Stacks",
+    "official_name": "David Pierpont Gardner Stacks",
+    "operator": "UC Berkeley Library",
+    "start_date": "1994",
+    "type": "multipolygon",
+    "website": "https://www.lib.berkeley.edu/visit/main-stacks",
+    "wheelchair": "yes",
+    "wikipedia": "en:University of California, Berkeley Libraries#Main Stacks"
+   }
+  },
+  {
+   "type": "relation",
+   "id": 21101411,
+   "center": {
+    "lat": 37.8721871,
+    "lon": -122.2595133
+   },
+   "tags": {
+    "access": "yes",
+    "addr:state": "CA",
+    "amenity": "library",
+    "architect": "John Galen Howard",
+    "building": "yes",
+    "building:levels": "5",
+    "ele": "88",
+    "gnis:feature_id": "1656688",
+    "internet_access": "wlan",
+    "internet_access:fee": "customers",
+    "name": "Doe Memorial Library",
+    "opening_hours": "See website",
+    "source": "USGS Geonames",
+    "start_date": "1911",
+    "type": "multipolygon",
+    "website": "https://www.lib.berkeley.edu/visit/doe",
+    "wikidata": "Q5288048",
+    "wikipedia": "https://en.wikipedia.org/wiki/Doe_Memorial_Library"
+   }
+  }
+ ]
+}

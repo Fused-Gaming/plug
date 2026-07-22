@@ -9,16 +9,28 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- Phase A OSINT ETL (issue #20): `scripts/etl/` fetches OpenStreetMap Overpass
+  data for the Oakland service area, normalizes/dedupes/scores it into
+  `data/locations.db` (canonical SQLite) and `public/data/locations.json`
+- Daily `data-sync` workflow committing refreshed data to `main` with the
+  `data:` prefix, commit-on-diff only
+- Auto-listed trust tier on the landing page: pipeline venues render with a
+  neutral `Auto-listed` badge after the curated entries
+- ODbL attribution in the site footer and `LICENSE-DATA`
+- ETL unit tests (8 cases: normalization, geofence, dedupe, tier derivation,
+  published-JSON stability)
 - Branching strategy and release process documentation
   ([docs/05-development/BRANCHING_STRATEGY.md](docs/05-development/BRANCHING_STRATEGY.md),
   [docs/05-development/RELEASE_PROCESS.md](docs/05-development/RELEASE_PROCESS.md))
+- `/status` page at plug.vln.gg/status driven by `public/data/status.json`
+- Prompt archive generator and per-push workflow (instructor deliverable)
 - This changelog
 
 ### Planned
 
-- Automated data pipeline (v2.1.0): scheduled GitHub Action refreshing
-  `data/locations.db` and `public/data/*.json` via direct `data:` commits to `main`
-- `/status` page reporting data freshness and deployment health
+- Socrata/BART corroboration sources completing the two-source auto-publish
+  rule (issue #20), community submissions (#21), Resend confirmations (#22),
+  staleness automation (#23), licensing/privacy completion (#24)
 
 ## [2.0.0] - 2026-07-22
 

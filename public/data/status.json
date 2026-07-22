@@ -1,43 +1,43 @@
 {
-  "updated": "2026-07-22",
-  "version": "2.0.0",
-  "milestone": "v2.1.0 — Community Data Pipeline",
-  "phases": [
-    {
-      "id": "design-system",
-      "name": "Design system & landing page",
-      "status": "done",
-      "detail": "Token-driven components, WCAG-graded palette, SVG iconography shipped in v2.0.0."
-    },
-    {
-      "id": "planning-docs",
-      "name": "Planning & process docs",
-      "status": "in_progress",
-      "detail": "Project plans, the branching and release process, and this status page."
-    },
-    {
-      "id": "osint-etl",
-      "name": "Daily OSINT data pipeline",
-      "status": "planned",
-      "detail": "Scheduled Overpass and Oakland open data pulls into SQLite/JSON, with an Auto-listed badge for pipeline-sourced locations."
-    },
-    {
-      "id": "submissions",
-      "name": "Community submissions",
-      "status": "planned",
-      "detail": "Suggest-a-place submissions via GitHub Issue Forms, ingested hourly by an automated workflow."
-    },
-    {
-      "id": "email",
-      "name": "Email confirmations",
-      "status": "planned",
-      "detail": "Resend confirmations and opt-in updates, sent by a GitHub Action using repository secrets."
-    },
-    {
-      "id": "data-hygiene",
-      "name": "Data hygiene & attribution",
-      "status": "planned",
-      "detail": "Staleness and liveness automation, ODbL attribution, and privacy documentation updates."
-    }
-  ]
+ "updated": "2026-07-22",
+ "version": "2.0.0",
+ "milestone": "v2.1.0 — Community Data Pipeline",
+ "phases": [
+  {
+   "id": "design-system",
+   "name": "Design system & landing page",
+   "status": "done",
+   "detail": "Token-driven components, WCAG-graded palette, SVG iconography shipped in v2.0.0."
+  },
+  {
+   "id": "planning-docs",
+   "name": "Planning & process docs",
+   "status": "done",
+   "detail": "Data pipeline plan, branching and release process, changelog, and this status page shipped in PR #26."
+  },
+  {
+   "id": "osint-etl",
+   "name": "Daily OSINT data pipeline",
+   "status": "in_progress",
+   "detail": "Daily Overpass ETL live: scripts/etl + data-sync workflow publish auto-listed Oakland venues to the site. Socrata/BART corroboration still to come."
+  },
+  {
+   "id": "submissions",
+   "name": "Community submissions",
+   "status": "planned",
+   "detail": "Suggest-a-place submissions via GitHub Issue Forms, ingested hourly by an automated workflow."
+  },
+  {
+   "id": "email",
+   "name": "Email confirmations",
+   "status": "planned",
+   "detail": "Resend confirmations and opt-in updates, sent by a GitHub Action using repository secrets."
+  },
+  {
+   "id": "data-hygiene",
+   "name": "Data hygiene & attribution",
+   "status": "planned",
+   "detail": "Staleness and liveness automation, ODbL attribution, and privacy documentation updates."
+  }
+ ]
 }
