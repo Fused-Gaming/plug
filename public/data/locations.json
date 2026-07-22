@@ -1,7 +1,7 @@
 {
  "meta": {
   "license": "Location data (c) OpenStreetMap contributors, ODbL 1.0 — see LICENSE-DATA",
-  "disclaimer": "Auto-listed entries are machine-corroborated from public data; outlet availability is inferred from venue category and has not been field-checked.",
+  "disclaimer": "Auto-listed entries are machine-corroborated from public data; community entries are neighbor-submitted pending review. Neither has been field-verified.",
   "count": 39
  },
  "venues": [

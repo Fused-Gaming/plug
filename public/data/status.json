@@ -24,8 +24,8 @@
   {
    "id": "submissions",
    "name": "Community submissions",
-   "status": "planned",
-   "detail": "Suggest-a-place submissions via GitHub Issue Forms, ingested hourly by an automated workflow."
+   "status": "in_progress",
+   "detail": "Suggest-a-place issue form is live; hourly workflow validates, sanitizes, and publishes submissions as Community reports."
   },
   {
    "id": "email",

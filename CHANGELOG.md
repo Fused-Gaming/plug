@@ -19,6 +19,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - ODbL attribution in the site footer and `LICENSE-DATA`
 - ETL unit tests (8 cases: normalization, geofence, dedupe, tier derivation,
   published-JSON stability)
+- Phase B community submissions (issue #21): "Suggest a charging location"
+  GitHub Issue Form, hourly `ingest-submissions` workflow that validates,
+  sanitizes (XSS/data-poisoning boundary with unit tests), geofences, and
+  publishes accepted entries as Community reports; invalid submissions get a
+  `needs-info` label and an explanatory comment
+- Landing page renders community-tier pipeline entries ahead of auto-listed
+  ones; "Suggest a place" now deep-links the public form
 - Branching strategy and release process documentation
   ([docs/05-development/BRANCHING_STRATEGY.md](docs/05-development/BRANCHING_STRATEGY.md),
   [docs/05-development/RELEASE_PROCESS.md](docs/05-development/RELEASE_PROCESS.md))
