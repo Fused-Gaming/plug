@@ -1,30 +1,14 @@
 // Location data adapter - provides read-only access to charging station data
-// Contract: Reads from seed-data.json or SQLite database
-// Wave 1 Database (A03) Schema: locations table with id, name, lat, lng, address, charger_type, connectors, power_kw, source, verified_date
+// Uses direct import from locations.js (no network fetch)
 
-let cachedLocations = null;
+import locationsData from '../data/locations'
 
 /**
- * Load locations from seed data (JSON format)
- * Falls back to in-memory data if database unavailable
+ * Load locations from imported data
  * @returns {Promise<Array>} Array of location objects
  */
 export async function getLocations() {
-  if (cachedLocations) {
-    return cachedLocations;
-  }
-
-  try {
-    const response = await fetch('/plug/src/data/seed-data.json');
-    if (!response.ok) throw new Error('Failed to load seed data');
-    const data = await response.json();
-    cachedLocations = data.locations || [];
-  } catch (error) {
-    console.error('Error loading locations:', error);
-    cachedLocations = [];
-  }
-
-  return cachedLocations;
+  return Promise.resolve(locationsData && Array.isArray(locationsData) ? locationsData : [])
 }
 
 /**
