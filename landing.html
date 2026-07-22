@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="OPEN SOURCES of power - Find free, reliable device charging in Oakland without giving up your privacy.">
-  <meta name="theme-color" content="#1d4ed8">
+  <meta name="theme-color" content="#9a3412">
   <title>OPEN SOURCES of power - Free Device Charging Locator</title>
   <link rel="stylesheet" href="styles/tokens.css">
   <link rel="stylesheet" href="styles/components.css">
@@ -50,8 +50,9 @@
       <div class="container">
         <div class="hero__grid">
           <div>
-            <h1>Power when<br>you need it.</h1>
-            <p class="hero__lede">Find a reliable place to charge your phone or essential device&mdash;without an account or giving up your privacy.</p>
+            <span class="overline">A community field guide &middot; Oakland, CA</span>
+            <h1>Power when<br><span class="highlight">you need it.</span></h1>
+            <p class="hero__lede">Find a reliable place to charge your phone or essential device&mdash;without an account or giving up your privacy. Every spot on this list was walked to and checked by a neighbor.</p>
             <p class="hero__privacy-badge">
               <svg class="icon" aria-hidden="true"><use href="icons/sprite.svg#lock"/></svg>
               <strong>Privacy is part of the service.</strong>
@@ -81,15 +82,17 @@
             </div>
           </div>
           <div class="hero__aside">
-            <div class="hero__region">San Francisco Bay</div>
-            <div class="hero__power" role="img" aria-label="Public charging access rating: 5 out of 5">
-              <svg class="icon" aria-hidden="true"><use href="icons/sprite.svg#bolt"/></svg>
-              <svg class="icon" aria-hidden="true"><use href="icons/sprite.svg#bolt"/></svg>
-              <svg class="icon" aria-hidden="true"><use href="icons/sprite.svg#bolt"/></svg>
-              <svg class="icon" aria-hidden="true"><use href="icons/sprite.svg#bolt"/></svg>
-              <svg class="icon" aria-hidden="true"><use href="icons/sprite.svg#bolt"/></svg>
+            <div class="stamp">San Francisco Bay</div>
+            <div>
+              <div class="hero__power" role="img" aria-label="Public charging access rating: 5 out of 5">
+                <svg class="icon icon--volt" aria-hidden="true"><use href="icons/sprite.svg#bolt"/></svg>
+                <svg class="icon icon--volt" aria-hidden="true"><use href="icons/sprite.svg#bolt"/></svg>
+                <svg class="icon icon--volt" aria-hidden="true"><use href="icons/sprite.svg#bolt"/></svg>
+                <svg class="icon icon--volt" aria-hidden="true"><use href="icons/sprite.svg#bolt"/></svg>
+                <svg class="icon icon--volt" aria-hidden="true"><use href="icons/sprite.svg#bolt"/></svg>
+              </div>
+              <div class="hero__access-label">Public charging access</div>
             </div>
-            <div class="hero__access-label">Public charging access</div>
           </div>
         </div>
       </div>
@@ -165,7 +168,7 @@
         </p>
 
         <div class="locations-list" id="locationsList">
-          <button class="card card--interactive" type="button" aria-current="true" data-index="0">
+          <button class="card card--interactive card--verified" type="button" aria-current="true" data-index="0">
             <span class="card__header">
               <span class="card__title">Oakland Main Library</span>
               <span class="badge badge--verified">
@@ -193,7 +196,7 @@
             </span>
           </button>
 
-          <button class="card card--interactive" type="button" aria-current="false" data-index="1">
+          <button class="card card--interactive card--verified" type="button" aria-current="false" data-index="1">
             <span class="card__header">
               <span class="card__title">81st Avenue Library</span>
               <span class="badge badge--verified">
@@ -221,7 +224,7 @@
             </span>
           </button>
 
-          <button class="card card--interactive" type="button" aria-current="false" data-index="2">
+          <button class="card card--interactive card--community" type="button" aria-current="false" data-index="2">
             <span class="card__header">
               <span class="card__title">West Oakland Library</span>
               <span class="badge badge--community">
@@ -249,7 +252,7 @@
             </span>
           </button>
 
-          <button class="card card--interactive" type="button" aria-current="false" data-index="3">
+          <button class="card card--interactive card--recheck" type="button" aria-current="false" data-index="3">
             <span class="card__header">
               <span class="card__title">Lake Merritt Station</span>
               <span class="badge badge--recheck">
@@ -280,7 +283,7 @@
 
       <!-- Detail panel -->
       <aside class="card detail-panel" id="detailPanel" aria-label="Selected location details">
-        <p class="detail-panel__label">Selected location</p>
+        <p class="overline">Selected location</p>
         <h3 id="detailTitle">Oakland Main Library</h3>
         <p class="detail-panel__description" id="detailDescription">
           Outlets available near reading tables. Library rules apply.
@@ -327,39 +330,38 @@
     <!-- How verification works -->
     <section class="info-section" id="how-it-works">
       <div class="container">
+        <span class="overline">Trust, on foot</span>
         <h2>
           <svg class="icon" aria-hidden="true"><use href="icons/sprite.svg#shield-check"/></svg>
-          How Verification Works
+          How verification works
         </h2>
-        <p>Every charging location in this directory has been verified using one of these methods:</p>
-        <div class="table-scroll">
-          <table class="table">
-            <thead>
-              <tr>
-                <th scope="col">Status</th>
-                <th scope="col">What It Means</th>
-                <th scope="col">How Often We Check</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><span class="badge badge--solid badge--verified">Verified</span></td>
-                <td>Physically checked by a trusted contributor</td>
-                <td>Quarterly</td>
-              </tr>
-              <tr>
-                <td><span class="badge badge--solid badge--community">Community Report</span></td>
-                <td>Submitted by a community member, awaiting confirmation</td>
-                <td>Within 30 days</td>
-              </tr>
-              <tr>
-                <td><span class="badge badge--solid badge--recheck">Needs Recheck</span></td>
-                <td>Last verified over 90 days ago</td>
-                <td>Pending update</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+        <p>Nobody scrapes this list from an API. Every charging location in this directory has been checked one of these ways:</p>
+        <table class="table table--stack">
+          <thead>
+            <tr>
+              <th scope="col">Status</th>
+              <th scope="col">What it means</th>
+              <th scope="col">How often we check</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td data-label="Status"><span class="badge badge--solid badge--verified">Verified</span></td>
+              <td data-label="What it means">Physically checked by a trusted contributor</td>
+              <td data-label="How often we check">Quarterly</td>
+            </tr>
+            <tr>
+              <td data-label="Status"><span class="badge badge--solid badge--community">Community Report</span></td>
+              <td data-label="What it means">Submitted by a community member, awaiting confirmation</td>
+              <td data-label="How often we check">Within 30 days</td>
+            </tr>
+            <tr>
+              <td data-label="Status"><span class="badge badge--solid badge--recheck">Needs Recheck</span></td>
+              <td data-label="What it means">Last verified over 90 days ago</td>
+              <td data-label="How often we check">Pending update</td>
+            </tr>
+          </tbody>
+        </table>
         <p><strong>Why this matters:</strong> Public facilities change their policies, hours, and availability. We work with the community to keep information current and accurate.</p>
       </div>
     </section>
@@ -367,6 +369,7 @@
     <!-- About -->
     <section class="info-section" id="suggest">
       <div class="container">
+        <span class="overline">Why we made this</span>
         <h2>
           <svg class="icon" aria-hidden="true"><use href="icons/sprite.svg#plug"/></svg>
           About Open Sources of Power
@@ -441,6 +444,7 @@
     <!-- Privacy -->
     <section class="info-section">
       <div class="container">
+        <span class="overline">No fine print</span>
         <h2>
           <svg class="icon" aria-hidden="true"><use href="icons/sprite.svg#lock"/></svg>
           Privacy Policy
@@ -539,6 +543,7 @@
         </nav>
       </div>
       <p class="site-footer__legal">
+        Made with care in Oakland &mdash; by neighbors, for neighbors. No trackers were harmed (or used) in the making of this site.<br>
         Built on <strong style="color: var(--ink-on-invert)">PLUG</strong> by Fused Gaming &middot; MIT License &middot; Last updated July 22, 2026
       </p>
     </div>

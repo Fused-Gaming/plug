@@ -9,8 +9,8 @@
 [![React: 18.2.0](https://img.shields.io/badge/react-18.2.0-61dafb?logo=react)](https://react.dev)
 [![Vite: 6.4.3](https://img.shields.io/badge/vite-6.4.3-646cff?logo=vite)](https://vitejs.dev)
 [![Accessibility: WCAG 2.1 AA](https://img.shields.io/badge/accessibility-WCAG%202.1%20AA-047857)](docs/04-design/COMPONENT_LIBRARY.md#color-palette--wcag-21-graded)
-[![Design System: documented](https://img.shields.io/badge/design%20system-documented-1d4ed8)](docs/04-design/COMPONENT_LIBRARY.md)
-[![Icons: SVG sprite](https://img.shields.io/badge/icons-SVG%20sprite-1d4ed8)](public/icons/sprite.svg)
+[![Design System: documented](https://img.shields.io/badge/design%20system-documented-9a3412)](docs/04-design/COMPONENT_LIBRARY.md)
+[![Icons: SVG sprite](https://img.shields.io/badge/icons-SVG%20sprite-9a3412)](public/icons/sprite.svg)
 <img width="2252" height="840" alt="image" src="https://github.com/user-attachments/assets/70e26e30-fbec-466c-9f3d-a3ef3f7d1e6a" />
 
 A privacy-first, interactive map to help vulnerable populations discover free, reliable device-charging options. Built as a bootcamp MVP demonstrating responsive web design, geolocation services, and GitHub Pages static site deployment.
