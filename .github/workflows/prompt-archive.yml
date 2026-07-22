@@ -1,0 +1,49 @@
+name: Regenerate Prompt Archive
+
+# Instructor deliverable (Next Chapter Project): the prompt archive under
+# docs/05-development/prompt-archive/ is regenerated on every commit to main.
+# Loop safety: pushes that only touch the archive are ignored here, and the
+# bot commit carries [skip ci] so no other workflow re-fires on it.
+
+on:
+  push:
+    branches: [main]
+    paths-ignore:
+      - 'docs/05-development/prompt-archive/**'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: prompt-archive
+  cancel-in-progress: true
+
+jobs:
+  regenerate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout full history
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 0 # generator walks the entire git log
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+
+      - name: Generate archive
+        run: node scripts/generate-prompt-archive.mjs
+
+      - name: Commit if changed
+        run: |
+          if git diff --quiet -- docs/05-development/prompt-archive/; then
+            echo "Archive unchanged; nothing to commit."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/05-development/prompt-archive/
+          git commit -m "docs: regenerate prompt archive [skip ci]"
+          git push

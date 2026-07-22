@@ -121,6 +121,8 @@ git diff           # Review your changes
 
 ## Branch Strategy
 
+> **Canonical guide:** see [Branching Strategy](05-development/BRANCHING_STRATEGY.md) for the full workflow — GitHub Flow with a protected `main`, short-lived `feat/`, `fix/`, `docs/`, `chore/` (and `claude/`) branches, and squash-merged PRs.
+
 ### Main Branches
 
 - **`main`** — Production branch, automatically deployed to GitHub Pages
@@ -278,6 +280,8 @@ To add a new city:
 5. Submit pull request with justification
 
 ## Pull Request Process
+
+> PRs are squash-merged into `main` and the branch is deleted after merge — see [Branching Strategy](05-development/BRANCHING_STRATEGY.md). For how changes become versioned releases (changelog, tags, GitHub Releases), see [Release Process](05-development/RELEASE_PROCESS.md).
 
 ### Before Submitting
 
