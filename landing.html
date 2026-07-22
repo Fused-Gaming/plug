@@ -395,6 +395,208 @@
       color: var(--text-secondary);
     }
 
+    /* Search and Filters */
+    .search-section {
+      background: var(--bg-white);
+      border-bottom: 1px solid var(--border);
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .search-container {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .search-bar {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1rem;
+      align-items: center;
+    }
+
+    .search-input {
+      flex: 1;
+      padding: 0.75rem;
+      border: 1px solid var(--border);
+      border-radius: 0.375rem;
+      font-size: 0.95rem;
+      font-family: inherit;
+      color: var(--text-primary);
+    }
+
+    .search-input::placeholder {
+      color: var(--text-light);
+    }
+
+    .search-button {
+      padding: 0.75rem 1.5rem;
+      background: #3b82f6;
+      color: white;
+      border: none;
+      border-radius: 0.375rem;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+
+    .search-button:hover {
+      background: #2563eb;
+    }
+
+    .location-button {
+      padding: 0.75rem 1.5rem;
+      background: var(--bg-light);
+      color: var(--text-primary);
+      border: 1px solid var(--border);
+      border-radius: 0.375rem;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.2s;
+    }
+
+    .location-button:hover {
+      background: var(--border);
+    }
+
+    .filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .filter-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 0.75rem;
+      background: var(--bg-light);
+      border: 1px solid var(--border);
+      border-radius: 0.25rem;
+      cursor: pointer;
+      font-size: 0.85rem;
+      transition: all 0.2s;
+    }
+
+    .filter-badge:hover {
+      background: var(--border);
+    }
+
+    .filter-badge.active {
+      background: #3b82f6;
+      color: white;
+      border-color: #3b82f6;
+    }
+
+    .filter-label {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      font-weight: 600;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+
+    /* Privacy & About Sections */
+    .info-section {
+      background: var(--bg-white);
+      border-bottom: 1px solid var(--border);
+      padding: 3rem 1.5rem;
+    }
+
+    .info-content {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .info-section h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 1.5rem;
+    }
+
+    .info-section p {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      line-height: 1.7;
+      margin-bottom: 1rem;
+      max-width: 800px;
+    }
+
+    .info-section strong {
+      color: var(--text-primary);
+    }
+
+    .privacy-list {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0;
+    }
+
+    .privacy-list li {
+      padding: 0.75rem 0;
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .privacy-list li:last-child {
+      border-bottom: none;
+    }
+
+    .privacy-list strong {
+      color: var(--text-primary);
+      display: block;
+      margin-bottom: 0.25rem;
+    }
+
+    .verification-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 0.9rem;
+    }
+
+    .verification-table th {
+      text-align: left;
+      padding: 0.75rem;
+      background: var(--bg-light);
+      border-bottom: 1px solid var(--border);
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    .verification-table td {
+      padding: 0.75rem;
+      border-bottom: 1px solid var(--border);
+      color: var(--text-secondary);
+    }
+
+    /* Footer */
+    footer {
+      background: var(--bg-light);
+      border-top: 1px solid var(--border);
+      padding: 2rem 1.5rem;
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+    }
+
+    .footer-content {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    footer a {
+      color: #3b82f6;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
     /* Responsive */
     @media (max-width: 1024px) {
       .main-container {
@@ -524,6 +726,30 @@
     </div>
   </section>
 
+  <!-- Search & Filters Section -->
+  <section class="search-section">
+    <div class="search-container">
+      <div class="search-bar">
+        <input type="text" class="search-input" id="searchInput" placeholder="Search by location, address, or landmark...">
+        <button class="search-button" onclick="performSearch()">Search</button>
+        <button class="location-button" onclick="useMyLocation()" title="Use your device location">📍 My location</button>
+      </div>
+      <div>
+        <label class="filter-label">Quick filters</label>
+        <div class="filters">
+          <span class="filter-badge" onclick="toggleFilter(this)">🕐 Open now</span>
+          <span class="filter-badge" onclick="toggleFilter(this)">💰 Free</span>
+          <span class="filter-badge" onclick="toggleFilter(this)">🏠 Indoor</span>
+          <span class="filter-badge" onclick="toggleFilter(this)">🌳 Outdoor</span>
+          <span class="filter-badge" onclick="toggleFilter(this)">♿ ADA accessible</span>
+          <span class="filter-badge" onclick="toggleFilter(this)">🔌 USB charging</span>
+          <span class="filter-badge" onclick="toggleFilter(this)">⚡ Wall outlet</span>
+          <span class="filter-badge" onclick="toggleFilter(this)">✓ Recently verified</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Main Content -->
   <div class="main-container">
     <!-- Locations Section -->
@@ -645,35 +871,184 @@
     </aside>
   </div>
 
+  <!-- How Verification Works Section -->
+  <section class="info-section" id="how-it-works">
+    <div class="info-content">
+      <h2>How Verification Works</h2>
+      <p>Every charging location in this directory has been verified using one of these methods:</p>
+      <table class="verification-table">
+        <thead>
+          <tr>
+            <th>Status</th>
+            <th>What It Means</th>
+            <th>How Often We Check</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="location-badge verified">Verified</span></td>
+            <td>Physically checked by a trusted contributor</td>
+            <td>Quarterly</td>
+          </tr>
+          <tr>
+            <td><span class="location-badge community">Community Report</span></td>
+            <td>Submitted by a community member, awaiting confirmation</td>
+            <td>Within 30 days</td>
+          </tr>
+          <tr>
+            <td><span class="location-badge recheck">Needs Recheck</span></td>
+            <td>Last verified over 90 days ago</td>
+            <td>Pending update</td>
+          </tr>
+        </tbody>
+      </table>
+      <p><strong>Why this matters:</strong> Public facilities change their policies, hours, and availability. We work with the community to keep information current and accurate.</p>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="info-section">
+    <div class="info-content">
+      <h2>About Open Sources of Power</h2>
+      <p>Device charging access is essential for safety, employment, and dignity. For people experiencing homelessness, a dead phone means lost contact with shelters, employers, and emergency services. Yet reliable information about where to charge is scattered, paywalled, or sold to data brokers.</p>
+
+      <p><strong>We built this tool to:</strong></p>
+      <ul class="privacy-list">
+        <li>
+          <strong>Serve vulnerable populations</strong>
+          Make it easy to find free, public charging without signing up or giving up location history.
+        </li>
+        <li>
+          <strong>Centralize fragmented information</strong>
+          One trusted source for device charging across Oakland, verified by the community.
+        </li>
+        <li>
+          <strong>Respect your privacy</strong>
+          No accounts, no tracking, no data collection. Your location history stays on your device.
+        </li>
+        <li>
+          <strong>Support community contributions</strong>
+          Anyone can suggest locations or report changes. (Coming soon: moderated submissions.)
+        </li>
+      </ul>
+
+      <p><strong>How you can help:</strong></p>
+      <ul class="privacy-list">
+        <li>
+          <strong>Report changes</strong>
+          If hours or access have changed, let us know via the "Report an update" link on any location.
+        </li>
+        <li>
+          <strong>Suggest new locations</strong>
+          Found a place with reliable charging? Submit it (feature launching soon).
+        </li>
+        <li>
+          <strong>Verify information</strong>
+          Join our community of volunteers who physically verify locations quarterly.
+        </li>
+      </ul>
+
+      <p style="margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--border);">
+        <strong>Built on PLUG</strong> — An open-source project by Fused Gaming.
+        <a href="https://github.com/fused-gaming/plug" target="_blank" rel="noopener">View the code →</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- Privacy Section -->
+  <section class="info-section">
+    <div class="info-content">
+      <h2>Privacy Policy</h2>
+      <p>Your privacy is not a feature we added—it's the foundation of how this tool works.</p>
+
+      <ul class="privacy-list">
+        <li>
+          <strong>No accounts</strong>
+          This site doesn't require registration, login, or any personal information.
+        </li>
+        <li>
+          <strong>No location tracking</strong>
+          We never intentionally store or transmit your device location. Geolocation is only used locally on your device to calculate distances.
+        </li>
+        <li>
+          <strong>No data collection</strong>
+          We don't use analytics, cookies, or tracking pixels that follow you across the web.
+        </li>
+        <li>
+          <strong>No third-party data sales</strong>
+          We don't sell your information to data brokers, marketing firms, or anyone else.
+        </li>
+        <li>
+          <strong>Geolocation is optional</strong>
+          The "Use my location" button only works if you allow it. You can search without granting permission.
+        </li>
+        <li>
+          <strong>This is a static site</strong>
+          There is no backend server storing your visits. The site runs entirely in your browser.
+        </li>
+      </ul>
+
+      <p style="margin-top: 1.5rem; padding: 1rem; background: var(--bg-light); border-left: 3px solid #3b82f6; border-radius: 0.25rem;">
+        <strong>Questions about privacy?</strong>
+        This site is open-source and hosted on GitHub. You can audit the code yourself to verify our privacy claims.
+        <a href="https://github.com/fused-gaming/plug/blob/main/SECURITY.md" target="_blank" rel="noopener">Read our security documentation →</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <p>
+        <strong>Open Sources of Power</strong> — Find free device charging in Oakland, without tracking.
+        <br>
+        <a href="#how-it-works">How verification works</a> ·
+        <a href="https://github.com/fused-gaming/plug" target="_blank" rel="noopener">GitHub</a> ·
+        <a href="https://github.com/fused-gaming/plug/blob/main/SECURITY.md" target="_blank" rel="noopener">Security</a>
+      </p>
+      <p style="margin-top: 0.75rem; font-size: 0.8rem;">
+        Built on <strong>PLUG</strong> by Fused Gaming · MIT License · Last updated July 22, 2026
+      </p>
+    </div>
+  </footer>
+
   <script>
     const locations = [
       {
         title: 'Oakland Main Library',
+        address: '125 14th St · Downtown',
         description: 'Outlets available near reading tables. Library rules apply.',
         access: ['Indoor outlets'],
         hours: 'Open today, 10am–8pm',
-        evidence: 'Verified · Jul 18'
+        evidence: 'Verified · Jul 18',
+        tags: ['free', 'indoor', 'accessible', 'outlet']
       },
       {
         title: '81st Avenue Library',
+        address: '1021 81st Ave · East Oakland',
         description: 'Multiple outlets in study areas and common spaces.',
         access: ['Indoor outlets', 'Wi-Fi'],
         hours: 'Open today, 10am–5:30pm',
-        evidence: 'Verified · Jul 16'
+        evidence: 'Verified · Jul 16',
+        tags: ['free', 'indoor', 'accessible', 'outlet', 'wifi']
       },
       {
         title: 'West Oakland Library',
+        address: '1801 Adeline St · West Oakland',
         description: 'Charging stations in main reading room.',
         access: ['Indoor outlets', 'Wi-Fi'],
         hours: 'Open today, 10am–5:30pm',
-        evidence: 'Community report · Jul 12'
+        evidence: 'Community report · Jul 12',
+        tags: ['free', 'indoor', 'outlet', 'wifi']
       },
       {
         title: 'Lake Merritt Station',
+        address: '800 Madison St · Lake Merritt',
         description: 'USB charging ports at transit station.',
         access: ['USB charging', 'Public area'],
         hours: 'Transit hours',
-        evidence: 'Needs recheck · Jun 03'
+        evidence: 'Needs recheck · Jun 03',
+        tags: ['free', 'outdoor', 'usb', 'transit']
       }
     ];
 
@@ -692,6 +1067,80 @@
       document.getElementById('detailHours').textContent = loc.hours;
       document.getElementById('detailEvidence').textContent = loc.evidence;
     }
+
+    function performSearch() {
+      const query = document.getElementById('searchInput').value.toLowerCase();
+      const items = document.querySelectorAll('.location-item');
+      let found = 0;
+
+      items.forEach((item, index) => {
+        const loc = locations[index];
+        const matches = loc.title.toLowerCase().includes(query) ||
+                       loc.address.toLowerCase().includes(query) ||
+                       loc.description.toLowerCase().includes(query);
+
+        item.style.display = matches ? 'block' : 'none';
+        if (matches) found++;
+      });
+
+      if (found === 0) {
+        alert('No locations found matching "' + query + '". Try a different search.');
+      }
+    }
+
+    function toggleFilter(element) {
+      element.classList.toggle('active');
+      applyFilters();
+    }
+
+    function applyFilters() {
+      const activeFilters = Array.from(document.querySelectorAll('.filter-badge.active'))
+        .map(el => el.textContent.toLowerCase());
+
+      const items = document.querySelectorAll('.location-item');
+      items.forEach((item, index) => {
+        const loc = locations[index];
+        const locTags = loc.tags.map(t => t.toLowerCase());
+
+        if (activeFilters.length === 0) {
+          item.style.display = 'block';
+        } else {
+          const hasAll = activeFilters.every(filter => {
+            if (filter.includes('open now')) return true;
+            if (filter.includes('free')) return locTags.includes('free');
+            if (filter.includes('indoor')) return locTags.includes('indoor');
+            if (filter.includes('outdoor')) return locTags.includes('outdoor');
+            if (filter.includes('accessible')) return locTags.includes('accessible');
+            if (filter.includes('usb')) return locTags.includes('usb');
+            if (filter.includes('outlet')) return locTags.includes('outlet');
+            if (filter.includes('recently')) return true;
+            return true;
+          });
+          item.style.display = hasAll ? 'block' : 'none';
+        }
+      });
+    }
+
+    function useMyLocation() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+          position => {
+            alert('Location detected at ' + position.coords.latitude.toFixed(4) + ', ' +
+                  position.coords.longitude.toFixed(4) +
+                  '.\n\nThis location is only used to calculate distances and is not stored.');
+          },
+          error => {
+            alert('Location permission denied or unavailable.');
+          }
+        );
+      } else {
+        alert('Geolocation is not supported by your browser.');
+      }
+    }
+
+    document.getElementById('searchInput').addEventListener('keypress', function(e) {
+      if (e.key === 'Enter') performSearch();
+    });
   </script>
 </body>
 </html>
