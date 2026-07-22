@@ -5,7 +5,8 @@ Understand the project vision, goals, constraints, and how we prioritized the MV
 ## What's Here
 
 - **[Goals & Value](goals-and-value.md)** — Problem statement and value proposition
-- **[Roadmap](roadmap.md)** — 7-day sprint plan with 4 phases
+- **[Roadmap](roadmap.md)** — 7-day sprint plan (shipped) and the v2.1.0 Community Data Pipeline milestone
+- **[Data Pipeline Plan](DATA_PIPELINE_PLAN.md)** — v2.1.0 plan: OSINT ETL, evidence-based trust tiers, community submissions, email flow, phased rollout
 - **[Constraints](constraints.md)** — GitHub Pages limitation and architectural mitigation
 
 ## TL;DR
@@ -14,7 +15,7 @@ Understand the project vision, goals, constraints, and how we prioritized the MV
 
 **Solution:** Privacy-first map showing free charging locations near you. No accounts, no tracking, no data collection.
 
-**Timeline:** 7 days. Ruthlessly cut 8-phase roadmap to MVP: read-only map with 10 seed locations.
+**Timeline:** 7 days. Ruthlessly cut 8-phase roadmap to MVP: read-only map with 10 seed locations. The MVP shipped (v2.0.0 is live); next up is the v2.1.0 Community Data Pipeline.
 
 **Value:** Demonstrate that simple solutions work, privacy matters, and GitHub Pages can host full React apps.
 
@@ -28,8 +29,9 @@ Understand the project vision, goals, constraints, and how we prioritized the MV
 ## Document Navigation
 
 1. Start with [Goals & Value](goals-and-value.md) to understand the problem
-2. Read [Roadmap](roadmap.md) to see the 7-day plan
-3. Reference [Constraints](constraints.md) when asking "why GitHub Pages?"
+2. Read [Roadmap](roadmap.md) to see the shipped 7-day plan and what comes next
+3. Dive into the [Data Pipeline Plan](DATA_PIPELINE_PLAN.md) for the v2.1.0 methodology
+4. Reference [Constraints](constraints.md) when asking "why GitHub Pages?"
 
 ---
 

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Where the Open Sources of Power project stands: shipped milestones, current work, and what's planned next for the community data pipeline.">
+  <meta name="theme-color" content="#9a3412">
+  <title>Project Status — Open Sources of Power</title>
+  <link rel="stylesheet" href="../styles/tokens.css">
+  <link rel="stylesheet" href="../styles/components.css">
+  <link rel="stylesheet" href="../styles/status.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- Component: .site-header -->
+  <header class="site-header">
+    <div class="container">
+      <div class="site-header__inner">
+        <a href="../" class="site-header__brand">
+          <svg class="icon" aria-hidden="true"><use href="../icons/sprite.svg#plug"/></svg>
+          <span>Open Sources</span>
+          <small>of power</small>
+        </a>
+        <button class="site-header__toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Toggle navigation">
+          <svg class="icon icon--open" aria-hidden="true"><use href="../icons/sprite.svg#menu"/></svg>
+          <svg class="icon icon--close" aria-hidden="true"><use href="../icons/sprite.svg#close"/></svg>
+        </button>
+        <nav class="site-nav" id="site-nav" aria-label="Primary">
+          <a href="../#locations">
+            <svg class="icon icon--sm" aria-hidden="true"><use href="../icons/sprite.svg#pin"/></svg>
+            Oakland, California
+          </a>
+          <a href="../#how-it-works">
+            <svg class="icon icon--sm" aria-hidden="true"><use href="../icons/sprite.svg#shield-check"/></svg>
+            How it works
+          </a>
+          <a href="../#suggest">
+            <svg class="icon icon--sm" aria-hidden="true"><use href="../icons/sprite.svg#users"/></svg>
+            Suggest a place
+          </a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Intro -->
+    <section class="status-intro">
+      <div class="container">
+        <span class="overline">Project status &middot; Built in the open</span>
+        <h1>Where things stand</h1>
+        <p class="status-intro__lede">A plain public view of what has shipped, what is being worked on, and what comes next&mdash;updated with each release.</p>
+      </div>
+    </section>
+
+    <!-- Summary + phases -->
+    <section class="status-section" aria-label="Milestones and phases">
+      <div class="container">
+        <div class="card status-summary">
+          <div class="status-summary__item">
+            <span class="status-summary__label">Current version</span>
+            <span class="stamp" id="statusVersion">v2.0.0</span>
+          </div>
+          <div class="status-summary__item">
+            <span class="status-summary__label">Next milestone</span>
+            <span class="status-summary__value" id="statusMilestone">v2.1.0 &mdash; Community Data Pipeline</span>
+          </div>
+          <div class="status-summary__item">
+            <span class="status-summary__label">Last updated</span>
+            <span class="status-summary__value" id="statusUpdated">July 22, 2026</span>
+          </div>
+        </div>
+
+        <h2>
+          <svg class="icon" aria-hidden="true"><use href="../icons/sprite.svg#bolt"/></svg>
+          Phases
+        </h2>
+
+        <div class="status-list" id="statusList" aria-live="polite"></div>
+
+        <noscript>
+          <p class="status-card__detail">
+            This page renders the phase list with a small local script and JavaScript is disabled.
+            The same information is published as plain JSON:
+            <a href="../data/status.json">view the machine-readable status file</a>.
+          </p>
+        </noscript>
+
+        <p class="info-callout">
+          <strong>Looking for task-level detail?</strong>
+          Day-to-day work is tracked in the open on the issue tracker.
+          <a href="https://github.com/Fused-Gaming/plug/issues" target="_blank" rel="noopener">Browse open issues on GitHub
+            <svg class="icon icon--sm" aria-hidden="true"><use href="../icons/sprite.svg#arrow-right"/></svg></a>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Component: .site-footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="site-footer__grid">
+        <div>
+          <p class="site-footer__brand">
+            <svg class="icon" aria-hidden="true"><use href="../icons/sprite.svg#plug"/></svg>
+            Open Sources of Power
+          </p>
+          <p style="margin-top: var(--space-3); font-size: var(--text-sm);">
+            Find free device charging in Oakland, without tracking.
+          </p>
+        </div>
+        <nav aria-label="Footer resources">
+          <h4 class="site-footer__heading">Resources</h4>
+          <ul class="site-footer__links">
+            <li><a href="../#how-it-works">
+              <svg class="icon icon--sm" aria-hidden="true"><use href="../icons/sprite.svg#shield-check"/></svg>
+              How verification works</a></li>
+            <li><a href="../#suggest">
+              <svg class="icon icon--sm" aria-hidden="true"><use href="../icons/sprite.svg#users"/></svg>
+              Suggest a place</a></li>
+          </ul>
+        </nav>
+        <nav aria-label="Footer project links">
+          <h4 class="site-footer__heading">Project</h4>
+          <ul class="site-footer__links">
+            <li><a href="https://github.com/fused-gaming/plug" target="_blank" rel="noopener">
+              <svg class="icon icon--sm" aria-hidden="true"><use href="../icons/sprite.svg#github"/></svg>
+              GitHub</a></li>
+            <li><a href="https://github.com/fused-gaming/plug/blob/main/SECURITY.md" target="_blank" rel="noopener">
+              <svg class="icon icon--sm" aria-hidden="true"><use href="../icons/sprite.svg#lock"/></svg>
+              Security</a></li>
+            <li><a href="./" aria-current="page">
+              <svg class="icon icon--sm" aria-hidden="true"><use href="../icons/sprite.svg#check-circle"/></svg>
+              Project status</a></li>
+          </ul>
+        </nav>
+      </div>
+      <p class="site-footer__legal">
+        Made with care in Oakland &mdash; by neighbors, for neighbors. No trackers were harmed (or used) in the making of this site.<br>
+        Built on <strong style="color: var(--ink-on-invert)">PLUG</strong> by Fused Gaming &middot; MIT License &middot; Last updated July 22, 2026
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    /* Status page behavior: nav toggle + render phases from ../data/status.json.
+       Static-only — the one fetch is same-origin to this site's own JSON file. */
+    (function () {
+      'use strict';
+
+      var navToggle = document.querySelector('.site-header__toggle');
+      var nav = document.getElementById('site-nav');
+      if (navToggle && nav) {
+        navToggle.addEventListener('click', function () {
+          var expanded = navToggle.getAttribute('aria-expanded') === 'true';
+          navToggle.setAttribute('aria-expanded', String(!expanded));
+          nav.classList.toggle('is-open', !expanded);
+        });
+        nav.addEventListener('click', function (event) {
+          if (event.target.closest('a')) {
+            navToggle.setAttribute('aria-expanded', 'false');
+            nav.classList.remove('is-open');
+          }
+        });
+      }
+
+      var STATUS_META = {
+        done:        { badge: 'badge--verified',  icon: 'check-circle', label: 'Shipped' },
+        in_progress: { badge: 'badge--community', icon: 'clock',        label: 'In progress' },
+        planned:     { badge: 'badge--planned',   icon: 'info',         label: 'Planned' }
+      };
+
+      var list = document.getElementById('statusList');
+
+      function badgeMarkup(meta) {
+        return '<svg class="icon icon--sm" aria-hidden="true">' +
+               '<use href="../icons/sprite.svg#' + meta.icon + '"/></svg>';
+      }
+
+      function renderPhase(phase) {
+        var meta = STATUS_META[phase.status] || STATUS_META.planned;
+
+        var card = document.createElement('article');
+        card.className = 'card status-card status-card--' +
+          (STATUS_META[phase.status] ? phase.status : 'planned');
+
+        var header = document.createElement('div');
+        header.className = 'card__header';
+
+        var title = document.createElement('h3');
+        title.className = 'card__title';
+        title.textContent = phase.name;
+
+        var badge = document.createElement('span');
+        badge.className = 'badge ' + meta.badge;
+        badge.innerHTML = badgeMarkup(meta);
+        badge.appendChild(document.createTextNode(meta.label));
+
+        header.appendChild(title);
+        header.appendChild(badge);
+
+        var detail = document.createElement('p');
+        detail.className = 'status-card__detail';
+        detail.textContent = phase.detail;
+
+        card.appendChild(header);
+        card.appendChild(detail);
+        return card;
+      }
+
+      function formatDate(iso) {
+        var parts = /^(\d{4})-(\d{2})-(\d{2})$/.exec(iso || '');
+        if (!parts) return iso || '';
+        var months = ['January', 'February', 'March', 'April', 'May', 'June',
+                      'July', 'August', 'September', 'October', 'November', 'December'];
+        return months[Number(parts[2]) - 1] + ' ' + Number(parts[3]) + ', ' + parts[1];
+      }
+
+      fetch('../data/status.json')
+        .then(function (response) {
+          if (!response.ok) throw new Error('HTTP ' + response.status);
+          return response.json();
+        })
+        .then(function (data) {
+          if (data.version)   document.getElementById('statusVersion').textContent  = 'v' + data.version;
+          if (data.milestone) document.getElementById('statusMilestone').textContent = data.milestone;
+          if (data.updated)   document.getElementById('statusUpdated').textContent  = formatDate(data.updated);
+
+          list.textContent = '';
+          (data.phases || []).forEach(function (phase) {
+            list.appendChild(renderPhase(phase));
+          });
+        })
+        .catch(function () {
+          list.innerHTML = '<p class="status-card__detail">Couldn&rsquo;t load the phase list right now. ' +
+            'The raw data is available at <a href="../data/status.json">data/status.json</a>.</p>';
+        });
+    })();
+  </script>
+</body>
+</html>

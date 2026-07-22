@@ -1,0 +1,128 @@
+/* ==========================================================================
+   Project Status page layout — /status/
+   Depends on: ../styles/tokens.css, ../styles/components.css.
+   Page-specific composition only; anything reusable belongs in components.css.
+   ========================================================================== */
+
+/* ---- Intro ---------------------------------------------------------------- */
+.status-intro {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border-strong);
+  padding-block: var(--space-12) var(--space-10);
+}
+
+.status-intro h1 {
+  font-size: var(--text-3xl);
+  line-height: var(--leading-tight);
+  letter-spacing: -0.01em;
+  margin-bottom: var(--space-5);
+}
+
+.status-intro__lede {
+  font-size: var(--text-lg);
+  color: var(--ink-secondary);
+  line-height: var(--leading-loose);
+  max-width: 40rem;
+}
+
+@media (min-width: 64rem) {
+  .status-intro h1 {
+    font-size: var(--text-4xl);
+  }
+}
+
+/* ---- Summary row (version / milestone / last updated) --------------------- */
+.status-summary {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-5);
+  margin-top: calc(-1 * var(--space-6));
+}
+
+.status-summary__item {
+  min-width: 0;
+}
+
+.status-summary__label {
+  display: block;
+  font-size: var(--text-xs);
+  font-weight: var(--weight-bold);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+  color: var(--ink-muted);
+  margin-bottom: var(--space-2);
+}
+
+.status-summary__value {
+  font-family: var(--font-display);
+  font-weight: var(--weight-bold);
+  font-size: var(--text-lg);
+  color: var(--ink-primary);
+}
+
+@media (min-width: 40rem) {
+  .status-summary {
+    grid-template-columns: auto 1fr auto;
+    align-items: start;
+    gap: var(--space-8);
+  }
+}
+
+/* ---- Phase list ------------------------------------------------------------ */
+.status-section {
+  padding-block: var(--space-8) var(--space-12);
+}
+
+.status-section > .container > h2 {
+  font-size: var(--text-2xl);
+  margin-block: var(--space-8) var(--space-5);
+}
+
+.status-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+/* Colored spine matches the location-card convention on the landing page. */
+.status-card {
+  border-left: 4px solid var(--border-strong);
+}
+
+.status-card--done        { border-left-color: var(--status-verified); }
+.status-card--in_progress { border-left-color: var(--status-community); }
+.status-card--planned     { border-left-color: var(--border-input); }
+
+.status-card__detail {
+  font-size: var(--text-sm);
+  color: var(--ink-secondary);
+  line-height: var(--leading-loose);
+  max-width: 46rem;
+}
+
+/* ---- .badge--planned: neutral third state ----------------------------------
+   --ink-secondary (#44403c) on --surface-inset (#f3ede1) measures 8.87:1 —
+   AAA for the badge's bold uppercase text.                                  */
+.badge--planned {
+  background: var(--surface-inset);
+  color: var(--ink-secondary);
+  border: 1px solid var(--border-input);
+}
+
+/* ---- Callout (mirrors landing.css .info-callout for this page) ------------- */
+.info-callout {
+  max-width: 46rem;
+  margin-top: var(--space-8);
+  padding: var(--space-5);
+  background: var(--action-tint);
+  border: 1px solid var(--status-community-ink);
+  border-left-width: 4px;
+  border-radius: var(--radius-sm);
+  font-size: var(--text-sm);
+  line-height: var(--leading-loose);
+  color: var(--ink-secondary);
+}
+
+.info-callout strong {
+  color: var(--ink-primary);
+}
