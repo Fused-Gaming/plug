@@ -1,0 +1,121 @@
+name: Suggest a charging location
+description: Tell us about a public place with outlets or device charging in Oakland. Your suggestion is reviewed and then listed as a Community report.
+title: "[Location]: "
+labels: ["submission"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping neighbors find power. A few notes before you start:
+
+        - **This form is public.** Anything you write here is visible to everyone
+          on GitHub. Please do not include your name, email, phone number, or any
+          personal information — we do not need it and cannot remove it from
+          GitHub history once posted.
+        - Suggestions are ingested automatically every hour and appear on
+          [plug.vln.gg](https://plug.vln.gg) as a **Community report** until a
+          volunteer field-checks them.
+        - Only suggest places that are safe and legal for the public to use.
+
+  - type: input
+    id: name
+    attributes:
+      label: Place name
+      description: The name of the venue, e.g. "Oakland Main Library".
+      placeholder: Oakland Main Library
+    validations:
+      required: true
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      options:
+        - Library
+        - Community center
+        - Public charging station
+        - Cafe or restaurant (customers only)
+        - Other public space
+    validations:
+      required: true
+
+  - type: input
+    id: address
+    attributes:
+      label: Street address
+      placeholder: 125 14th St, Oakland
+    validations:
+      required: true
+
+  - type: input
+    id: area
+    attributes:
+      label: Neighborhood or cross street
+      placeholder: Downtown, near 14th & Madison
+    validations:
+      required: false
+
+  - type: input
+    id: latitude
+    attributes:
+      label: Latitude (optional)
+      description: Long-press the spot in any map app to copy coordinates.
+      placeholder: "37.8011"
+    validations:
+      required: false
+
+  - type: input
+    id: longitude
+    attributes:
+      label: Longitude (optional)
+      placeholder: "-122.2648"
+    validations:
+      required: false
+
+  - type: dropdown
+    id: setting
+    attributes:
+      label: Indoor or outdoor
+      options:
+        - Indoor
+        - Outdoor
+    validations:
+      required: true
+
+  - type: dropdown
+    id: access
+    attributes:
+      label: Who can use it
+      options:
+        - Open to everyone
+        - Customers only
+    validations:
+      required: true
+
+  - type: input
+    id: hours
+    attributes:
+      label: Hours (if known)
+      placeholder: Mo-Sa 10:00-18:00
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: features
+    attributes:
+      label: What is available
+      options:
+        - label: Wall outlets
+        - label: USB ports
+        - label: Wi-Fi
+        - label: Wheelchair accessible
+        - label: Restrooms
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Anything else worth knowing
+      description: Where the outlets are, house rules, best times, etc. Keep it under 280 characters.
+      placeholder: Outlets along the wall by the reading tables. Staff are friendly about charging.
+    validations:
+      required: false

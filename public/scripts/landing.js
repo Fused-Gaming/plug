@@ -138,18 +138,36 @@
     return el;
   }
 
+  var TIER_PRESENTATION = {
+    auto: {
+      cardClass: 'card--auto',
+      badgeClass: 'badge--auto',
+      badgeIcon: 'info',
+      badgeText: ' Auto-listed',
+      footnote: ' Auto-listed from public data, not yet field-checked',
+    },
+    community: {
+      cardClass: 'card--community',
+      badgeClass: 'badge--community',
+      badgeIcon: 'users',
+      badgeText: ' Community report',
+      footnote: ' Suggested by a neighbor, pending field check',
+    },
+  };
+
   function buildAutoCard(venue, index) {
+    var tier = TIER_PRESENTATION[venue.tier] || TIER_PRESENTATION.auto;
     var card = document.createElement('button');
     card.type = 'button';
-    card.className = 'card card--interactive card--auto';
+    card.className = 'card card--interactive ' + tier.cardClass;
     card.setAttribute('aria-current', 'false');
     card.dataset.index = String(index);
 
     var header = span('card__header');
     header.appendChild(span('card__title', venue.title));
-    var badge = span('badge badge--auto');
-    badge.appendChild(spriteIcon('info', true));
-    badge.appendChild(document.createTextNode(' Auto-listed'));
+    var badge = span('badge ' + tier.badgeClass);
+    badge.appendChild(spriteIcon(tier.badgeIcon, true));
+    badge.appendChild(document.createTextNode(tier.badgeText));
     header.appendChild(badge);
     card.appendChild(header);
 
@@ -174,8 +192,8 @@
     card.appendChild(amenityList);
 
     var footnote = span('card__footnote');
-    footnote.appendChild(spriteIcon('info', true));
-    footnote.appendChild(document.createTextNode(' Auto-listed from public data, not yet field-checked'));
+    footnote.appendChild(spriteIcon(tier.badgeIcon, true));
+    footnote.appendChild(document.createTextNode(tier.footnote));
     card.appendChild(footnote);
     return card;
   }
@@ -192,6 +210,9 @@
         var venues = (payload.venues || [])
           .slice()
           .sort(function (a, b) {
+            // Neighbor submissions outrank machine finds; then by category prior.
+            var byTier = (a.tier === 'community' ? 0 : 1) - (b.tier === 'community' ? 0 : 1);
+            if (byTier !== 0) return byTier;
             var byPrior = (priorOrder[a.category] || 9) - (priorOrder[b.category] || 9);
             return byPrior !== 0 ? byPrior : (b.address ? 1 : 0) - (a.address ? 1 : 0);
           })
@@ -206,16 +227,19 @@
           if (amenityLabels.indexOf('Accessible') !== -1) tags.push('accessible');
           if (amenityLabels.indexOf('Wi-Fi') !== -1) tags.push('wifi');
 
+          var isCommunity = v.tier === 'community';
           var entry = {
             title: v.name,
             address: v.address || 'Address not mapped',
-            description:
-              'Public venue sourced automatically from OpenStreetMap. Outlet availability is inferred from the venue type and has not been field-checked yet.',
+            description: isCommunity
+              ? (v.notes ? v.notes + ' ' : '') + '(Suggested by a neighbor; awaiting a volunteer field check.)'
+              : 'Public venue sourced automatically from OpenStreetMap. Outlet availability is inferred from the venue type and has not been field-checked yet.',
             access: amenityLabels,
             accessList: amenityLabels,
             hours: !v.hours ? 'Check hours on site' : v.hours.length <= 60 ? v.hours : 'See posted hours',
-            evidence: 'Auto-listed · OpenStreetMap (ODbL)',
+            evidence: isCommunity ? 'Community report · neighbor submission' : 'Auto-listed · OpenStreetMap (ODbL)',
             tags: tags,
+            tier: v.tier,
           };
           var index = locations.length;
           locations.push(entry);

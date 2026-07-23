@@ -2,8 +2,8 @@
 /**
  * Phase A OSINT ETL runner (issue #20). Fetches public venues from the
  * OpenStreetMap Overpass API for the Oakland service area, normalizes and
- * dedupes them, records them in the canonical SQLite database, and emits the
- * diff-stable published JSON the site consumes.
+ * dedupes them, records them in the canonical SQLite database, and republishes
+ * public/data/locations.json (auto + community tiers) via db.js.
  *
  *   node scripts/etl/sync-locations.mjs             # live fetch
  *   node scripts/etl/sync-locations.mjs --offline   # reuse last raw snapshot
@@ -19,8 +19,8 @@
 import { execFileSync } from 'node:child_process';
 import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
-import Database from 'better-sqlite3';
-import { SERVICE_AREA, dedupe, deriveTier, normalizeOsmElement, toPublishedJson } from './lib.js';
+import { addEvidence, openDb, publishFromDb, upsertVenue } from './db.js';
+import { SERVICE_AREA, dedupe, deriveTier, normalizeOsmElement } from './lib.js';
 
 const ROOT = new URL('../..', import.meta.url).pathname;
 const DB_PATH = join(ROOT, 'data/locations.db');
@@ -64,71 +64,6 @@ async function fetchOverpass() {
   throw lastError;
 }
 
-function openDb() {
-  mkdirSync(join(ROOT, 'data'), { recursive: true });
-  const db = new Database(DB_PATH);
-  db.pragma('journal_mode = DELETE'); // no -wal/-shm sidecars in the repo
-  db.exec(`
-    CREATE TABLE IF NOT EXISTS venues (
-      id TEXT PRIMARY KEY,
-      name TEXT NOT NULL,
-      lat REAL NOT NULL,
-      lon REAL NOT NULL,
-      category TEXT NOT NULL,
-      indoor INTEGER NOT NULL,
-      access TEXT NOT NULL,
-      hours TEXT,
-      address TEXT,
-      amenities TEXT NOT NULL,
-      tier TEXT NOT NULL,
-      first_seen TEXT NOT NULL,
-      missing_since TEXT
-    );
-    CREATE TABLE IF NOT EXISTS evidence (
-      venue_id TEXT NOT NULL REFERENCES venues(id),
-      source TEXT NOT NULL,
-      observed_at TEXT NOT NULL,
-      outlet_claim TEXT NOT NULL,
-      payload_json TEXT NOT NULL,
-      PRIMARY KEY (venue_id, source, observed_at)
-    );
-  `);
-  return db;
-}
-
-function sync(db, venues, today) {
-  const upsert = db.prepare(`
-    INSERT INTO venues (id, name, lat, lon, category, indoor, access, hours, address, amenities, tier, first_seen, missing_since)
-    VALUES (@id, @name, @lat, @lon, @category, @indoor, @access, @hours, @address, @amenities, @tier, @first_seen, NULL)
-    ON CONFLICT(id) DO UPDATE SET
-      name=excluded.name, lat=excluded.lat, lon=excluded.lon, category=excluded.category,
-      indoor=excluded.indoor, access=excluded.access, hours=excluded.hours, address=excluded.address,
-      amenities=excluded.amenities, tier=excluded.tier, missing_since=NULL
-  `);
-  const addEvidence = db.prepare(`
-    INSERT OR IGNORE INTO evidence (venue_id, source, observed_at, outlet_claim, payload_json)
-    VALUES (?, 'osm', ?, 'inferred', ?)
-  `);
-  const markMissing = db.prepare(
-    `UPDATE venues SET missing_since = ? WHERE missing_since IS NULL AND id NOT IN (${venues.map(() => '?').join(',')})`,
-  );
-
-  db.transaction(() => {
-    for (const v of venues) {
-      upsert.run({
-        ...v,
-        indoor: v.indoor ? 1 : 0,
-        amenities: JSON.stringify(v.amenities),
-        tier: deriveTier(v),
-        first_seen: today,
-      });
-      // Evidence keyed by month, not day, so unchanged months stay diff-free.
-      addEvidence.run(v.id, today.slice(0, 7), JSON.stringify({ category: v.category, hours: v.hours }));
-    }
-    if (venues.length) markMissing.run(today, ...venues.map((v) => v.id));
-  })();
-}
-
 const offline = process.argv.includes('--offline');
 let raw;
 if (offline) {
@@ -144,17 +79,30 @@ if (offline) {
 const venues = dedupe(raw.elements.map(normalizeOsmElement).filter(Boolean));
 const today = new Date().toISOString().slice(0, 10);
 
-const db = openDb();
-sync(db, venues, today);
+const db = openDb(DB_PATH);
+db.transaction(() => {
+  for (const v of venues) {
+    upsertVenue(db, { ...v, notes: null, tier: deriveTier(v) }, today);
+    // Evidence keyed by month, not day, so unchanged months stay diff-free.
+    addEvidence(db, v.id, 'osm', today.slice(0, 7), 'inferred', { category: v.category, hours: v.hours });
+  }
+  if (venues.length) {
+    // Presence tracking scoped to OSM-sourced venues; submissions have their
+    // own lifecycle in the ingest workflow.
+    db.prepare(
+      `UPDATE venues SET missing_since = ?
+       WHERE missing_since IS NULL AND id NOT LIKE 'sub/%'
+         AND id NOT IN (${venues.map(() => '?').join(',')})`,
+    ).run(today, ...venues.map((v) => v.id));
+  }
+})();
+
 const counts = db.prepare(`SELECT tier, COUNT(*) n FROM venues WHERE missing_since IS NULL GROUP BY tier`).all();
+const payload = publishFromDb(db, JSON_PATH);
 db.close();
 
-const published = toPublishedJson(venues);
-mkdirSync(join(ROOT, 'public/data'), { recursive: true });
-writeFileSync(JSON_PATH, JSON.stringify(published, null, 1) + '\n');
-
 console.log(`normalized ${venues.length} venues; tiers:`, counts.map((c) => `${c.tier}=${c.n}`).join(' '));
-console.log(`published ${published.meta.count} auto-listed venues -> public/data/locations.json`);
+console.log(`published ${payload.meta.count} venues -> public/data/locations.json`);
 try {
   console.log('git diff:', execFileSync('git', ['status', '--short', 'data', 'public/data'], { cwd: ROOT, encoding: 'utf8' }).trim() || '(none)');
 } catch {
