@@ -1,43 +1,43 @@
 {
- "updated": "2026-07-22",
- "version": "2.0.0",
+ "updated": "2026-07-23",
+ "version": "2.1.0-in-progress",
  "milestone": "v2.1.0 — Community Data Pipeline",
  "phases": [
   {
    "id": "design-system",
    "name": "Design system & landing page",
    "status": "done",
-   "detail": "Token-driven components, WCAG-graded palette, SVG iconography shipped in v2.0.0."
+   "detail": "Token-driven components, WCAG-graded palette, SVG iconography shipped in v2.0.0 (PR #19)."
   },
   {
    "id": "planning-docs",
    "name": "Planning & process docs",
    "status": "done",
-   "detail": "Data pipeline plan, branching and release process, changelog, and this status page shipped in PR #26."
+   "detail": "Data pipeline plan, branching and release process, prompt archive, status page shipped in PR #26."
   },
   {
    "id": "osint-etl",
-   "name": "Daily OSINT data pipeline",
-   "status": "in_progress",
-   "detail": "Daily Overpass ETL live: scripts/etl + data-sync workflow publish auto-listed Oakland venues to the site. Socrata/BART corroboration still to come."
+   "name": "Phase A: Daily OSINT data pipeline",
+   "status": "done",
+   "detail": "Daily Overpass ETL live: 39 auto-listed Oakland venues published via data-sync.yml (daily 10:41 UTC). PR #27 shipped."
   },
   {
    "id": "submissions",
-   "name": "Community submissions",
-   "status": "in_progress",
-   "detail": "Suggest-a-place issue form is live; hourly workflow validates, sanitizes, and publishes submissions as Community reports."
+   "name": "Phase B: Community submissions",
+   "status": "done",
+   "detail": "GitHub Issue Form live; hourly ingest validates, sanitizes (XSS boundary), publishes as Community reports. PR #28 shipped."
   },
   {
    "id": "email",
-   "name": "Email confirmations",
+   "name": "Phase C: Email confirmations",
    "status": "planned",
-   "detail": "Resend confirmations and opt-in updates, sent by a GitHub Action using repository secrets."
+   "detail": "Resend confirmations for submissions (design decision pending: Reply-to-Confirm recommended). See PHASE_C_DESIGN_DECISION.md."
   },
   {
    "id": "data-hygiene",
-   "name": "Data hygiene & attribution",
+   "name": "Phases D & E: Staleness & licensing",
    "status": "planned",
-   "detail": "Staleness and liveness automation, ODbL attribution, and privacy documentation updates."
+   "detail": "Weekly liveness checks (Phase D), auto-demotion for stale venues; README data-sources, privacy policy updates (Phase E). See PHASES_D_E_PLANNING.md."
   }
  ]
 }
