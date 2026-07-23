@@ -1,8 +1,8 @@
 # Documentation Index
 
-**Project:** Charging Station Locator MVP  
-**Status:** Production Ready ✅  
-**Last Updated:** July 20, 2026
+**Project:** Charging Station Locator MVP (v2.0.0) → Community Data Pipeline (v2.1.0 In Progress)  
+**Current Status:** v2.1.0 Phases A & B Shipped ✅ | Phases C-E Planned  
+**Last Updated:** July 23, 2026
 
 Welcome to the Charging Station Locator documentation. This guide helps you navigate project documentation by role and task.
 
@@ -17,7 +17,9 @@ Welcome to the Charging Station Locator documentation. This guide helps you navi
 
 ### **For Contributors**
 - 👉 [Contribution Guidelines](../CONTRIBUTING.md) (in root)
+- 👉 [Implementation Summary](05-development/IMPLEMENTATION_SUMMARY.md) — Phases A & B complete; architecture, file locations, next steps
 - 👉 [Architecture Decisions](03-architecture/technical-decisions.md)
+- 👉 [Data Pipeline Plan](02-project-scope/DATA_PIPELINE_PLAN.md) — Full v2.1.0 methodology and phase acceptance criteria
 - 👉 [Design System](04-design/design-system.md)
 - 👉 [Development Process](05-development/prompt-history.md)
 
@@ -54,16 +56,17 @@ Welcome to the Charging Station Locator documentation. This guide helps you navi
 ---
 
 ### **02 — Project Scope**
-*Roadmap, goals, constraints, design decisions*
+*Roadmap, goals, constraints, data pipeline methodology*
 
 | Document | Purpose |
 |----------|---------|
 | [README](02-project-scope/README.md) | Overview of project scope |
-| [Roadmap](02-project-scope/roadmap.md) | 7-day sprint plan |
+| [Roadmap](02-project-scope/roadmap.md) | 7-day sprint plan (shipped); v2.1.0 phases (A-B shipped, C-E planned) |
 | [Goals & Value](02-project-scope/goals-and-value.md) | Problem statement and value creation |
 | [Constraints](02-project-scope/constraints.md) | GitHub Pages limitation and mitigation |
+| [Data Pipeline Plan](02-project-scope/DATA_PIPELINE_PLAN.md) | v2.1.0 methodology: OSINT ETL, community submissions, trust tiers, phased rollout |
 
-**For:** Project managers, stakeholders, anyone understanding "what are we building"
+**For:** Project managers, stakeholders, engineers, anyone understanding "what are we building" or "how does the data pipeline work"
 
 ---
 
@@ -96,16 +99,21 @@ Welcome to the Charging Station Locator documentation. This guide helps you navi
 ---
 
 ### **05 — Development**
-*Development narrative, AI collaboration, debugging*
+*Development narrative, processes, testing, automation*
 
 | Document | Purpose |
 |----------|---------|
 | [README](05-development/README.md) | Overview of development process |
+| [Implementation Summary](05-development/IMPLEMENTATION_SUMMARY.md) | v2.1.0 Phases A & B shipped; architecture decisions; files by category; next steps |
+| [Branching Strategy](05-development/BRANCHING_STRATEGY.md) | GitHub Flow, data-sync workflow exception, PR process |
+| [Release Process](05-development/RELEASE_PROCESS.md) | Semantic Versioning, changelog, git tags, GitHub Releases |
 | [Prompt History](05-development/prompt-history.md) | Key prompts and development narrative |
+| [Prompt Archive](05-development/prompt-archive/README.md) | Auto-generated, 8,000-byte-capped chunks (instructor deliverable) |
+| [Status Page](05-development/STATUS_PAGE.md) | How the public `/status/` page works |
 | [AI Collaboration](05-development/ai-collaboration.md) | How AI assisted development |
 | [Debugging Guide](05-development/debugging-guide.md) | Interesting bugs and solutions |
 
-**For:** Developers, anyone curious about the development process
+**For:** Developers, anyone curious about the development process; essential before opening PRs or cutting releases
 
 ---
 
@@ -150,8 +158,10 @@ Welcome to the Charging Station Locator documentation. This guide helps you navi
 
 ### "I want to contribute code"
 1. Read: [CONTRIBUTING.md](../CONTRIBUTING.md)
-2. Read: [Architecture](03-architecture/technical-decisions.md)
-3. Read: [Design System](04-design/design-system.md)
+2. Read: [Implementation Summary](05-development/IMPLEMENTATION_SUMMARY.md) (understand what's shipped and planned)
+3. Read: [Branching Strategy](05-development/BRANCHING_STRATEGY.md) (before opening a PR)
+4. Read: [Architecture](03-architecture/technical-decisions.md)
+5. Read: [Design System](04-design/design-system.md)
 
 ### "I want to deploy this"
 1. Read: [Deployment Pipeline](03-architecture/deployment-pipeline.md)
@@ -188,9 +198,11 @@ README.md (main)
 └─ 04-design/responsive-strategy.md
 ```
 
-### **Architect (1 hour)**
+### **Architect (1.5 hours)**
 ```
-03-architecture/README.md
+05-development/IMPLEMENTATION_SUMMARY.md
+├─ 02-project-scope/DATA_PIPELINE_PLAN.md
+├─ 03-architecture/README.md
 ├─ 03-architecture/technical-decisions.md
 ├─ 03-architecture/deployment-pipeline.md
 ├─ 03-architecture/data-flow.md
@@ -297,6 +309,6 @@ descriptive-name.md
 
 ---
 
-**Last Updated:** July 20, 2026  
+**Last Updated:** July 23, 2026  
 **Maintained By:** Fused Gaming (AI-Assisted Development)  
-**Version:** 1.0
+**Version:** 2.1.0 (In Progress)

@@ -123,10 +123,10 @@ With v2.0.0 live, the next milestone replaces hardcoded seed data with an automa
 
 ### Rollout Phases
 
-- [ ] **Phase A — OSINT ETL + Auto-listed badge:** daily workflow, canonical SQLite + derived JSON, commit-on-diff, auto-publish rule, honest badge wording ([details](DATA_PIPELINE_PLAN.md#phase-a--osint-etl--auto-listed-badge))
-- [ ] **Phase B — Community submissions:** GitHub Issue Form queue, hourly ingest with JSON Schema validation, geofencing, and free-text sanitization as the XSS boundary ([details](DATA_PIPELINE_PLAN.md#phase-b--community-submissions))
+- [x] **Phase A — OSINT ETL + Auto-listed badge:** daily workflow, canonical SQLite + derived JSON, commit-on-diff, auto-publish rule, honest badge wording ([details](DATA_PIPELINE_PLAN.md#phase-a--osint-etl--auto-listed-badge)) — **SHIPPED in PR #27**
+- [x] **Phase B — Community submissions:** GitHub Issue Form queue, hourly ingest with JSON Schema validation, geofencing, and free-text sanitization as the XSS boundary ([details](DATA_PIPELINE_PLAN.md#phase-b--community-submissions)) — **SHIPPED in PR #28**
 - [ ] **Phase C — Resend confirmations + opt-in:** Action-side confirmation emails, reply-to-confirm double opt-in, contacts stored only in Resend Audiences — never in the repo ([details](DATA_PIPELINE_PLAN.md#phase-c--resend-confirmations--opt-in))
 - [ ] **Phase D — Staleness and liveness automation:** auto-demote to Needs recheck when a venue vanishes from OSM, hours change, or its website goes dark ([details](DATA_PIPELINE_PLAN.md#phase-d--staleness-and-liveness-automation))
-- [ ] **Phase E — Licensing, attribution, privacy:** ODbL compliance (LICENSE-DATA + footer attribution), data license note, privacy policy update ([details](DATA_PIPELINE_PLAN.md#phase-e--licensing-attribution-privacy))
+- [ ] **Phase E — Licensing, attribution, privacy:** ODbL compliance (LICENSE-DATA + footer attribution), data license note, privacy policy update ([details](DATA_PIPELINE_PLAN.md#phase-e--licensing-attribution-privacy)) — **PARTIALLY SHIPPED** (ODbL in place; privacy policy pending)
 
 **Definition of Done:** All five phases shipped; the map is populated and maintained by automation and community evidence, with no hand-edited data files.
