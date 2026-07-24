@@ -5,8 +5,10 @@ Understand the project vision, goals, constraints, and how we prioritized the MV
 ## What's Here
 
 - **[Goals & Value](goals-and-value.md)** — Problem statement and value proposition
-- **[Roadmap](roadmap.md)** — 7-day sprint plan (shipped) and the v2.1.0 Community Data Pipeline milestone
-- **[Data Pipeline Plan](DATA_PIPELINE_PLAN.md)** — v2.1.0 plan: OSINT ETL, evidence-based trust tiers, community submissions, email flow, phased rollout
+- **[Roadmap](roadmap.md)** — 7-day sprint plan (shipped) and the v2.1.0 Community Data Pipeline (Phases A-B shipped; C-E planned)
+- **[Data Pipeline Plan](DATA_PIPELINE_PLAN.md)** — v2.1.0 full methodology: OSINT ETL, evidence-based trust tiers, community submissions, phased rollout
+- **[Phase C Design Decision](PHASE_C_DESIGN_DECISION.md)** — Email confirmation options (Reply-to-Confirm recommended); blocks Phase C implementation
+- **[Phases D & E Planning](PHASES_D_E_PLANNING.md)** — Staleness automation and licensing/privacy roadmap
 - **[Constraints](constraints.md)** — GitHub Pages limitation and architectural mitigation
 
 ## TL;DR

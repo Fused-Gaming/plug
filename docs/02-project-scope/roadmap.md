@@ -123,10 +123,10 @@ With v2.0.0 live, the next milestone replaces hardcoded seed data with an automa
 
 ### Rollout Phases
 
-- [ ] **Phase A — OSINT ETL + Auto-listed badge:** daily workflow, canonical SQLite + derived JSON, commit-on-diff, auto-publish rule, honest badge wording ([details](DATA_PIPELINE_PLAN.md#phase-a--osint-etl--auto-listed-badge))
-- [ ] **Phase B — Community submissions:** GitHub Issue Form queue, hourly ingest with JSON Schema validation, geofencing, and free-text sanitization as the XSS boundary ([details](DATA_PIPELINE_PLAN.md#phase-b--community-submissions))
-- [ ] **Phase C — Resend confirmations + opt-in:** Action-side confirmation emails, reply-to-confirm double opt-in, contacts stored only in Resend Audiences — never in the repo ([details](DATA_PIPELINE_PLAN.md#phase-c--resend-confirmations--opt-in))
-- [ ] **Phase D — Staleness and liveness automation:** auto-demote to Needs recheck when a venue vanishes from OSM, hours change, or its website goes dark ([details](DATA_PIPELINE_PLAN.md#phase-d--staleness-and-liveness-automation))
-- [ ] **Phase E — Licensing, attribution, privacy:** ODbL compliance (LICENSE-DATA + footer attribution), data license note, privacy policy update ([details](DATA_PIPELINE_PLAN.md#phase-e--licensing-attribution-privacy))
+- [x] **Phase A — OSINT ETL + Auto-listed badge:** daily workflow, canonical SQLite + derived JSON, commit-on-diff, auto-publish rule, honest badge wording — **SHIPPED in PR #27** ([details](DATA_PIPELINE_PLAN.md#phase-a--osint-etl--auto-listed-badge))
+- [x] **Phase B — Community submissions:** GitHub Issue Form queue, hourly ingest with JSON Schema validation, geofencing, and free-text sanitization as the XSS boundary — **SHIPPED in PR #28** ([details](DATA_PIPELINE_PLAN.md#phase-b--community-submissions))
+- [ ] **Phase C — Resend confirmations + opt-in:** Action-side confirmation emails, double opt-in, contacts stored only in Resend Audiences — never in the repo — **DESIGN DECISION PENDING** ([options](PHASE_C_DESIGN_DECISION.md), [details](DATA_PIPELINE_PLAN.md#phase-c--resend-confirmations--opt-in))
+- [ ] **Phase D — Staleness and liveness automation:** Weekly HTTP checks; auto-demote to "Needs recheck" when venues disappear from OSM or websites go dark ([planning](PHASES_D_E_PLANNING.md#phase-d-staleness-and-liveness-automation), [details](DATA_PIPELINE_PLAN.md#phase-d--staleness-and-liveness-automation))
+- [ ] **Phase E — Licensing, attribution, privacy:** ODbL compliance ✅, README data-sources section, privacy policy for Resend + submissions flow ([planning](PHASES_D_E_PLANNING.md#phase-e-licensing-attribution--privacy), [details](DATA_PIPELINE_PLAN.md#phase-e--licensing-attribution-privacy))
 
 **Definition of Done:** All five phases shipped; the map is populated and maintained by automation and community evidence, with no hand-edited data files.
