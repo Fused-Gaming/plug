@@ -32,7 +32,10 @@ export function openDb(dbPath) {
       first_seen TEXT NOT NULL,
       missing_since TEXT,
       email_confirmed INTEGER DEFAULT 0,
-      confirmed_at TEXT
+      confirmed_at TEXT,
+      last_verified TEXT,
+      stale_at TEXT,
+      verification_source TEXT
     );
     CREATE TABLE IF NOT EXISTS evidence (
       venue_id TEXT NOT NULL REFERENCES venues(id),
@@ -52,13 +55,31 @@ export function openDb(dbPath) {
       created_at TEXT NOT NULL
     );
   `);
+
+  // Phase D migration: add staleness tracking columns if not present
+  const columns = db.prepare(`PRAGMA table_info(venues)`).all();
+  const hasLastVerified = columns.some((c) => c.name === 'last_verified');
+  if (!hasLastVerified) {
+    db.exec(`
+      ALTER TABLE venues ADD COLUMN last_verified TEXT;
+      ALTER TABLE venues ADD COLUMN stale_at TEXT;
+      ALTER TABLE venues ADD COLUMN verification_source TEXT;
+    `);
+    // Initialize last_verified to first_seen for existing venues
+    db.prepare(`UPDATE venues SET last_verified = first_seen WHERE last_verified IS NULL`).run();
+    // Set verification_source based on venue ID pattern
+    db.prepare(`UPDATE venues SET verification_source = 'osint' WHERE verification_source IS NULL AND id NOT LIKE 'sub/%'`).run();
+    db.prepare(`UPDATE venues SET verification_source = 'community' WHERE verification_source IS NULL AND id LIKE 'sub/%'`).run();
+  }
+
   return db;
 }
 
 export function upsertVenue(db, venue, today) {
+  const verificationSource = venue.id.startsWith('sub/') ? 'community' : 'osint';
   db.prepare(`
-    INSERT INTO venues (id, name, lat, lon, category, indoor, access, hours, address, amenities, notes, tier, first_seen, missing_since)
-    VALUES (@id, @name, @lat, @lon, @category, @indoor, @access, @hours, @address, @amenities, @notes, @tier, @first_seen, NULL)
+    INSERT INTO venues (id, name, lat, lon, category, indoor, access, hours, address, amenities, notes, tier, first_seen, missing_since, last_verified, verification_source)
+    VALUES (@id, @name, @lat, @lon, @category, @indoor, @access, @hours, @address, @amenities, @notes, @tier, @first_seen, NULL, @last_verified, @verification_source)
     ON CONFLICT(id) DO UPDATE SET
       name=excluded.name, lat=excluded.lat, lon=excluded.lon, category=excluded.category,
       indoor=excluded.indoor, access=excluded.access, hours=excluded.hours, address=excluded.address,
@@ -71,6 +92,8 @@ export function upsertVenue(db, venue, today) {
     notes: venue.notes ?? null,
     amenities: JSON.stringify(venue.amenities),
     first_seen: today,
+    last_verified: today,
+    verification_source: verificationSource,
   });
 }
 
@@ -82,16 +105,20 @@ export function addEvidence(db, venueId, source, observedAt, outletClaim, payloa
 }
 
 /** Published payload: auto + community tiers, present venues only, sorted by
- * id, no volatile timestamps — byte-stable when nothing changed. */
+ * id, no volatile timestamps — byte-stable when nothing changed. Includes
+ * staleness metadata (last_verified, stale flag, months_since_verified). */
 export function publishFromDb(db, jsonPath) {
   const rows = db
     .prepare(
-      `SELECT id, name, lat, lon, category, indoor, access, hours, address, amenities, notes, tier
+      `SELECT id, name, lat, lon, category, indoor, access, hours, address, amenities, notes, tier, last_verified, stale_at
        FROM venues
        WHERE missing_since IS NULL AND tier IN ('auto', 'community')
        ORDER BY id`,
     )
     .all();
+
+  const today = new Date().toISOString().split('T')[0];
+  const daysSinceThreshold = 180; // 6 months
 
   const venues = rows.map((r) => {
     const v = {
@@ -109,6 +136,19 @@ export function publishFromDb(db, jsonPath) {
       tier: r.tier,
     };
     if (r.notes) v.notes = r.notes;
+
+    // Phase D: Add staleness metadata
+    if (r.last_verified) {
+      const lastVerified = new Date(r.last_verified);
+      const nowDate = new Date(today);
+      const daysSinceVerified = Math.floor((nowDate - lastVerified) / (1000 * 60 * 60 * 24));
+      const monthsSinceVerified = Math.floor(daysSinceVerified / 30);
+
+      v.last_verified = r.last_verified;
+      v.months_since_verified = monthsSinceVerified;
+      v.stale = r.stale_at !== null || daysSinceVerified > daysSinceThreshold;
+    }
+
     return v;
   });
 
@@ -118,6 +158,7 @@ export function publishFromDb(db, jsonPath) {
       disclaimer:
         'Auto-listed entries are machine-corroborated from public data; community entries are neighbor-submitted pending review. Neither has been field-verified.',
       count: venues.length,
+      staleness_threshold_days: daysSinceThreshold,
     },
     venues,
   };
