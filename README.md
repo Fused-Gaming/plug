@@ -3,9 +3,9 @@
 [![Build Status](https://github.com/fused-gaming/plug/actions/workflows/deploy.yml/badge.svg?branch=main)](https://github.com/fused-gaming/plug/actions)
 [![Deployment Status](https://img.shields.io/badge/deployment-live-success?logo=github)](https://plug.vln.gg)
 [![Security: 0 Vulnerabilities](https://img.shields.io/badge/security-0%20vulnerabilities-success)](SECURITY_SCANNING.md)
-[![Tests: 66 Passing](https://img.shields.io/badge/tests-66%20passing-success)](#)
+[![Tests: 123 Passing](https://img.shields.io/badge/tests-123%20passing-success)](#)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
-[![Version: 2.0.0](https://img.shields.io/badge/version-2.0.0-blue)](#)
+[![Version: 2.1.0-RC](https://img.shields.io/badge/version-2.1.0--RC-blue)](#)
 [![React: 18.2.0](https://img.shields.io/badge/react-18.2.0-61dafb?logo=react)](https://react.dev)
 [![Vite: 6.4.3](https://img.shields.io/badge/vite-6.4.3-646cff?logo=vite)](https://vitejs.dev)
 [![Accessibility: WCAG 2.1 AA](https://img.shields.io/badge/accessibility-WCAG%202.1%20AA-047857)](docs/04-design/COMPONENT_LIBRARY.md#color-palette--wcag-21-graded)
@@ -465,11 +465,40 @@ Browser Display (fully client-side)
 
 ---
 
+## Data Sources & Attribution
+
+**All venue data sourced from public, community-maintained datasets:**
+
+### Primary Source: OpenStreetMap (Overpass API)
+- **Data:** Libraries, community centers, charging stations
+- **Source:** https://www.openstreetmap.org/
+- **License:** [Open Data Commons (ODbL)](https://opendatacommons.org/licenses/odbl/) — Requires attribution
+- **Attribution:** "Location data © OpenStreetMap contributors, ODbL 1.0"
+- **Verification:** Weekly automated checks confirm venue liveness (Phase D)
+
+### Community Submissions
+- **Source:** GitHub Issue Forms (Phase B)
+- **Confirmation:** Email verification (Phase C)
+- **License:** Contributor retains rights; accepts publication under ODbL
+- **Data Quality:** Human-verified before publication
+
+### Data Quality Assurance
+- **Daily OSINT sync:** Pulls latest Overpass data (Phase A)
+- **Weekly staleness checks:** Re-verifies venues still exist (Phase D)
+- **Stale venue flagging:** Venues unverified >180 days marked for review
+- **Missing venue exclusion:** Venues no longer in Overpass excluded from publication
+
+For detailed sourcing methodology, see [DATA_SOURCES.md](docs/DATA_SOURCES.md).
+
+---
+
 ## License
 
 **MIT License** — Free to use, modify, and distribute.
 
 See [LICENSE](LICENSE) file for details.
+
+**Data License:** Location data © OpenStreetMap contributors, [ODbL 1.0](https://opendatacommons.org/licenses/odbl/) — See [DATA_SOURCES.md](docs/DATA_SOURCES.md) for full attribution.
 
 ---
 

@@ -377,7 +377,35 @@ Based on charging density and community need:
 
 ## Verification Process
 
-### Step 1: Source Verification
+### Automated Verification (Phase D: Staleness Detection)
+
+Weekly automated checks ensure venue data stays current:
+
+**Weekly Staleness Check (Sundays 10:51 UTC):**
+- Re-queries Overpass API for all venues
+- Updates `last_verified` timestamp for found venues
+- Marks venues as `stale_at` if unverified >6 months (180 days)
+- Sets `missing_since` for venues no longer in Overpass
+- Excludes missing venues from publication
+
+**Data Quality Indicators in Published JSON:**
+```json
+{
+  "id": "node/123456",
+  "name": "Downtown Library",
+  "last_verified": "2026-07-24",        // ISO 8601 date
+  "months_since_verified": 0,            // Integer (for "Last verified X months ago")
+  "stale": false,                        // Boolean (true if >180 days without verification)
+  "verification_source": "osint"         // osint/community
+}
+```
+
+**Staleness Thresholds:**
+- **Active:** Verified within 180 days (6 months)
+- **Stale:** Unverified >180 days (marked for potential demotion in Phase E)
+- **Missing:** Not found in Overpass for any check cycle
+
+### Manual Verification (Step 1: Source Verification)
 
 Confirm source legitimacy:
 
@@ -500,10 +528,11 @@ No private or proprietary data included.
 
 ### Data Freshness
 
-- MVP data verified: 2026-07-20
-- Recommended refresh: Every 6 months
-- Manual update process (no automated sync)
-- Community reports accepted for urgent updates
+- **Automated verification:** Weekly (Sundays 10:51 UTC via `staleness-check.mjs`)
+- **MVP data initialized:** 2026-07-20
+- **Staleness threshold:** 180 days (6 months) without verification
+- **Workflow:** Daily OSINT sync (Phase A) + weekly staleness checks (Phase D)
+- **Community reports:** Accepted via GitHub Issues (Phase B) with automatic confirmation (Phase C)
 
 ## Contributing Data
 

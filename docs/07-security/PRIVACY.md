@@ -364,9 +364,53 @@ Confirmation emails include a one-time verification link:
 
 ---
 
-## 18. Contact & Questions
+## 13. Automated Data Verification (Phase D: Staleness Checks)
 
-### 13.1 Privacy Questions
+### 13.1 Weekly Staleness Verification
+
+To keep venue data current and reliable, we perform automated weekly verification checks:
+
+**What Happens:**
+- **Every Sunday at 10:51 UTC:** Automated job re-queries the Overpass API
+- **Data checked:** All OSINT venues from Phase A (daily Overpass sync)
+- **Verification method:** Anonymous Overpass query (no personal data)
+- **Results:** 
+  - Updates `last_verified` timestamp for venues still found
+  - Marks `stale_at` for venues unverified >180 days (6 months)
+  - Sets `missing_since` for venues no longer in Overpass
+
+**Privacy Impact:**
+- **Your data:** Not affected (no personal data involved)
+- **Queries:** Anonymous API calls to Overpass (no authentication, no tracking)
+- **Results:** Published in `locations.json` with staleness metadata (last_verified, months_since_verified)
+- **Excluded venues:** Missing venues automatically removed from public publication
+
+### 13.2 Staleness Threshold
+
+| Status | Days Since Verified | Published? | Notes |
+|--------|-------------------|-----------|-------|
+| **Active** | 0-180 days | ✅ Yes | Current venue, displayed on map |
+| **Stale** | >180 days | ✅ Yes* | Marked with `stale: true`, flagged for review |
+| **Missing** | Not found by Overpass | ❌ No | Excluded from publication entirely |
+
+*Stale venues remain published for user awareness but flagged as unverified.
+
+### 13.3 No Personal Data Collected
+
+The staleness verification process:
+- ❌ Does NOT collect user location data
+- ❌ Does NOT track who uses the app
+- ❌ Does NOT identify individual users
+- ❌ Does NOT store any personal information
+- ✅ Only queries public venue data from Overpass API
+
+This is a data quality maintenance process, not a tracking mechanism.
+
+---
+
+## 14. Contact & Questions
+
+### 14.1 Privacy Questions
 
 For privacy questions about the Charging Station Locator:
 
@@ -374,7 +418,7 @@ For privacy questions about the Charging Station Locator:
 2. **Email:** security@fused-gaming.com (when domain secured)
 3. **Security advisory:** [Private security advisory](https://github.com/Fused-Gaming/plug/security/advisories)
 
-### 13.2 Privacy Requests
+### 14.2 Privacy Requests
 
 Since we store no personal data:
 
@@ -384,20 +428,20 @@ Since we store no personal data:
 
 If you'd like to verify our privacy practices, the source code is open-source and auditable.
 
-## 18. Opt-Out Procedures
+## 15. Opt-Out Procedures
 
-### 13.1 Disable Geolocation
+### 15.1 Disable Geolocation
 
 1. Open Charging Station Locator
 2. Do NOT click "Find Nearby Chargers"
 3. Use the search bar instead (no geolocation needed)
 4. Browser → Settings → Reset location permissions
 
-### 13.2 Disable Tracking (Already Disabled)
+### 15.2 Disable Tracking (Already Disabled)
 
 We have no analytics to disable. The app ships with zero tracking.
 
-### 13.3 Browser Privacy Mode
+### 15.3 Browser Privacy Mode
 
 Open the app in:
 
@@ -407,7 +451,7 @@ Open the app in:
 
 For even stronger privacy (cookies and cache automatically deleted on close).
 
-## 18. Do Not Track (DNT)
+## 16. Do Not Track (DNT)
 
 While we honor the "Do Not Track" (DNT) header from browsers, we do not track users regardless of DNT status.
 
@@ -415,7 +459,7 @@ While we honor the "Do Not Track" (DNT) header from browsers, we do not track us
 - No analytics to disable
 - No personalization happening
 
-## 18. California Privacy Rights (CPRA)
+## 17. California Privacy Rights (CPRA)
 
 **California Consumer Privacy Act (CCPA) & California Privacy Rights Act (CPRA):**
 
@@ -447,7 +491,7 @@ Hypothetical transparency report (if it existed):
 | Government requests | 0 |
 | Data breaches | 0 |
 
-## 18. Special Requests from Governments
+## 19. Special Requests from Governments
 
 **If law enforcement requests user data:**
 
