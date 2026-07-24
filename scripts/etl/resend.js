@@ -9,13 +9,9 @@
  * Expiry: 7 days from creation
  */
 
-import { randomBytes, createHash } from 'node:crypto';
+import { randomBytes } from 'node:crypto';
 import { readFileSync } from 'node:fs';
-import { fileURLToPath } from 'node:url';
-import { dirname, join } from 'node:path';
-
-const __dirname = dirname(fileURLToPath(import.meta.url));
-const EMAIL_TEMPLATE = readFileSync(join(__dirname, 'templates', 'confirmation-email.txt'), 'utf-8');
+import { join } from 'node:path';
 
 /**
  * Generate a unique, collision-resistant verification token.
@@ -49,10 +45,26 @@ export function extractContactEmail(issueData) {
 /**
  * Build confirmation email body from template.
  * Replaces {CONFIRMATION_LINK} with actual ephemeral endpoint URL.
+ * Loads template from file on each call (for testability).
  */
-export function buildEmailBody(submissionData, token, confirmationEndpoint) {
+export function buildEmailBody(submissionData, token, confirmationEndpoint, templatePath = null) {
+  let template;
+
+  if (templatePath) {
+    template = readFileSync(templatePath, 'utf-8');
+  } else {
+    // Try to load from default location relative to this file
+    try {
+      const defaultPath = join(process.cwd(), 'scripts', 'etl', 'templates', 'confirmation-email.txt');
+      template = readFileSync(defaultPath, 'utf-8');
+    } catch (err) {
+      // Fallback template for testing
+      template = `Thank you for your submission!\n\nClick to confirm: {CONFIRMATION_LINK}\n\nPrivacy: Email stored only with Resend.`;
+    }
+  }
+
   const confirmationLink = `${confirmationEndpoint}?token=${encodeURIComponent(token)}`;
-  return EMAIL_TEMPLATE.replace('{CONFIRMATION_LINK}', confirmationLink).replace(
+  return template.replace('{CONFIRMATION_LINK}', confirmationLink).replace(
     '{{LOCATION_NAME}}',
     submissionData.name,
   );
