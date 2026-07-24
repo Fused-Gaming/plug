@@ -15,7 +15,8 @@ name: Data Sync (OSINT ETL)
 
 on:
   schedule:
-    - cron: '41 10 * * *' # 03:41 Pacific
+    - cron: '41 10 * * *' # Daily at 03:41 Pacific
+    - cron: '51 10 * * 0' # Sundays at 03:51 Pacific (staleness check after sync)
   workflow_dispatch:
 
 permissions:
@@ -54,4 +55,38 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data public/data
           git commit -m "data: refresh Oakland locations $(date -u +%F)"
+          git push
+
+  staleness-check:
+    needs: sync
+    runs-on: ubuntu-latest
+    if: github.event.schedule == '51 10 * * 0'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run staleness check
+        env:
+          OPENSTREETMAP_API: ${{ secrets.OPENSTREETMAP_API || 'https://overpass-api.de/api/interpreter' }}
+        run: node scripts/etl/staleness-check.mjs --db=data/locations.db
+
+      - name: Commit staleness updates
+        run: |
+          if git diff --quiet -- data public/data; then
+            echo "No staleness changes; nothing to commit."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data public/data
+          git commit -m "data: update venue staleness tracking (weekly verification)"
           git push
