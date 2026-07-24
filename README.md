@@ -131,7 +131,6 @@ Build a minimal viable demo showing that a privacy-first, community-driven charg
 
 ### 🔜 Next Features (Post-MVP / Phase 4+)
 
-- **User Submissions** — Allow community to add/verify charging locations (requires backend)
 - **Confidence Ratings** — Show verification status and recency of reports
 - **Charging Type Filters** — USB, AC outlets, fast charging, WiFi included
 - **Operating Hours** — Filter by "open now" status (real-time data)
@@ -140,6 +139,43 @@ Build a minimal viable demo showing that a privacy-first, community-driven charg
 - **Favorites** — Save preferred locations (local storage)
 - **Directions** — Integrate with navigation apps
 - **Admin Dashboard** — Moderate submissions and manage data quality
+
+### 📝 How to Suggest a Location (Phase C)
+
+Found a charging location we're missing? We'd love to hear about it!
+
+**Submit via GitHub Issues:**
+1. Visit the [plug repository](https://github.com/fused-gaming/plug)
+2. Click **Issues** → **New Issue**
+3. Choose the **Suggest a Charging Location** template
+4. Fill out the form with:
+   - Place name (library, cafe, community center, etc.)
+   - Category
+   - Street address
+   - Neighborhood or cross street
+   - Coordinates (optional — we can look them up)
+   - Indoor/outdoor status
+   - Who can use it (everyone or customers only)
+   - Operating hours (if known)
+   - Available charging methods (USB, outlets, etc.)
+   - Any additional details
+
+**Email Confirmation (Privacy-First):**
+- After you submit, we'll send a one-time confirmation email via Resend
+- Click the link to verify — it expires after 7 days
+- Your email is stored only with Resend (never in our GitHub repo)
+- No marketing emails, no data sharing
+
+**What Happens Next:**
+- Verified submissions are published to the live map within 24 hours
+- You can edit or delete your submission anytime on GitHub
+- See our [Privacy Policy](docs/07-security/PRIVACY.md#12-community-submissions--email-confirmations-phase-c) for details
+
+**Data Quality:**
+- Please verify the location still has free charging available
+- Include accurate hours if the location is open only during certain times
+- Note if charging is available to everyone or customers only
+- Avoid duplicate submissions (check the map first)
 
 ### ❌ Intentionally Out of Scope (for 7-day MVP)
 

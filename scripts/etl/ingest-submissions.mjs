@@ -17,6 +17,13 @@ import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { addEvidence, openDb, publishFromDb, upsertVenue } from './db.js';
 import { parseIssueForm, validateSubmission } from './submissions.js';
+import {
+  generateToken,
+  storeConfirmationRecord,
+  sendConfirmationEmail,
+  extractContactEmail,
+  cleanupExpiredTokens,
+} from './resend.js';
 
 const ROOT = new URL('../..', import.meta.url).pathname;
 const DB_PATH = join(ROOT, 'data/locations.db');
@@ -25,6 +32,11 @@ const JSON_PATH = join(ROOT, 'public/data/locations.json');
 const REPO = process.env.GITHUB_REPOSITORY || 'Fused-Gaming/plug';
 const API = `https://api.github.com/repos/${REPO}`;
 const TOKEN = process.env.GITHUB_TOKEN;
+
+// Phase C: Resend email confirmation
+const RESEND_API_KEY = process.env.RESEND_API_KEY;
+const RESEND_FROM_EMAIL = process.env.RESEND_FROM_EMAIL || 'noreply@resend.app';
+const CONFIRMATION_ENDPOINT = process.env.CONFIRMATION_ENDPOINT || 'https://plug.vln.gg/api/confirm-submission';
 
 const fixtureFlag = process.argv.indexOf('--fixture');
 const fixturePath = fixtureFlag !== -1 ? process.argv[fixtureFlag + 1] : null;
@@ -85,6 +97,36 @@ for (const issue of issues) {
       issue: issue.number,
       category: result.venue.category,
     });
+
+    // Phase C: Send confirmation email if Resend is configured
+    if (RESEND_API_KEY && issue.user?.email) {
+      try {
+        const token = generateToken();
+        const expiryDate = new Date(Date.now() + 7 * 24 * 60 * 60 * 1000);
+
+        // Store confirmation record (pending email verification)
+        storeConfirmationRecord(db, today, result.venue.id, issue.user.email, token, expiryDate);
+
+        // Send confirmation email via Resend
+        const emailResult = await sendConfirmationEmail(
+          { email: issue.user.email, replyTo: 'support@vln.gg' },
+          result.venue,
+          token,
+          RESEND_API_KEY,
+          RESEND_FROM_EMAIL,
+          CONFIRMATION_ENDPOINT,
+        );
+
+        if (emailResult.ok) {
+          console.log(`confirmation email sent to ${issue.user.email} for #${issue.number}`);
+        } else {
+          console.warn(`failed to send confirmation email for #${issue.number}: ${emailResult.error}`);
+        }
+      } catch (err) {
+        console.warn(`error sending confirmation email for #${issue.number}: ${err.message}`);
+      }
+    }
+
     await label(issue.number, 'ingested');
     ingested++;
     console.log(`ingested #${issue.number}: ${result.venue.name}`);
@@ -100,6 +142,14 @@ for (const issue of issues) {
     console.log(`flagged #${issue.number}: ${result.problems.length} problem(s)`);
   } else {
     skipped++; // already flagged, unchanged
+  }
+}
+
+// Clean up expired confirmation tokens (optional, can be run periodically)
+if (RESEND_API_KEY) {
+  const expired = cleanupExpiredTokens(db);
+  if (expired > 0) {
+    console.log(`cleaned up ${expired} expired confirmation token(s)`);
   }
 }
 

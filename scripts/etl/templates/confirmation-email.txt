@@ -1,0 +1,30 @@
+Subject: Confirm your charging location suggestion for plug.vln.gg
+
+Hi there,
+
+Thank you for suggesting a charging location! Your submission helps us build a more complete map of free device charging in Oakland and the Bay Area.
+
+To confirm your submission and help us verify its accuracy, please click the link below:
+
+{CONFIRMATION_LINK}
+
+This link is valid for 7 days. If you don't click it, your submission will remain pending verification.
+
+What happens next:
+- After you confirm, we'll review your submission
+- If it passes our checks, it'll appear on the map with a "Community" badge
+- You can see all submissions and help verify others at: https://github.com/fused-gaming/plug/issues
+
+Questions?
+- Reply to this email
+- Open an issue: https://github.com/fused-gaming/plug/issues
+
+---
+
+Privacy note:
+Your email is stored only with Resend, our email service provider. We never save email addresses in our GitHub repository. See our privacy policy: https://plug.vln.gg/privacy
+
+---
+
+plug.vln.gg
+Open sources of power — free charging near you
