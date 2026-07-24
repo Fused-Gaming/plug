@@ -1,9 +1,13 @@
 name: Ingest Community Submissions
 
-# Phase B of the v2.1.0 data pipeline (issue #21): hourly ingest of
+# Phase B & C of the v2.1.0 data pipeline (issues #21 & #22): hourly ingest of
 # `submission`-labeled issues created via the "Suggest a charging location"
 # issue form. Valid entries become community-tier venues; invalid ones get a
 # `needs-info` label and a comment explaining what to fix.
+#
+# Phase C: After ingesting, sends confirmation emails via Resend to the issue
+# creator (if available). Tracks verification tokens in submission_confirmations
+# table; tokens expire after 7 days if not confirmed.
 #
 # Same commit rules as data-sync.yml: `data:` prefix, commit-on-diff, no
 # [skip ci] so Pages republishes. Off-minute hourly cron per fleet etiquette.
@@ -55,6 +59,9 @@ jobs:
       - name: Run ingest
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          RESEND_FROM_EMAIL: queen.vln.gg
+          CONFIRMATION_ENDPOINT: https://plug.vln.gg/api/confirm-submission
         run: node scripts/etl/ingest-submissions.mjs
 
       - name: Commit if changed

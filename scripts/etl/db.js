@@ -30,7 +30,9 @@ export function openDb(dbPath) {
       notes TEXT,
       tier TEXT NOT NULL,
       first_seen TEXT NOT NULL,
-      missing_since TEXT
+      missing_since TEXT,
+      email_confirmed INTEGER DEFAULT 0,
+      confirmed_at TEXT
     );
     CREATE TABLE IF NOT EXISTS evidence (
       venue_id TEXT NOT NULL REFERENCES venues(id),
@@ -39,6 +41,15 @@ export function openDb(dbPath) {
       outlet_claim TEXT NOT NULL,
       payload_json TEXT NOT NULL,
       PRIMARY KEY (venue_id, source, observed_at)
+    );
+    CREATE TABLE IF NOT EXISTS submission_confirmations (
+      id TEXT PRIMARY KEY,
+      venue_id TEXT NOT NULL UNIQUE REFERENCES venues(id),
+      contact_email TEXT NOT NULL,
+      resend_token TEXT UNIQUE NOT NULL,
+      token_expires TEXT NOT NULL,
+      confirmed_at TEXT,
+      created_at TEXT NOT NULL
     );
   `);
   return db;
