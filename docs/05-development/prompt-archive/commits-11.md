@@ -191,3 +191,17 @@ All changes maintain privacy-first commitment while documenting data quality pro
 
 ---
 
+## 2026-07-24 - docs: regenerate prompt archive [skip ci]
+
+- Commit: `52646e7d23`
+- Author: github-actions[bot]
+
+---
+
+## 2026-07-24 - Status: Mark Phase E complete - v2.1.0 Community Data Pipeline shipped
+
+- Commit: `dbbc0f0c5b`
+- Author: Claude
+
+---
+
