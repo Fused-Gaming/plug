@@ -290,9 +290,83 @@ We will update this privacy policy if:
 - CDN: Global (Fastly)
 - Data hosted subject to GitHub's privacy policy
 
-## 12. Contact & Questions
+## 12. Community Submissions & Email Confirmations (Phase C)
 
-### 12.1 Privacy Questions
+### 12.1 How Community Submissions Work
+
+Users can submit charging location suggestions via our GitHub Issue Form:
+
+- **No email field in form** — Email is not collected publicly (avoids exposure in public GitHub issues)
+- **Email collection is optional** — If you submit, we may send a confirmation email via Resend (see below)
+- **Issue is public** — Your submission (name, address, hours) appears publicly on GitHub
+- **Email is private** — Your email address is never stored in our GitHub repository
+
+### 12.2 Resend Email Integration
+
+When you suggest a location, we may send a confirmation email through **Resend** (a privacy-first email service):
+
+**What Resend Does:**
+- Sends confirmation emails from `queen.vln.gg`
+- Stores your email address only in Resend's encrypted "Audiences" service (not in our GitHub repo)
+- Provides a one-click confirmation link
+
+**What Resend Doesn't Do:**
+- Never shares your email with us (we don't store it)
+- Never uses your email for marketing
+- Never shares your email with third parties
+- See [Resend's Privacy Policy](https://resend.com/privacy) for their full commitment
+
+**What We Don't Do:**
+- Never store your email in our database
+- Never use your email for anything except confirmation
+- Never access Resend's stored emails directly
+
+### 12.3 Confirmation Tokens & Expiry
+
+Confirmation emails include a one-time verification link:
+
+- **Token Format:** 40+ character random string, expires after 7 days
+- **Single-Use:** Each token can only be used once; after confirmation, it's invalidated
+- **Unconfirmed Cleanup:** If you don't confirm within 7 days, the token is automatically deleted
+- **No Re-verification Needed:** Confirmed submissions are published immediately
+
+### 12.4 Data Retention
+
+| Data | Storage | Retention |
+|------|---------|-----------|
+| Confirmation email | Resend Audiences only | Until you request deletion |
+| Confirmation token | Our database | 7 days (auto-deleted if not confirmed) |
+| Your submission text | GitHub Issues (public) | Indefinitely (you can delete or edit) |
+| Email confirmation status | Our database | Until you request deletion |
+
+### 12.5 Your Rights Regarding Submissions
+
+- **Edit/Delete:** You can edit or delete your GitHub Issue submission anytime
+- **Unsubscribe:** Email us to remove your email from Resend Audiences
+- **No Targeting:** We never use your email for advertising or marketing
+- **Transparency:** All submission data is public on GitHub (except email)
+
+### 12.6 GDPR & CCPA Compliance for Email
+
+**GDPR (Europe):**
+- We have a lawful basis (your explicit consent to confirm) for storing your email with Resend
+- You can request deletion anytime (contact us below)
+- Resend is GDPR-compliant (see their privacy policy)
+
+**CCPA (California):**
+- Email is not "personal information" requiring CCPA compliance in our systems (it's stored only with Resend)
+- You have the right to request deletion
+
+**Contact for Deletion:**
+- Email: privacy@fused-gaming.com (when domain secured)
+- GitHub: [Private security advisory](https://github.com/Fused-Gaming/plug/security/advisories)
+- Include: "Remove my email from Resend Audiences"
+
+---
+
+## 18. Contact & Questions
+
+### 13.1 Privacy Questions
 
 For privacy questions about the Charging Station Locator:
 
@@ -300,7 +374,7 @@ For privacy questions about the Charging Station Locator:
 2. **Email:** security@fused-gaming.com (when domain secured)
 3. **Security advisory:** [Private security advisory](https://github.com/Fused-Gaming/plug/security/advisories)
 
-### 12.2 Privacy Requests
+### 13.2 Privacy Requests
 
 Since we store no personal data:
 
@@ -310,7 +384,7 @@ Since we store no personal data:
 
 If you'd like to verify our privacy practices, the source code is open-source and auditable.
 
-## 13. Opt-Out Procedures
+## 18. Opt-Out Procedures
 
 ### 13.1 Disable Geolocation
 
@@ -333,7 +407,7 @@ Open the app in:
 
 For even stronger privacy (cookies and cache automatically deleted on close).
 
-## 14. Do Not Track (DNT)
+## 18. Do Not Track (DNT)
 
 While we honor the "Do Not Track" (DNT) header from browsers, we do not track users regardless of DNT status.
 
@@ -341,7 +415,7 @@ While we honor the "Do Not Track" (DNT) header from browsers, we do not track us
 - No analytics to disable
 - No personalization happening
 
-## 15. California Privacy Rights (CPRA)
+## 18. California Privacy Rights (CPRA)
 
 **California Consumer Privacy Act (CCPA) & California Privacy Rights Act (CPRA):**
 
@@ -357,7 +431,7 @@ Under CPRA, California residents have the right to:
 
 We do not sell personal information and do not require opt-out mechanisms because we collect nothing.
 
-## 16. Transparency Report
+## 18. Transparency Report
 
 **We have nothing to report because we collect nothing.**
 
@@ -373,7 +447,7 @@ Hypothetical transparency report (if it existed):
 | Government requests | 0 |
 | Data breaches | 0 |
 
-## 17. Special Requests from Governments
+## 18. Special Requests from Governments
 
 **If law enforcement requests user data:**
 
