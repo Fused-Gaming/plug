@@ -34,10 +34,16 @@
    "detail": "Resend Reply-to-Confirm workflow live: 7-day token expiry, email stored only with Resend (never in repo), GDPR/CCPA compliant. PR #30 shipped."
   },
   {
-   "id": "data-hygiene",
-   "name": "Phases D & E: Staleness & licensing",
+   "id": "staleness",
+   "name": "Phase D: Staleness detection",
+   "status": "done",
+   "detail": "Weekly Overpass liveness checks live (Sundays 10:51 UTC): last_verified tracking, 180-day staleness threshold, missing venue exclusion. PR #31 shipped."
+  },
+  {
+   "id": "licensing",
+   "name": "Phase E: Licensing & v2.1.0 release",
    "status": "planned",
-   "detail": "Weekly liveness checks (Phase D), auto-demotion for stale venues; README data-sources, privacy policy updates (Phase E). See PHASES_D_E_PLANNING.md."
+   "detail": "License assertions in README data-sources section, privacy policy updates for staleness tracking, v2.1.0 release documentation. Finalizes community data pipeline."
   }
  ]
 }
