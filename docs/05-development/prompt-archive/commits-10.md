@@ -48,3 +48,100 @@ template look.
 
 ---
 
+## 2026-07-22 - Add project management layer: plans, process docs, status page, prompt archive (#26)
+
+- Commit: `2bc6a7b877`
+- Author: SupItsJ
+- Claude-Session: https://claude.ai/code/session_01HTKXt7WAz9QrWLPayo5fyU
+- Co-authored-by: Claude <noreply@anthropic.com>
+
+Add project management layer: plans, process docs, status page, prompt archive
+
+- docs/02-project-scope/DATA_PIPELINE_PLAN.md: full v2.1.0 methodology
+  (OSINT ETL, Issue Forms submissions, Action-side Resend, trust tiers,
+  risks, phased rollout A-E); roadmap.md marks the MVP shipped and adds
+  the v2.1.0 milestone summary
+- docs/05-development/BRANCHING_STRATEGY.md: GitHub Flow with the
+  data-sync bot exception, plus the integration-branch swarm model from
+  issue #3 as the escalation path for parallel work
+- docs/05-development/RELEASE_PROCESS.md + root CHANGELOG.md (Keep a
+  Changelog): SemVer rules, tagging commands, release history;
+  package.json version aligned 0.1.0 -> 2.0.0 to match the README badge
+- Public status page at /status/ rendered from public/data/status.json
+  on the existing design system (stamp version chip, phase cards with
+  status badges, zero horizontal overflow at 375px); linked from the
+  landing footer; documented in STATUS_PAGE.md
+- Prompt archive (instructor deliverable): scripts/generate-prompt-archive.mjs
+  chunks the curated prompt history plus the full commit trail into
+  docs/05-development/prompt-archive/ files hard-capped at 8000 bytes;
+  .github/workflows/prompt-archive.yml regenerates on every push to main
+  with commit-on-diff and [skip ci] loop guards
+- Rollout tracked on GitHub: epic #25 with phase issues #20-#24
+
+---
+
+## 2026-07-22 - Phase A: daily OSINT ETL pipeline with auto-listed venues (#27)
+
+- Commit: `082a021bcb`
+- Author: SupItsJ
+- Claude-Session: https://claude.ai/code/session_01HTKXt7WAz9QrWLPayo5fyU
+- Co-authored-by: Claude <noreply@anthropic.com>
+
+Phase A: daily OSINT ETL pipeline with auto-listed venues (#20)
+
+- scripts/etl/lib.js: pure, unit-tested normalization/dedupe/scoring —
+  category priors, Oakland service-area geofence, ~110m+name dedupe,
+  tier derivation (auto requires high prior AND machine-readable hours
+  until multi-source corroboration lands), diff-stable published JSON
+- scripts/etl/sync-locations.mjs: Overpass fetch (primary + mirror
+  fallback, identified UA, one bounded query/day), raw snapshot for
+  reproducible offline runs, canonical SQLite (venues + evidence with
+  presence tracking via first_seen/missing_since so unchanged worlds
+  produce byte-identical output), publishes public/data/locations.json
+- .github/workflows/data-sync.yml: daily 10:41 UTC, commit-on-diff
+  with data: prefix per the branching strategy's bot exception; no
+  [skip ci] so Pages republishes fresh data (loop-safe)
+- Landing page renders up to 12 pipeline venues after the curated
+  entries with a new neutral Auto-listed badge (built via textContent,
+  no injection path); detail panel and filters integrate them
+- ODbL attribution in footer + LICENSE-DATA; status.json phases
+  updated (planning-docs done, osint-etl in progress); CHANGELOG
+- Seeded with a real fetch: 136 OSM elements -> 129 venues ->
+  39 auto-listed; 8 new ETL tests, suite now 74/74
+
+---
+
+## 2026-07-22 - Phase B: community submissions via Issue Forms with hourly ingest (#28)
+
+- Commit: `49170d6e89`
+- Author: SupItsJ
+- Claude-Session: https://claude.ai/code/session_01HTKXt7WAz9QrWLPayo5fyU
+- Co-authored-by: Claude <noreply@anthropic.com>
+
+Phase B: community submissions via Issue Forms with hourly ingest (#21)
+
+- .github/ISSUE_TEMPLATE/location.yml: structured public form (labeled
+  submission) with an explicit this-is-public privacy notice and no
+  personal-information fields
+- scripts/etl/submissions.js: pure, unit-tested parse/validate/sanitize
+  boundary — strips control/bidi chars, markup metacharacters, markdown
+  links and bare URLs; enforces field lengths, dropdown whitelists, and
+  the Oakland geofence when coordinates are supplied
+- scripts/etl/ingest-submissions.mjs: reads submission-labeled issues
+  (GITHUB_TOKEN, or --fixture for offline tests), records valid entries
+  as community-tier venues with evidence, labels issues ingested;
+  invalid ones get needs-info plus one explanatory comment
+- scripts/etl/db.js: shared schema/publish module for both pipeline
+  scripts; lat/lon now nullable for address-only submissions; published
+  JSON carries auto + community tiers, still timestamp-free and
+  byte-stable
+- .github/workflows/ingest-submissions.yml: hourly at :13, bootstraps
+  triage labels idempotently, commit-on-diff with data: prefix
+- Landing page renders community pipeline entries ahead of auto-listed
+  ones with the Community report badge; Suggest a place nav/footer/About
+  links now open the pre-filled form
+- status.json submissions phase -> in progress; CHANGELOG updated;
+  10 new tests, suite 84/84
+
+---
+
