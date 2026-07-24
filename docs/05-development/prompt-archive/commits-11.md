@@ -51,3 +51,90 @@ All CI checks passing: CodeQL, Build, Security, Tests
 
 ---
 
+## 2026-07-24 - docs: regenerate prompt archive [skip ci]
+
+- Commit: `e8bf4678e1`
+- Author: github-actions[bot]
+
+---
+
+## 2026-07-24 - Phase D: Staleness detection and verification (issue #22)
+
+- Commit: `f39e633890`
+- Author: Claude
+- Co-Authored-By: Claude Haiku 4.5 <noreply@anthropic.com>
+- Claude-Session: https://claude.ai/code/session_01HTKXt7WAz9QrWLPayo5fyU
+
+Implements automatic staleness tracking to keep venue data current:
+- Re-queries Overpass API weekly to verify OSINT venues still exist
+- Tracks last_verified date for each venue (initialized to first_seen)
+- Marks venues as stale if unverified >6 months (180 days)
+- Publishes staleness metadata in locations.json (last_verified, months_since_verified, stale flag)
+- Excludes missing venues from publication
+
+Database changes:
+- Added last_verified TEXT column (ISO 8601, when venue was last confirmed to exist)
+- Added stale_at TEXT column (ISO 8601, when venue became stale)
+- Added verification_source TEXT column (osint/community to track data origin)
+- Migration logic initializes existing venues based on first_seen and ID pattern
+
+Weekly staleness check workflow:
+- Triggered every Sunday at 10:51 UTC (10 min after daily sync completes)
+- Queries Overpass for libraries, community centers, charging stations
+- Updates last_verified for venues found; marks stale_at for unverified >6 months
+- Sets missing_since for venues no longer in Overpass
+
+Testing:
+- 8 unit tests for staleness detection, marking, and tracking
+- 5 E2E tests for full workflow (DB → staleness marking → publication)
+- All 123 existing tests continue to pass (no regressions)
+
+---
+
+## 2026-07-24 - Phase D: Staleness detection and verification (issue #22) (#31)
+
+- Commit: `5042c03aa4`
+- Author: SupItsJ
+
+## Summary
+
+Implements automatic staleness tracking for venue data to prevent
+outdated charging stations from remaining on the map. Weekly
+verification checks re-query Overpass API to confirm OSINT venues still
+exist, track verification dates, and mark unverified venues as stale
+after 6 months.
+
+## Changes
+
+### Database (`scripts/etl/db.js`)
+- Added three columns to venues table: `last_verified`, `stale_at`,
+`verification_source`
+- Migration logic initializes existing databases with values based on
+first_seen and ID pattern
+- Updated `upsertVenue` to set `last_verified` and `verification_source`
+on insert
+- Enhanced `publishFromDb` to calculate and include staleness metadata
+in JSON output
+
+### Staleness Detection Script (`scripts/etl/staleness-check.mjs`)
+- New weekly verification script (~200 lines)
+- Queries Overpass API for libraries, community centers, and charging
+stations
+- Updates `last_verified` for venues found in Overpass
+- Marks `stale_at` for venues unverified >6 months
+- Sets `missing_since` for venues no longer in Overpass
+- CLI entry point: `node scripts/etl/staleness-check.mjs
+--db=data/locations.db`
+
+### Workflow Integration (`.github/workflows/data-sync.yml`)
+- Added Sunday schedule trigger (10:51 UTC, 10 min after daily sync)
+- New `staleness-check` job depends on `sync` job completing first
+- Commits staleness updates to database and published JSON
+
+### Tests
+- Added `scripts/etl/__tests__/staleness-check.test.js` (8 unit tests)
+- Added `scripts/__tests__
+...(truncated; see git log)
+
+---
+
