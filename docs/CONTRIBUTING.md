@@ -43,7 +43,18 @@ Help us maintain clear, accurate project documentation:
 - **Case Studies:** Share stories of how the map helped vulnerable populations
 - **Translations:** Help translate the interface and docs into other languages
 
-### 4. Community Building
+### 4. Community Submissions (Phase C)
+
+Help expand our charging station database with one-click verification:
+
+- **Suggest Locations:** Submit new charging stations via GitHub Issue Form
+- **Email Verification:** Click confirmation link to verify your submission
+- **Privacy-First:** Email stored only with Resend, never in GitHub
+- **Quick Publishing:** Verified locations appear on the map within 24 hours
+
+See [Community Submissions](#community-submission-workflow-phase-c) below for detailed workflow.
+
+### 5. Community Building
 
 Support the project beyond code:
 
@@ -278,6 +289,94 @@ To add a new city:
 3. Add to app configuration
 4. Update documentation with city info
 5. Submit pull request with justification
+
+## Community Submission Workflow (Phase C)
+
+Phase C enables community members to suggest charging locations via GitHub Issue Forms with email verification.
+
+### User Flow
+
+1. **Visit GitHub Issues** → Click "New Issue" → Choose "Suggest a Charging Location"
+2. **Fill out Form:**
+   - Place name (required, 3–80 chars)
+   - Category (dropdown: Library, Community Center, Cafe, Charging Station, Other)
+   - Street address (required, 5–120 chars)
+   - Neighborhood/cross street (optional)
+   - Coordinates (optional, must be in Oakland area)
+   - Indoor/Outdoor (required)
+   - Who can use it (required: Everyone or Customers Only)
+   - Hours (optional, e.g., "Mon-Fri 10am-6pm")
+   - Available charging types (checkboxes: Outlets, USB, WiFi, Accessible)
+   - Additional notes (optional, 0–280 chars)
+
+3. **Submit Issue** → System sends confirmation email to issue creator
+4. **Click Confirmation Link** in email (7-day expiry)
+5. **Location Published** to map within 24 hours
+
+### Data Quality Standards
+
+All submissions are validated and sanitized before publication:
+
+#### Required Fields Validation
+
+| Field | Rules | Valid Example | Invalid Example |
+|-------|-------|---------------|-----------------|
+| **Place Name** | 3–80 chars, no markup | "Oakland Main Library" | "Lib <b>Main</b>" |
+| **Category** | From dropdown only | "Library" | "Free WiFi Place" |
+| **Street Address** | 5–120 chars, specific | "123 Main St, Oakland" | "Downtown" |
+| **Indoor/Outdoor** | Exactly "Indoor" or "Outdoor" | "Indoor" | "sometimes" |
+| **Who Can Use** | "Open to everyone" or "Customers only" | "Open to everyone" | "Usually public" |
+
+#### Text Sanitization
+
+All text fields are automatically cleaned:
+
+- **Strips:** Control characters, markup tags (`<>`, backticks), URLs
+- **Converts:** Markdown links → plain text
+- **Collapses:** Multiple spaces → single space
+- **Trims:** Leading/trailing whitespace
+
+Example:
+```
+Input:  "Best place EVER!!! <script>alert('hi')</script> Visit https://example.com"
+Output: "Best place EVER Visit example.com"
+```
+
+#### Location Filtering
+
+- **Coordinates** must fall within Oakland service area (37.7°–37.85°N, 122.1°–122.3°W)
+- **Out-of-area submissions** are flagged for manual review
+- **No duplicates:** Check the live map before submitting
+
+### Email Confirmation Privacy
+
+- **Email storage:** Only with Resend (encrypted "Audiences" service)
+- **No GitHub storage:** Email never committed to repository
+- **No marketing:** Only confirmation email sent
+- **Your control:** Email us to unsubscribe anytime
+
+See [Privacy Policy](../07-security/PRIVACY.md#12-community-submissions--email-confirmations-phase-c) for full details.
+
+### Review Process
+
+1. **Automated validation** — Form fields checked
+2. **Sanitization** — Text cleaned of control chars/markup
+3. **User confirmation** — Email link clicked
+4. **Publication** — Location added to locations.json within 24 hours
+5. **Listing** — Appears on live map at plug.vln.gg
+
+### Duplicate Submissions
+
+If the same location is submitted multiple times:
+- Latest confirmation timestamp wins
+- Earlier submissions are kept for audit trail
+- Contact maintainers for removal requests
+
+### Editing or Removing Submissions
+
+- **Edit:** Modify your GitHub Issue anytime
+- **Delete:** Delete the GitHub Issue (removes from future ingests)
+- **Email:** Contact maintainers to remove email from Resend
 
 ## Pull Request Process
 

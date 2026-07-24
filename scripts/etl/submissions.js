@@ -26,10 +26,19 @@ const FEATURE_AMENITIES = {
   Restrooms: 'Restrooms',
 };
 
-/** Strip anything that could smuggle markup or control characters through the
- * pipeline, collapse whitespace, and cap the length. Defense in depth: the
- * renderer also uses textContent, but sanitized storage keeps the DB and JSON
- * clean for every future consumer. */
+/** Sanitize text from community submissions to prevent XSS and injection attacks.
+ *
+ * Strips control characters, markup, and URLs; collapses whitespace; caps length.
+ * Defense in depth: renderer also uses textContent, but sanitized storage keeps
+ * the DB and JSON clean for all downstream consumers.
+ *
+ * Transformation sequence:
+ * 1. Unicode control/invisible/bidi → spaces (prevent hidden content)
+ * 2. Markup/injection chars (<, >, `, |, \) → removed
+ * 3. Markdown links/images → plain text (e.g., "[label](url)" → "label")
+ * 4. HTTP(S) URLs → removed entirely (add no value, pose phishing risk)
+ * 5. Collapse spaces, trim, truncate to maxLen
+ */
 export function sanitizeText(value, maxLen) {
   if (typeof value !== 'string') return '';
   return value
@@ -43,8 +52,18 @@ export function sanitizeText(value, maxLen) {
     .trim();
 }
 
-/** Parse an issue-form body into a { label: value } map. Checkbox groups
- * yield an array of checked labels. "_No response_" becomes empty. */
+/** Parse GitHub Issue Form body into structured { label: value } object.
+ *
+ * GitHub's issue form (YAML template) produces markdown like:
+ *   ### Place name
+ *   Test Library
+ *
+ *   ### Hours (if known)
+ *   Mon-Fri 10am-6pm
+ *
+ * Checkbox groups ("What is available") become arrays of checked labels.
+ * "_No response_" (GitHub's placeholder for empty fields) becomes empty string.
+ */
 export function parseIssueForm(body) {
   const fields = {};
   const sections = String(body || '').split(/\n(?=### )/);
@@ -62,9 +81,14 @@ export function parseIssueForm(body) {
   return fields;
 }
 
-/**
- * Validate parsed fields into a community venue record.
- * Returns { ok: true, venue } or { ok: false, problems: [...] }.
+/** Validate parsed issue form fields into a community venue record.
+ *
+ * Returns { ok: true, venue } on success, { ok: false, problems: [...] } on failure.
+ * All text is sanitized; coordinates are validated against service area boundary.
+ * Category must match CATEGORY_MAP; access must be explicit ("everyone" or "customers").
+ *
+ * Returns venue object with fields: id, name, lat, lon, category, indoor, access,
+ * hours, address, amenities, notes, source, tier.
  */
 export function validateSubmission(fields, issueNumber) {
   const problems = [];
