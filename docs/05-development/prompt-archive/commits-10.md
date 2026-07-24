@@ -145,3 +145,25 @@ Phase B: community submissions via Issue Forms with hourly ingest (#21)
 
 ---
 
+## 2026-07-23 - docs: regenerate prompt archive [skip ci]
+
+- Commit: `240907bf2b`
+- Author: github-actions[bot]
+
+---
+
+## 2026-07-24 - docs: v2.1.0 comprehensive planning and cross-documentation for phases A-E
+
+- Commit: `6d6b6b6188`
+- Author: SupItsJ
+
+Consolidates documentation and planning for v2.1.0 completion phases (A through E), marking Phases A and B as shipped and providing detailed design decisions and implementation roadmaps for Phases C through E.
+
+Includes:
+- Phase C Design Decision document with three email confirmation options (Reply-to-Confirm recommended)
+- Phases D & E Planning with staleness automation and licensing/privacy roadmaps
+- Enhanced cross-documentation linking project scope to development docs
+- Status page update reflecting Phase A-B completion
+
+---
+
