@@ -152,3 +152,42 @@ stations
 
 ---
 
+## 2026-07-24 - docs: regenerate prompt archive [skip ci]
+
+- Commit: `3e14ac4862`
+- Author: github-actions[bot]
+
+---
+
+## 2026-07-24 - Phase E: Documentation for v2.1.0 release
+
+- Commit: `288f574327`
+- Author: Claude
+- Co-Authored-By: Claude Haiku 4.5 <noreply@anthropic.com>
+- Claude-Session: https://claude.ai/code/session_01HTKXt7WAz9QrWLPayo5fyU
+
+Updated documentation to reflect Phase D staleness detection and prepare for v2.1.0 release:
+
+README.md:
+- Added Data Sources & Attribution section with ODbL license for OpenStreetMap
+- Documents weekly staleness checks (Phase D) and verification workflow
+- Updated version badge to 2.1.0-RC
+- Updated test count to 123 passing tests
+
+docs/DATA_SOURCES.md:
+- Added Phase D automated verification section with staleness thresholds
+- Documented staleness metadata published in JSON (last_verified, months_since_verified, stale)
+- Updated Data Freshness section to reflect automated weekly checks via staleness-check.mjs
+- Clarified community submissions workflow with automated confirmation (Phase C)
+
+docs/07-security/PRIVACY.md:
+- Added new section 13: Automated Data Verification (Phase D: Staleness Checks)
+- Explains weekly Overpass re-verification process and anonymity
+- Documents staleness threshold (180 days) and publication status
+- Clarifies no personal data collected during staleness checks
+- Updated all subsequent section numbers for consistency
+
+All changes maintain privacy-first commitment while documenting data quality processes.
+
+---
+
