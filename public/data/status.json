@@ -1,7 +1,7 @@
 {
  "updated": "2026-07-24",
- "version": "2.1.0",
- "milestone": "v2.1.0 — Community Data Pipeline",
+ "version": "2.1.0 → 2.2.0-dev",
+ "milestone": "v2.2.0 — Enhanced Submissions & Geographic Expansion",
  "phases": [
   {
    "id": "design-system",
@@ -44,6 +44,18 @@
    "name": "Phase E: Licensing & v2.1.0 release",
    "status": "done",
    "detail": "ODbL attribution in README data-sources section, privacy policy updated for Phase D staleness tracking, v2.1.0 release ready. Community data pipeline complete (PR #31 + docs)."
+  },
+  {
+   "id": "web-form",
+   "name": "Phase F: Web form submissions",
+   "status": "in_progress",
+   "detail": "Building web form on map for direct submissions (no GitHub required). Resend confirmation emails → GitHub Issues → Email confirmed → Published to map. Improved UX vs GitHub Issues form."
+  },
+  {
+   "id": "expansion",
+   "name": "Phase G: Geographic expansion",
+   "status": "planned",
+   "detail": "Multi-city support: San Francisco, LA, Seattle, Portland. Reuse DATA_SOURCES.md workflow. Staleness checks scale across regions."
   }
  ]
 }
