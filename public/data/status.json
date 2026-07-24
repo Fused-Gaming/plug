@@ -1,5 +1,5 @@
 {
- "updated": "2026-07-23",
+ "updated": "2026-07-24",
  "version": "2.1.0-in-progress",
  "milestone": "v2.1.0 — Community Data Pipeline",
  "phases": [
@@ -30,8 +30,8 @@
   {
    "id": "email",
    "name": "Phase C: Email confirmations",
-   "status": "planned",
-   "detail": "Resend confirmations for submissions (design decision pending: Reply-to-Confirm recommended). See PHASE_C_DESIGN_DECISION.md."
+   "status": "done",
+   "detail": "Resend Reply-to-Confirm workflow live: 7-day token expiry, email stored only with Resend (never in repo), GDPR/CCPA compliant. PR #30 shipped."
   },
   {
    "id": "data-hygiene",
