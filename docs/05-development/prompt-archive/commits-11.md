@@ -37,3 +37,17 @@ All CI checks passing: CodeQL, Build, Security, Tests
 
 ---
 
+## 2026-07-24 - docs: regenerate prompt archive [skip ci]
+
+- Commit: `17d0447562`
+- Author: github-actions[bot]
+
+---
+
+## 2026-07-24 - Status: Mark Phase C (email confirmations) as complete - PR #30 shipped
+
+- Commit: `ca629607e4`
+- Author: Claude
+
+---
+
