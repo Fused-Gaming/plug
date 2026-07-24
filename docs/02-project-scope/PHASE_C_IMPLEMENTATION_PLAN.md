@@ -58,8 +58,8 @@ Confirmed venues published to locations.json
   - New secret: `RESEND_API_KEY` = `re_...` (from Resend)
   - Verify: no test value in repo
 
-- [ ] **Verify vln email**
-  - Confirm sender email: `queen.vln.gg` (or actual vln domain)
+- [x] **Verify vln email** ✅ CONFIRMED
+  - Sender email: `queen.vln.gg` 
   - Add as verified sender in Resend dashboard
   - Document in code as: `RESEND_FROM_EMAIL` variable
 
@@ -298,10 +298,10 @@ describe('End-to-End: Submit and Confirm', () => {
 Create a `.env.example` for local development:
 
 ```env
-# Resend (Required for Phase C)
-RESEND_API_KEY=re_...
-RESEND_FROM_EMAIL=queen.vln.gg
-REPLY_TO_EMAIL=support@vln.gg
+# Resend (Required for Phase C) — CONFIRMED 2026-07-24
+RESEND_API_KEY=re_...  # Get from Resend dashboard
+RESEND_FROM_EMAIL=queen.vln.gg  # ✅ CONFIRMED
+REPLY_TO_EMAIL=support@vln.gg  # Optional: where replies go
 
 # GitHub (existing)
 GITHUB_TOKEN=ghp_...
