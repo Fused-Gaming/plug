@@ -138,3 +138,17 @@ stations
 
 ---
 
+## 2026-07-24 - docs: regenerate prompt archive [skip ci]
+
+- Commit: `35d94a2ea9`
+- Author: github-actions[bot]
+
+---
+
+## 2026-07-24 - Status: Mark Phase D (staleness detection) as complete - PR #31 shipped
+
+- Commit: `b3cd97e595`
+- Author: Claude
+
+---
+
