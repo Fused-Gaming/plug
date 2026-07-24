@@ -1,6 +1,6 @@
 {
  "updated": "2026-07-24",
- "version": "2.1.0-in-progress",
+ "version": "2.1.0",
  "milestone": "v2.1.0 — Community Data Pipeline",
  "phases": [
   {
@@ -42,8 +42,8 @@
   {
    "id": "licensing",
    "name": "Phase E: Licensing & v2.1.0 release",
-   "status": "planned",
-   "detail": "License assertions in README data-sources section, privacy policy updates for staleness tracking, v2.1.0 release documentation. Finalizes community data pipeline."
+   "status": "done",
+   "detail": "ODbL attribution in README data-sources section, privacy policy updated for Phase D staleness tracking, v2.1.0 release ready. Community data pipeline complete (PR #31 + docs)."
   }
  ]
 }
