@@ -23,13 +23,17 @@ export async function confirmSubmission(token) {
   try {
     decoded = jwt.verify(token, process.env.JWT_SECRET);
   } catch (error) {
-    throw new Error('Invalid or expired confirmation link');
+    const err = new Error('Invalid or expired confirmation link');
+    err.code = 'TOKEN_EXPIRED';
+    throw err;
   }
 
   const { email, issueNumber } = decoded;
 
   if (!email || !issueNumber) {
-    throw new Error('Invalid token data');
+    const err = new Error('Invalid token data');
+    err.code = 'INVALID_TOKEN';
+    throw err;
   }
 
   try {
@@ -42,11 +46,9 @@ export async function confirmSubmission(token) {
 
     // Check if already confirmed
     if (issue.data.labels.some((label) => label.name === 'email-confirmed')) {
-      return {
-        success: true,
-        already: true,
-        message: 'This submission was already confirmed!',
-      };
+      const err = new Error('This submission was already confirmed!');
+      err.code = 'ALREADY_CONFIRMED';
+      throw err;
     }
 
     // Update issue with confirmation labels
