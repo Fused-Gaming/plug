@@ -3,14 +3,15 @@
  * Routes API requests to handler scripts for local development
  */
 
-import { submitVenue } from './scripts/api/submit-venue.mjs';
-import { confirmSubmission } from './scripts/api/confirm-submission.mjs';
-
-export function apiMiddleware(req, res, next) {
+export async function apiMiddleware(req, res, next) {
   // Only handle POST requests to /api/*
   if (req.method !== 'POST' || !req.url.startsWith('/api/')) {
     return next();
   }
+
+  // Lazy-load handlers to avoid loading during build
+  const { submitVenue } = await import('./scripts/api/submit-venue.mjs');
+  const { confirmSubmission } = await import('./scripts/api/confirm-submission.mjs');
 
   // Set JSON content type
   res.setHeader('Content-Type', 'application/json');

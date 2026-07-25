@@ -1,6 +1,5 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
-import { apiMiddleware } from './vite.middleware.js'
 
 export default defineConfig({
   plugins: [react()],
@@ -22,7 +21,8 @@ export default defineConfig({
     port: 3000,
     open: true,
     configureServer(server) {
-      return () => {
+      return async () => {
+        const { apiMiddleware } = await import('./vite.middleware.js')
         server.middlewares.use(apiMiddleware)
       }
     },
