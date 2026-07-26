@@ -3,6 +3,8 @@ import Map from './components/Map'
 import LocationList from './components/LocationList'
 import Filters from './components/Filters'
 import LocationDetail from './components/LocationDetail'
+import SubmitVenueForm from './components/SubmitVenueForm'
+import ConfirmSubmission from './pages/ConfirmSubmission'
 import locationsData from './data/locations'
 import { logInfo, logGeolocationError } from './utils/errorSanitizer'
 
@@ -34,6 +36,16 @@ export default function App() {
   const [userLocation, setUserLocation] = useState(null)
   const [allLocations, setAllLocations] = useState(locations || [])
   const [filteredLocations, setFilteredLocations] = useState(locations || [])
+  const [showSubmitForm, setShowSubmitForm] = useState(false)
+  const [confirmationToken, setConfirmationToken] = useState(null)
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search)
+    const token = params.get('token')
+    if (token) {
+      setConfirmationToken(token)
+    }
+  }, [])
 
   useEffect(() => {
     if (navigator.geolocation) {
@@ -84,8 +96,17 @@ export default function App() {
       </a>
 
       <header className="header">
-        <h1>📱 Charging Station Locator</h1>
-        <p>Find device charging nearby (v2.0.0 - Wave 4 Secured)</p>
+        <div className="header-content">
+          <h1>📱 Charging Station Locator</h1>
+          <p>Find device charging nearby (v2.0.0 - Wave 4 Secured)</p>
+        </div>
+        <button
+          className="submit-venue-btn"
+          onClick={() => setShowSubmitForm(true)}
+          aria-label="Suggest a new charging location"
+        >
+          ➕ Suggest Location
+        </button>
       </header>
 
       <div className="main-content" id="main-content">
@@ -120,6 +141,22 @@ export default function App() {
           userLocation={userLocation}
           getDistance={getDistance}
           onClose={() => setSelectedLocation(null)}
+        />
+      )}
+
+      {showSubmitForm && (
+        <SubmitVenueForm
+          onClose={() => setShowSubmitForm(false)}
+        />
+      )}
+
+      {confirmationToken && (
+        <ConfirmSubmission
+          token={confirmationToken}
+          onClose={() => {
+            setConfirmationToken(null)
+            window.history.replaceState({}, document.title, window.location.pathname)
+          }}
         />
       )}
     </div>

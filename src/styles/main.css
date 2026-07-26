@@ -27,8 +27,16 @@ body {
   background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%);
   color: white;
   padding: 20px;
-  text-align: center;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.header-content {
+  text-align: center;
+  flex: 1;
 }
 
 .header h1 {
@@ -39,6 +47,29 @@ body {
 .header p {
   font-size: 14px;
   opacity: 0.9;
+}
+
+.submit-venue-btn {
+  background: rgba(255, 255, 255, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.submit-venue-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.6);
+  transform: translateY(-1px);
+}
+
+.submit-venue-btn:active {
+  transform: translateY(0);
 }
 
 .main-content {
@@ -199,8 +230,21 @@ body {
     flex: 2;
   }
 
+  .header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .header-content {
+    width: 100%;
+  }
+
   .header h1 {
     font-size: 22px;
+  }
+
+  .submit-venue-btn {
+    width: 100%;
   }
 
   .location-popup {

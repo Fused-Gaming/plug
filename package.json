@@ -24,9 +24,12 @@
   "author": "Fused Gaming",
   "license": "MIT",
   "dependencies": {
+    "@octokit/rest": "^20.0.0",
+    "jsonwebtoken": "^9.0.0",
     "maplibre-gl": "^4.0.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "resend": "^6.18.0"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.22.0",

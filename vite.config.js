@@ -20,5 +20,11 @@ export default defineConfig({
   server: {
     port: 3000,
     open: true,
+    configureServer(server) {
+      return async () => {
+        const { apiMiddleware } = await import('./vite.middleware.js')
+        server.middlewares.use(apiMiddleware)
+      }
+    },
   },
 })
