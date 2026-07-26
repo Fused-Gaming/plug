@@ -176,3 +176,37 @@ This fixes both the missing web form submissions and exposes the 34 library venu
 
 ---
 
+## 2026-07-26 - docs: regenerate prompt archive [skip ci]
+
+- Commit: `eb6d9b2c13`
+- Author: github-actions[bot]
+
+---
+
+## 2026-07-26 - data: refresh Oakland locations 2026-07-26
+
+- Commit: `3a8463ec00`
+- Author: github-actions[bot]
+
+---
+
+## 2026-07-26 - feat: fetch live location data and add submission method choice
+
+- Commit: `a140afdde2`
+- Author: Claude
+
+Changes:
+1. App now fetches locations from live JSON endpoint (/data/locations.json) instead of hardcoded seed data
+2. Header shows actual venue count from live data
+3. Added SubmissionMethodChoice modal for users to choose between:
+   - Quick Web Form (email-based, mobile-friendly)
+   - GitHub Issue (direct, full version control)
+4. Web form choice opens SubmitVenueForm
+5. GitHub issue choice opens location.yml template in new tab
+
+This enables users to see all 74 locations (previously showing only 16 from seed data) and choose their preferred submission method.
+
+Build: npm run build completed successfully with 74-location dataset
+
+---
+
