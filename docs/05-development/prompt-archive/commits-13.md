@@ -76,3 +76,21 @@ in the gith
 
 ---
 
+## 2026-07-26 - docs: regenerate prompt archive [skip ci]
+
+- Commit: `300142e8cf`
+- Author: github-actions[bot]
+
+---
+
+## 2026-07-26 - workflow: add manual email dispatch for TheMade.org outreach
+
+- Commit: `1d241a5d2e`
+- Author: Claude
+
+Create GitHub Actions workflow that sends outreach email to INFO@themade.org
+with CC to j@vln.gg using Resend API. Can be triggered manually via
+workflow_dispatch for sending project introduction emails.
+
+---
+
