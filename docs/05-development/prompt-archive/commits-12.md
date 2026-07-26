@@ -200,3 +200,10 @@ Fixes critical workflow parsing error blocking Phase F web form submission deplo
 
 ---
 
+## 2026-07-26 - docs: regenerate prompt archive [skip ci]
+
+- Commit: `26a21e2b92`
+- Author: github-actions[bot]
+
+---
+
