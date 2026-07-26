@@ -94,3 +94,43 @@ workflow_dispatch for sending project introduction emails.
 
 ---
 
+## 2026-07-26 - docs: regenerate prompt archive [skip ci]
+
+- Commit: `ea0f6fe0dc`
+- Author: github-actions[bot]
+
+---
+
+## 2026-07-26 - docs: update README with workflow badges and remove React/Vite badges
+
+- Commit: `20cd98ef00`
+- Author: Claude
+- Co-Authored-By: Claude Haiku 4.5 <noreply@anthropic.com>
+- Claude-Session: https://claude.ai/code/session_01HTKXt7WAz9QrWLPayo5fyU
+
+Add badges for all GitHub Actions workflows:
+- Data Sync (Phase A ETL)
+- Ingest Submissions (Phase B)
+- Auto-label Submissions (submission workflow)
+- Web Form Submission (Phase F)
+- Prompt Archive (documentation)
+
+Remove framework-specific badges (React, Vite) to focus on project workflows
+and data pipeline status rather than implementation details.
+
+---
+
+## 2026-07-26 - Update send-themade-email workflow with dark mode macOS themed HTML design
+
+- Commit: `c4e0ed8f28`
+- Author: Claude
+
+- Replace plain text email with professional HTML template
+- Apply dark theme color palette matching macOS design language
+- Use system font stack for native appearance
+- Improve email readability and visual hierarchy
+- Add link sections with distinctive styling
+- Enhance signature and footer sections
+
+---
+
