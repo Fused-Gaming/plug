@@ -1,13 +1,16 @@
 # 📱 Charging Station Locator
 
 [![Build Status](https://github.com/fused-gaming/plug/actions/workflows/deploy.yml/badge.svg?branch=main)](https://github.com/fused-gaming/plug/actions)
+[![Data Sync](https://github.com/fused-gaming/plug/actions/workflows/data-sync.yml/badge.svg?branch=main)](https://github.com/fused-gaming/plug/actions)
+[![Ingest Submissions](https://github.com/fused-gaming/plug/actions/workflows/ingest-submissions.yml/badge.svg?branch=main)](https://github.com/fused-gaming/plug/actions)
+[![Auto-label Submissions](https://github.com/fused-gaming/plug/actions/workflows/auto-label-submissions.yml/badge.svg?branch=main)](https://github.com/fused-gaming/plug/actions)
+[![Web Form Submission](https://github.com/fused-gaming/plug/actions/workflows/web-form-submission.yml/badge.svg?branch=main)](https://github.com/fused-gaming/plug/actions)
+[![Prompt Archive](https://github.com/fused-gaming/plug/actions/workflows/prompt-archive.yml/badge.svg?branch=main)](https://github.com/fused-gaming/plug/actions)
 [![Deployment Status](https://img.shields.io/badge/deployment-live-success?logo=github)](https://plug.vln.gg)
 [![Security: 0 Vulnerabilities](https://img.shields.io/badge/security-0%20vulnerabilities-success)](SECURITY_SCANNING.md)
 [![Tests: 123 Passing](https://img.shields.io/badge/tests-123%20passing-success)](#)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
 [![Version: 2.2.0-dev](https://img.shields.io/badge/version-2.2.0--dev-blue)](#)
-[![React: 18.2.0](https://img.shields.io/badge/react-18.2.0-61dafb?logo=react)](https://react.dev)
-[![Vite: 6.4.3](https://img.shields.io/badge/vite-6.4.3-646cff?logo=vite)](https://vitejs.dev)
 [![Accessibility: WCAG 2.1 AA](https://img.shields.io/badge/accessibility-WCAG%202.1%20AA-047857)](docs/04-design/COMPONENT_LIBRARY.md#color-palette--wcag-21-graded)
 [![Design System: documented](https://img.shields.io/badge/design%20system-documented-9a3412)](docs/04-design/COMPONENT_LIBRARY.md)
 [![Icons: SVG sprite](https://img.shields.io/badge/icons-SVG%20sprite-9a3412)](public/icons/sprite.svg)
