@@ -1,15 +1,24 @@
 /**
  * Email confirmation page for web form submissions
  * Handles JWT token verification and submission confirmation
+ *
+ * The confirmation endpoint is configurable via the VITE_CONFIRM_ENDPOINT env var so this
+ * page can point at a real serverless verification function in production while still
+ * falling back to the Vite dev-only middleware (vite.middleware.js +
+ * scripts/api/confirm-submission.mjs) for local development. Set VITE_CONFIRM_ENDPOINT in
+ * .env / .env.production once the backend URL is provisioned (see issue #42).
  */
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import styles from './ConfirmSubmission.module.css';
+
+const CONFIRM_ENDPOINT = import.meta.env.VITE_CONFIRM_ENDPOINT || '/api/confirm-submission';
 
 export default function ConfirmSubmission({ token, onClose }) {
   const [status, setStatus] = useState('loading'); // loading, success, error, expired
   const [message, setMessage] = useState('');
   const [details, setDetails] = useState(null);
+  const headingRef = useRef(null);
 
   useEffect(() => {
     if (!token) {
@@ -21,9 +30,15 @@ export default function ConfirmSubmission({ token, onClose }) {
     confirmSubmission(token);
   }, [token]);
 
+  // Move focus to the result heading whenever status changes, so screen reader
+  // users are taken to the outcome instead of being left on a stale focus target.
+  useEffect(() => {
+    headingRef.current?.focus();
+  }, [status]);
+
   const confirmSubmission = async (confirmToken) => {
     try {
-      const response = await fetch('/api/confirm-submission', {
+      const response = await fetch(CONFIRM_ENDPOINT, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ token: confirmToken }),
@@ -63,20 +78,20 @@ export default function ConfirmSubmission({ token, onClose }) {
   };
 
   return (
-    <div className={styles.container}>
+    <div className={styles.container} role="region" aria-live="polite" aria-busy={status === 'loading'}>
       <div className={styles.card}>
         {status === 'loading' && (
           <>
-            <div className={styles.spinner}></div>
-            <h1>Confirming your submission...</h1>
+            <div className={styles.spinner} role="status" aria-label="Confirming"></div>
+            <h1 ref={headingRef} tabIndex={-1}>Confirming your submission...</h1>
             <p>Please wait while we verify your email.</p>
           </>
         )}
 
         {status === 'success' && (
           <>
-            <div className={styles.icon}>✅</div>
-            <h1>{message}</h1>
+            <div className={styles.icon} aria-hidden="true">✅</div>
+            <h1 ref={headingRef} tabIndex={-1}>{message}</h1>
             <p>{details}</p>
             <div className={styles.timeline}>
               <div className={styles.step}>
@@ -102,8 +117,8 @@ export default function ConfirmSubmission({ token, onClose }) {
 
         {status === 'error' && (
           <>
-            <div className={styles.icon}>❌</div>
-            <h1>{message}</h1>
+            <div className={styles.icon} aria-hidden="true">❌</div>
+            <h1 ref={headingRef} tabIndex={-1}>{message}</h1>
             <p>{details}</p>
             <button onClick={onClose} className={styles.button}>
               Try Again
@@ -113,8 +128,8 @@ export default function ConfirmSubmission({ token, onClose }) {
 
         {status === 'expired' && (
           <>
-            <div className={styles.icon}>⏰</div>
-            <h1>{message}</h1>
+            <div className={styles.icon} aria-hidden="true">⏰</div>
+            <h1 ref={headingRef} tabIndex={-1}>{message}</h1>
             <p>{details}</p>
             <button onClick={onClose} className={styles.button}>
               Return to Map & Submit Again

@@ -1,10 +1,18 @@
 /**
  * Web form for community venue submissions
  * Collects location details and user email, sends confirmation link via Resend
+ *
+ * The submission endpoint is configurable via the VITE_SUBMIT_ENDPOINT env var so this
+ * component can point at a real serverless verification function in production while
+ * still falling back to the Vite dev-only middleware (vite.middleware.js +
+ * scripts/api/submit-venue.mjs) for local development. Set VITE_SUBMIT_ENDPOINT in
+ * .env / .env.production once the backend URL is provisioned (see issue #42).
  */
 
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import styles from './SubmitVenueForm.module.css';
+
+const SUBMIT_ENDPOINT = import.meta.env.VITE_SUBMIT_ENDPOINT || '/api/submit-venue';
 
 export default function SubmitVenueForm({ onClose }) {
   const [formData, setFormData] = useState({
@@ -21,6 +29,48 @@ export default function SubmitVenueForm({ onClose }) {
 
   const [status, setStatus] = useState('idle'); // idle, loading, success, error
   const [message, setMessage] = useState('');
+
+  const modalRef = useRef(null);
+  const closeBtnRef = useRef(null);
+  const previouslyFocusedRef = useRef(null);
+
+  // Focus management: move focus into the modal on open, trap it while open,
+  // and restore focus to whatever triggered the modal on close (Esc or overlay click).
+  useEffect(() => {
+    previouslyFocusedRef.current = document.activeElement;
+    closeBtnRef.current?.focus();
+
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') {
+        onClose();
+        return;
+      }
+
+      if (e.key === 'Tab' && modalRef.current) {
+        const focusable = modalRef.current.querySelectorAll(
+          'a[href], button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex="-1"])'
+        );
+        if (focusable.length === 0) return;
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+
+        if (e.shiftKey && document.activeElement === first) {
+          e.preventDefault();
+          last.focus();
+        } else if (!e.shiftKey && document.activeElement === last) {
+          e.preventDefault();
+          first.focus();
+        }
+      }
+    };
+
+    document.addEventListener('keydown', handleKeyDown);
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown);
+      previouslyFocusedRef.current?.focus?.();
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const categories = [
     { value: 'library', label: '📚 Library' },
@@ -61,7 +111,7 @@ export default function SubmitVenueForm({ onClose }) {
     setMessage('');
 
     try {
-      const response = await fetch('/api/submit-venue', {
+      const response = await fetch(SUBMIT_ENDPOINT, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
@@ -98,49 +148,68 @@ export default function SubmitVenueForm({ onClose }) {
 
   return (
     <div className={styles.overlay} onClick={onClose}>
-      <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
+      <div
+        className={styles.modal}
+        onClick={(e) => e.stopPropagation()}
+        ref={modalRef}
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="submit-venue-heading"
+      >
         <div className={styles.header}>
-          <h2>Suggest a Charging Location</h2>
-          <button className={styles.closeBtn} onClick={onClose}>
+          <h2 id="submit-venue-heading">Suggest a Charging Location</h2>
+          <button
+            className={styles.closeBtn}
+            onClick={onClose}
+            ref={closeBtnRef}
+            aria-label="Close dialog"
+          >
             ✕
           </button>
         </div>
 
         {status === 'success' ? (
-          <div className={styles.successMessage}>{message}</div>
+          <div className={styles.successMessage} role="status" aria-live="polite">
+            {message}
+          </div>
         ) : (
-          <form onSubmit={handleSubmit} className={styles.form}>
+          <form onSubmit={handleSubmit} className={styles.form} noValidate>
             <div className={styles.section}>
-              <label>
-                <span className={styles.required}>*</span> Location Name
+              <label htmlFor="submit-venue-name">
+                <span className={styles.required} aria-hidden="true">*</span> Location Name
               </label>
               <input
+                id="submit-venue-name"
                 type="text"
                 name="name"
                 value={formData.name}
                 onChange={handleInputChange}
                 placeholder="e.g., Downtown Library, Community Center"
                 required
+                aria-required="true"
               />
             </div>
 
             <div className={styles.section}>
-              <label>
-                <span className={styles.required}>*</span> Street Address
+              <label htmlFor="submit-venue-address">
+                <span className={styles.required} aria-hidden="true">*</span> Street Address
               </label>
               <input
+                id="submit-venue-address"
                 type="text"
                 name="address"
                 value={formData.address}
                 onChange={handleInputChange}
                 placeholder="e.g., 123 Main St, Oakland, CA 94607"
                 required
+                aria-required="true"
               />
             </div>
 
             <div className={styles.section}>
-              <label>Neighborhood (optional)</label>
+              <label htmlFor="submit-venue-neighborhood">Neighborhood (optional)</label>
               <input
+                id="submit-venue-neighborhood"
                 type="text"
                 name="neighborhood"
                 value={formData.neighborhood}
@@ -150,14 +219,16 @@ export default function SubmitVenueForm({ onClose }) {
             </div>
 
             <div className={styles.section}>
-              <label>
-                <span className={styles.required}>*</span> Category
+              <label htmlFor="submit-venue-category">
+                <span className={styles.required} aria-hidden="true">*</span> Category
               </label>
               <select
+                id="submit-venue-category"
                 name="category"
                 value={formData.category}
                 onChange={handleInputChange}
                 required
+                aria-required="true"
               >
                 {categories.map((cat) => (
                   <option key={cat.value} value={cat.value}>
@@ -167,8 +238,8 @@ export default function SubmitVenueForm({ onClose }) {
               </select>
             </div>
 
-            <div className={styles.section}>
-              <label>Indoor/Outdoor</label>
+            <fieldset className={styles.section}>
+              <legend>Indoor/Outdoor</legend>
               <div className={styles.radioGroup}>
                 <label className={styles.radio}>
                   <input
@@ -191,10 +262,10 @@ export default function SubmitVenueForm({ onClose }) {
                   🌳 Outdoor
                 </label>
               </div>
-            </div>
+            </fieldset>
 
-            <div className={styles.section}>
-              <label>Amenities (optional)</label>
+            <fieldset className={styles.section}>
+              <legend>Amenities (optional)</legend>
               <div className={styles.checkboxGroup}>
                 {amenityOptions.map((amenity) => (
                   <label key={amenity.value} className={styles.checkbox}>
@@ -207,11 +278,12 @@ export default function SubmitVenueForm({ onClose }) {
                   </label>
                 ))}
               </div>
-            </div>
+            </fieldset>
 
             <div className={styles.section}>
-              <label>Hours of Operation (optional)</label>
+              <label htmlFor="submit-venue-hours">Hours of Operation (optional)</label>
               <input
+                id="submit-venue-hours"
                 type="text"
                 name="hours"
                 value={formData.hours}
@@ -221,23 +293,34 @@ export default function SubmitVenueForm({ onClose }) {
             </div>
 
             <div className={styles.section}>
-              <label>
-                <span className={styles.required}>*</span> Your Email
+              <label htmlFor="submit-venue-email">
+                <span className={styles.required} aria-hidden="true">*</span> Your Email
               </label>
               <input
+                id="submit-venue-email"
                 type="email"
                 name="email"
                 value={formData.email}
                 onChange={handleInputChange}
                 placeholder="your.email@example.com"
                 required
+                aria-required="true"
+                aria-describedby="submit-venue-email-hint"
               />
-              <small>We'll send you a confirmation link. Your email is never shared.</small>
+              <small id="submit-venue-email-hint">
+                We'll send you a confirmation link. Your email is never shared.
+              </small>
             </div>
 
             {status === 'error' && (
-              <div className={styles.errorMessage}>{message}</div>
+              <div className={styles.errorMessage} role="alert" aria-live="assertive">
+                {message}
+              </div>
             )}
+
+            <div className={styles.visuallyHidden} role="status" aria-live="polite">
+              {status === 'loading' ? 'Sending your submission…' : ''}
+            </div>
 
             <div className={styles.actions}>
               <button
