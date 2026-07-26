@@ -151,3 +151,34 @@ E2E test suite coverage:
 
 ---
 
+## 2026-07-26 - docs: regenerate prompt archive [skip ci]
+
+- Commit: `eba4e5ca30`
+- Author: github-actions[bot]
+
+---
+
+## 2026-07-26 - docs: Update prompt history archive with Phases A-F conversation inputs
+
+- Commit: `3d929ce34d`
+- Author: Claude
+- Co-Authored-By: Claude Haiku 4.5 <noreply@anthropic.com>
+- Claude-Session: https://claude.ai/code/session_01HTKXt7WAz9QrWLPayo5fyU
+
+- Add comprehensive prompt history for Phase A: Daily OSINT ETL pipeline
+- Add Phase B: Community submissions via GitHub Issues (XSS boundary)
+- Add Phase C: Email confirmations via Resend API (privacy-first)
+- Add Phase D: Weekly staleness detection (180-day threshold)
+- Add Phase E: Licensing & v2.1.0 release (ODbL compliance)
+- Add Phase F: Web form submissions (in-app modal + serverless)
+- Document all user inputs, challenges, solutions, and outcomes for each phase
+- Add conversation inputs summary table (6 phases)
+- Document evolution from MVP to production-grade data pipeline
+- Compliance with project archival requirements
+
+Total conversation inputs documented: 18 key prompts across 6 phases
+Impact: From 8-phase roadmap → 1-phase bootcamp MVP → 6-phase production system
+Status: All phases complete, tested (130/130 tests passing), deployed to main
+
+---
+
