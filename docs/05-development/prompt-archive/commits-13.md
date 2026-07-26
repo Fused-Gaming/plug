@@ -152,3 +152,27 @@ and data pipeline status rather than implementation details.
 
 ---
 
+## 2026-07-26 - docs: regenerate prompt archive [skip ci]
+
+- Commit: `dae55e50e3`
+- Author: github-actions[bot]
+
+---
+
+## 2026-07-26 - fix: enable web form submissions and publish library venues without hours
+
+- Commit: `10c48fb388`
+- Author: Claude
+
+Changes:
+1. Fix web form submissions: add 'submission' label so issues get ingested by hourly workflow
+2. Loosen deriveTier requirements: make hours optional for high-confidence categories (library 0.9+, device_charging 0.95)
+3. Promote 34 library venues to auto tier from candidates
+4. Regenerate locations.json with 74 venues (up from 40)
+
+Web form submissions now flow: form → GitHub issue (with submission label) → ingest workflow → published venue
+
+This fixes both the missing web form submissions and exposes the 34 library venues that lacked hours data.
+
+---
+
