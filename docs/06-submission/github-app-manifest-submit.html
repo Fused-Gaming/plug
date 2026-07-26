@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Create the PLUG GitHub App</title>
+</head>
+<body>
+  <!--
+    Open this file directly in a browser (double-click it, or File > Open).
+    It auto-submits the manifest below to GitHub's org app-creation page.
+    See github-app-manifest.md in this same folder for the full walkthrough.
+
+    Nothing here is sent anywhere except this one POST to github.com, which
+    only happens when you open this exact file yourself.
+  -->
+  <p>Redirecting to GitHub to create the PLUG GitHub App&hellip;</p>
+  <form id="manifest-form" action="https://github.com/organizations/Fused-Gaming/settings/apps/new" method="post">
+    <input type="hidden" name="manifest" id="manifest-field">
+  </form>
+  <script>
+    const manifest = {
+      name: "PLUG Submission Bridge",
+      url: "https://plug.vln.gg",
+      redirect_url: "http://localhost/plug-github-app-callback",
+      public: false,
+      default_permissions: {
+        metadata: "read",
+        issues: "write"
+      },
+      default_events: []
+    };
+    document.getElementById('manifest-field').value = JSON.stringify(manifest);
+    document.getElementById('manifest-form').submit();
+  </script>
+</body>
+</html>
