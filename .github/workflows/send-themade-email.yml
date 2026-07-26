@@ -13,27 +13,136 @@ jobs:
             const https = require('https');
 
             const apiKey = '${{ secrets.RESEND_API_KEY }}';
-            const emailContent = \`Hello Team,
+            const emailContent = \`<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+  margin: 0;
+  padding: 16px;
+  background-color: #1d1d1d;
+}
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: #2a2a2a;
+  border-radius: 12px;
+  padding: 48px;
+  color: #e8e8e8;
+  line-height: 1.6;
+}
+.salutation {
+  font-size: 14px;
+  color: #a1a1a1;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+h1 {
+  font-size: 20px;
+  font-weight: 500;
+  margin: 0 0 24px 0;
+  color: #e8e8e8;
+}
+p {
+  margin: 0 0 16px 0;
+  font-size: 15px;
+  color: #e8e8e8;
+}
+.highlight {
+  font-weight: 500;
+  color: #0a84ff;
+}
+.section-divider {
+  border-top: 1px solid #454545;
+  margin: 24px 0;
+}
+.links-section {
+  margin: 24px 0;
+}
+.link-item {
+  margin: 12px 0;
+  padding: 12px;
+  background-color: #333333;
+  border-left: 2px solid #0a84ff;
+  border-radius: 4px;
+}
+.link-item a {
+  color: #0a84ff;
+  text-decoration: none;
+  word-break: break-all;
+}
+.link-item a:hover {
+  text-decoration: underline;
+}
+.signature {
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid #454545;
+}
+.sig-name {
+  font-weight: 500;
+  font-size: 15px;
+  margin-bottom: 4px;
+}
+.sig-title {
+  font-size: 13px;
+  color: #a1a1a1;
+}
+.footer {
+  margin-top: 24px;
+  padding-top: 16px;
+  border-top: 1px solid #454545;
+  font-size: 12px;
+  color: #757575;
+  text-align: center;
+}
+</style>
+</head>
+<body>
+<div class="container">
+<div class="salutation">Hello Team</div>
 
-My name is J and I am the founder of Fused Gaming. I recently utilized your location to test a new web app as part of a project submitted for my application to the next chapter project, a code development bootcamp for formerly incarcerated people.
+<h1>Introducing Plug by Fused Gaming</h1>
 
-My app is simple, vulnerable people who experience housing insecurity have a hard time finding power sources. Well not any more thanks to Plug by Fused Gaming, an open sourced project.
+<p>My name is <span class="highlight">J</span>, and I'm the founder of Fused Gaming. I recently used your location to test a new web app as part of my application to the <span class="highlight">Next Chapter Project</span>—a code development bootcamp for formerly incarcerated people.</p>
 
-https://plug.vln.gg/
+<p>Here's the problem we're solving: vulnerable people experiencing housing insecurity struggle to find reliable power sources. That's where <span class="highlight">Plug</span> comes in—an open-source project that helps people locate free charging stations in their community.</p>
 
-https://github.com/Fused-Gaming/plug
+<div class="section-divider"></div>
 
-I am happy to get involved in any capacity should the need ever arise please keep me in mind. You can find my full skills and experience at https://jlucus.dev along with in production works.
+<div class="links-section">
+<div class="link-item"><strong>Live Demo:</strong><br><a href="https://plug.vln.gg/">https://plug.vln.gg/</a></div>
+<div class="link-item"><strong>GitHub Repository:</strong><br><a href="https://github.com/Fused-Gaming/plug">https://github.com/Fused-Gaming/plug</a></div>
+<div class="link-item"><strong>My Portfolio:</strong><br><a href="https://jlucus.dev">https://jlucus.dev</a></div>
+</div>
 
-Happy Gaming Friends,
-J.\`;
+<div class="section-divider"></div>
+
+<p>I'm genuinely interested in getting involved with TheMade.org in any capacity that might be valuable. You can explore my full skills and experience at my portfolio, along with other production work I've shipped.</p>
+
+<div class="signature">
+<div class="sig-name">Happy Gaming,</div>
+<div class="sig-title">J</div>
+<div class="sig-title">Founder, Fused Gaming</div>
+</div>
+
+<div class="footer">
+<p>This email was sent to share the Plug project. Visit <a href="https://plug.vln.gg/" style="color: #0a84ff;">plug.vln.gg</a> to help people find charging.</p>
+</div>
+</div>
+</body>
+</html>\`;
 
             const payload = JSON.stringify({
               from: 'info@queen.vln.gg',
               to: 'INFO@themade.org',
               cc: 'j@vln.gg',
               subject: 'Plug by Fused Gaming - Web App Project',
-              text: emailContent
+              html: emailContent
             });
 
             const options = {
