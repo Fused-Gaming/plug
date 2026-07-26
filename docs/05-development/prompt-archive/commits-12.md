@@ -182,3 +182,21 @@ Status: All phases complete, tested (130/130 tests passing), deployed to main
 
 ---
 
+## 2026-07-26 - docs: regenerate prompt archive [skip ci]
+
+- Commit: `9604cd91da`
+- Author: github-actions[bot]
+
+---
+
+## 2026-07-26 - fix: resolve YAML syntax error in web-form-submission workflow
+
+- Commit: `b199f96ef4`
+- Author: SupItsJ
+
+Convert backtick template literal to string concatenation in the Update GitHub Issue step's body field to fix YAML parsing error. Also regenerate package-lock.json to sync with package.json and resolve npm ci failures in CI workflows.
+
+Fixes critical workflow parsing error blocking Phase F web form submission deployment.
+
+---
+
