@@ -119,3 +119,35 @@ Merge Phase F web form submissions feature:
 
 ---
 
+## 2026-07-26 - docs: regenerate prompt archive [skip ci]
+
+- Commit: `35f1ac4095`
+- Author: github-actions[bot]
+
+---
+
+## 2026-07-26 - test: Add comprehensive E2E tests for Phase F web form submission
+
+- Commit: `e709cc693b`
+- Author: Claude
+- Co-Authored-By: Claude Haiku 4.5 <noreply@anthropic.com>
+- Claude-Session: https://claude.ai/code/session_01HTKXt7WAz9QrWLPayo5fyU
+
+- Add 7 new E2E tests for Phase F web form submission workflow
+- Test form submission → token generation → email confirmation → publication
+- Coverage: token validation, expiry, signature verification, form schema
+- Tests for amenities array handling and duplicate submission prevention
+- Cleanup of expired confirmation tokens (7-day threshold)
+- All tests passing: 130/130 tests green
+
+E2E test suite coverage:
+✓ Form submission end-to-end (create → confirm → publish)
+✓ JWT token expiry (7-day threshold enforcement)
+✓ Token signature verification (HMAC-SHA256)
+✓ Form data schema validation
+✓ Amenities as array in form submission
+✓ Expired token cleanup workflow
+✓ Duplicate submission prevention (24-hour cooldown)
+
+---
+
