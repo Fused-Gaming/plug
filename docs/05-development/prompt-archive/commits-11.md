@@ -205,3 +205,10 @@ All changes maintain privacy-first commitment while documenting data quality pro
 
 ---
 
+## 2026-07-24 - docs: regenerate prompt archive [skip ci]
+
+- Commit: `e695dceb08`
+- Author: github-actions[bot]
+
+---
+
