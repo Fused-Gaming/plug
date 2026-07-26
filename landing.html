@@ -35,7 +35,7 @@
             <svg class="icon icon--sm" aria-hidden="true"><use href="icons/sprite.svg#shield-check"/></svg>
             How it works
           </a>
-          <a href="https://github.com/Fused-Gaming/plug/issues/new?template=location.yml" target="_blank" rel="noopener">
+          <a class="js-suggest-place" href="https://github.com/Fused-Gaming/plug/issues/new?template=location.yml" target="_blank" rel="noopener">
             <svg class="icon icon--sm" aria-hidden="true"><use href="icons/sprite.svg#users"/></svg>
             Suggest a place
           </a>
@@ -421,7 +421,7 @@
             <svg class="icon icon--sm" aria-hidden="true"><use href="icons/sprite.svg#pin"/></svg>
             <span>
               <strong>Suggest new locations</strong>
-              Found a place with reliable charging? <a href="https://github.com/Fused-Gaming/plug/issues/new?template=location.yml" target="_blank" rel="noopener">Suggest it through our public form</a> &mdash; it appears on the map as a Community report within the hour.
+              Found a place with reliable charging? <a class="js-suggest-place" href="https://github.com/Fused-Gaming/plug/issues/new?template=location.yml" target="_blank" rel="noopener">Suggest it through our public form</a> &mdash; it appears on the map as a Community report within the hour.
             </span>
           </li>
           <li>
@@ -525,7 +525,7 @@
             <li><a href="#how-it-works">
               <svg class="icon icon--sm" aria-hidden="true"><use href="icons/sprite.svg#shield-check"/></svg>
               How verification works</a></li>
-            <li><a href="https://github.com/Fused-Gaming/plug/issues/new?template=location.yml" target="_blank" rel="noopener">
+            <li><a class="js-suggest-place" href="https://github.com/Fused-Gaming/plug/issues/new?template=location.yml" target="_blank" rel="noopener">
               <svg class="icon icon--sm" aria-hidden="true"><use href="icons/sprite.svg#users"/></svg>
               Suggest a place</a></li>
           </ul>
@@ -552,6 +552,110 @@
       </p>
     </div>
   </footer>
+
+  <!-- Suggest-a-place: method choice -->
+  <div class="modal-overlay" id="suggestChoiceOverlay" hidden>
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="suggestChoiceTitle">
+      <div class="modal__header">
+        <h2 id="suggestChoiceTitle">How would you like to suggest a location?</h2>
+        <button class="modal__close" type="button" data-modal-close aria-label="Close dialog">✕</button>
+      </div>
+      <div class="modal__body modal__body--choice">
+        <div class="modal__option">
+          <div class="modal__option-icon" aria-hidden="true">📋</div>
+          <h3>Quick Web Form</h3>
+          <p>Fill in the details right here on the site &mdash; no GitHub account needed to start.</p>
+          <button class="btn btn--primary btn--block" type="button" id="chooseWebForm">Use Web Form</button>
+        </div>
+        <div class="modal__divider" aria-hidden="true">or</div>
+        <div class="modal__option">
+          <div class="modal__option-icon" aria-hidden="true">💻</div>
+          <h3>GitHub Issue</h3>
+          <p>For contributors who already use GitHub and want full version history.</p>
+          <a class="btn btn--secondary btn--block" id="chooseGithubIssue"
+             href="https://github.com/Fused-Gaming/plug/issues/new?template=location.yml" target="_blank" rel="noopener">
+            Create GitHub Issue
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Suggest-a-place: web form -->
+  <div class="modal-overlay" id="suggestFormOverlay" hidden>
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="suggestFormTitle">
+      <div class="modal__header">
+        <h2 id="suggestFormTitle">Suggest a Charging Location</h2>
+        <button class="modal__close" type="button" data-modal-close aria-label="Close dialog">✕</button>
+      </div>
+      <form class="modal__body" id="suggestForm">
+        <p class="modal__note">
+          <svg class="icon icon--sm" aria-hidden="true"><use href="icons/sprite.svg#lock"/></svg>
+          This is submitted as a public GitHub issue &mdash; please don't include your name, email, or other personal details.
+        </p>
+
+        <label class="field-label" for="sf-name">Place name <span class="required">*</span></label>
+        <input class="field" id="sf-name" name="name" type="text" placeholder="Oakland Main Library" required>
+
+        <label class="field-label" for="sf-category">Category <span class="required">*</span></label>
+        <select class="field" id="sf-category" name="category" required>
+          <option value="" disabled selected>Choose one&hellip;</option>
+          <option>Library</option>
+          <option>Community center</option>
+          <option>Public charging station</option>
+          <option>Cafe or restaurant (customers only)</option>
+          <option>Other public space</option>
+        </select>
+
+        <label class="field-label" for="sf-address">Street address <span class="required">*</span></label>
+        <input class="field" id="sf-address" name="address" type="text" placeholder="125 14th St, Oakland" required>
+
+        <label class="field-label" for="sf-area">Neighborhood or cross street</label>
+        <input class="field" id="sf-area" name="area" type="text" placeholder="Downtown, near 14th &amp; Madison">
+
+        <div class="modal__row">
+          <div>
+            <label class="field-label" for="sf-setting">Indoor or outdoor <span class="required">*</span></label>
+            <select class="field" id="sf-setting" name="setting" required>
+              <option value="" disabled selected>Choose one&hellip;</option>
+              <option>Indoor</option>
+              <option>Outdoor</option>
+            </select>
+          </div>
+          <div>
+            <label class="field-label" for="sf-access">Who can use it <span class="required">*</span></label>
+            <select class="field" id="sf-access" name="access" required>
+              <option value="" disabled selected>Choose one&hellip;</option>
+              <option>Open to everyone</option>
+              <option>Customers only</option>
+            </select>
+          </div>
+        </div>
+
+        <label class="field-label" for="sf-hours">Hours (if known)</label>
+        <input class="field" id="sf-hours" name="hours" type="text" placeholder="Mo-Sa 10:00-18:00">
+
+        <fieldset class="modal__fieldset">
+          <legend class="field-label">What is available</legend>
+          <div class="modal__checkboxes">
+            <label><input type="checkbox" name="features" value="Wall outlets"> Wall outlets</label>
+            <label><input type="checkbox" name="features" value="USB ports"> USB ports</label>
+            <label><input type="checkbox" name="features" value="Wi-Fi"> Wi-Fi</label>
+            <label><input type="checkbox" name="features" value="Wheelchair accessible"> Wheelchair accessible</label>
+            <label><input type="checkbox" name="features" value="Restrooms"> Restrooms</label>
+          </div>
+        </fieldset>
+
+        <label class="field-label" for="sf-notes">Anything else worth knowing</label>
+        <textarea class="field" id="sf-notes" name="notes" rows="3" maxlength="280" placeholder="Outlets along the wall by the reading tables."></textarea>
+
+        <div class="modal__actions">
+          <button class="btn btn--secondary" type="button" data-modal-close>Cancel</button>
+          <button class="btn btn--primary" type="submit">Continue on GitHub</button>
+        </div>
+      </form>
+    </div>
+  </div>
 
   <script src="scripts/landing.js"></script>
 </body>

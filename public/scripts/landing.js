@@ -115,8 +115,9 @@
 
   /* Auto-listed venues from the daily OSINT pipeline (data/locations.json).
      Everything is rendered with textContent — submission and pipeline text is
-     never treated as HTML. Static curated cards above stay the lead entries. */
-  var AUTO_DISPLAY_CAP = 12;
+     never treated as HTML. Static curated cards above stay the lead entries.
+     No display cap: the pipeline already publishes only field-checked-enough
+     venues, so every one returned by the endpoint should be shown. */
   var svgNS = 'http://www.w3.org/2000/svg';
   var xlinkNS = 'http://www.w3.org/1999/xlink';
 
@@ -215,8 +216,7 @@
             if (byTier !== 0) return byTier;
             var byPrior = (priorOrder[a.category] || 9) - (priorOrder[b.category] || 9);
             return byPrior !== 0 ? byPrior : (b.address ? 1 : 0) - (a.address ? 1 : 0);
-          })
-          .slice(0, AUTO_DISPLAY_CAP);
+          });
 
         venues.forEach(function (v) {
           var tags = ['open', 'free'];
@@ -290,6 +290,89 @@
       }
     );
   });
+
+  /* Suggest-a-place: web form modal, with GitHub Issue as the alternate path.
+     No production backend exists on this static site, so the form itself
+     builds a pre-filled GitHub Issue Form URL (matching the field ids in
+     .github/ISSUE_TEMPLATE/location.yml) and hands off to GitHub's existing,
+     already-ingested submission pipeline instead of a blank issue page. */
+  var REPO_URL = 'https://github.com/Fused-Gaming/plug';
+  var choiceOverlay = document.getElementById('suggestChoiceOverlay');
+  var formOverlay = document.getElementById('suggestFormOverlay');
+  var suggestForm = document.getElementById('suggestForm');
+  var lastFocused = null;
+
+  function openModal(overlay) {
+    lastFocused = document.activeElement;
+    overlay.hidden = false;
+    var focusable = overlay.querySelector('input, select, textarea, button, a');
+    if (focusable) focusable.focus();
+  }
+
+  function closeModal(overlay) {
+    overlay.hidden = true;
+    if (lastFocused && typeof lastFocused.focus === 'function') lastFocused.focus();
+  }
+
+  function closeAllModals() {
+    [choiceOverlay, formOverlay].forEach(function (overlay) {
+      if (overlay && !overlay.hidden) closeModal(overlay);
+    });
+  }
+
+  if (choiceOverlay && formOverlay && suggestForm) {
+    document.querySelectorAll('.js-suggest-place').forEach(function (trigger) {
+      trigger.addEventListener('click', function (event) {
+        event.preventDefault();
+        openModal(choiceOverlay);
+      });
+    });
+
+    document.getElementById('chooseWebForm').addEventListener('click', function () {
+      closeModal(choiceOverlay);
+      openModal(formOverlay);
+    });
+
+    document.querySelectorAll('[data-modal-close]').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        closeModal(btn.closest('.modal-overlay'));
+      });
+    });
+
+    [choiceOverlay, formOverlay].forEach(function (overlay) {
+      overlay.addEventListener('click', function (event) {
+        if (event.target === overlay) closeModal(overlay);
+      });
+    });
+
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape') closeAllModals();
+    });
+
+    suggestForm.addEventListener('submit', function (event) {
+      event.preventDefault();
+      var data = new FormData(suggestForm);
+      var name = String(data.get('name') || '').trim();
+      var features = data.getAll('features');
+
+      var params = new URLSearchParams();
+      params.set('template', 'location.yml');
+      params.set('title', '[Location]: ' + name);
+      params.set('name', name);
+      params.set('category', String(data.get('category') || ''));
+      params.set('address', String(data.get('address') || ''));
+      if (data.get('area')) params.set('area', String(data.get('area')));
+      params.set('setting', String(data.get('setting') || ''));
+      params.set('access', String(data.get('access') || ''));
+      if (data.get('hours')) params.set('hours', String(data.get('hours')));
+      if (features.length) params.set('features', features.join(', '));
+      if (data.get('notes')) params.set('notes', String(data.get('notes')));
+
+      window.open(REPO_URL + '/issues/new?' + params.toString(), '_blank', 'noopener');
+      closeModal(formOverlay);
+      suggestForm.reset();
+    });
+  }
 
   var navToggle = document.querySelector('.site-header__toggle');
   var nav = document.getElementById('site-nav');
