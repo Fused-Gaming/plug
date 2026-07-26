@@ -210,3 +210,35 @@ Build: npm run build completed successfully with 74-location dataset
 
 ---
 
+## 2026-07-26 - docs: regenerate prompt archive [skip ci]
+
+- Commit: `4848f7c2d6`
+- Author: github-actions[bot]
+
+---
+
+## 2026-07-26 - fix: restore web-form submission flow and remove 16-location display cap (#40)
+
+- Commit: `58ede756ec`
+- Author: SupItsJ
+- Claude-Session: https://claude.ai/code/session_01Ug4DmRTRQzL7281fJwVk24
+- Co-authored-by: Claude <noreply@anthropic.com>
+
+fix: add web-form submission flow and remove 16-location display cap on production landing page
+
+The production build ships public/landing.html (not the React SPA), which
+had diverged from Phase F: every "Suggest a place" link bypassed the web
+form entirely and went straight to a blank GitHub issue, and
+landing.js capped auto-listed venues at 12 (plus 4 hardcoded demo cards),
+showing 16 locations regardless of how many actually exist.
+
+- Add a method-choice modal and in-page web form to landing.html/landing.js,
+  mirroring SubmissionMethodChoice.jsx/SubmitVenueForm.jsx. Submission opens
+  a pre-filled GitHub Issue Form URL for the existing ingest-submissions.yml
+  pipeline, since GitHub Pages has no backend to host /api/submit-venue.
+- Remove the AUTO_DISPLAY_CAP slice in landing.js so all fetched venues render.
+
+Fixes #38, Fixes #39.
+
+---
+
