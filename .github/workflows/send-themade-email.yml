@@ -1,0 +1,74 @@
+name: Send Email to TheMade.org
+
+on:
+  workflow_dispatch:
+
+jobs:
+  send-email:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send email via Resend
+        run: |
+          node -e "
+            const https = require('https');
+
+            const apiKey = '${{ secrets.RESEND_API_KEY }}';
+            const emailContent = \`Hello Team,
+
+My name is J and I am the founder of Fused Gaming. I recently utilized your location to test a new web app as part of a project submitted for my application to the next chapter project, a code development bootcamp for formerly incarcerated people.
+
+My app is simple, vulnerable people who experience housing insecurity have a hard time finding power sources. Well not any more thanks to Plug by Fused Gaming, an open sourced project.
+
+https://plug.vln.gg/
+
+https://github.com/Fused-Gaming/plug
+
+I am happy to get involved in any capacity should the need ever arise please keep me in mind. You can find my full skills and experience at https://jlucus.dev along with in production works.
+
+Happy Gaming Friends,
+J.\`;
+
+            const payload = JSON.stringify({
+              from: 'info@queen.vln.gg',
+              to: 'INFO@themade.org',
+              cc: 'j@vln.gg',
+              subject: 'Plug by Fused Gaming - Web App Project',
+              text: emailContent
+            });
+
+            const options = {
+              hostname: 'api.resend.com',
+              path: '/emails',
+              method: 'POST',
+              headers: {
+                'Authorization': \`Bearer \${apiKey}\`,
+                'Content-Type': 'application/json',
+                'Content-Length': Buffer.byteLength(payload)
+              }
+            };
+
+            const req = https.request(options, (res) => {
+              let data = '';
+              res.on('data', (chunk) => { data += chunk; });
+              res.on('end', () => {
+                if (res.statusCode === 200 || res.statusCode === 201) {
+                  const response = JSON.parse(data);
+                  console.log('✅ Email sent successfully!');
+                  console.log('Email ID:', response.id);
+                } else {
+                  console.error('❌ Failed to send email');
+                  console.error('Status:', res.statusCode);
+                  console.error('Response:', data);
+                  process.exit(1);
+                }
+              });
+            });
+
+            req.on('error', (e) => {
+              console.error('Error:', e.message);
+              process.exit(1);
+            });
+
+            req.write(payload);
+            req.end();
+          "
