@@ -1,0 +1,79 @@
+name: Process Location Submissions
+
+# Issue #42: account-free outlet submissions. Unlike ingest-submissions.yml
+# (hourly cron over manually-filled .github/ISSUE_TEMPLATE/location.yml
+# issues, committing straight to main), this workflow fires per-issue when
+# the PLUG GitHub App creates or labels a `submission` issue on behalf of
+# someone who used the org's web form and never touched GitHub. It parses +
+# validates the App's structured payload (scripts/etl/parse-submission-issue.mjs,
+# scripts/etl/validate-submission.mjs) and, if valid, opens a PR instead of
+# committing directly (scripts/etl/create-submission-pr.mjs) so
+# validate-location-data.yml can gate the merge as a required check.
+
+on:
+  issues:
+    types: [opened, labeled]
+
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
+
+concurrency:
+  group: process-submission-${{ github.event.issue.number }}
+  cancel-in-progress: true
+
+jobs:
+  process:
+    runs-on: ubuntu-latest
+    # Guard: only App-created submissions, never a human-filled issue-form
+    # entry (those stay on the ingest-submissions.yml hourly path) and never
+    # an unrelated issue that merely picked up other labels.
+    #
+    # TODO(issue #42): finalize the exact login check once the PLUG GitHub
+    # App exists. `user.type == 'Bot'` is necessarily true for any GitHub
+    # App-authored issue, but it's not sufficient on its own (other bots/Apps
+    # in this repo would also match) -- PLUG_APP_LOGIN is a placeholder for
+    # the App's real `login` (typically `<app-slug>[bot]`) until it's minted.
+    if: |
+      contains(github.event.issue.labels.*.name, 'submission') &&
+      github.event.issue.user.type == 'Bot' &&
+      (github.event.issue.user.login == vars.PLUG_APP_LOGIN || vars.PLUG_APP_LOGIN == '')
+    env:
+      PLUG_APP_LOGIN: ${{ vars.PLUG_APP_LOGIN }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+          cache: 'npm'
+
+      - name: Install dependencies (native build needed for better-sqlite3)
+        run: npm ci
+
+      - name: Ensure triage labels exist
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          for label in 'submission:1d4ed8:Community location suggestion' \
+                       'needs-info:b45309:Submission needs fixes before ingest'; do
+            name="${label%%:*}"; rest="${label#*:}"; color="${rest%%:*}"; desc="${rest#*:}"
+            curl -sf -X POST "https://api.github.com/repos/${GITHUB_REPOSITORY}/labels" \
+              -H "Authorization: Bearer ${GH_TOKEN}" \
+              -H "Accept: application/vnd.github+json" \
+              -d "{\"name\":\"${name}\",\"color\":\"${color}\",\"description\":\"${desc}\"}" \
+              > /dev/null || true # 422 = already exists
+          done
+
+      - name: Configure git identity for the submission PR commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Parse, validate, and open (or flag) the submission
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node scripts/etl/process-submission-issue.mjs
