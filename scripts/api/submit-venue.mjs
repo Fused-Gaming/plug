@@ -70,7 +70,7 @@ export async function submitVenue(formData) {
       repo: 'plug',
       title: issueTitle,
       body: issueBody,
-      labels: ['community-submission', 'web-form', 'pending-confirmation'],
+      labels: ['submission', 'community-submission', 'web-form', 'pending-confirmation'],
     });
 
     console.log(`Created GitHub Issue #${issue.data.number}`);

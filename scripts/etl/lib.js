@@ -93,12 +93,15 @@ export function dedupe(venues) {
  * Derive the publish tier. Phase A ships a single upstream source, so the
  * full two-source corroboration rule from the pipeline plan cannot fire yet;
  * until Socrata/BART land (see issue #20), "auto" requires a high category
- * prior AND machine-readable hours. Everything else stays a DB-only
- * candidate and is excluded from the published JSON.
+ * prior. For high-confidence categories (library 0.9+), hours are optional
+ * since these venues are reliably public with outlets. For borderline
+ * categories (community_centre 0.7), hours are required to increase confidence.
  */
 export function deriveTier(venue) {
   const prior = CATEGORY_PRIORS[venue.category] ?? 0;
-  if (prior >= 0.7 && venue.hours) return 'auto';
+  const hasHours = venue.hours !== null && venue.hours !== undefined;
+  if (prior >= 0.85) return 'auto'; // high-confidence categories (library, device_charging_station)
+  if (prior >= 0.7 && hasHours) return 'auto'; // borderline categories need hours
   return 'candidate';
 }
 
