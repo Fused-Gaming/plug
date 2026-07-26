@@ -290,16 +290,23 @@ We will update this privacy policy if:
 - CDN: Global (Fastly)
 - Data hosted subject to GitHub's privacy policy
 
-## 12. Community Submissions & Email Confirmations (Phase C)
+## 12. Community Submissions & Email Confirmations (Phases C & F)
 
 ### 12.1 How Community Submissions Work
 
-Users can submit charging location suggestions via our GitHub Issue Form:
+Users can submit charging location suggestions via two methods:
 
-- **No email field in form** — Email is not collected publicly (avoids exposure in public GitHub issues)
-- **Email collection is optional** — If you submit, we may send a confirmation email via Resend (see below)
-- **Issue is public** — Your submission (name, address, hours) appears publicly on GitHub
-- **Email is private** — Your email address is never stored in our GitHub repository
+**Web Form (Phase F — Recommended):**
+- Submit directly in-app: Click "Suggest Location" button on the map
+- Form fields validated in real-time
+- Email address collected only for confirmation (not published)
+- Email stored only with Resend, never in GitHub
+
+**GitHub Issues (Phase C — Alternative):**
+- Submit via GitHub Issue Form in the repository
+- Email is not collected publicly (avoids exposure in public GitHub issues)
+- Your submission (name, address, hours) appears publicly on GitHub
+- Email is private — Your email address is never stored in our GitHub repository
 
 ### 12.2 Resend Email Integration
 
@@ -341,10 +348,11 @@ Confirmation emails include a one-time verification link:
 
 ### 12.5 Your Rights Regarding Submissions
 
-- **Edit/Delete:** You can edit or delete your GitHub Issue submission anytime
+- **Edit/Delete (GitHub):** You can edit or delete your GitHub Issue submission anytime
+- **Edit/Delete (Web Form):** Contact us to remove your web form submission or update it
 - **Unsubscribe:** Email us to remove your email from Resend Audiences
 - **No Targeting:** We never use your email for advertising or marketing
-- **Transparency:** All submission data is public on GitHub (except email)
+- **Transparency:** GitHub submissions are public; web form submissions are private until confirmed and published
 
 ### 12.6 GDPR & CCPA Compliance for Email
 

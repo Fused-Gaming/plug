@@ -5,7 +5,7 @@
 [![Security: 0 Vulnerabilities](https://img.shields.io/badge/security-0%20vulnerabilities-success)](SECURITY_SCANNING.md)
 [![Tests: 123 Passing](https://img.shields.io/badge/tests-123%20passing-success)](#)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
-[![Version: 2.1.0-RC](https://img.shields.io/badge/version-2.1.0--RC-blue)](#)
+[![Version: 2.2.0-dev](https://img.shields.io/badge/version-2.2.0--dev-blue)](#)
 [![React: 18.2.0](https://img.shields.io/badge/react-18.2.0-61dafb?logo=react)](https://react.dev)
 [![Vite: 6.4.3](https://img.shields.io/badge/vite-6.4.3-646cff?logo=vite)](https://vitejs.dev)
 [![Accessibility: WCAG 2.1 AA](https://img.shields.io/badge/accessibility-WCAG%202.1%20AA-047857)](docs/04-design/COMPONENT_LIBRARY.md#color-palette--wcag-21-graded)
@@ -128,6 +128,7 @@ Build a minimal viable demo showing that a privacy-first, community-driven charg
 - **Static Site** — No backend required; runs entirely client-side
 - **Privacy-First** — No accounts, no tracking, no data collection
 - **Design System** — Token-driven landing page with WCAG 2.1 graded palette, reusable HTML/CSS components, and an SVG icon sprite ([docs](docs/04-design/COMPONENT_LIBRARY.md))
+- **Web Form Submissions** — In-app modal form for direct venue submissions with email confirmation workflow (Phase F)
 
 ### 🔜 Next Features (Post-MVP / Phase 4+)
 
@@ -140,42 +141,56 @@ Build a minimal viable demo showing that a privacy-first, community-driven charg
 - **Directions** — Integrate with navigation apps
 - **Admin Dashboard** — Moderate submissions and manage data quality
 
-### 📝 How to Suggest a Location (Phase C)
+### 📝 How to Suggest a Location (Phases C & F)
 
 Found a charging location we're missing? We'd love to hear about it!
 
-**Submit via GitHub Issues:**
-1. Visit the [plug repository](https://github.com/fused-gaming/plug)
-2. Click **Issues** → **New Issue**
-3. Choose the **Suggest a Charging Location** template
-4. Fill out the form with:
+#### ✨ **Submit via Web Form (Fastest — Phase F)**
+
+1. Visit https://plug.vln.gg
+2. Click **"Suggest Location"** button in the header
+3. Fill out the form with:
    - Place name (library, cafe, community center, etc.)
    - Category
    - Street address
-   - Neighborhood or cross street
-   - Coordinates (optional — we can look them up)
+   - Neighborhood (optional)
    - Indoor/outdoor status
-   - Who can use it (everyone or customers only)
-   - Operating hours (if known)
-   - Available charging methods (USB, outlets, etc.)
-   - Any additional details
+   - Amenities (free WiFi, seating, restrooms, etc.)
+   - Hours (if known)
+   - Your email (for confirmation)
+4. Click **Submit**
+5. Check your email for a confirmation link (expires in 7 days)
+6. Click the link to confirm your submission
+7. Get a thank you email when published to the map (usually within 24 hours)
 
-**Email Confirmation (Privacy-First):**
-- After you submit, we'll send a one-time confirmation email via Resend
-- Click the link to verify — it expires after 7 days
-- Your email is stored only with Resend (never in our GitHub repo)
-- No marketing emails, no data sharing
+**Why use the web form?**
+- ⚡ **Faster** — No GitHub account needed
+- 🔒 **Private** — Email handled by Resend, never stored in GitHub
+- ✅ **Guided** — Form validates data as you type
+- 🎯 **Direct** — Goes straight to our moderation queue
 
-**What Happens Next:**
-- Verified submissions are published to the live map within 24 hours
-- You can edit or delete your submission anytime on GitHub
-- See our [Privacy Policy](docs/07-security/PRIVACY.md#12-community-submissions--email-confirmations-phase-c) for details
+#### 🔗 **Submit via GitHub Issues (Alternative — Phase C)**
 
-**Data Quality:**
+If you prefer to use GitHub:
+1. Visit the [plug repository](https://github.com/fused-gaming/plug)
+2. Click **Issues** → **New Issue**
+3. Choose the **Suggest a Charging Location** template
+4. Fill out the form with venue details
+5. Click **Submit new issue**
+
+**What Happens After Submission:**
+- ✉️ Confirmation email via Resend (web form or GitHub)
+- 🔗 Click the link in your email to confirm (7-day expiry)
+- 🔍 Our moderators review your submission (1-2 business days)
+- 📍 Approved venues appear on the live map within 24 hours
+- ✅ You'll get a thank you email when published
+
+**Data Quality Tips:**
 - Please verify the location still has free charging available
 - Include accurate hours if the location is open only during certain times
 - Note if charging is available to everyone or customers only
 - Avoid duplicate submissions (check the map first)
+- See our [Privacy Policy](docs/07-security/PRIVACY.md#12-community-submissions--email-confirmations-phases-c--f) for details
 
 ### ❌ Intentionally Out of Scope (for 7-day MVP)
 

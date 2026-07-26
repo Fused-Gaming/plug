@@ -48,8 +48,8 @@
   {
    "id": "web-form",
    "name": "Phase F: Web form submissions",
-   "status": "in_progress",
-   "detail": "Building web form on map for direct submissions (no GitHub required). Resend confirmation emails → GitHub Issues → Email confirmed → Published to map. Improved UX vs GitHub Issues form."
+   "status": "done",
+   "detail": "In-app modal form live on map (\"Suggest Location\" button in header). Resend confirmation emails (7-day JWT tokens), GitHub Issues as audit trail, real-time publication workflow. Email stored only with Resend (never in repo). PR #32 shipped."
   },
   {
    "id": "expansion",
