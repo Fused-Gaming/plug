@@ -72,6 +72,22 @@ export function openDb(dbPath) {
     db.prepare(`UPDATE venues SET verification_source = 'community' WHERE verification_source IS NULL AND id LIKE 'sub/%'`).run();
   }
 
+  // Issue #42 migration: account-free submission tracking columns.
+  // source_issue/submission_id are unique so re-processing the same GitHub
+  // Issue or the same signed submission token can never create a duplicate row.
+  const hasSourceIssue = columns.some((c) => c.name === 'source_issue');
+  if (!hasSourceIssue) {
+    // SQLite's ALTER TABLE ADD COLUMN can't carry a UNIQUE constraint directly;
+    // partial unique indexes give the same guarantee (uniqueness only when set).
+    db.exec(`
+      ALTER TABLE venues ADD COLUMN source_issue INTEGER;
+      ALTER TABLE venues ADD COLUMN submission_id TEXT;
+      ALTER TABLE venues ADD COLUMN submitted_by_hash TEXT;
+      CREATE UNIQUE INDEX idx_venues_source_issue ON venues(source_issue) WHERE source_issue IS NOT NULL;
+      CREATE UNIQUE INDEX idx_venues_submission_id ON venues(submission_id) WHERE submission_id IS NOT NULL;
+    `);
+  }
+
   return db;
 }
 
@@ -94,6 +110,41 @@ export function upsertVenue(db, venue, today) {
     first_seen: today,
     last_verified: today,
     verification_source: verificationSource,
+  });
+}
+
+/** Issue #42: account-free web-form submissions land here, keyed by the
+ * signed submission token's id and the GitHub Issue the App created for it.
+ * Both are UNIQUE columns, so re-running the ingest workflow against the
+ * same issue or the same confirmation link is a safe no-op, not a dupe row. */
+export function findVenueBySubmissionId(db, submissionId) {
+  return db.prepare(`SELECT * FROM venues WHERE submission_id = ?`).get(submissionId) ?? null;
+}
+
+export function findVenueBySourceIssue(db, issueNumber) {
+  return db.prepare(`SELECT * FROM venues WHERE source_issue = ?`).get(issueNumber) ?? null;
+}
+
+export function insertSubmittedVenue(db, venue, today) {
+  db.prepare(`
+    INSERT INTO venues (id, name, lat, lon, category, indoor, access, hours, address, amenities, notes, tier, first_seen, last_verified, verification_source, source_issue, submission_id, submitted_by_hash)
+    VALUES (@id, @name, @lat, @lon, @category, @indoor, @access, @hours, @address, @amenities, @notes, 'community', @today, @today, 'community', @sourceIssue, @submissionId, @submittedByHash)
+  `).run({
+    id: venue.id,
+    name: venue.name,
+    lat: venue.lat ?? null,
+    lon: venue.lon ?? null,
+    category: venue.category,
+    indoor: venue.indoor ? 1 : 0,
+    access: venue.access,
+    hours: venue.hours ?? null,
+    address: venue.address ?? null,
+    amenities: JSON.stringify(venue.amenities ?? []),
+    notes: venue.notes ?? null,
+    today,
+    sourceIssue: venue.sourceIssue,
+    submissionId: venue.submissionId,
+    submittedByHash: venue.submittedByHash ?? null,
   });
 }
 
