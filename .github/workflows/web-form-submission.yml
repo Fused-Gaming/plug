@@ -224,9 +224,7 @@ jobs:
               owner: context.repo.owner,
               repo: context.repo.repo,
               issue_number: issueNumber,
-              body: `✅ **Email confirmed** by ${{ steps.verify.outputs.EMAIL }} on ${new Date().toISOString()}
-
-This submission is now ready for moderator review and publication.`
+              body: '✅ **Email confirmed** by ' + '${{ steps.verify.outputs.EMAIL }}' + ' on ' + new Date().toISOString() + '\n\nThis submission is now ready for moderator review and publication.'
             });
 
       - name: Send thank you email
