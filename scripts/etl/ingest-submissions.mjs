@@ -72,6 +72,11 @@ async function comment(issueNumber, body) {
   await gh(`/issues/${issueNumber}/comments`, { method: 'POST', body: JSON.stringify({ body }) });
 }
 
+async function closeIssue(issueNumber) {
+  if (fixturePath) return;
+  await gh(`/issues/${issueNumber}`, { method: 'PATCH', body: JSON.stringify({ state: 'closed', state_reason: 'completed' }) });
+}
+
 const issues = await listSubmissionIssues();
 const today = new Date().toISOString().slice(0, 10);
 const db = openDb(DB_PATH);
@@ -128,6 +133,7 @@ for (const issue of issues) {
     }
 
     await label(issue.number, 'ingested');
+    await closeIssue(issue.number);
     ingested++;
     console.log(`ingested #${issue.number}: ${result.venue.name}`);
   } else if (!labels.includes('needs-info')) {
