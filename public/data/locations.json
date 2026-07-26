@@ -2,7 +2,7 @@
  "meta": {
   "license": "Location data (c) OpenStreetMap contributors, ODbL 1.0 — see LICENSE-DATA",
   "disclaimer": "Auto-listed entries are machine-corroborated from public data; community entries are neighbor-submitted pending review. Neither has been field-verified.",
-  "count": 39,
+  "count": 40,
   "staleness_threshold_days": 180
  },
  "venues": [
@@ -334,6 +334,30 @@
    "source": "osm",
    "tier": "auto",
    "last_verified": "2026-07-22",
+   "months_since_verified": 0,
+   "stale": false
+  },
+  {
+   "id": "sub/33",
+   "name": "Museum Of Art and Digital Experience",
+   "lat": null,
+   "lon": null,
+   "category": "cafe",
+   "indoor": true,
+   "access": "customer",
+   "hours": "Tues thru Saturday",
+   "address": "921 Washington St, Oakland, CA 94607 (Washington and 9th st)",
+   "amenities": [
+    "Outlets",
+    "USB charging",
+    "Wi-Fi",
+    "Accessible",
+    "Restrooms"
+   ],
+   "source": "submission",
+   "tier": "community",
+   "notes": "They have 27,000 games on their inventory and for $100 a year you can enjoy the space with no strings attached and it's actually dope as hell.",
+   "last_verified": "2026-07-26",
    "months_since_verified": 0,
    "stale": false
   },
