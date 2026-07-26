@@ -5,39 +5,62 @@ import Filters from './components/Filters'
 import LocationDetail from './components/LocationDetail'
 import SubmitVenueForm from './components/SubmitVenueForm'
 import ConfirmSubmission from './pages/ConfirmSubmission'
+import SubmissionMethodChoice from './components/SubmissionMethodChoice'
 import locationsData from './data/locations'
 import { logInfo, logGeolocationError } from './utils/errorSanitizer'
 
-// Use imported locations with fallback
-const locations = (locationsData && Array.isArray(locationsData) && locationsData.length > 0)
-  ? locationsData
-  : [
-      {
-        id: 1,
-        name: 'Downtown Oakland Convention Center',
-        lat: 37.8044,
-        lng: -122.2712,
-        address: '10 10th St, Oakland, CA 94607',
-        charger_type: 'Level 2',
-        connectors: 'Tesla, CCS, J1772',
-        power_kw: 7.2,
-        source: 'PlugShare',
-        verified_date: '2026-07-20',
-        hours: '9 AM - 5 PM daily',
-      },
-    ]
-
-logInfo('Locations loaded:', locations.length)
+logInfo('App initializing')
 
 export default function App() {
-  logInfo('App rendering with', locations.length, 'locations')
-
   const [selectedLocation, setSelectedLocation] = useState(null)
   const [userLocation, setUserLocation] = useState(null)
-  const [allLocations, setAllLocations] = useState(locations || [])
-  const [filteredLocations, setFilteredLocations] = useState(locations || [])
+  const [allLocations, setAllLocations] = useState([])
+  const [filteredLocations, setFilteredLocations] = useState([])
   const [showSubmitForm, setShowSubmitForm] = useState(false)
+  const [showSubmissionChoice, setShowSubmissionChoice] = useState(false)
   const [confirmationToken, setConfirmationToken] = useState(null)
+  const [isLoadingLocations, setIsLoadingLocations] = useState(true)
+
+  // Fetch locations from the live JSON endpoint
+  useEffect(() => {
+    const fetchLocations = async () => {
+      try {
+        const response = await fetch('/data/locations.json')
+        if (!response.ok) throw new Error('Failed to fetch locations')
+        const data = await response.json()
+
+        // Transform API format to component format
+        const transformed = data.venues.map((venue) => ({
+          id: venue.id,
+          name: venue.name,
+          lat: venue.lat,
+          lng: venue.lon,
+          address: venue.address,
+          category: venue.category,
+          indoor: venue.indoor,
+          access: venue.access,
+          hours: venue.hours,
+          amenities: Array.isArray(venue.amenities) ? venue.amenities : [],
+          tier: venue.tier,
+        }))
+
+        logInfo('Loaded', transformed.length, 'locations from API')
+        setAllLocations(transformed)
+        setFilteredLocations(transformed)
+      } catch (error) {
+        logInfo('Failed to fetch live locations, using fallback seed data')
+        // Fallback: transform seed data if API fails
+        if (locationsData && Array.isArray(locationsData) && locationsData.length > 0) {
+          setAllLocations(locationsData)
+          setFilteredLocations(locationsData)
+        }
+      } finally {
+        setIsLoadingLocations(false)
+      }
+    }
+
+    fetchLocations()
+  }, [])
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search)
@@ -98,11 +121,11 @@ export default function App() {
       <header className="header">
         <div className="header-content">
           <h1>📱 Charging Station Locator</h1>
-          <p>Find device charging nearby (v2.0.0 - Wave 4 Secured)</p>
+          <p>Find device charging nearby (v2.0.0 - Wave 4 Secured) — {allLocations.length} locations</p>
         </div>
         <button
           className="submit-venue-btn"
-          onClick={() => setShowSubmitForm(true)}
+          onClick={() => setShowSubmissionChoice(true)}
           aria-label="Suggest a new charging location"
         >
           ➕ Suggest Location
@@ -141,6 +164,20 @@ export default function App() {
           userLocation={userLocation}
           getDistance={getDistance}
           onClose={() => setSelectedLocation(null)}
+        />
+      )}
+
+      {showSubmissionChoice && (
+        <SubmissionMethodChoice
+          onChooseForm={() => {
+            setShowSubmissionChoice(false)
+            setShowSubmitForm(true)
+          }}
+          onChooseIssue={() => {
+            setShowSubmissionChoice(false)
+            window.open('https://github.com/Fused-Gaming/plug/issues/new?template=location.yml&title=[LOCATION]', '_blank')
+          }}
+          onClose={() => setShowSubmissionChoice(false)}
         />
       )}
 
