@@ -1,0 +1,60 @@
+name: Validate Location Data
+
+# Issue #42's required status check: the thing "automatically merge after
+# all required checks pass" actually gates on. Runs on any PR touching the
+# published data files -- most importantly the PRs
+# scripts/etl/create-submission-pr.mjs opens for App-created submissions,
+# but also anything else that happens to touch these paths.
+#
+# Two checks:
+#   1. `PRAGMA integrity_check` on data/locations.db must report `ok`.
+#   2. public/data/locations.json must be byte-identical to what
+#      publishFromDb() would produce from data/locations.db right now.
+#
+# Why re-run publishFromDb() and diff, instead of e.g. just comparing venue
+# counts/ids: publishFromDb()'s output includes derived fields (months_since_
+# verified, stale) computed from *today's* date, so a byte-diff would flap
+# on any PR left open across a day boundary even with no data drift. Counting
+# venues/ids also wouldn't catch a JSON file that's stale relative to the DB
+# in other columns (hours, amenities, tier, ...). Comparing every row's
+# id/name/lat/lon/category/indoor/access/hours/address/amenities/notes/tier
+# (excluding the date-derived fields) catches real drift -- someone editing
+# locations.json by hand instead of through the ETL pipeline -- without
+# false-failing on day-boundary noise.
+
+on:
+  pull_request:
+    paths:
+      - 'data/**'
+      - 'public/data/**'
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+          cache: 'npm'
+
+      - name: Install dependencies (native build needed for better-sqlite3)
+        run: npm ci
+
+      - name: SQLite integrity check
+        run: |
+          result=$(sqlite3 data/locations.db "PRAGMA integrity_check;")
+          echo "PRAGMA integrity_check -> ${result}"
+          if [ "${result}" != "ok" ]; then
+            echo "::error::data/locations.db failed integrity_check: ${result}"
+            exit 1
+          fi
+
+      - name: Verify public/data/locations.json matches data/locations.db
+        run: node scripts/etl/verify-published-json.mjs

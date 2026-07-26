@@ -8,7 +8,10 @@ export default {
     '^.*/data/locations$': '<rootDir>/src/__tests__/__mocks__/data/locations.js',
   },
   transform: {
-    '^.+\\.(jsx?|es6)$': 'babel-jest',
+    // mjs added for issue #42's scripts/etl/*.mjs pure-function modules
+    // (parse-submission-issue.mjs, validate-submission.mjs) so their unit
+    // tests can import them directly.
+    '^.+\\.(jsx?|mjs|es6)$': 'babel-jest',
   },
   testMatch: ['**/__tests__/**/*.test.js', '**/*.test.js'],
   collectCoverageFrom: [
