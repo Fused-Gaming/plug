@@ -134,3 +134,21 @@ and data pipeline status rather than implementation details.
 
 ---
 
+## 2026-07-26 - docs: regenerate prompt archive [skip ci]
+
+- Commit: `da712ead70`
+- Author: github-actions[bot]
+
+---
+
+## 2026-07-26 - fix: resolve YAML syntax errors in send-themade-email workflow
+
+- Commit: `fc2e858ef8`
+- Author: Claude
+
+- Convert HTML template literal to string concatenation
+- Convert Authorization header template literal to string concatenation
+- Resolves invalid YAML syntax on line 17
+
+---
+
