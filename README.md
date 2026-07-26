@@ -320,6 +320,25 @@ npm run preview
 - Serves the `dist/` folder locally
 - Simulates what users will see on GitHub Pages
 
+### Environment Variables
+
+The account-free web form (issue #42) talks to a serverless verification function for
+submitting and confirming venues. Locally this is served by the Vite dev-only middleware
+(`vite.middleware.js` + `scripts/api/*.mjs`), so no configuration is needed out of the box.
+Once the production backend is deployed, point the app at it via a `.env` / `.env.production`
+file (see [Vite's env docs](https://vitejs.dev/guide/env-and-mode.html)):
+
+| Variable | Default | Purpose |
+| --- | --- | --- |
+| `VITE_SUBMIT_ENDPOINT` | `/api/submit-venue` | Where `SubmitVenueForm` POSTs new venue submissions |
+| `VITE_CONFIRM_ENDPOINT` | `/api/confirm-submission` | Where `ConfirmSubmission` POSTs the emailed `?token=` to confirm a submission |
+
+```bash
+# .env.production
+VITE_SUBMIT_ENDPOINT=https://your-verification-function.example.com/submit-venue
+VITE_CONFIRM_ENDPOINT=https://your-verification-function.example.com/confirm-submission
+```
+
 ### Deployment (Automatic)
 
 - Push to `main` branch

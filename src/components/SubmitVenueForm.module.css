@@ -75,6 +75,32 @@
   font-size: 0.95rem;
 }
 
+fieldset.section {
+  border: none;
+  padding: 0;
+  margin: 0 0 1.5rem 0;
+}
+
+fieldset.section legend {
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+  padding: 0;
+}
+
+.visuallyHidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 .required {
   color: #ef4444;
 }

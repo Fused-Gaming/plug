@@ -2,15 +2,70 @@
  * Modal for choosing between web form and GitHub issue submission methods
  */
 
+import { useEffect, useRef } from 'react';
 import styles from './SubmissionMethodChoice.module.css';
 
 export default function SubmissionMethodChoice({ onChooseForm, onChooseIssue, onClose }) {
+  const modalRef = useRef(null);
+  const closeBtnRef = useRef(null);
+  const previouslyFocusedRef = useRef(null);
+
+  // Focus management: move focus into the modal on open, trap it while open,
+  // and restore focus to whatever triggered the modal on close (Esc or overlay click).
+  useEffect(() => {
+    previouslyFocusedRef.current = document.activeElement;
+    closeBtnRef.current?.focus();
+
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') {
+        onClose();
+        return;
+      }
+
+      if (e.key === 'Tab' && modalRef.current) {
+        const focusable = modalRef.current.querySelectorAll(
+          'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])'
+        );
+        if (focusable.length === 0) return;
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+
+        if (e.shiftKey && document.activeElement === first) {
+          e.preventDefault();
+          last.focus();
+        } else if (!e.shiftKey && document.activeElement === last) {
+          e.preventDefault();
+          first.focus();
+        }
+      }
+    };
+
+    document.addEventListener('keydown', handleKeyDown);
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown);
+      previouslyFocusedRef.current?.focus?.();
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   return (
     <div className={styles.overlay} onClick={onClose}>
-      <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
+      <div
+        className={styles.modal}
+        onClick={(e) => e.stopPropagation()}
+        ref={modalRef}
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="submission-choice-heading"
+      >
         <div className={styles.header}>
-          <h2>How would you like to suggest a location?</h2>
-          <button className={styles.closeBtn} onClick={onClose}>
+          <h2 id="submission-choice-heading">How would you like to suggest a location?</h2>
+          <button
+            className={styles.closeBtn}
+            onClick={onClose}
+            ref={closeBtnRef}
+            aria-label="Close dialog"
+          >
             ✕
           </button>
         </div>
