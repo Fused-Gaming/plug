@@ -49,7 +49,7 @@ jobs:
 
       - name: Create GitHub Issue for submission
         id: create-issue
-        uses: actions/github-script@v7
+        uses: actions/github-script@v9
         with:
           script: |
             const formData = ${{ github.event.inputs.formData }};
@@ -188,7 +188,7 @@ jobs:
           " >> $GITHUB_OUTPUT
 
       - name: Update GitHub Issue
-        uses: actions/github-script@v7
+        uses: actions/github-script@v9
         with:
           script: |
             const issueNumber = parseInt('${{ steps.verify.outputs.ISSUE }}');

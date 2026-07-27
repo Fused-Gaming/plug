@@ -32,7 +32,7 @@ jobs:
 
       - name: Apply submission label if needed
         if: steps.check.outputs.is_submission == 'true'
-        uses: actions/github-script@v7
+        uses: actions/github-script@v9
         with:
           script: |
             const labels = (context.payload.issue.labels || []).map(l => l.name);
