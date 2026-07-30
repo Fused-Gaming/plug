@@ -2,7 +2,7 @@
  "meta": {
   "license": "Location data (c) OpenStreetMap contributors, ODbL 1.0 — see LICENSE-DATA",
   "disclaimer": "Auto-listed entries are machine-corroborated from public data; community entries are neighbor-submitted pending review. Neither has been field-verified.",
-  "count": 75,
+  "count": 74,
   "staleness_threshold_days": 180
  },
  "venues": [
@@ -70,8 +70,8 @@
   {
    "id": "node/1250624743",
    "name": "Main Stacks",
-   "lat": 37.87295,
-   "lon": -122.259322,
+   "lat": 37.87269,
+   "lon": -122.258957,
    "category": "library",
    "indoor": true,
    "access": "public",
@@ -79,7 +79,8 @@
    "address": null,
    "amenities": [
     "Indoor outlets (likely)",
-    "Free"
+    "Free",
+    "Accessible"
    ],
    "source": "osm",
    "tier": "auto",
@@ -117,6 +118,48 @@
    "access": "public",
    "hours": null,
    "address": "50 McCone Hall",
+   "amenities": [
+    "Indoor outlets (likely)",
+    "Free",
+    "Wi-Fi"
+   ],
+   "source": "osm",
+   "tier": "auto",
+   "last_verified": "2026-07-22",
+   "months_since_verified": 0,
+   "stale": false
+  },
+  {
+   "id": "node/13987240865",
+   "name": "Morrison Library",
+   "lat": 37.872459,
+   "lon": -122.259782,
+   "category": "library",
+   "indoor": true,
+   "access": "public",
+   "hours": "See website",
+   "address": "101 Doe Library",
+   "amenities": [
+    "Indoor outlets (likely)",
+    "Free",
+    "Wi-Fi"
+   ],
+   "source": "osm",
+   "tier": "auto",
+   "last_verified": "2026-07-22",
+   "months_since_verified": 0,
+   "stale": false
+  },
+  {
+   "id": "node/13987240866",
+   "name": "North Reading Room",
+   "lat": 37.872435,
+   "lon": -122.259496,
+   "category": "library",
+   "indoor": true,
+   "access": "public",
+   "hours": "See website",
+   "address": "200 Doe Library",
    "amenities": [
     "Indoor outlets (likely)",
     "Free",
@@ -212,9 +255,9 @@
   },
   {
    "id": "node/2427751968",
-   "name": "Anthropology Library",
-   "lat": 37.86981,
-   "lon": -122.255095,
+   "name": "Anthropology Reading Room",
+   "lat": 37.869136,
+   "lon": -122.255029,
    "category": "library",
    "indoor": true,
    "access": "public",
@@ -222,7 +265,8 @@
    "address": null,
    "amenities": [
     "Indoor outlets (likely)",
-    "Free"
+    "Free",
+    "Wi-Fi"
    ],
    "source": "osm",
    "tier": "auto",
@@ -319,7 +363,7 @@
    "category": "library",
    "indoor": true,
    "access": "public",
-   "hours": "Mo 9:00-19:00; Tu-Th 9:00-17:30; Fr 12:00-17:30",
+   "hours": "Mo 09:00-19:00; Tu-Th 09:00-17:30; Fr 12:00-17:30",
    "address": null,
    "amenities": [
     "Indoor outlets (likely)",
@@ -496,17 +540,18 @@
   },
   {
    "id": "node/4124184017",
-   "name": "Kresge Engineering Library",
+   "name": "Kresge Engineering & Mathematical Sciences Library",
    "lat": 37.873995,
    "lon": -122.258186,
    "category": "library",
    "indoor": true,
    "access": "public",
-   "hours": null,
-   "address": null,
+   "hours": "See website",
+   "address": "B120 Grimes Engineering Center",
    "amenities": [
     "Indoor outlets (likely)",
-    "Free"
+    "Free",
+    "Wi-Fi"
    ],
    "source": "osm",
    "tier": "auto",
@@ -516,7 +561,7 @@
   },
   {
    "id": "node/4124184018",
-   "name": "Chemistry and Chemical Engineering Library",
+   "name": "Chemistry, Astronomy & Physics Library",
    "lat": 37.872541,
    "lon": -122.255808,
    "category": "library",
@@ -526,31 +571,12 @@
    "address": "100 Hildebrand Hall",
    "amenities": [
     "Indoor outlets (likely)",
-    "Free"
+    "Free",
+    "Wi-Fi"
    ],
    "source": "osm",
    "tier": "auto",
    "last_verified": "2026-07-22",
-   "months_since_verified": 0,
-   "stale": false
-  },
-  {
-   "id": "node/4124184019",
-   "name": "Physics-Astronomy Library",
-   "lat": 37.872663,
-   "lon": -122.256905,
-   "category": "library",
-   "indoor": true,
-   "access": "public",
-   "hours": null,
-   "address": null,
-   "amenities": [
-    "Indoor outlets (likely)",
-    "Free"
-   ],
-   "source": "osm",
-   "tier": "auto",
-   "last_verified": "2026-07-29",
    "months_since_verified": 0,
    "stale": false
   },
@@ -595,38 +621,19 @@
    "stale": false
   },
   {
-   "id": "node/4124184022",
-   "name": "Mathematics Statistics Library",
-   "lat": 37.873646,
-   "lon": -122.257672,
-   "category": "library",
-   "indoor": true,
-   "access": "public",
-   "hours": null,
-   "address": null,
-   "amenities": [
-    "Indoor outlets (likely)",
-    "Free"
-   ],
-   "source": "osm",
-   "tier": "auto",
-   "last_verified": "2026-07-27",
-   "months_since_verified": 0,
-   "stale": false
-  },
-  {
    "id": "node/4124184024",
    "name": "Social Research Library",
-   "lat": 37.873584,
-   "lon": -122.261047,
+   "lat": 37.873614,
+   "lon": -122.261117,
    "category": "library",
    "indoor": true,
    "access": "public",
-   "hours": null,
+   "hours": "See website",
    "address": null,
    "amenities": [
     "Indoor outlets (likely)",
-    "Free"
+    "Free",
+    "Wi-Fi"
    ],
    "source": "osm",
    "tier": "auto",
@@ -651,26 +658,6 @@
    "source": "osm",
    "tier": "auto",
    "last_verified": "2026-07-22",
-   "months_since_verified": 0,
-   "stale": false
-  },
-  {
-   "id": "node/4124184027",
-   "name": "Optometry and Health Sciences Library",
-   "lat": 37.871681,
-   "lon": -122.254753,
-   "category": "library",
-   "indoor": true,
-   "access": "public",
-   "hours": null,
-   "address": null,
-   "amenities": [
-    "Indoor outlets (likely)",
-    "Free"
-   ],
-   "source": "osm",
-   "tier": "auto",
-   "last_verified": "2026-07-29",
    "months_since_verified": 0,
    "stale": false
   },
@@ -809,6 +796,27 @@
    "amenities": [
     "Indoor outlets (likely)",
     "Free"
+   ],
+   "source": "osm",
+   "tier": "auto",
+   "last_verified": "2026-07-22",
+   "months_since_verified": 0,
+   "stale": false
+  },
+  {
+   "id": "relation/21101411",
+   "name": "Doe Memorial Library",
+   "lat": 37.872187,
+   "lon": -122.259513,
+   "category": "library",
+   "indoor": true,
+   "access": "public",
+   "hours": "See website",
+   "address": null,
+   "amenities": [
+    "Indoor outlets (likely)",
+    "Free",
+    "Wi-Fi"
    ],
    "source": "osm",
    "tier": "auto",
@@ -993,27 +1001,7 @@
    "category": "library",
    "indoor": true,
    "access": "public",
-   "hours": null,
-   "address": null,
-   "amenities": [
-    "Indoor outlets (likely)",
-    "Free"
-   ],
-   "source": "osm",
-   "tier": "auto",
-   "last_verified": "2026-07-22",
-   "months_since_verified": 0,
-   "stale": false
-  },
-  {
-   "id": "way/24024513",
-   "name": "Doe Memorial Library",
-   "lat": 37.872187,
-   "lon": -122.259513,
-   "category": "library",
-   "indoor": true,
-   "access": "public",
-   "hours": null,
+   "hours": "See website",
    "address": null,
    "amenities": [
     "Indoor outlets (likely)",
@@ -1022,7 +1010,7 @@
    ],
    "source": "osm",
    "tier": "auto",
-   "last_verified": "2026-07-27",
+   "last_verified": "2026-07-22",
    "months_since_verified": 0,
    "stale": false
   },
@@ -1034,7 +1022,7 @@
    "category": "library",
    "indoor": true,
    "access": "public",
-   "hours": null,
+   "hours": "See website",
    "address": null,
    "amenities": [
     "Indoor outlets (likely)",
@@ -1051,8 +1039,8 @@
   {
    "id": "way/263313197",
    "name": "Orinda Library",
-   "lat": 37.882461,
-   "lon": -122.187381,
+   "lat": 37.882469,
+   "lon": -122.187392,
    "category": "library",
    "indoor": true,
    "access": "public",
