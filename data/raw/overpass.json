@@ -532,8 +532,8 @@
   {
    "type": "node",
    "id": 4124184028,
-   "lat": 37.8714803,
-   "lon": -122.253854,
+   "lat": 37.8714772,
+   "lon": -122.2537364,
    "tags": {
     "access": "permissive",
     "amenity": "library",
