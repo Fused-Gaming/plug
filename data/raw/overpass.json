@@ -455,7 +455,7 @@
     "layer": "-1",
     "level": "1",
     "name": "Kresge Engineering & Mathematical Sciences Library",
-    "opening_hours": "See website",
+    "opening_hours": "\"see website\"",
     "operator": "University of California, Berkeley",
     "operator:type": "university",
     "operator:wikidata": "Q168756",
@@ -465,8 +465,8 @@
   {
    "type": "node",
    "id": 4124184018,
-   "lat": 37.8725411,
-   "lon": -122.2558076,
+   "lat": 37.8724987,
+   "lon": -122.2557685,
    "tags": {
     "addr:housenumber": "100",
     "addr:street": "Hildebrand Hall",
@@ -511,7 +511,7 @@
     "internet_access:fee": "no",
     "level": "2",
     "name": "Social Research Library",
-    "opening_hours": "See website",
+    "opening_hours": "\"see website\"",
     "operator": "University of California, Berkeley",
     "operator:type": "university",
     "operator:wikidata": "Q168756",
@@ -899,6 +899,16 @@
     "operator": "Sports Basement",
     "operator:type": "business",
     "website": "https://www.sportsbasement.com/blogs/community-spaces/community-room-1"
+   }
+  },
+  {
+   "type": "node",
+   "id": 14072062991,
+   "lat": 37.8688029,
+   "lon": -122.2706958,
+   "tags": {
+    "amenity": "library",
+    "name": "Berkeley High School Library"
    }
   },
   {
@@ -2434,7 +2444,7 @@
     "internet_access": "wlan",
     "internet_access:fee": "customers",
     "name": "Doe Memorial Library",
-    "opening_hours": "See website",
+    "opening_hours": "\"see website\"",
     "operator": "University of California, Berkeley",
     "operator:type": "university",
     "operator:wikidata": "Q168756",
