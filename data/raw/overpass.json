@@ -74,7 +74,7 @@
     "ele": "24",
     "gnis:feature_id": "1676071",
     "name": "Eastmont Branch Oakland Public Library",
-    "opening_hours": "Mo 9:00-19:00; Tu-Th 9:00-17:30; Fr 12:00-17:30",
+    "opening_hours": "Mo 09:00-19:00; Tu-Th 09:00-17:30; Fr 12:00-17:30",
     "source": "USGS Geonames",
     "wikidata": "Q66362564"
    }
@@ -141,6 +141,9 @@
     "ele": "164",
     "gnis:feature_id": "1723575",
     "name": "Moraga Branch Contra Costa County Library",
+    "operator": "Contra Costa County Library",
+    "operator:type": "public",
+    "operator:wikidata": "Q5165604",
     "source": "USGS Geonames",
     "website": "https://ccclib.org/locations/15/",
     "wikidata": "Q66237502"
@@ -193,8 +196,8 @@
   {
    "type": "node",
    "id": 1250624743,
-   "lat": 37.8729501,
-   "lon": -122.259322,
+   "lat": 37.8728354,
+   "lon": -122.2594817,
    "tags": {
     "amenity": "library",
     "layer": "-1",
@@ -233,6 +236,9 @@
     "internet_access": "yes",
     "internet_access:fee": "no",
     "name": "Earth Sciences and Map Library",
+    "operator": "University of California, Berkeley",
+    "operator:type": "university",
+    "operator:wikidata": "Q168756",
     "website": "https://www.lib.berkeley.edu/visit/earth-sciences"
    }
   },
@@ -282,6 +288,7 @@
     "level": "2",
     "name": "Environmental Design Library",
     "operator": "University of California, Berkeley",
+    "operator:type": "university",
     "operator:wikidata": "Q168756",
     "toilets:wheelchair": "yes",
     "website": "https://www.lib.berkeley.edu/visit/environmental-design",
@@ -291,12 +298,17 @@
   {
    "type": "node",
    "id": 2427751968,
-   "lat": 37.8698095,
-   "lon": -122.2550952,
+   "lat": 37.8691357,
+   "lon": -122.2550293,
    "tags": {
     "amenity": "library",
-    "name": "Anthropology Library",
-    "operator": "University of California, Berkeley"
+    "internet_access": "wlan",
+    "level": "2",
+    "name": "Anthropology Reading Room",
+    "official_name": "Constance Chiang Pan Anthropology Reading Room",
+    "operator": "University of California, Berkeley - Anthropology Department",
+    "operator:type": "university",
+    "website": "https://anthropology.berkeley.edu/about/constance-chiang-pan-anthropology-reading-room"
    }
   },
   {
@@ -412,6 +424,9 @@
    "tags": {
     "amenity": "library",
     "name": "Marian Koshland Bioscience & Natural Resources Library",
+    "operator": "University of California, Berkeley",
+    "operator:type": "university",
+    "operator:wikidata": "Q168756",
     "website": "https://www.lib.berkeley.edu/visit/bioscience",
     "wikidata": "Q56628012"
    }
@@ -432,34 +447,37 @@
    "lat": 37.8739952,
    "lon": -122.258186,
    "tags": {
+    "addr:housenumber": "B120",
+    "addr:street": "Grimes Engineering Center",
     "amenity": "library",
+    "internet_access": "wlan",
+    "internet_access:fee": "customers",
     "layer": "-1",
     "level": "1",
-    "name": "Kresge Engineering Library"
+    "name": "Kresge Engineering & Mathematical Sciences Library",
+    "opening_hours": "\"see website\"",
+    "operator": "University of California, Berkeley",
+    "operator:type": "university",
+    "operator:wikidata": "Q168756",
+    "website": "https://www.lib.berkeley.edu/visit/engineering"
    }
   },
   {
    "type": "node",
    "id": 4124184018,
-   "lat": 37.8725411,
-   "lon": -122.2558076,
+   "lat": 37.8724987,
+   "lon": -122.2557685,
    "tags": {
     "addr:housenumber": "100",
     "addr:street": "Hildebrand Hall",
     "amenity": "library",
-    "name": "Chemistry and Chemical Engineering Library",
-    "website": "https://www.lib.berkeley.edu/libraries/chemistry-library",
+    "internet_access": "wlan",
+    "name": "Chemistry, Astronomy & Physics Library",
+    "operator": "University of California, Berkeley",
+    "operator:type": "university",
+    "operator:wikidata": "Q168756",
+    "website": "https://www.lib.berkeley.edu/visit/chemistry",
     "wheelchair": "limited"
-   }
-  },
-  {
-   "type": "node",
-   "id": 4124184019,
-   "lat": 37.8726634,
-   "lon": -122.2569047,
-   "tags": {
-    "amenity": "library",
-    "name": "Physics-Astronomy Library"
    }
   },
   {
@@ -484,24 +502,20 @@
   },
   {
    "type": "node",
-   "id": 4124184022,
-   "lat": 37.8736458,
-   "lon": -122.2576719,
-   "tags": {
-    "amenity": "library",
-    "check_date": "2024-09-23",
-    "name": "Mathematics Statistics Library",
-    "website": "https://www.lib.berkeley.edu/visit/math"
-   }
-  },
-  {
-   "type": "node",
    "id": 4124184024,
-   "lat": 37.8735839,
-   "lon": -122.2610467,
+   "lat": 37.8736138,
+   "lon": -122.2611175,
    "tags": {
     "amenity": "library",
+    "internet_access": "wlan",
+    "internet_access:fee": "no",
+    "level": "2",
     "name": "Social Research Library",
+    "opening_hours": "\"see website\"",
+    "operator": "University of California, Berkeley",
+    "operator:type": "university",
+    "operator:wikidata": "Q168756",
+    "ref:addr": "227",
     "website": "https://www.lib.berkeley.edu/visit/social-research"
    }
   },
@@ -517,25 +531,18 @@
   },
   {
    "type": "node",
-   "id": 4124184027,
-   "lat": 37.871681,
-   "lon": -122.2547533,
-   "tags": {
-    "amenity": "library",
-    "name": "Optometry and Health Sciences Library"
-   }
-  },
-  {
-   "type": "node",
    "id": 4124184028,
-   "lat": 37.8714803,
-   "lon": -122.253854,
+   "lat": 37.8714772,
+   "lon": -122.2537364,
    "tags": {
     "access": "permissive",
     "amenity": "library",
     "internet_access": "wlan",
     "level:ref": "2;3",
     "name": "Thomas J. Long Business Library",
+    "operator": "University of California, Berkeley",
+    "operator:type": "university",
+    "operator:wikidata": "Q168756",
     "website": "https://www.lib.berkeley.edu/visit/business",
     "wikidata": "Q63198329"
    }
@@ -821,6 +828,90 @@
    }
   },
   {
+   "type": "node",
+   "id": 13975959299,
+   "lat": 37.8475957,
+   "lon": -122.2606814,
+   "tags": {
+    "addr:city": "Oakland",
+    "addr:housenumber": "6116",
+    "addr:postcode": "94609",
+    "addr:state": "CA",
+    "addr:street": "Telegraph Avenue",
+    "amenity": "community_centre",
+    "community_centre": "cultural_centre",
+    "contact:facebook": "https://www.facebook.com/p/Oakland-Ethiopian-Community-and-Cultural-Center-100076252394910/",
+    "description": "ECCC is a non-profit organization that supports the 20,000 members of the Bay Area (CA) community.",
+    "name": "Ethiopian Community Cultural Center",
+    "phone": "+1-510-268-4770"
+   }
+  },
+  {
+   "type": "node",
+   "id": 13987240865,
+   "lat": 37.8724588,
+   "lon": -122.2597817,
+   "tags": {
+    "access": "yes",
+    "addr:housenumber": "101",
+    "addr:street": "Doe Library",
+    "air_conditioning": "yes",
+    "amenity": "library",
+    "internet_access": "wlan",
+    "internet_access:fee": "customers",
+    "name": "Morrison Library",
+    "opening_hours": "Mo-Fr 12:00-17:00; Sa,Su off",
+    "operator": "University of California, Berkeley",
+    "operator:type": "university",
+    "operator:wikidata": "Q168756",
+    "website": "https://www.lib.berkeley.edu/visit/morrison"
+   }
+  },
+  {
+   "type": "node",
+   "id": 13987240866,
+   "lat": 37.8724352,
+   "lon": -122.2594958,
+   "tags": {
+    "access": "yes",
+    "addr:housenumber": "200",
+    "addr:street": "Doe Library",
+    "amenity": "library",
+    "internet_access": "wlan",
+    "internet_access:fee": "customers",
+    "level": "2",
+    "name": "North Reading Room",
+    "opening_hours": "See website",
+    "operator": "UC Berkeley Library",
+    "operator:type": "university"
+   }
+  },
+  {
+   "type": "node",
+   "id": 14003340443,
+   "lat": 37.8595145,
+   "lon": -122.2691647,
+   "tags": {
+    "access": "permissive",
+    "amenity": "community_centre",
+    "community_centre": "community_hall",
+    "name": "Community Room",
+    "operator": "Sports Basement",
+    "operator:type": "business",
+    "website": "https://www.sportsbasement.com/blogs/community-spaces/community-room-1"
+   }
+  },
+  {
+   "type": "node",
+   "id": 14072062991,
+   "lat": 37.8688029,
+   "lon": -122.2706958,
+   "tags": {
+    "amenity": "library",
+    "name": "Berkeley High School Library"
+   }
+  },
+  {
    "type": "way",
    "id": 23553106,
    "center": {
@@ -852,6 +943,9 @@
     "name": "C V Starr East Asian Library",
     "name:etymology:wikidata": "Q183340",
     "name:etymology:wikipedia": "en:Cornelius Vander Starr",
+    "operator": "University of California, Berkeley",
+    "operator:type": "university",
+    "operator:wikidata": "Q168756",
     "website": "https://www.lib.berkeley.edu/visit/east-asian",
     "wikidata": "Q118903541"
    }
@@ -865,35 +959,27 @@
    },
    "tags": {
     "addr:state": "CA",
+    "air_conditioning": "yes",
+    "alt_name": "Doe Annex",
     "amenity": "library",
+    "architect": "Arthur Brown Jr.",
     "building": "yes",
     "building:levels": "5",
     "ele": "91",
     "gnis:feature_id": "1656666",
-    "name": "Bancroft Library",
-    "source": "USGS Geonames",
-    "wikidata": "Q4854158"
-   }
-  },
-  {
-   "type": "way",
-   "id": 24024513,
-   "center": {
-    "lat": 37.8721874,
-    "lon": -122.2595133
-   },
-   "tags": {
-    "addr:state": "CA",
-    "amenity": "library",
-    "building": "yes",
-    "building:levels": "4",
-    "ele": "88",
-    "gnis:feature_id": "1656688",
     "internet_access": "wlan",
-    "name": "Doe Memorial Library",
+    "internet_access:fee": "customers",
+    "last_renovation": "2008",
+    "name": "Bancroft Library",
+    "opening_hours": "See website",
+    "operator": "University of California, Berkeley",
+    "operator:type": "university",
+    "operator:wikidata": "Q168756",
     "source": "USGS Geonames",
-    "website": "https://www.lib.berkeley.edu/libraries/doe-library",
-    "wikidata": "Q5288048"
+    "start_date": "1949",
+    "website": "https://www.lib.berkeley.edu/visit/bancroft",
+    "wikidata": "Q4854158",
+    "wikipedia": "en:Bancroft Library"
    }
   },
   {
@@ -911,10 +997,14 @@
     "air_conditioning": "yes",
     "amenity": "library",
     "building": "university",
-    "building:levels": "4",
+    "building:levels": "3",
     "internet_access": "yes",
+    "internet_access:fee": "customers",
     "name": "Hargrove Music Library",
+    "opening_hours": "See website",
     "operator": "University of California, Berkeley",
+    "operator:type": "university",
+    "operator:wikidata": "Q168756",
     "phone": "+1-510-642-2623",
     "website": "https://www.lib.berkeley.edu/libraries/music-library",
     "wheelchair": "yes",
@@ -1073,17 +1163,22 @@
     "addr:street": "The Alameda",
     "alt_name": "North Berkeley Branch Berkeley Public Library",
     "amenity": "library",
+    "architect": "James W. Plachek",
     "building": "public",
     "building:levels": "1",
+    "description": "WPA project",
     "ele": "61",
     "gnis:feature_id": "1676026",
     "internet_access": "wlan",
     "internet_access:fee": "no",
     "name": "Berkeley Public Library North Branch",
     "opening_hours": "Mo-Tu 10:00-18:00; We-Th 12:00-20:00; Fr-Sa 10:00-18:00",
+    "operator": "Berkeley Public Library",
+    "operator:type": "public",
     "phone": "+1 510 9816250",
     "roof:levels": "0",
     "source": "USGS Geonames",
+    "start_date": "1936",
     "wheelchair": "yes"
    }
   },
@@ -1091,8 +1186,8 @@
    "type": "way",
    "id": 31424293,
    "center": {
-    "lat": 37.883055,
-    "lon": -122.1878659
+    "lat": 37.8830574,
+    "lon": -122.187881
    },
    "tags": {
     "addr:city": "Orinda",
@@ -1568,8 +1663,8 @@
    "type": "way",
    "id": 263313197,
    "center": {
-    "lat": 37.8824613,
-    "lon": -122.1873814
+    "lat": 37.8824687,
+    "lon": -122.1873924
    },
    "tags": {
     "addr:city": "Orinda",
@@ -1585,6 +1680,9 @@
     "internet_access:fee": "no",
     "internet_access:ssid": "CCCLIBRARY",
     "name": "Orinda Library",
+    "operator": "Contra Costa County Library",
+    "operator:type": "public",
+    "operator:wikidata": "Q5165604",
     "website": "https://ccclib.org/locations/19/"
    }
   },
@@ -1670,8 +1768,8 @@
    "type": "way",
    "id": 376427450,
    "center": {
-    "lat": 37.7998208,
-    "lon": -122.2700276
+    "lat": 37.7998254,
+    "lon": -122.2700311
    },
    "tags": {
     "addr:housenumber": "316",
@@ -1958,6 +2056,28 @@
   },
   {
    "type": "way",
+   "id": 471289300,
+   "center": {
+    "lat": 37.8339748,
+    "lon": -122.2797713
+   },
+   "tags": {
+    "addr:country": "US",
+    "addr:housenumber": "4321",
+    "addr:state": "CA",
+    "addr:street": "Salem Street",
+    "amenity": "community_centre",
+    "building": "yes",
+    "community_centre:for": "senior",
+    "ele": "15",
+    "gnis:feature_id": "1961860",
+    "name": "Emeryville Senior Center",
+    "source": "USGS Geonames",
+    "website": "https://www.emeryville.org/Recreation/Senior-Center"
+   }
+  },
+  {
+   "type": "way",
    "id": 475331878,
    "center": {
     "lat": 37.8319833,
@@ -2052,7 +2172,7 @@
    "id": 560051803,
    "center": {
     "lat": 37.8523854,
-    "lon": -122.1268751
+    "lon": -122.1267823
    },
    "tags": {
     "amenity": "community_centre",
@@ -2276,6 +2396,64 @@
     "opening_hours:signed": "no",
     "type": "multipolygon",
     "website": "https://www.jcceastbay.org/"
+   }
+  },
+  {
+   "type": "relation",
+   "id": 21101300,
+   "center": {
+    "lat": 37.87269,
+    "lon": -122.2589567
+   },
+   "tags": {
+    "alt_name": "Gardner Stacks",
+    "amenity": "library",
+    "architect": "Esherick Homsey Dodge and Davis",
+    "building": "library",
+    "building:levels": "4",
+    "building:levels:underground": "3",
+    "layer": "1",
+    "name": "Main Stacks",
+    "official_name": "David Pierpont Gardner Stacks",
+    "operator": "University of California, Berkeley",
+    "operator:type": "university",
+    "operator:wikidata": "Q168756",
+    "start_date": "1994",
+    "type": "multipolygon",
+    "website": "https://www.lib.berkeley.edu/visit/main-stacks",
+    "wheelchair": "yes",
+    "wikipedia": "en:University of California, Berkeley Libraries#Main Stacks"
+   }
+  },
+  {
+   "type": "relation",
+   "id": 21101411,
+   "center": {
+    "lat": 37.8721871,
+    "lon": -122.2595133
+   },
+   "tags": {
+    "access": "yes",
+    "addr:state": "CA",
+    "amenity": "library",
+    "architect": "John Galen Howard",
+    "building": "yes",
+    "building:levels": "5",
+    "ele": "88",
+    "gnis:feature_id": "1656688",
+    "internet_access": "wlan",
+    "internet_access:fee": "customers",
+    "name": "Doe Memorial Library",
+    "opening_hours": "\"see website\"",
+    "operator": "University of California, Berkeley",
+    "operator:type": "university",
+    "operator:wikidata": "Q168756",
+    "source": "USGS Geonames",
+    "start_date": "1911",
+    "type": "multipolygon",
+    "website": "https://www.lib.berkeley.edu/visit/doe",
+    "wikidata": "Q5288048",
+    "wikipedia": "https://en.wikipedia.org/wiki/Doe_Memorial_Library"
    }
   }
  ]
