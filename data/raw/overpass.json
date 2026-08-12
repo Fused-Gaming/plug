@@ -522,8 +522,8 @@
   {
    "type": "node",
    "id": 4124184025,
-   "lat": 37.8710437,
-   "lon": -122.2579066,
+   "lat": 37.8710364,
+   "lon": -122.2579217,
    "tags": {
     "amenity": "library",
     "name": "Institute of Governmental Studies Library"
@@ -909,6 +909,19 @@
    "tags": {
     "amenity": "library",
     "name": "Berkeley High School Library"
+   }
+  },
+  {
+   "type": "node",
+   "id": 14088374069,
+   "lat": 37.8706333,
+   "lon": -122.2582775,
+   "tags": {
+    "amenity": "community_centre",
+    "community_centre": "community_hall",
+    "name": "Native American Community Center",
+    "operator": "Native American Student Development office",
+    "website": "https://cejce.berkeley.edu/centers/native-american-student-development/indigenous-and-native-coalition-recruitment-and"
    }
   },
   {

@@ -664,8 +664,8 @@
   {
    "id": "node/4124184025",
    "name": "Institute of Governmental Studies Library",
-   "lat": 37.871044,
-   "lon": -122.257907,
+   "lat": 37.871036,
+   "lon": -122.257922,
    "category": "library",
    "indoor": true,
    "access": "public",
