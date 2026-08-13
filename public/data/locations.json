@@ -158,7 +158,7 @@
    "category": "library",
    "indoor": true,
    "access": "public",
-   "hours": "See website",
+   "hours": "\"see website\"",
    "address": "200 Doe Library",
    "amenities": [
     "Indoor outlets (likely)",
@@ -1021,7 +1021,7 @@
    "category": "library",
    "indoor": true,
    "access": "public",
-   "hours": "See website",
+   "hours": "\"see website\"",
    "address": null,
    "amenities": [
     "Indoor outlets (likely)",
@@ -1042,7 +1042,7 @@
    "category": "library",
    "indoor": true,
    "access": "public",
-   "hours": "See website",
+   "hours": "\"see website\"",
    "address": null,
    "amenities": [
     "Indoor outlets (likely)",

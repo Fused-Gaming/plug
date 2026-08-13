@@ -881,7 +881,7 @@
     "internet_access:fee": "customers",
     "level": "2",
     "name": "North Reading Room",
-    "opening_hours": "See website",
+    "opening_hours": "\"see website\"",
     "operator": "UC Berkeley Library",
     "operator:type": "university"
    }
@@ -984,7 +984,7 @@
     "internet_access:fee": "customers",
     "last_renovation": "2008",
     "name": "Bancroft Library",
-    "opening_hours": "See website",
+    "opening_hours": "\"see website\"",
     "operator": "University of California, Berkeley",
     "operator:type": "university",
     "operator:wikidata": "Q168756",
@@ -1014,7 +1014,7 @@
     "internet_access": "yes",
     "internet_access:fee": "customers",
     "name": "Hargrove Music Library",
-    "opening_hours": "See website",
+    "opening_hours": "\"see website\"",
     "operator": "University of California, Berkeley",
     "operator:type": "university",
     "operator:wikidata": "Q168756",
