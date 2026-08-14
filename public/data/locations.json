@@ -2,7 +2,7 @@
  "meta": {
   "license": "Location data (c) OpenStreetMap contributors, ODbL 1.0 — see LICENSE-DATA",
   "disclaimer": "Auto-listed entries are machine-corroborated from public data; community entries are neighbor-submitted pending review. Neither has been field-verified.",
-  "count": 75,
+  "count": 74,
   "staleness_threshold_days": 180
  },
  "venues": [
@@ -137,7 +137,7 @@
    "category": "library",
    "indoor": true,
    "access": "public",
-   "hours": "Mo-Fr 12:00-17:00; Sa,Su off",
+   "hours": "See website",
    "address": "101 Doe Library",
    "amenities": [
     "Indoor outlets (likely)",
@@ -158,7 +158,7 @@
    "category": "library",
    "indoor": true,
    "access": "public",
-   "hours": "\"see website\"",
+   "hours": "See website",
    "address": "200 Doe Library",
    "amenities": [
     "Indoor outlets (likely)",
@@ -168,26 +168,6 @@
    "source": "osm",
    "tier": "auto",
    "last_verified": "2026-07-22",
-   "months_since_verified": 0,
-   "stale": false
-  },
-  {
-   "id": "node/14072062991",
-   "name": "Berkeley High School Library",
-   "lat": 37.868803,
-   "lon": -122.270696,
-   "category": "library",
-   "indoor": true,
-   "access": "public",
-   "hours": null,
-   "address": null,
-   "amenities": [
-    "Indoor outlets (likely)",
-    "Free"
-   ],
-   "source": "osm",
-   "tier": "auto",
-   "last_verified": "2026-08-05",
    "months_since_verified": 0,
    "stale": false
   },
@@ -276,8 +256,8 @@
   {
    "id": "node/2427751968",
    "name": "Anthropology Reading Room",
-   "lat": 37.869136,
-   "lon": -122.255029,
+   "lat": 37.86981,
+   "lon": -122.255095,
    "category": "library",
    "indoor": true,
    "access": "public",
@@ -566,7 +546,7 @@
    "category": "library",
    "indoor": true,
    "access": "public",
-   "hours": "\"see website\"",
+   "hours": "See website",
    "address": "B120 Grimes Engineering Center",
    "amenities": [
     "Indoor outlets (likely)",
@@ -582,8 +562,8 @@
   {
    "id": "node/4124184018",
    "name": "Chemistry, Astronomy & Physics Library",
-   "lat": 37.872499,
-   "lon": -122.255769,
+   "lat": 37.872541,
+   "lon": -122.255808,
    "category": "library",
    "indoor": true,
    "access": "public",
@@ -648,7 +628,7 @@
    "category": "library",
    "indoor": true,
    "access": "public",
-   "hours": "\"see website\"",
+   "hours": "See website",
    "address": null,
    "amenities": [
     "Indoor outlets (likely)",
@@ -664,8 +644,8 @@
   {
    "id": "node/4124184025",
    "name": "Institute of Governmental Studies Library",
-   "lat": 37.871036,
-   "lon": -122.257922,
+   "lat": 37.871044,
+   "lon": -122.257907,
    "category": "library",
    "indoor": true,
    "access": "public",
@@ -684,8 +664,8 @@
   {
    "id": "node/4124184028",
    "name": "Thomas J. Long Business Library",
-   "lat": 37.871477,
-   "lon": -122.253736,
+   "lat": 37.87148,
+   "lon": -122.253854,
    "category": "library",
    "indoor": true,
    "access": "public",
@@ -831,7 +811,7 @@
    "category": "library",
    "indoor": true,
    "access": "public",
-   "hours": "\"see website\"",
+   "hours": "See website",
    "address": null,
    "amenities": [
     "Indoor outlets (likely)",
@@ -1021,7 +1001,7 @@
    "category": "library",
    "indoor": true,
    "access": "public",
-   "hours": "\"see website\"",
+   "hours": "See website",
    "address": null,
    "amenities": [
     "Indoor outlets (likely)",
@@ -1042,7 +1022,7 @@
    "category": "library",
    "indoor": true,
    "access": "public",
-   "hours": "\"see website\"",
+   "hours": "See website",
    "address": null,
    "amenities": [
     "Indoor outlets (likely)",
