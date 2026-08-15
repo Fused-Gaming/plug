@@ -37,6 +37,9 @@
     "gnis:feature_id": "1676076",
     "name": "Elmhurst Branch Oakland Public Library",
     "opening_hours": "Mo 10:00-17:30; Tu-We 10:00-20:00; Th 10:00-17:30; Fr 12:00-17:30; Sa 10:00-17:30",
+    "operator": "Oakland Public Library",
+    "operator:type": "public",
+    "operator:wikidata": "Q1090829",
     "source": "USGS Geonames",
     "wikidata": "Q66362565"
    }
@@ -75,6 +78,9 @@
     "gnis:feature_id": "1676071",
     "name": "Eastmont Branch Oakland Public Library",
     "opening_hours": "Mo 09:00-19:00; Tu-Th 09:00-17:30; Fr 12:00-17:30",
+    "operator": "Oakland Public Library",
+    "operator:type": "public",
+    "operator:wikidata": "Q1090829",
     "source": "USGS Geonames",
     "wikidata": "Q66362564"
    }
@@ -91,6 +97,9 @@
     "gnis:feature_id": "1676062",
     "name": "Martin Luther King Junior Branch Oakland Public Library",
     "opening_hours": "Mo 10:00-17:30; Tu-We 10:00-20:00; Th 10:00-17:30; Fr 12:00-17:30; Sa 10:00-17:30",
+    "operator": "Oakland Public Library",
+    "operator:type": "public",
+    "operator:wikidata": "Q1090829",
     "source": "USGS Geonames"
    }
   },
@@ -105,6 +114,9 @@
     "ele": "24",
     "gnis:feature_id": "1676061",
     "name": "Latin American Branch Oakland Public Library",
+    "operator": "Oakland Public Library",
+    "operator:type": "public",
+    "operator:wikidata": "Q1090829",
     "source": "USGS Geonames"
    }
   },
@@ -121,6 +133,9 @@
     "gnis:feature_id": "1676055",
     "name": "Asian Branch Oakland Public Library",
     "opening_hours": "Mo 10:00-17:30; Tu-We 10:00-20:00; Th 10:00-17:30; Fr 12:00-17:30; Sa 10:00-17:30",
+    "operator": "Oakland Public Library",
+    "operator:type": "public",
+    "operator:wikidata": "Q1090829",
     "source": "USGS Geonames",
     "wheelchair": "yes",
     "wikidata": "Q66362560"
@@ -141,6 +156,9 @@
     "ele": "164",
     "gnis:feature_id": "1723575",
     "name": "Moraga Branch Contra Costa County Library",
+    "operator": "Contra Costa County Library",
+    "operator:type": "public",
+    "operator:wikidata": "Q5165604",
     "source": "USGS Geonames",
     "website": "https://ccclib.org/locations/15/",
     "wikidata": "Q66237502"
@@ -233,6 +251,9 @@
     "internet_access": "yes",
     "internet_access:fee": "no",
     "name": "Earth Sciences and Map Library",
+    "operator": "University of California, Berkeley",
+    "operator:type": "university",
+    "operator:wikidata": "Q168756",
     "website": "https://www.lib.berkeley.edu/visit/earth-sciences"
    }
   },
@@ -282,6 +303,7 @@
     "level": "2",
     "name": "Environmental Design Library",
     "operator": "University of California, Berkeley",
+    "operator:type": "university",
     "operator:wikidata": "Q168756",
     "toilets:wheelchair": "yes",
     "website": "https://www.lib.berkeley.edu/visit/environmental-design",
@@ -291,8 +313,8 @@
   {
    "type": "node",
    "id": 2427751968,
-   "lat": 37.8698095,
-   "lon": -122.2550952,
+   "lat": 37.8691357,
+   "lon": -122.2550293,
    "tags": {
     "amenity": "library",
     "internet_access": "wlan",
@@ -315,6 +337,9 @@
     "entrance": "yes",
     "name": "Temescal Tool Lending Library",
     "opening_hours": "Mo 10:00-17:30; Tu-We 10:00-20:00; Th 10:00-17:30; Fr 12:00-17:30; Sa 10:00-17:30",
+    "operator": "Oakland Public Library",
+    "operator:type": "public",
+    "operator:wikidata": "Q1090829",
     "phone": "+1-510-597-5089"
    }
   },
@@ -404,8 +429,10 @@
     "internet_access:fee": "no",
     "name": "César E. Chávez Branch Oakland Public Library",
     "opening_hours": "Mo 10:00-17:30; Tu-We 10:00-20:00; Th 10:00-17:30; Fr 12:00-17:30; Sa-Su 10:00-17:30; PH off",
+    "operator": "Oakland Public Library",
+    "operator:type": "public",
+    "operator:wikidata": "Q1090829",
     "phone": "+1-510-535-5620",
-    "source": "Bing;https://oaklandlibrary.org/locations/CCA/",
     "wikidata": "Q66362562"
    }
   },
@@ -417,6 +444,9 @@
    "tags": {
     "amenity": "library",
     "name": "Marian Koshland Bioscience & Natural Resources Library",
+    "operator": "University of California, Berkeley",
+    "operator:type": "university",
+    "operator:wikidata": "Q168756",
     "website": "https://www.lib.berkeley.edu/visit/bioscience",
     "wikidata": "Q56628012"
    }
@@ -445,25 +475,27 @@
     "layer": "-1",
     "level": "1",
     "name": "Kresge Engineering & Mathematical Sciences Library",
-    "opening_hours": "See website",
-    "operator": "UC Berkeley Library",
+    "opening_hours": "\"see website\"",
+    "operator": "University of California, Berkeley",
     "operator:type": "university",
+    "operator:wikidata": "Q168756",
     "website": "https://www.lib.berkeley.edu/visit/engineering"
    }
   },
   {
    "type": "node",
    "id": 4124184018,
-   "lat": 37.8725411,
-   "lon": -122.2558076,
+   "lat": 37.8724987,
+   "lon": -122.2557685,
    "tags": {
     "addr:housenumber": "100",
     "addr:street": "Hildebrand Hall",
     "amenity": "library",
     "internet_access": "wlan",
     "name": "Chemistry, Astronomy & Physics Library",
-    "operator": "UC Berkeley Library",
+    "operator": "University of California, Berkeley",
     "operator:type": "university",
+    "operator:wikidata": "Q168756",
     "website": "https://www.lib.berkeley.edu/visit/chemistry",
     "wheelchair": "limited"
    }
@@ -499,9 +531,10 @@
     "internet_access:fee": "no",
     "level": "2",
     "name": "Social Research Library",
-    "opening_hours": "See website",
-    "operator": "UC Berkeley Library",
+    "opening_hours": "\"see website\"",
+    "operator": "University of California, Berkeley",
     "operator:type": "university",
+    "operator:wikidata": "Q168756",
     "ref:addr": "227",
     "website": "https://www.lib.berkeley.edu/visit/social-research"
    }
@@ -509,8 +542,8 @@
   {
    "type": "node",
    "id": 4124184025,
-   "lat": 37.8710437,
-   "lon": -122.2579066,
+   "lat": 37.8710364,
+   "lon": -122.2579217,
    "tags": {
     "amenity": "library",
     "name": "Institute of Governmental Studies Library"
@@ -519,14 +552,17 @@
   {
    "type": "node",
    "id": 4124184028,
-   "lat": 37.8714803,
-   "lon": -122.253854,
+   "lat": 37.8714772,
+   "lon": -122.2537364,
    "tags": {
     "access": "permissive",
     "amenity": "library",
     "internet_access": "wlan",
     "level:ref": "2;3",
     "name": "Thomas J. Long Business Library",
+    "operator": "University of California, Berkeley",
+    "operator:type": "university",
+    "operator:wikidata": "Q168756",
     "website": "https://www.lib.berkeley.edu/visit/business",
     "wikidata": "Q63198329"
    }
@@ -844,9 +880,10 @@
     "internet_access": "wlan",
     "internet_access:fee": "customers",
     "name": "Morrison Library",
-    "opening_hours": "See website",
-    "operator": "UC Berkely Library",
+    "opening_hours": "Mo-Fr 12:00-17:00; Sa,Su off",
+    "operator": "University of California, Berkeley",
     "operator:type": "university",
+    "operator:wikidata": "Q168756",
     "website": "https://www.lib.berkeley.edu/visit/morrison"
    }
   },
@@ -864,7 +901,7 @@
     "internet_access:fee": "customers",
     "level": "2",
     "name": "North Reading Room",
-    "opening_hours": "See website",
+    "opening_hours": "\"see website\"",
     "operator": "UC Berkeley Library",
     "operator:type": "university"
    }
@@ -882,6 +919,29 @@
     "operator": "Sports Basement",
     "operator:type": "business",
     "website": "https://www.sportsbasement.com/blogs/community-spaces/community-room-1"
+   }
+  },
+  {
+   "type": "node",
+   "id": 14072062991,
+   "lat": 37.8688029,
+   "lon": -122.2706958,
+   "tags": {
+    "amenity": "library",
+    "name": "Berkeley High School Library"
+   }
+  },
+  {
+   "type": "node",
+   "id": 14088374069,
+   "lat": 37.8706333,
+   "lon": -122.2582775,
+   "tags": {
+    "amenity": "community_centre",
+    "community_centre": "community_hall",
+    "name": "Native American Community Center",
+    "operator": "Native American Student Development office",
+    "website": "https://cejce.berkeley.edu/centers/native-american-student-development/indigenous-and-native-coalition-recruitment-and"
    }
   },
   {
@@ -916,6 +976,9 @@
     "name": "C V Starr East Asian Library",
     "name:etymology:wikidata": "Q183340",
     "name:etymology:wikipedia": "en:Cornelius Vander Starr",
+    "operator": "University of California, Berkeley",
+    "operator:type": "university",
+    "operator:wikidata": "Q168756",
     "website": "https://www.lib.berkeley.edu/visit/east-asian",
     "wikidata": "Q118903541"
    }
@@ -939,9 +1002,12 @@
     "gnis:feature_id": "1656666",
     "internet_access": "wlan",
     "internet_access:fee": "customers",
+    "last_renovation": "2008",
     "name": "Bancroft Library",
-    "opening_hours": "See website",
-    "renovated": "2008",
+    "opening_hours": "\"see website\"",
+    "operator": "University of California, Berkeley",
+    "operator:type": "university",
+    "operator:wikidata": "Q168756",
     "source": "USGS Geonames",
     "start_date": "1949",
     "website": "https://www.lib.berkeley.edu/visit/bancroft",
@@ -968,9 +1034,10 @@
     "internet_access": "yes",
     "internet_access:fee": "customers",
     "name": "Hargrove Music Library",
-    "opening_hours": "See website",
+    "opening_hours": "\"see website\"",
     "operator": "University of California, Berkeley",
     "operator:type": "university",
+    "operator:wikidata": "Q168756",
     "phone": "+1-510-642-2623",
     "website": "https://www.lib.berkeley.edu/libraries/music-library",
     "wheelchair": "yes",
@@ -1110,6 +1177,9 @@
     "internet_access:fee": "no",
     "name": "Main Branch Oakland Public Library",
     "opening_hours": "Mo-Th 10:00-20:00; Fr 12:00- 17:30; Sa-Su 10:00-17:30",
+    "operator": "Oakland Public Library",
+    "operator:type": "public",
+    "operator:wikidata": "Q1090829",
     "phone": "+1-510-238-3134"
    }
   },
@@ -1129,17 +1199,22 @@
     "addr:street": "The Alameda",
     "alt_name": "North Berkeley Branch Berkeley Public Library",
     "amenity": "library",
+    "architect": "James W. Plachek",
     "building": "public",
     "building:levels": "1",
+    "description": "WPA project",
     "ele": "61",
     "gnis:feature_id": "1676026",
     "internet_access": "wlan",
     "internet_access:fee": "no",
     "name": "Berkeley Public Library North Branch",
     "opening_hours": "Mo-Tu 10:00-18:00; We-Th 12:00-20:00; Fr-Sa 10:00-18:00",
+    "operator": "Berkeley Public Library",
+    "operator:type": "public",
     "phone": "+1 510 9816250",
     "roof:levels": "0",
     "source": "USGS Geonames",
+    "start_date": "1936",
     "wheelchair": "yes"
    }
   },
@@ -1220,6 +1295,9 @@
     "internet_access": "wlan",
     "name": "Lakeview Branch Oakland Public Library",
     "opening_hours": "Mo 10:00-17:30; Tu-We 10:00-20:00; Th 10:00-17:30; Fr 12:00-17:30; Sa 10:00-17:30",
+    "operator": "Oakland Public Library",
+    "operator:type": "public",
+    "operator:wikidata": "Q1090829",
     "roof:shape": "hipped",
     "source": "USGS Geonames",
     "wheelchair": "yes",
@@ -1260,6 +1338,9 @@
     "internet_access:fee": "no",
     "name": "Rockridge Branch Oakland Public Library",
     "opening_hours": "Mo,Th,Sa 10:00-17:30; Tu-We 10:00-20:00; Fr 12:00-17:30; Su off",
+    "operator": "Oakland Public Library",
+    "operator:type": "public",
+    "operator:wikidata": "Q1090829",
     "website": "https://www.oaklandlibrary.org/locations/rockridge-branch",
     "wheelchair": "yes",
     "wikidata": "Q66362574"
@@ -1282,7 +1363,9 @@
     "gnis:feature_id": "1676069",
     "name": "West Oakland Branch Oakland Public Library",
     "opening_hours": "Mo 10:00-17:30; Tu-We 10:00-20:00; Th 10:00-17:30; Fr 12:00-17:30; Sa 10:00-17:30",
-    "source": "USGS Geonames",
+    "operator": "Oakland Public Library",
+    "operator:type": "public",
+    "operator:wikidata": "Q1090829",
     "wikidata": "Q66362576"
    }
   },
@@ -1514,6 +1597,9 @@
     "gnis:feature_id": "1676057",
     "name": "Dimond Branch Oakland Public Library",
     "opening_hours": "Mo 10:00-17:30; Tu-We 10:00-20:00; Th 10:00-17:30; Fr 12:00-17:30; Sa 10:00-17:30",
+    "operator": "Oakland Public Library",
+    "operator:type": "public",
+    "operator:wikidata": "Q1090829",
     "source": "USGS Geonames",
     "wikidata": "Q66362563"
    }
@@ -1537,6 +1623,9 @@
     "internet_access:fee": "no",
     "name": "Temescal Branch Oakland Public Library",
     "opening_hours": "Mo 10:00-17:30; Tu-We 10:00-20:00; Th 10:00-17:30; Fr 12:00-17:30; Sa 10:00-17:30",
+    "operator": "Oakland Public Library",
+    "operator:type": "public",
+    "operator:wikidata": "Q1090829",
     "phone": "+1-510-597-5089",
     "wikidata": "Q66362575"
    }
@@ -1562,6 +1651,8 @@
     "name": "Golden Gate Branch Oakland Public Library",
     "opening_hours": "Mo 10:00-17:30; Tu-We 10:00-20:00; Th 10:00-17:30; Fr 12:00-17:30; Sa 10:00-17:30",
     "operator": "Oakland Public Library",
+    "operator:type": "public",
+    "operator:wikidata": "Q1090829",
     "phone": "+1-510-597-5023",
     "source": "USGS Geonames",
     "website": "https://oaklandlibrary.org/locations/GGA/",
@@ -1641,6 +1732,9 @@
     "internet_access:fee": "no",
     "internet_access:ssid": "CCCLIBRARY",
     "name": "Orinda Library",
+    "operator": "Contra Costa County Library",
+    "operator:type": "public",
+    "operator:wikidata": "Q5165604",
     "website": "https://ccclib.org/locations/19/"
    }
   },
@@ -1661,6 +1755,9 @@
     "gnis:feature_id": "1676063",
     "name": "Melrose Branch Oakland Public Library",
     "opening_hours": "Mo 10:00-17:30; Tu-We 10:00-20:00; Th 10:00-17:30; Fr 12:00-17:30; Sa 10:00-17:30",
+    "operator": "Oakland Public Library",
+    "operator:type": "public",
+    "operator:wikidata": "Q1090829",
     "source": "USGS Geonames",
     "wikidata": "Q66362570"
    }
@@ -1755,6 +1852,9 @@
     "gnis:feature_id": "1692770",
     "name": "Brookfield Village Branch Oakland Public Library",
     "opening_hours": "Mo 10:00-17:30; Tu-We 10:00-20:00; Th 10:00-17:30; Fr 12:00-17:30; Sa 10:00-17:30",
+    "operator": "Oakland Public Library",
+    "operator:type": "public",
+    "operator:wikidata": "Q1090829",
     "source": "USGS Geonames"
    }
   },
@@ -1836,7 +1936,8 @@
     "name": "Piedmont Avenue Branch Oakland Public Library",
     "opening_hours": "Mo 10:00-17:30; Tu-We 10:00-20:00; Th 10:00-17:30; Fr 12:00-17:30; Sa 10:00-17:30; PH off",
     "operator": "Oakland Public Library",
-    "operator:type": "government",
+    "operator:type": "public",
+    "operator:wikidata": "Q1090829",
     "phone": "+1-510-597-5011",
     "source": "USGS Geonames",
     "website": "https://www.oaklandlibrary.org/locations/piedmont-avenue-branch",
@@ -1876,6 +1977,9 @@
     "internet_access:fee": "no",
     "name": "81st Avenue Branch Oakland Public Library",
     "opening_hours": "Sa-Mo 10:00-17:30; Tu, We 10:00-20:00; Th 10:00-17:30; Fr 12:00-17:30",
+    "operator": "Oakland Public Library",
+    "operator:type": "public",
+    "operator:wikidata": "Q1090829",
     "phone": "+1-510-615-5812",
     "source": "Bing",
     "wikidata": "Q66362559"
@@ -2057,6 +2161,9 @@
     "internet_access:fee": "no",
     "name": "Montclair Branch Oakland Public Library",
     "opening_hours": "Mo 10:00-17:30; Tu-We 10:00-20:00; Th 10:00-17:30; Fr 12:00-17:30; Sa 10:00-17:30; PH off",
+    "operator": "Oakland Public Library",
+    "operator:type": "public",
+    "operator:wikidata": "Q1090829",
     "source": "USGS Geonames",
     "wikidata": "Q66362571"
    }
@@ -2373,7 +2480,9 @@
     "layer": "1",
     "name": "Main Stacks",
     "official_name": "David Pierpont Gardner Stacks",
-    "operator": "UC Berkeley Library",
+    "operator": "University of California, Berkeley",
+    "operator:type": "university",
+    "operator:wikidata": "Q168756",
     "start_date": "1994",
     "type": "multipolygon",
     "website": "https://www.lib.berkeley.edu/visit/main-stacks",
@@ -2400,7 +2509,10 @@
     "internet_access": "wlan",
     "internet_access:fee": "customers",
     "name": "Doe Memorial Library",
-    "opening_hours": "See website",
+    "opening_hours": "\"see website\"",
+    "operator": "University of California, Berkeley",
+    "operator:type": "university",
+    "operator:wikidata": "Q168756",
     "source": "USGS Geonames",
     "start_date": "1911",
     "type": "multipolygon",
