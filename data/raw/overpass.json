@@ -1259,6 +1259,8 @@
     "internet_access:fee": "no",
     "name": "West Branch Berkeley Public Library",
     "opening_hours": "Mo-Sa 10:00-18:00",
+    "operator": "Berkeley Public Library",
+    "operator:type": "public",
     "source": "USGS Geonames",
     "website": "https://www.berkeleypubliclibrary.org/locations/west-branch",
     "wheelchair": "yes"
