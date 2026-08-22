@@ -1494,6 +1494,29 @@
   },
   {
    "type": "way",
+   "id": 98585539,
+   "center": {
+    "lat": 37.8700872,
+    "lon": -122.2883935
+   },
+   "tags": {
+    "access:disabled": "yes",
+    "addr:city": "Berkeley",
+    "addr:country": "US",
+    "addr:housenumber": "1970",
+    "addr:state": "CA",
+    "addr:street": "Chestnut Street",
+    "alt_name": "White Finn Hall",
+    "amenity": "community_centre",
+    "building": "yes",
+    "building:levels": "3",
+    "name": "Finnish Brotherhood Hall",
+    "start_date": "1932",
+    "website": "http://www.finnishhall.org/"
+   }
+  },
+  {
+   "type": "way",
    "id": 104441907,
    "center": {
     "lat": 37.8454617,
