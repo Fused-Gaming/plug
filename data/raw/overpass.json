@@ -2377,28 +2377,13 @@
    "type": "way",
    "id": 1551809798,
    "center": {
-    "lat": 37.8706973,
-    "lon": -122.2935903
+    "lat": 37.8706966,
+    "lon": -122.2935939
    },
    "tags": {
     "amenity": "community_centre",
     "community_centre": "events_place",
     "name": "Old Finnish Hall"
-   }
-  },
-  {
-   "type": "way",
-   "id": 1551809799,
-   "center": {
-    "lat": 37.8701459,
-    "lon": -122.2883988
-   },
-   "tags": {
-    "amenity": "community_centre",
-    "building": "yes",
-    "community_centre": "community_hall",
-    "layer": "1",
-    "name": "Finnish Brotherhood Hall"
    }
   },
   {
