@@ -130,3 +130,38 @@ With v2.0.0 live, the next milestone replaces hardcoded seed data with an automa
 - [ ] **Phase E — Licensing, attribution, privacy:** ODbL compliance ✅, README data-sources section, privacy policy for Resend + submissions flow ([planning](PHASES_D_E_PLANNING.md#phase-e-licensing-attribution--privacy), [details](DATA_PIPELINE_PLAN.md#phase-e--licensing-attribution-privacy))
 
 **Definition of Done:** All five phases shipped; the map is populated and maintained by automation and community evidence, with no hand-edited data files.
+
+
+---
+
+## Future concept — Solar-powered drone charger rental
+
+**Status:** Exploratory; discovery only  
+**Timing:** Consider after the v2.1.0 community data pipeline; this concept does not change the v2.1.0 delivery order  
+**Concept:** Extend solar charging stations into a local network that dispatches reusable magnetic power banks by drone for short-term customer rental. The drone lands at an approved pickup pad; the customer retrieves the charger after landing. This is a controlled handoff, not an airdrop.
+
+### Proposed rollout gates
+
+1. **Feasibility and demand discovery**
+   - Identify one compact, high-demand service area, such as a campus, event site, or private facility.
+   - Validate customer demand, acceptable delivery fees, expected turnaround, charging needs, and charger return behavior.
+   - Assess aircraft payload and range, landing/pickup design, weather limits, battery handling, privacy, site permissions, insurance, and applicable aviation requirements with qualified operators and counsel.
+   - Model full service cost, including aircraft, operations, maintenance, charging equipment, battery replacement, and charger recovery. Solar may lower grid-energy costs; it does not by itself fund the service.
+
+2. **Station and rental prototype**
+   - Prototype a solar station with energy storage, charger charging/health monitoring, inventory tracking, and a secure return process.
+   - Use reusable magnetic wireless power banks with USB-C fallback; document device compatibility and charge performance.
+   - Add a request and dispatch flow with QR pickup, charger identity/condition logging, rental terms, and return confirmation.
+   - Support a refundable deposit for general rentals and an approved account-billing option only where a customer has an explicit agreement.
+
+3. **Supervised field pilot**
+   - Begin with a small, geofenced site and a qualified drone operator after required FAA, property-owner, and local approvals are in place.
+   - Require the aircraft to land at a designated safe pad before customer retrieval; do not release chargers in flight.
+   - Return chargers to a station or approved collection point for inspection and recharging.
+   - Record delivery time, successful retrieval and return rates, utilization, energy autonomy, charger cycle life, incidents, customer price acceptance, and total cost per completed rental.
+
+### Scale decision
+
+Expand only if the pilot demonstrates safe, reliable handoffs, strong charger return rates, repeat demand, and sustainable unit economics after including labor, equipment, maintenance, and recovery costs. Keep the charging-location map useful as a standalone service while this operational concept is evaluated.
+
+**Regulatory starting points:** [FAA package delivery under Part 107](https://www.faa.gov/faq/package-delivery-allowed-under-small-uas-rule-part-107) and [FAA package delivery by drone (Part 135)](https://www.faa.gov/uas/advanced_operations/package_delivery_drone).
