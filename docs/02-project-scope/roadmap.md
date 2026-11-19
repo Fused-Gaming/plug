@@ -152,7 +152,9 @@ With v2.0.0 live, the next milestone replaces hardcoded seed data with an automa
    - Prototype a solar station with energy storage, charger charging/health monitoring, inventory tracking, and a secure return process.
    - Use reusable magnetic wireless power banks with USB-C fallback; document device compatibility and charge performance.
    - Add a request and dispatch flow with QR pickup, charger identity/condition logging, rental terms, and return confirmation.
-   - Support a refundable deposit for general rentals and an approved account-billing option only where a customer has an explicit agreement.
+   - Make account creation optional. Support a complete one-time anonymous request without registration, with delivery to a customer-confirmed GPS pin and no persistent location history.
+   - Design the anonymous flow to use three payment options; select and document the actual payment methods during feasibility discovery. Support a refundable deposit for general rentals and an approved account-billing option only where a customer has an explicit agreement.
+   - Collect only the location and transaction data needed to complete and support the delivery; disclose the pin to the authorized operator for fulfillment and define a short retention period for anonymous request data.
 
 3. **Supervised field pilot**
    - Begin with a small, geofenced site and a qualified drone operator after required FAA, property-owner, and local approvals are in place.
