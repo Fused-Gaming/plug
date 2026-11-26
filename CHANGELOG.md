@@ -7,6 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Deprecated
+
+- The locator is deprecated in favor of
+  [Fused-Gaming/theplug](https://github.com/Fused-Gaming/theplug). The
+  `plug.vln.gg` custom domain moves to theplug; this site is now served at
+  `https://fused-gaming.github.io/plug` (Vite `base` set to `/plug/`).
+- Removed `CNAME` / `public/CNAME`; confirmation emails, API links and the
+  default `CONFIRMATION_ENDPOINT` now point at the github.io URL.
+- Landing page shows a deprecation notice linking to plug.vln.gg.
+
 ### Added
 
 - Phase A OSINT ETL (issue #20): `scripts/etl/` fetches OpenStreetMap Overpass

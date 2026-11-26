@@ -1,4 +1,4 @@
-Subject: Confirm your charging location suggestion for plug.vln.gg
+Subject: Confirm your charging location suggestion for fused-gaming.github.io/plug
 
 Hi there,
 
@@ -22,9 +22,9 @@ Questions?
 ---
 
 Privacy note:
-Your email is stored only with Resend, our email service provider. We never save email addresses in our GitHub repository. See our privacy policy: https://plug.vln.gg/privacy
+Your email is stored only with Resend, our email service provider. We never save email addresses in our GitHub repository. See our privacy policy: https://fused-gaming.github.io/plug/privacy
 
 ---
 
-plug.vln.gg
+fused-gaming.github.io/plug
 Open sources of power — free charging near you

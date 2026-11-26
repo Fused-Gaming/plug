@@ -115,7 +115,7 @@ This submission is now ready for moderator review and publication.`,
 
       <p>We verify all submissions to keep the map accurate and up-to-date. Thank you for helping people find free charging!</p>
 
-      <a href="https://plug.vln.gg" class="button">View the Map</a>
+      <a href="https://fused-gaming.github.io/plug" class="button">View the Map</a>
     </div>
 
     <div class="footer">

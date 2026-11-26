@@ -36,7 +36,7 @@ const TOKEN = process.env.GITHUB_TOKEN;
 // Phase C: Resend email confirmation
 const RESEND_API_KEY = process.env.RESEND_API_KEY;
 const RESEND_FROM_EMAIL = process.env.RESEND_FROM_EMAIL || 'noreply@resend.app';
-const CONFIRMATION_ENDPOINT = process.env.CONFIRMATION_ENDPOINT || 'https://plug.vln.gg/api/confirm-submission';
+const CONFIRMATION_ENDPOINT = process.env.CONFIRMATION_ENDPOINT || 'https://fused-gaming.github.io/plug/api/confirm-submission';
 
 const fixtureFlag = process.argv.indexOf('--fixture');
 const fixturePath = fixtureFlag !== -1 ? process.argv[fixtureFlag + 1] : null;

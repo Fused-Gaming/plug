@@ -94,18 +94,18 @@ describe('Phase C: Resend Confirmation Workflow', () => {
     it('includes confirmation link', () => {
       const token = 'test-token-xyz';
       const submission = { name: 'Test Library', id: 'sub/123' };
-      const endpoint = 'https://plug.vln.gg/api/confirm-submission';
+      const endpoint = 'https://fused-gaming.github.io/plug/api/confirm-submission';
 
       const body = buildEmailBody(submission, token, endpoint);
 
-      expect(body).toContain('https://plug.vln.gg/api/confirm-submission?token=test-token-xyz');
-      expect(body).toContain('plug.vln.gg');
+      expect(body).toContain('https://fused-gaming.github.io/plug/api/confirm-submission?token=test-token-xyz');
+      expect(body).toContain('fused-gaming.github.io/plug');
     });
 
     it('includes privacy statement', () => {
       const token = generateToken();
       const submission = { name: 'Community Center' };
-      const endpoint = 'https://plug.vln.gg/api/confirm';
+      const endpoint = 'https://fused-gaming.github.io/plug/api/confirm';
 
       const body = buildEmailBody(submission, token, endpoint);
 
@@ -169,7 +169,7 @@ describe('Phase C: Resend Confirmation Workflow', () => {
         token,
         're_testkey',
         'sender@vln.gg',
-        'https://plug.vln.gg/confirm',
+        'https://fused-gaming.github.io/plug/confirm',
       );
 
       expect(fetchMock).toHaveBeenCalled();
