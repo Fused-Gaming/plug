@@ -94,7 +94,7 @@ export async function sendConfirmationEmail(contact, submissionData, token, rese
       body: JSON.stringify({
         from: resendFromEmail,
         to: contact.email,
-        subject: 'Confirm your charging location suggestion for plug.vln.gg',
+        subject: 'Confirm your charging location suggestion for fused-gaming.github.io/plug',
         text: emailBody,
         reply_to: contact.replyTo || 'support@vln.gg',
         // Resend doesn't support custom token storage in emails, but we can

@@ -7,6 +7,28 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Deprecated
+
+- The locator is deprecated in favor of
+  [Fused-Gaming/theplug](https://github.com/Fused-Gaming/theplug). The
+  `plug.vln.gg` custom domain moves to theplug; this site is now served at
+  `https://fused-gaming.github.io/plug` (Vite `base` set to `/plug/`).
+- Removed `CNAME` / `public/CNAME`; confirmation emails, API links and the
+  default `CONFIRMATION_ENDPOINT` now point at the github.io URL.
+- Landing page shows a deprecation notice linking to plug.vln.gg.
+
+### Changed
+
+- CI gates moved from GitHub Actions to a local multi-stage `Dockerfile`
+  (`npm run gate`): production `npm audit` (high/critical now blocking),
+  security and CSP tests, and the production build. The Pages workflow no
+  longer runs on pull requests and deploys via the same Dockerfile.
+
+### Security
+
+- Upgrade `maplibre-gl` 4.x -> 6.19.0 to fix critical XSS advisory
+  GHSA-jrc7-96c5-q579 (previously masked by a non-blocking audit step).
+
 ### Added
 
 - Phase A OSINT ETL (issue #20): `scripts/etl/` fetches OpenStreetMap Overpass

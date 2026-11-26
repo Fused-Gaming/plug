@@ -1,4 +1,10 @@
-# 📱 Charging Station Locator
+# 📱 Charging Station Locator (Deprecated)
+
+> [!WARNING]
+> **Deprecated.** This charging locator is no longer actively developed. It has been superseded by
+> [Fused-Gaming/theplug](https://github.com/Fused-Gaming/theplug), and the **plug.vln.gg** domain now serves
+> The Plug's new plans. This repository and its site at https://fused-gaming.github.io/plug remain available for reference.
+
 
 [![Build Status](https://github.com/fused-gaming/plug/actions/workflows/deploy.yml/badge.svg?branch=main)](https://github.com/fused-gaming/plug/actions)
 [![Data Sync](https://github.com/fused-gaming/plug/actions/workflows/data-sync.yml/badge.svg?branch=main)](https://github.com/fused-gaming/plug/actions)
@@ -6,7 +12,7 @@
 [![Auto-label Submissions](https://github.com/fused-gaming/plug/actions/workflows/auto-label-submissions.yml/badge.svg?branch=main)](https://github.com/fused-gaming/plug/actions)
 [![Web Form Submission](https://github.com/fused-gaming/plug/actions/workflows/web-form-submission.yml/badge.svg?branch=main)](https://github.com/fused-gaming/plug/actions)
 [![Prompt Archive](https://github.com/fused-gaming/plug/actions/workflows/prompt-archive.yml/badge.svg?branch=main)](https://github.com/fused-gaming/plug/actions)
-[![Deployment Status](https://img.shields.io/badge/deployment-live-success?logo=github)](https://plug.vln.gg)
+[![Deployment Status](https://img.shields.io/badge/deployment-live-success?logo=github)](https://fused-gaming.github.io/plug)
 [![Security: 0 Vulnerabilities](https://img.shields.io/badge/security-0%20vulnerabilities-success)](SECURITY_SCANNING.md)
 [![Tests: 123 Passing](https://img.shields.io/badge/tests-123%20passing-success)](#)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
@@ -22,15 +28,14 @@ A privacy-first, interactive map to help vulnerable populations discover free, r
 
 ## 🚀 Live Demo
 
-### **[View the Live Application →](https://plug.vln.gg)**
+### **[View the Live Application →](https://fused-gaming.github.io/plug)**
 
-- **Production:** https://plug.vln.gg (custom domain)
-- **Fallback:** https://fused-gaming.github.io/plug
+- **Archived site:** https://fused-gaming.github.io/plug
 - **Status:** ✅ Live and responsive (automatic deployment on every push)
 - **Build:** Static Vite build (pre-compiled React)
 - **Hosting:** GitHub Pages with custom CNAME
 
-**Try it now:** Visit https://plug.vln.gg on any device (desktop, tablet, mobile)
+**Try it now:** Visit https://fused-gaming.github.io/plug on any device (desktop, tablet, mobile)
 
 ---
 
@@ -127,7 +132,7 @@ Build a minimal viable demo showing that a privacy-first, community-driven charg
 - **Geolocation** — Optional browser geolocation (user-controlled) sorts by distance
 - **Mobile Responsive** — Optimized layouts for desktop (60/40 split), tablet (overlay), mobile (stacked)
 - **Automatic Deployment** — GitHub Actions builds and deploys on every push to main
-- **Custom Domain** — plug.vln.gg configured via CNAME
+- **Custom Domain** — served from fused-gaming.github.io/plug (custom domain moved to theplug)
 - **Static Site** — No backend required; runs entirely client-side
 - **Privacy-First** — No accounts, no tracking, no data collection
 - **Design System** — Token-driven landing page with WCAG 2.1 graded palette, reusable HTML/CSS components, and an SVG icon sprite ([docs](docs/04-design/COMPONENT_LIBRARY.md))
@@ -150,7 +155,7 @@ Found a charging location we're missing? We'd love to hear about it!
 
 #### ✨ **Submit via Web Form (Fastest — Phase F)**
 
-1. Visit https://plug.vln.gg
+1. Visit https://fused-gaming.github.io/plug
 2. Click **"Suggest Location"** button in the header
 3. Fill out the form with:
    - Place name (library, cafe, community center, etc.)
@@ -220,7 +225,7 @@ If you prefer to use GitHub:
 - **npm 10** — Package manager
 - **GitHub Actions** — CI/CD pipeline (automatic builds and deploys)
 - **GitHub Pages** — Static site hosting (free, included with repo)
-- **Custom Domain** — plug.vln.gg via CNAME
+- **Custom Domain** — none (plug.vln.gg moved to theplug)
 
 ### Development & Quality
 - **CSS 3** — Responsive design with mobile-first approach
@@ -271,6 +276,18 @@ This project was built with extensive use of Claude AI (Anthropic):
 **Human Role:** Project vision, requirements, architecture decisions, and code review. AI handled: rapid implementation, documentation, testing, and deployment configuration.
 
 ---
+
+## CI Gates (Docker)
+
+Pull requests are gated locally with Docker instead of GitHub Actions minutes:
+
+```bash
+npm run gate          # npm audit (high+ blocks), security/CSP tests, production build
+npm run build:docker  # same gates, then exports the static site to ./dist
+```
+
+Behind a TLS-intercepting proxy, pass its CA: `docker build --secret id=extra_ca,src=/path/ca.pem --target gate .`
+The Pages workflow runs only on pushes to `main` and re-runs the same Dockerfile gates before deploying.
 
 ## Running the Project
 
@@ -345,7 +362,7 @@ VITE_CONFIRM_ENDPOINT=https://your-verification-function.example.com/confirm-sub
 - GitHub Actions workflow triggers automatically
 - Vite builds React to static files
 - GitHub Pages serves the `dist/` folder
-- Live at https://plug.vln.gg within 30 seconds
+- Live at https://fused-gaming.github.io/plug within 30 seconds
 
 ---
 
@@ -404,7 +421,7 @@ We built **Charging Station Locator** in 7 days to prove that:
 
 ### What We Delivered
 
-- ✅ **Live, functional MVP** at plug.vln.gg
+- ✅ **Live, functional MVP** at fused-gaming.github.io/plug
 - ✅ **Static site architecture** (no backend, no infrastructure costs)
 - ✅ **Fully responsive** (mobile-first design)
 - ✅ **Automatic deployment** (push to git, site updates instantly)
@@ -585,6 +602,6 @@ See [LICENSE](LICENSE) file for details.
 
 ---
 
-**Status:** MVP Complete ✅ | Live at https://plug.vln.gg | Demo Ready for Bootcamp 🎯
+**Status:** MVP Complete ✅ | Live at https://fused-gaming.github.io/plug | Demo Ready for Bootcamp 🎯
 
 **Last Updated:** July 20, 2026 | Built with React + Vite | Deployed to GitHub Pages

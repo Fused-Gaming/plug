@@ -87,7 +87,7 @@ export async function submitVenue(formData) {
     );
 
     // 3. Send Resend confirmation email
-    const confirmationUrl = `https://plug.vln.gg/confirm?token=${confirmationToken}`;
+    const confirmationUrl = `https://fused-gaming.github.io/plug/confirm?token=${confirmationToken}`;
 
     const emailResult = await resend.emails.send({
       from: 'confirm@queen.vln.gg',
@@ -136,7 +136,7 @@ export async function submitVenue(formData) {
 
     <div class="footer">
       <p>Charging Station Locator | Privacy-first mapping of free charging stations</p>
-      <p>Your email is stored securely and used only for confirmation. <a href="https://plug.vln.gg">View our privacy policy</a></p>
+      <p>Your email is stored securely and used only for confirmation. <a href="https://fused-gaming.github.io/plug">View our privacy policy</a></p>
     </div>
   </div>
 </body>

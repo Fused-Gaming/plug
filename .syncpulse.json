@@ -13,7 +13,7 @@
     "framework": "react",
     "build_tool": "vite",
     "deployment": "github-pages",
-    "deploy_url": "https://plug.vln.gg",
+    "deploy_url": "https://fused-gaming.github.io/plug",
     "repository": "https://github.com/Fused-Gaming/plug",
     "branch": "main"
   },
