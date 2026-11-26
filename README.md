@@ -277,6 +277,18 @@ This project was built with extensive use of Claude AI (Anthropic):
 
 ---
 
+## CI Gates (Docker)
+
+Pull requests are gated locally with Docker instead of GitHub Actions minutes:
+
+```bash
+npm run gate          # npm audit (high+ blocks), security/CSP tests, production build
+npm run build:docker  # same gates, then exports the static site to ./dist
+```
+
+Behind a TLS-intercepting proxy, pass its CA: `docker build --secret id=extra_ca,src=/path/ca.pem --target gate .`
+The Pages workflow runs only on pushes to `main` and re-runs the same Dockerfile gates before deploying.
+
 ## Running the Project
 
 ### Prerequisites
